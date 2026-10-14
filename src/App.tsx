@@ -1,37 +1,40 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import timelines from 'virtual:timelines';
 import type { Lane, TimelineEvent } from './types';
+import { VIEWS, parseHash, timelineHash } from './lib/route';
+import type { View } from './lib/route';
+import { Dashboard } from './components/Dashboard';
+import { Logo } from './components/Logo';
 import { TimelinePicker } from './components/TimelinePicker';
 import { HorizontalView } from './components/HorizontalView';
 import { VerticalView } from './components/VerticalView';
 import { GridView } from './components/GridView';
 import { EventDetail } from './components/EventDetail';
 
-type View = 'grid' | 'horizontal' | 'vertical';
-
-const VIEWS: { id: View; label: string }[] = [
-  { id: 'grid', label: 'Grid' },
-  { id: 'horizontal', label: '橫向' },
-  { id: 'vertical', label: '縱向' },
-];
-
-/** Current view and timelines are kept in the URL hash, e.g. `#v=horizontal&t=Bach|近代世界史`. */
-function readHash(): { view: View; ids: string[] } {
-  const params = new URLSearchParams(location.hash.slice(1));
-  const view = VIEWS.find((v) => v.id === params.get('v'))?.id ?? 'horizontal';
-  const ids = (params.get('t') ?? '').split('|').filter((id) => timelines.some((t) => t.id === id));
-  return { view, ids: ids.length > 0 ? ids : timelines.slice(0, 1).map((t) => t.id) };
-}
+const KNOWN_IDS = timelines.map((t) => t.id);
 
 export function App() {
-  const [initial] = useState(readHash);
-  const [view, setView] = useState<View>(initial.view);
-  const [selected, setSelected] = useState<string[]>(initial.ids);
+  const [route, setRoute] = useState(() => parseHash(location.hash, KNOWN_IDS));
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(parseHash(location.hash, KNOWN_IDS));
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  if (route.page === 'dashboard') return <Dashboard timelines={timelines} />;
+  return <TimelinePage key={timelineHash(route.ids, route.view)} initialView={route.view} initialIds={route.ids} />;
+}
+
+function TimelinePage({ initialView, initialIds }: { initialView: View; initialIds: string[] }) {
+  const [view, setView] = useState<View>(initialView);
+  const [selected, setSelected] = useState<string[]>(initialIds);
   const [query, setQuery] = useState('');
   const [detail, setDetail] = useState<TimelineEvent | null>(null);
 
+  // In-page changes replace the history entry, so Back returns to the dashboard.
   useEffect(() => {
-    history.replaceState(null, '', '#' + new URLSearchParams({ v: view, t: selected.join('|') }).toString());
+    history.replaceState(null, '', timelineHash(selected, view));
   }, [view, selected]);
 
   const lanes: Lane[] = useMemo(() => {
@@ -48,17 +51,18 @@ export function App() {
 
   const closeDetail = useCallback(() => setDetail(null), []);
 
-  if (timelines.length === 0) {
-    return <p className="empty">尚無時間軸資料：請在 Data\ 資料夾放入 .md 檔（格式見 plan.md）。</p>;
-  }
-
   const overlay = lanes.length > 1;
   const detailTimeline = detail && timelines.find((t) => t.id === detail.timelineId);
 
   return (
     <div className="app">
       <header className="header">
-        <TimelinePicker timelines={timelines} selected={selected} onChange={setSelected} />
+        <div className="header-top">
+          <a className="home-link" href="#" title="回到 Dashboard" aria-label="回到 Dashboard">
+            <Logo />
+          </a>
+          <TimelinePicker timelines={timelines} selected={selected} onChange={setSelected} />
+        </div>
         {!overlay && lanes[0]?.timeline.description && <p className="description">{lanes[0].timeline.description}</p>}
         <div className="header-bottom">
           <nav className="tabs">

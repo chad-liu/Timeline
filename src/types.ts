@@ -32,6 +32,8 @@ export interface Timeline {
   title: string;
   color: string;
   description: string;
+  /** Dashboard cover image (frontmatter `cover:`). */
+  cover?: string;
   periods: Period[];
   events: TimelineEvent[];
 }
