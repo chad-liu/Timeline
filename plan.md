@@ -1,4 +1,4 @@
-# Notes Timeline
+# Liu's Timeline
 
 參考 [Timetoast](https://www.timetoast.com/) 的個人時間軸 App。資料來源是 `Data\*.md`，一個檔案就是一條時間軸。
 

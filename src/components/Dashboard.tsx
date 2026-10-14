@@ -100,7 +100,7 @@ export function Dashboard({ timelines }: { timelines: Timeline[] }) {
       <header className="topbar">
         <a className="brand" href="#">
           <Logo />
-          Notes Timeline
+          Liu's Timeline
         </a>
       </header>
 
