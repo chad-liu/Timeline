@@ -32,6 +32,7 @@ cover: images/bach-cover.jpg   # Dashboard 封面（可省略：改用第一張�
 
 # Periods                 （也可寫「# 時期」）
 - 1685 ~ 1695 | 幼年@埃森納赫 | #7c4dff      ← 日期 | 名稱 | 顏色（可省略）
+  縮排的文字是這個時期的說明（可多行、支援 Markdown）
 
 # Events                  （也可寫「# 事件」）
 ## 1685-03-21 | 出生

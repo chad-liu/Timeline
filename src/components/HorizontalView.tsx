@@ -46,6 +46,7 @@ interface Props {
   lanes: Lane[];
   overlay: boolean;
   onSelect: (event: TimelineEvent) => void;
+  onSelectPeriod: (period: Period, timeline: Timeline) => void;
 }
 
 function domainOf(timelines: Timeline[]): { min: number; max: number } {
@@ -122,7 +123,7 @@ function layoutLanes(lanes: Lane[], overlay: boolean, ppy: number, min: number):
   return { layouts, height: top };
 }
 
-export function HorizontalView({ lanes, overlay, onSelect }: Props) {
+export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const draggedRef = useRef(false);
@@ -265,10 +266,12 @@ export function HorizontalView({ lanes, overlay, onSelect }: Props) {
                   // Clip to the viewport so the label stays readable while panning.
                   const left = Math.max(sx(p.x), -4);
                   const right = Math.min(sx(p.x + p.w), width + 4);
+                  const hasDetail = p.period.html !== '';
                   return (
                     <div
                       key={`${p.period.title}-${p.x}`}
-                      className="hview-period"
+                      className={hasDetail ? 'hview-period clickable' : 'hview-period'}
+                      onClick={hasDetail ? () => !draggedRef.current && onSelectPeriod(p.period, L.lane.timeline) : undefined}
                       title={`${p.period.date.label}　${p.period.title}`}
                       style={{
                         left,

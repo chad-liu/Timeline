@@ -1,14 +1,22 @@
 import { useEffect } from 'react';
-import type { Timeline, TimelineEvent } from '../types';
+import type { TimePoint, Timeline } from '../types';
 import { sanitize } from '../lib/sanitize';
 
+/** Anything with a date and a markdown body: an event or a period. */
+export interface DetailItem {
+  title: string;
+  date: TimePoint;
+  html: string;
+  image?: string;
+}
+
 interface Props {
-  event: TimelineEvent;
+  item: DetailItem;
   timeline: Timeline;
   onClose: () => void;
 }
 
-export function EventDetail({ event, timeline, onClose }: Props) {
+export function EventDetail({ item, timeline, onClose }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -19,17 +27,17 @@ export function EventDetail({ event, timeline, onClose }: Props) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <article className="modal" role="dialog" aria-modal="true" aria-label={event.title} onClick={(e) => e.stopPropagation()}>
+      <article className="modal" role="dialog" aria-modal="true" aria-label={item.title} onClick={(e) => e.stopPropagation()}>
         <button type="button" className="modal-close" onClick={onClose} aria-label="關閉">
           ×
         </button>
-        {event.image && <img className="modal-image" src={event.image} alt="" />}
+        {item.image && <img className="modal-image" src={item.image} alt="" />}
         <p className="modal-meta">
           <span className="dot" style={{ background: timeline.color }} />
-          {timeline.title}・{event.date.label}
+          {timeline.title}・{item.date.label}
         </p>
-        <h2 className="modal-title">{event.title}</h2>
-        <div className="md" dangerouslySetInnerHTML={{ __html: sanitize(event.html) }} />
+        <h2 className="modal-title">{item.title}</h2>
+        <div className="md" dangerouslySetInnerHTML={{ __html: sanitize(item.html) }} />
       </article>
     </div>
   );

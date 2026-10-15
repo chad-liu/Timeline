@@ -351,6 +351,14 @@ input {
   text-overflow: ellipsis;
 }
 
+.hview-period.clickable {
+  cursor: pointer;
+}
+
+.hview-period.clickable:hover {
+  filter: brightness(1.12);
+}
+
 .hview-axis {
   position: relative;
   flex: none;
@@ -525,9 +533,19 @@ input {
   object-fit: cover;
 }
 
-.vview-period-chip {
-  justify-self: start;
+.vview-period-body {
+  min-width: 0;
   margin-left: 40px;
+}
+
+.vview-period-text {
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 3px solid var(--line);
+}
+
+.vview-period-chip {
+  display: inline-block;
   padding: 6px 14px;
   border-radius: 6px;
   font-weight: 700;
@@ -946,7 +964,7 @@ input {
     padding-left: 24px;
   }
 
-  .vview-period-chip {
+  .vview-period-body {
     margin-left: 24px;
   }
 

@@ -25,6 +25,10 @@ export interface Period {
   date: TimePoint;
   title: string;
   color: string;
+  /** Rendered markdown description (unsanitized); empty when the period has none. */
+  html: string;
+  text: string;
+  image?: string;
 }
 
 export interface Timeline {

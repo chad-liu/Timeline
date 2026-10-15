@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import timelines from 'virtual:timelines';
-import type { Lane, TimelineEvent } from './types';
+import type { Lane, Period, Timeline, TimelineEvent } from './types';
 import { VIEWS, parseHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
@@ -10,6 +10,7 @@ import { HorizontalView } from './components/HorizontalView';
 import { VerticalView } from './components/VerticalView';
 import { GridView } from './components/GridView';
 import { EventDetail } from './components/EventDetail';
+import type { DetailItem } from './components/EventDetail';
 
 const KNOWN_IDS = timelines.map((t) => t.id);
 
@@ -30,7 +31,7 @@ function TimelinePage({ initialView, initialIds }: { initialView: View; initialI
   const [view, setView] = useState<View>(initialView);
   const [selected, setSelected] = useState<string[]>(initialIds);
   const [query, setQuery] = useState('');
-  const [detail, setDetail] = useState<TimelineEvent | null>(null);
+  const [detail, setDetail] = useState<{ item: DetailItem; timeline: Timeline } | null>(null);
 
   // In-page changes replace the history entry, so Back returns to the dashboard.
   useEffect(() => {
@@ -50,9 +51,13 @@ function TimelinePage({ initialView, initialIds }: { initialView: View; initialI
   }, [selected, query]);
 
   const closeDetail = useCallback(() => setDetail(null), []);
+  const selectEvent = useCallback((event: TimelineEvent) => {
+    const timeline = timelines.find((t) => t.id === event.timelineId);
+    if (timeline) setDetail({ item: event, timeline });
+  }, []);
+  const selectPeriod = useCallback((period: Period, timeline: Timeline) => setDetail({ item: period, timeline }), []);
 
   const overlay = lanes.length > 1;
-  const detailTimeline = detail && timelines.find((t) => t.id === detail.timelineId);
 
   return (
     <div className="app">
@@ -77,12 +82,12 @@ function TimelinePage({ initialView, initialIds }: { initialView: View; initialI
       </header>
 
       <main className={view === 'horizontal' ? 'main fixed' : 'main'}>
-        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} onSelect={setDetail} />}
-        {view === 'vertical' && <VerticalView lanes={lanes} overlay={overlay} onSelect={setDetail} />}
-        {view === 'grid' && <GridView lanes={lanes} overlay={overlay} onSelect={setDetail} />}
+        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} onSelect={selectEvent} onSelectPeriod={selectPeriod} />}
+        {view === 'vertical' && <VerticalView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
+        {view === 'grid' && <GridView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
       </main>
 
-      {detail && detailTimeline && <EventDetail event={detail} timeline={detailTimeline} onClose={closeDetail} />}
+      {detail && <EventDetail item={detail.item} timeline={detail.timeline} onClose={closeDetail} />}
     </div>
   );
 }

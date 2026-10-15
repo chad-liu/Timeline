@@ -34,9 +34,12 @@ export function VerticalView({ lanes, overlay, onSelect }: Props) {
             return (
               <li key={`p-${row.timeline.id}-${period.title}-${period.date.start}`} className="vview-period">
                 <span />
-                <div className="vview-period-chip" style={{ background: period.color, color: readableText(period.color) }}>
-                  {period.title}
-                  <small>{period.date.label}</small>
+                <div className="vview-period-body">
+                  <div className="vview-period-chip" style={{ background: period.color, color: readableText(period.color) }}>
+                    {period.title}
+                    <small>{period.date.label}</small>
+                  </div>
+                  {period.html && <div className="md vview-period-text" dangerouslySetInnerHTML={{ __html: sanitize(period.html) }} />}
                 </div>
               </li>
             );

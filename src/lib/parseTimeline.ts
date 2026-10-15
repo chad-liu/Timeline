@@ -33,13 +33,10 @@ interface DraftEvent {
   line: number;
 }
 
-function buildEvent(draft: DraftEvent, timelineId: string, index: number): TimelineEvent {
-  const date = parseDate(draft.dateRaw);
-  if (draft.attrs.label) date.label = draft.attrs.label;
-
-  let body = draft.body.join('\n').trim();
+/** Markdown body → html, plain text, and a leading image used as the thumbnail. */
+function renderBody(lines: string[]): { html: string; text: string; image?: string } {
+  let body = lines.join('\n').trim();
   let image: string | undefined;
-  // A leading image becomes the event's thumbnail.
   const lead = body.match(/^!\[[^\]]*\]\(([^)\s]+)[^)]*\)[ \t]*(\n|$)/);
   if (lead) {
     image = resolveAsset(lead[1]);
@@ -49,15 +46,19 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
 
   const html = markdown.parse(body, { async: false }) as string;
   const text = html.replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return { html, text, image };
+}
+
+function buildEvent(draft: DraftEvent, timelineId: string, index: number): TimelineEvent {
+  const date = parseDate(draft.dateRaw);
+  if (draft.attrs.label) date.label = draft.attrs.label;
 
   return {
     id: `${timelineId}-${index}`,
     timelineId,
     date,
     title: draft.title,
-    html,
-    text,
-    image,
+    ...renderBody(draft.body),
     color: draft.attrs.color,
   };
 }
@@ -65,13 +66,13 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
 /**
  * Parse one Data\*.md file:
  *   frontmatter (title / color / description / cover),
- *   `# Periods` list items `- date | title | color`,
+ *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
 export function parseTimeline(source: string, id: string): Timeline {
   const { data, content } = matter(source);
   const color = typeof data.color === 'string' ? data.color : DEFAULT_COLOR;
-  const periods: Period[] = [];
+  const periodDrafts: { period: Omit<Period, 'html' | 'text' | 'image'>; body: string[] }[] = [];
   const drafts: DraftEvent[] = [];
   let section: 'periods' | 'events' | null = null;
   let current: DraftEvent | null = null;
@@ -87,12 +88,16 @@ export function parseTimeline(source: string, id: string): Timeline {
     }
 
     if (section === 'periods') {
-      const item = line.match(/^\s*[-*]\s+(.+)$/);
-      if (!item) return;
+      const item = line.match(/^[-*]\s+(.+)$/);
+      if (!item) {
+        // Indented (or blank) lines continue the previous item as its description.
+        if (/^\s+\S/.test(line) || line.trim() === '') periodDrafts.at(-1)?.body.push(line.replace(/^(\t| {1,4})/, ''));
+        return;
+      }
       const { text, attrs } = splitAttrs(item[1]);
       const [dateRaw, title = '', periodColor] = text.split('|').map((s) => s.trim());
       try {
-        periods.push({ date: parseDate(dateRaw), title, color: periodColor || attrs.color || color });
+        periodDrafts.push({ period: { date: parseDate(dateRaw), title, color: periodColor || attrs.color || color }, body: [] });
       } catch (err) {
         throw new Error(`第 ${i + 1} 行：${(err as Error).message}`);
       }
@@ -128,7 +133,9 @@ export function parseTimeline(source: string, id: string): Timeline {
     })
     .sort((a, b) => a.date.start - b.date.start);
 
-  periods.sort((a, b) => a.date.start - b.date.start);
+  const periods: Period[] = periodDrafts
+    .map(({ period, body }) => ({ ...period, ...renderBody(body) }))
+    .sort((a, b) => a.date.start - b.date.start);
 
   return {
     id,
