@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Plugin } from 'vite';
 import { ASSET_PREFIX, parseTimeline } from './src/lib/parseTimeline';
+import { compareTimelines } from './src/lib/timelineOrder';
 import type { Timeline } from './src/types';
 
 const VIRTUAL_ID = 'virtual:timelines';
@@ -32,7 +33,8 @@ function loadTimelines(dataDir: string): Timeline[] {
         throw new Error(`Data\\${file} ${(err as Error).message}`);
       }
     })
-    .filter((t) => t.events.length > 0 || t.periods.length > 0);
+    .filter((t) => t.events.length > 0 || t.periods.length > 0)
+    .sort(compareTimelines);
 }
 
 /** Non-markdown files under Data\ (images), as posix paths relative to Data\. */

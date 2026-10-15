@@ -18,11 +18,6 @@ cover: images/beethoven.jpg
 ![](images/beethoven-bonn.jpg)
 內文支援 Markdown。`;
 
-/** Earliest date in a timeline; for a composer this is the birth date. */
-function startOf(t: Timeline): number {
-  return Math.min(...t.events.map((e) => e.date.start), ...t.periods.map((p) => p.date.start));
-}
-
 function yearRange(t: Timeline): string {
   const dates = [...t.events.map((e) => e.date), ...t.periods.map((p) => p.date)];
   const min = Math.min(...dates.map((d) => d.start));
@@ -123,7 +118,7 @@ export function Dashboard({ timelines }: { timelines: Timeline[] }) {
           <p className="empty">尚無時間軸資料：請在 Data\ 資料夾放入 .md 檔。</p>
         ) : (
           <div className="dash-grid">
-            {[...timelines].sort((a, b) => Number(a.sortLast) - Number(b.sortLast) || startOf(a) - startOf(b)).map((t) => {
+            {timelines.map((t) => {
               const href = timelineHash([t.id]);
               const cover = t.cover ?? t.events.find((e) => e.image)?.image;
               return (
