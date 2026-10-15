@@ -910,6 +910,8 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Covers are mostly portraits taller than 3:2: crop from the bottom so heads stay whole. */
+  object-position: center top;
 }
 
 .md ol {

@@ -2,6 +2,7 @@
 title: 巴赫生平
 color: "#6200ea"
 description: 約翰·塞巴斯蒂安·巴赫（Johann Sebastian Bach，1685–1750）
+cover: images/bach-cover.jpg
 ---
 
 <!--
