@@ -38,6 +38,8 @@ export interface Timeline {
   description: string;
   /** Dashboard cover image (frontmatter `cover:`). */
   cover?: string;
+  /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
+  sortLast?: boolean;
   periods: Period[];
   events: TimelineEvent[];
 }

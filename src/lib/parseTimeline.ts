@@ -143,6 +143,7 @@ export function parseTimeline(source: string, id: string): Timeline {
     color,
     description: typeof data.description === 'string' ? data.description : '',
     cover: typeof data.cover === 'string' ? resolveAsset(data.cover) : undefined,
+    sortLast: data.sortLast === true,
     periods,
     events,
   };
