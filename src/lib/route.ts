@@ -10,7 +10,7 @@ export type Route = { page: 'dashboard'; category?: string } | { page: 'timeline
 
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家` picks its category tab),
- * `#v=horizontal&t=Bach|近代世界史` shows those timelines.
+ * `#v=horizontal&t=Bach|Handel` shows those timelines.
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
   const params = new URLSearchParams(hash.replace(/^#/, ''));
