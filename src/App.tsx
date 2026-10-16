@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import timelines from 'virtual:timelines';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
-import { VIEWS, parseHash, timelineHash } from './lib/route';
+import { VIEWS, dashboardHash, parseHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Logo } from './components/Logo';
@@ -23,7 +23,7 @@ export function App() {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  if (route.page === 'dashboard') return <Dashboard timelines={timelines} />;
+  if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} />;
   return <TimelinePage key={timelineHash(route.ids, route.view)} initialView={route.view} initialIds={route.ids} />;
 }
 
@@ -58,12 +58,13 @@ function TimelinePage({ initialView, initialIds }: { initialView: View; initialI
   const selectPeriod = useCallback((period: Period, timeline: Timeline) => setDetail({ item: period, timeline }), []);
 
   const overlay = lanes.length > 1;
+  const homeHash = dashboardHash(lanes[0]?.timeline.category);
 
   return (
     <div className="app">
       <header className="header">
         <div className="header-top">
-          <a className="home-link" href="#" title="回到 Dashboard" aria-label="回到 Dashboard">
+          <a className="home-link" href={homeHash} title="回到 Dashboard" aria-label="回到 Dashboard">
             <Logo />
           </a>
           <TimelinePicker timelines={timelines} selected={selected} onChange={setSelected} />

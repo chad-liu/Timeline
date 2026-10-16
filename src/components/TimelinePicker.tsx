@@ -22,6 +22,15 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
     return () => document.removeEventListener('mousedown', close);
   }, [open]);
 
+  const groups = groupTimelines(timelines);
+  // Groups start collapsed unless they hold a selected timeline.
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set(groups.filter((g) => !g.timelines.some((t) => selected.includes(t.id))).map((g) => g.category)));
+  const toggleGroup = (category: string) => {
+    const next = new Set(collapsed);
+    if (!next.delete(category)) next.add(category);
+    setCollapsed(next);
+  };
+
   const current = timelines.filter((t) => selected.includes(t.id));
   const title = current.length === 1 ? current[0].title : `${current.length} 條時間軸比較`;
 
@@ -39,28 +48,30 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
       {open && (
         <div className="picker-menu">
           <p className="picker-hint">點名稱切換；勾選可疊加比較</p>
-          {groupTimelines(timelines).map((group) => (
+          {groups.map((group) => (
             <div key={group.category} className="picker-group" role="group" aria-label={group.category}>
-              <p className="picker-group-title">
+              <button type="button" className="picker-group-title" onClick={() => toggleGroup(group.category)} aria-expanded={!collapsed.has(group.category)}>
+                <span className="picker-group-chev">{collapsed.has(group.category) ? '▸' : '▾'}</span>
                 {group.category} <small>{group.timelines.length}</small>
-              </p>
-              {group.timelines.map((t) => (
-                <div key={t.id} className="picker-row">
-                  <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
-                  <button
-                    type="button"
-                    className="picker-name"
-                    onClick={() => {
-                      onChange([t.id]);
-                      setOpen(false);
-                    }}
-                  >
-                    <span className="dot" style={{ background: t.color }} />
-                    {t.title}
-                    <small>{t.events.length} 個事件</small>
-                  </button>
-                </div>
-              ))}
+              </button>
+              {!collapsed.has(group.category) &&
+                group.timelines.map((t) => (
+                  <div key={t.id} className="picker-row">
+                    <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
+                    <button
+                      type="button"
+                      className="picker-name"
+                      onClick={() => {
+                        onChange([t.id]);
+                        setOpen(false);
+                      }}
+                    >
+                      <span className="dot" style={{ background: t.color }} />
+                      {t.title}
+                      <small>{t.events.length} 個事件</small>
+                    </button>
+                  </div>
+                ))}
             </div>
           ))}
         </div>

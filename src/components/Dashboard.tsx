@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { VIEWS, timelineHash } from '../lib/route';
+import { VIEWS, dashboardHash, timelineHash } from '../lib/route';
 import { groupTimelines } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -94,8 +94,10 @@ function AddHelp({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function Dashboard({ timelines }: { timelines: Timeline[] }) {
+export function Dashboard({ timelines, category }: { timelines: Timeline[]; category?: string }) {
   const [showHelp, setShowHelp] = useState(false);
+  const groups = groupTimelines(timelines);
+  const active = groups.find((g) => g.category === category) ?? groups[0];
 
   return (
     <div className="dashboard">
@@ -119,13 +121,17 @@ export function Dashboard({ timelines }: { timelines: Timeline[] }) {
         {timelines.length === 0 ? (
           <p className="empty">尚無時間軸資料：請在 Data\ 資料夾放入 .md 檔。</p>
         ) : (
-          groupTimelines(timelines).map((group) => (
-            <section key={group.category} className="dash-group">
-              <h2 className="dash-group-title">
-                {group.category} <small>{group.timelines.length}</small>
-              </h2>
+          <>
+            <nav className="tabs dash-tabs" aria-label="類別">
+              {groups.map((g) => (
+                <a key={g.category} className={g === active ? 'tab active' : 'tab'} href={dashboardHash(g.category)} aria-current={g === active ? 'page' : undefined}>
+                  {g.category} <small>{g.timelines.length}</small>
+                </a>
+              ))}
+            </nav>
+            <section className="dash-group">
               <div className="dash-grid">
-                {group.timelines.map((t) => {
+                {active.timelines.map((t) => {
                   const href = timelineHash([t.id]);
                   const cover = t.cover ?? t.events.find((e) => e.image)?.image;
                   return (
@@ -148,7 +154,7 @@ export function Dashboard({ timelines }: { timelines: Timeline[] }) {
                 })}
               </div>
             </section>
-          ))
+          </>
         )}
       </main>
 
