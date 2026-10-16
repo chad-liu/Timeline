@@ -1,5 +1,6 @@
 ---
 title: 穆索斯基生平
+category: 音樂家
 color: "#6b705c"
 description: 莫傑斯特·穆索斯基（Modest Mussorgsky，1839–1881），俄國作曲家，「俄國五人組」成員
 cover: images/mussorgsky-cover.jpg

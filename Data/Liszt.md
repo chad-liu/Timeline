@@ -1,5 +1,6 @@
 ---
 title: 李斯特生平
+category: 音樂家
 color: "#c92a2a"
 description: 李斯特·費倫茨（Liszt Ferenc／Franz Liszt，1811–1886），匈牙利作曲家，「鋼琴之王」
 cover: images/liszt-cover.jpg

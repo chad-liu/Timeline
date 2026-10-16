@@ -65,7 +65,7 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
 
 /**
  * Parse one Data\*.md file:
- *   frontmatter (title / color / description / cover),
+ *   frontmatter (title / color / description / cover / category / sortLast),
  *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
@@ -143,6 +143,7 @@ export function parseTimeline(source: string, id: string): Timeline {
     color,
     description: typeof data.description === 'string' ? data.description : '',
     cover: typeof data.cover === 'string' ? resolveAsset(data.cover) : undefined,
+    category: typeof data.category === 'string' ? data.category : undefined,
     sortLast: data.sortLast === true,
     periods,
     events,

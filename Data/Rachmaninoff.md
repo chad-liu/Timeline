@@ -1,5 +1,6 @@
 ---
 title: 拉赫曼尼諾夫生平
+category: 音樂家
 color: "#1c7ed6"
 description: 謝爾蓋·拉赫曼尼諾夫（Sergei Vasilyevich Rachmaninoff，1873–1943），俄國作曲家、鋼琴家與指揮家
 cover: images/rachmaninoff-cover.jpg

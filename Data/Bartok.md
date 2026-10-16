@@ -1,5 +1,6 @@
 ---
 title: 巴爾托克生平
+category: 音樂家
 color: "#386641"
 description: 巴爾托克·貝拉（Bartók Béla，1881–1945），匈牙利作曲家、鋼琴家與民族音樂學家
 cover: images/bartok-cover.jpg

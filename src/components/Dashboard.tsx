@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
 import { VIEWS, timelineHash } from '../lib/route';
+import { groupTimelines } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
 const SAMPLE = `---
 title: 貝多芬
 color: "#0a84ff"
 cover: images/beethoven.jpg
+category: 音樂家
 ---
 
 # Periods
@@ -117,29 +119,36 @@ export function Dashboard({ timelines }: { timelines: Timeline[] }) {
         {timelines.length === 0 ? (
           <p className="empty">尚無時間軸資料：請在 Data\ 資料夾放入 .md 檔。</p>
         ) : (
-          <div className="dash-grid">
-            {timelines.map((t) => {
-              const href = timelineHash([t.id]);
-              const cover = t.cover ?? t.events.find((e) => e.image)?.image;
-              return (
-                <article key={t.id} className="project-card" style={{ borderTopColor: t.color }}>
-                  <div className="project-head">
-                    <h2>
-                      <a href={href}>{t.title}</a>
-                    </h2>
-                    <ProjectMenu timeline={t} />
-                  </div>
-                  <div className="project-tags">
-                    <span className="tag">{yearRange(t)}</span>
-                    <span className="tag tag-green">{t.events.length} 個事件</span>
-                  </div>
-                  <a className="project-cover" href={href} tabIndex={-1} aria-hidden="true">
-                    {cover && <img src={cover} alt="" loading="lazy" />}
-                  </a>
-                </article>
-              );
-            })}
-          </div>
+          groupTimelines(timelines).map((group) => (
+            <section key={group.category} className="dash-group">
+              <h2 className="dash-group-title">
+                {group.category} <small>{group.timelines.length}</small>
+              </h2>
+              <div className="dash-grid">
+                {group.timelines.map((t) => {
+                  const href = timelineHash([t.id]);
+                  const cover = t.cover ?? t.events.find((e) => e.image)?.image;
+                  return (
+                    <article key={t.id} className="project-card" style={{ borderTopColor: t.color }}>
+                      <div className="project-head">
+                        <h2>
+                          <a href={href}>{t.title}</a>
+                        </h2>
+                        <ProjectMenu timeline={t} />
+                      </div>
+                      <div className="project-tags">
+                        <span className="tag">{yearRange(t)}</span>
+                        <span className="tag tag-green">{t.events.length} 個事件</span>
+                      </div>
+                      <a className="project-cover" href={href} tabIndex={-1} aria-hidden="true">
+                        {cover && <img src={cover} alt="" loading="lazy" />}
+                      </a>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          ))
         )}
       </main>
 

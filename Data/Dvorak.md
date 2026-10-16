@@ -1,5 +1,6 @@
 ---
 title: 德弗札克生平
+category: 音樂家
 color: "#0b7285"
 description: 安東寧·德弗札克（Antonín Leopold Dvořák，1841–1904），捷克民族樂派作曲家
 cover: images/dvorak-cover.jpg

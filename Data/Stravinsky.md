@@ -1,5 +1,6 @@
 ---
 title: 史特拉汶斯基生平
+category: 音樂家
 color: "#862e9c"
 description: 伊果·史特拉汶斯基（Igor Fyodorovich Stravinsky，1882–1971），俄裔作曲家、指揮家，20世紀現代音樂的關鍵人物
 cover: images/stravinsky-cover.jpg

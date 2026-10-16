@@ -1,5 +1,6 @@
 ---
 title: 葛利格生平
+category: 音樂家
 color: "#6d597a"
 description: 愛德華·葛利格（Edvard Hagerup Grieg，1843–1907），挪威作曲家、鋼琴家
 cover: images/grieg-cover.jpg

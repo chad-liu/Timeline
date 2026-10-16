@@ -1,5 +1,6 @@
 ---
 title: 比才生平
+category: 音樂家
 color: "#e5383b"
 description: 喬治·比才（Georges Bizet，1838–1875），法國作曲家，歌劇《卡門》的作者
 cover: images/bizet-cover.jpg

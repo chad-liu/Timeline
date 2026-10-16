@@ -1,5 +1,6 @@
 ---
 title: 蓋西文生平
+category: 音樂家
 color: "#5f3dc4"
 description: 喬治·蓋西文（George Gershwin，1898–1937），美國作曲家、鋼琴家，融合爵士與古典音樂
 cover: images/gershwin-cover.jpg

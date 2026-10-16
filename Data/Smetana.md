@@ -1,5 +1,6 @@
 ---
 title: 史麥塔納生平
+category: 音樂家
 color: "#0f4c81"
 description: 貝多伊齊·史麥塔納（Bedřich Smetana，1824–1884），捷克作曲家，捷克音樂之父
 cover: images/smetana-cover.jpg

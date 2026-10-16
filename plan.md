@@ -28,6 +28,7 @@ title: 巴赫生平            # 時間軸名稱（省略則用檔名）
 color: "#6200ea"          # 主色：時期預設色、疊加比較時的代表色
 description: 一行說明
 cover: images/bach-cover.jpg   # Dashboard 封面（可省略：改用第一張事件圖，再沒有就留白）
+category: 音樂家           # 選填：上層類別，Dashboard 與下拉選單依此分組（省略則歸入「未分類」）
 sortLast: true            # 選填：Dashboard 上排在最後（其餘依最早日期，即出生年排序）
 ---
 

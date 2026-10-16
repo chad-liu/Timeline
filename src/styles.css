@@ -171,8 +171,32 @@ input {
   min-width: 280px;
   padding: 8px;
   border-radius: 10px;
+  max-height: min(70vh, 640px);
+  overflow-y: auto;
   background: var(--surface);
   box-shadow: 0 8px 28px rgba(30, 20, 60, 0.2);
+}
+
+.picker-group + .picker-group {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+
+.picker-group-title {
+  margin: 4px 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.picker-group-title small {
+  margin-left: 4px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.picker-group .picker-row {
+  padding-left: 18px;
 }
 
 .picker-hint {
@@ -201,6 +225,7 @@ input {
   border: 0;
   background: none;
   text-align: left;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -781,6 +806,24 @@ input {
 
 .btn-primary:hover {
   background: #4f00c0;
+}
+
+.dash-group + .dash-group {
+  margin-top: 44px;
+}
+
+.dash-group-title {
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.dash-group-title small {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .dash-grid {

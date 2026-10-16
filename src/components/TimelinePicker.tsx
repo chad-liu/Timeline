@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
+import { groupTimelines } from '../lib/timelineOrder';
 
 interface Props {
   timelines: Timeline[];
@@ -38,21 +39,28 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
       {open && (
         <div className="picker-menu">
           <p className="picker-hint">點名稱切換；勾選可疊加比較</p>
-          {timelines.map((t) => (
-            <div key={t.id} className="picker-row">
-              <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
-              <button
-                type="button"
-                className="picker-name"
-                onClick={() => {
-                  onChange([t.id]);
-                  setOpen(false);
-                }}
-              >
-                <span className="dot" style={{ background: t.color }} />
-                {t.title}
-                <small>{t.events.length} 個事件</small>
-              </button>
+          {groupTimelines(timelines).map((group) => (
+            <div key={group.category} className="picker-group" role="group" aria-label={group.category}>
+              <p className="picker-group-title">
+                {group.category} <small>{group.timelines.length}</small>
+              </p>
+              {group.timelines.map((t) => (
+                <div key={t.id} className="picker-row">
+                  <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
+                  <button
+                    type="button"
+                    className="picker-name"
+                    onClick={() => {
+                      onChange([t.id]);
+                      setOpen(false);
+                    }}
+                  >
+                    <span className="dot" style={{ background: t.color }} />
+                    {t.title}
+                    <small>{t.events.length} 個事件</small>
+                  </button>
+                </div>
+              ))}
             </div>
           ))}
         </div>

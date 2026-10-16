@@ -1,5 +1,6 @@
 ---
 title: 海頓生平
+category: 音樂家
 color: "#00a884"
 description: 法蘭茲·約瑟夫·海頓（Franz Joseph Haydn，1732–1809），「交響曲之父」、「弦樂四重奏之父」
 cover: images/haydn-cover.jpg

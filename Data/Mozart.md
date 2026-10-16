@@ -1,5 +1,6 @@
 ---
 title: 莫札特生平
+category: 音樂家
 color: "#d6336c"
 description: 沃夫岡·阿瑪迪斯·莫札特（Wolfgang Amadeus Mozart，1756–1791）
 cover: images/mozart-cover.jpg

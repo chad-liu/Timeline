@@ -1,5 +1,6 @@
 ---
 title: 拉威爾生平
+category: 音樂家
 color: "#495057"
 description: 莫里斯·拉威爾（Joseph Maurice Ravel，1875–1937），法國作曲家、鋼琴家與指揮家
 cover: images/ravel-cover.jpg

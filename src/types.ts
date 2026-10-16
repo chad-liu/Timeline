@@ -38,6 +38,8 @@ export interface Timeline {
   description: string;
   /** Dashboard cover image (frontmatter `cover:`). */
   cover?: string;
+  /** Top-level group on the dashboard and in the picker (frontmatter `category:`). */
+  category?: string;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
   periods: Period[];
