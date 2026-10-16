@@ -1,6 +1,7 @@
 ---
 title: 西貝流士生平
 category: 音樂家
+tags: [浪漫時期, 近當代音樂]
 color: "#3d5a80"
 description: 讓·西貝流士（Jean Sibelius，1865–1957），芬蘭作曲家，被視為芬蘭最偉大的作曲家
 cover: images/sibelius-cover.jpg

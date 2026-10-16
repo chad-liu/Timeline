@@ -1,6 +1,7 @@
 ---
 title: 羅西尼生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#ae3ec9"
 description: 焦阿基諾·羅西尼（Gioachino Antonio Rossini，1792–1868），義大利歌劇作曲家
 cover: images/rossini-cover.jpg

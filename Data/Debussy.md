@@ -1,6 +1,7 @@
 ---
 title: 德布西生平
 category: 音樂家
+tags: [近當代音樂]
 color: "#9775fa"
 description: 克洛德·德布西（Achille Claude Debussy，1862–1918），法國作曲家，印象主義音樂的代表人物
 cover: images/debussy-cover.jpg

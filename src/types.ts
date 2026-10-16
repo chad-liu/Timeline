@@ -40,6 +40,8 @@ export interface Timeline {
   cover?: string;
   /** Top-level group on the dashboard and in the picker (frontmatter `category:`). */
   category?: string;
+  /** Labels within the category, e.g. 浪漫時期 (frontmatter `tags:`, a list or a single string). */
+  tags: string[];
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
   periods: Period[];

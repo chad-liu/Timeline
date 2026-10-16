@@ -1,6 +1,7 @@
 ---
 title: 台灣歷史
 category: 東方歷史
+tags: [通史]
 color: "#0ca678"
 description: 從史前文化到解嚴與民主化：台灣四百年的政權更迭與社會變遷
 cover: images/taiwan-cover.jpg

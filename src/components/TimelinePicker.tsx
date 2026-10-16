@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
-import { groupTimelines } from '../lib/timelineOrder';
+import { groupByTag, groupTimelines } from '../lib/timelineOrder';
 
 interface Props {
   timelines: Timeline[];
@@ -23,11 +23,16 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
   }, [open]);
 
   const groups = groupTimelines(timelines);
-  // Groups start collapsed unless they hold a selected timeline.
-  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set(groups.filter((g) => !g.timelines.some((t) => selected.includes(t.id))).map((g) => g.category)));
-  const toggleGroup = (category: string) => {
+  // Category groups and tag subgroups start collapsed unless they hold a selected timeline.
+  // Keys are a category name, or `category/tag` for a tag subgroup.
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => {
+    const holdsSelected = (list: Timeline[]) => list.some((t) => selected.includes(t.id));
+    const keys = groups.flatMap((g) => [g, ...groupByTag(g.timelines).map((sub) => ({ category: `${g.category}/${sub.tag}`, timelines: sub.timelines }))]);
+    return new Set(keys.filter((k) => !holdsSelected(k.timelines)).map((k) => k.category));
+  });
+  const toggleGroup = (key: string) => {
     const next = new Set(collapsed);
-    if (!next.delete(category)) next.add(category);
+    if (!next.delete(key)) next.add(key);
     setCollapsed(next);
   };
 
@@ -38,6 +43,24 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
     const next = selected.includes(id) ? selected.filter((x) => x !== id) : [...selected, id];
     if (next.length > 0) onChange(next);
   };
+
+  const renderRow = (t: Timeline, key: string) => (
+    <div key={key} className="picker-row">
+      <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
+      <button
+        type="button"
+        className="picker-name"
+        onClick={() => {
+          onChange([t.id]);
+          setOpen(false);
+        }}
+      >
+        <span className="dot" style={{ background: t.color }} />
+        {t.title}
+        <small>{t.events.length} 個事件</small>
+      </button>
+    </div>
+  );
 
   return (
     <div className="picker" ref={ref}>
@@ -55,23 +78,19 @@ export function TimelinePicker({ timelines, selected, onChange }: Props) {
                 {group.category} <small>{group.timelines.length}</small>
               </button>
               {!collapsed.has(group.category) &&
-                group.timelines.map((t) => (
-                  <div key={t.id} className="picker-row">
-                    <input type="checkbox" checked={selected.includes(t.id)} onChange={() => toggle(t.id)} aria-label={`疊加 ${t.title}`} />
-                    <button
-                      type="button"
-                      className="picker-name"
-                      onClick={() => {
-                        onChange([t.id]);
-                        setOpen(false);
-                      }}
-                    >
-                      <span className="dot" style={{ background: t.color }} />
-                      {t.title}
-                      <small>{t.events.length} 個事件</small>
-                    </button>
-                  </div>
-                ))}
+                groupByTag(group.timelines).map((sub) => {
+                  const key = `${group.category}/${sub.tag}`;
+                  if (!sub.tag) return sub.timelines.map((t) => renderRow(t, t.id));
+                  return (
+                    <div key={key} className="picker-subgroup" role="group" aria-label={sub.tag}>
+                      <button type="button" className="picker-subgroup-title" onClick={() => toggleGroup(key)} aria-expanded={!collapsed.has(key)}>
+                        <span className="picker-group-chev">{collapsed.has(key) ? '▸' : '▾'}</span>
+                        {sub.tag} <small>{sub.timelines.length}</small>
+                      </button>
+                      {!collapsed.has(key) && sub.timelines.map((t) => renderRow(t, `${key}/${t.id}`))}
+                    </div>
+                  );
+                })}
             </div>
           ))}
         </div>

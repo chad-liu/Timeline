@@ -1,6 +1,7 @@
 ---
 title: AI 發展大事記
 category: 西方歷史
+tags: [科技史]
 color: "#7048e8"
 description: 從人工神經元到生成式 AI 與 AI Agent：人工智慧八十多年的起伏與突破（1943–2026）
 cover: images/ai-cover.jpg

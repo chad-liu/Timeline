@@ -1,6 +1,7 @@
 ---
 title: 蕭士塔高維奇生平
 category: 音樂家
+tags: [近當代音樂]
 color: "#b02525"
 description: 德米特里·蕭士塔高維奇（Dmitri Dmitriyevich Shostakovich，1906–1975），蘇聯作曲家
 cover: images/shostakovich-cover.jpg

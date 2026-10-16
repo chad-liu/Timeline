@@ -23,7 +23,7 @@ export function App() {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} />;
+  if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} tag={route.tag} />;
   return <TimelinePage key={timelineHash(route.ids, route.view)} initialView={route.view} initialIds={route.ids} />;
 }
 

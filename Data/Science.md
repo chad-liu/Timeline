@@ -1,6 +1,7 @@
 ---
 title: 科學大事記
 category: 西方歷史
+tags: [科技史]
 color: "#3b5bdb"
 description: 從哥白尼的日心說到人工智慧：16至21世紀的近現代科學發展
 cover: images/science-cover.jpg

@@ -1,6 +1,7 @@
 ---
 title: 文藝復興
 category: 西方歷史
+tags: [時代史]
 color: "#7b2d26"
 description: 從但丁到伽利略：歐洲14至17世紀的文化、藝術、宗教與科學變革
 cover: images/renaissance-cover.jpg

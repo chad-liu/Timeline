@@ -1,6 +1,7 @@
 ---
 title: 華格納生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#364fc7"
 description: 理查·華格納（Wilhelm Richard Wagner，1813–1883），德國作曲家、劇院導演，「樂劇」的開創者
 cover: images/wagner-cover.jpg

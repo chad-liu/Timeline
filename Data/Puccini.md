@@ -1,6 +1,7 @@
 ---
 title: 普契尼生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#b5179e"
 description: 賈科莫·普契尼（Giacomo Puccini，1858–1924），義大利歌劇作曲家
 cover: images/puccini-cover.jpg

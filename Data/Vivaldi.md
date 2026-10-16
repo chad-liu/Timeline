@@ -1,6 +1,7 @@
 ---
 title: 韋瓦第生平
 category: 音樂家
+tags: [巴洛克時期]
 color: "#a61e4d"
 description: 安東尼奧·韋瓦第（Antonio Lucio Vivaldi，1678–1741），義大利巴洛克作曲家、小提琴家與神父
 cover: images/vivaldi-cover.jpg

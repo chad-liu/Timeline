@@ -1,6 +1,7 @@
 ---
 title: 韓德爾生平
 category: 音樂家
+tags: [巴洛克時期]
 color: "#1864ab"
 description: 喬治·弗里德里希·韓德爾（George Frideric Handel，1685–1759），德裔英國巴洛克作曲家
 cover: images/handel-cover.jpg

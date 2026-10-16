@@ -1,6 +1,7 @@
 ---
 title: 小約翰·史特勞斯生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#bf8b2e"
 description: 約翰·史特勞斯二世（Johann Strauss II，1825–1899），奧地利作曲家，「圓舞曲之王」
 cover: images/johannstrauss-cover.jpg

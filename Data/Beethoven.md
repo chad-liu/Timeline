@@ -1,6 +1,7 @@
 ---
 title: 貝多芬生平
 category: 音樂家
+tags: [古典時期, 浪漫時期]
 color: "#e8590c"
 description: 路德維希·范·貝多芬（Ludwig van Beethoven，1770–1827），漢字文化圈尊稱「樂聖」
 cover: images/beethoven-cover.jpg

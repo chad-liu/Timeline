@@ -1,6 +1,7 @@
 ---
 title: 威爾第生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#087f5b"
 description: 朱塞佩·威爾第（Giuseppe Verdi，1813–1901），義大利歌劇作曲家
 cover: images/verdi-cover.jpg

@@ -1,6 +1,7 @@
 ---
 title: 柴可夫斯基生平
 category: 音樂家
+tags: [浪漫時期]
 color: "#f59f00"
 description: 彼得·伊里奇·柴可夫斯基（Pyotr Ilyich Tchaikovsky，1840–1893），俄國浪漫派作曲家
 cover: images/tchaikovsky-cover.jpg

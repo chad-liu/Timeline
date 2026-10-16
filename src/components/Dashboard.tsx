@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
 import { VIEWS, dashboardHash, timelineHash } from '../lib/route';
-import { groupTimelines } from '../lib/timelineOrder';
+import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
 const SAMPLE = `---
@@ -10,6 +10,7 @@ title: 貝多芬
 color: "#0a84ff"
 cover: images/beethoven.jpg
 category: 音樂家
+tags: [古典時期, 浪漫時期]
 ---
 
 # Periods
@@ -94,10 +95,13 @@ function AddHelp({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function Dashboard({ timelines, category }: { timelines: Timeline[]; category?: string }) {
+export function Dashboard({ timelines, category, tag }: { timelines: Timeline[]; category?: string; tag?: string }) {
   const [showHelp, setShowHelp] = useState(false);
   const groups = groupTimelines(timelines);
   const active = groups.find((g) => g.category === category) ?? groups[0];
+  const tags = active ? tagsOf(active.timelines) : [];
+  const activeTag = tag && tags.includes(tag) ? tag : undefined;
+  const shown = active ? active.timelines.filter((t) => !activeTag || t.tags.includes(activeTag)) : [];
 
   return (
     <div className="dashboard">
@@ -129,9 +133,21 @@ export function Dashboard({ timelines, category }: { timelines: Timeline[]; cate
                 </a>
               ))}
             </nav>
+            {tags.length > 0 && (
+              <nav className="dash-tag-filter" aria-label="標籤">
+                <a className={activeTag ? 'tag-chip' : 'tag-chip active'} href={dashboardHash(active.category)} aria-current={activeTag ? undefined : 'page'}>
+                  全部 <small>{active.timelines.length}</small>
+                </a>
+                {tags.map((t) => (
+                  <a key={t} className={t === activeTag ? 'tag-chip active' : 'tag-chip'} href={dashboardHash(active.category, t)} aria-current={t === activeTag ? 'page' : undefined}>
+                    {t} <small>{active.timelines.filter((x) => x.tags.includes(t)).length}</small>
+                  </a>
+                ))}
+              </nav>
+            )}
             <section className="dash-group">
               <div className="dash-grid">
-                {active.timelines.map((t) => {
+                {shown.map((t) => {
                   const href = timelineHash([t.id]);
                   const cover = t.cover ?? t.events.find((e) => e.image)?.image;
                   return (
@@ -145,6 +161,11 @@ export function Dashboard({ timelines, category }: { timelines: Timeline[]; cate
                       <div className="project-tags">
                         <span className="tag">{yearRange(t)}</span>
                         <span className="tag tag-green">{t.events.length} 個事件</span>
+                        {t.tags.map((x) => (
+                          <a key={x} className="tag tag-label" href={dashboardHash(t.category, x)}>
+                            {x}
+                          </a>
+                        ))}
                       </div>
                       <a className="project-cover" href={href} tabIndex={-1} aria-hidden="true">
                         {cover && <img src={cover} alt="" loading="lazy" />}

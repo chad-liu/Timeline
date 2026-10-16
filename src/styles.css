@@ -218,6 +218,30 @@ input {
   padding-left: 18px;
 }
 
+.picker-subgroup-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 4px 8px 4px 22px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.picker-subgroup-title:hover {
+  background: var(--accent-soft);
+}
+
+.picker-subgroup .picker-row {
+  padding-left: 32px;
+}
+
 .picker-hint {
   margin: 4px 8px 8px;
   color: var(--muted);
@@ -951,6 +975,53 @@ input {
 .tag-green {
   background: #2e8b3e;
   color: #fff;
+}
+
+.tag-label {
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tag-label:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dash-tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -8px 0 24px;
+}
+
+.tag-chip {
+  padding: 5px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.tag-chip small {
+  margin-left: 2px;
+  color: var(--muted);
+}
+
+.tag-chip:hover {
+  border-color: var(--accent);
+}
+
+.tag-chip.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.tag-chip.active small {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .project-cover {

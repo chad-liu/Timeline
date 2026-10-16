@@ -29,6 +29,7 @@ color: "#6200ea"          # 主色：時期預設色、疊加比較時的代表�
 description: 一行說明
 cover: images/bach-cover.jpg   # Dashboard 封面（可省略：改用第一張事件圖，再沒有就留白）
 category: 音樂家           # 選填：上層類別，Dashboard 與下拉選單依此分組（省略則歸入「未分類」）
+tags: [古典時期, 浪漫時期]  # 選填：類別內的標籤，可多個；Dashboard 可依標籤篩選
 sortLast: true            # 選填：Dashboard 上排在最後（其餘依最早日期，即出生年排序）
 ---
 

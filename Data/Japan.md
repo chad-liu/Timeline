@@ -1,6 +1,7 @@
 ---
 title: 日本歷史
 category: 東方歷史
+tags: [通史]
 color: "#d6336c"
 description: 從舊石器、繩文時代到令和時代：日本列島三萬多年的歷史變遷
 cover: images/japan-cover.jpg
