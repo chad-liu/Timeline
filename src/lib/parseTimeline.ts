@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
 import { Marked } from 'marked';
-import type { Period, Timeline, TimelineEvent, TimePoint } from '../types';
+import type { Period, Timeline, TimelineEvent } from '../types';
 import { parseDate } from './parseDate';
 
 const DEFAULT_COLOR = '#6200ea';
@@ -52,6 +52,8 @@ function renderBody(lines: string[]): { html: string; text: string; image?: stri
 function buildEvent(draft: DraftEvent, timelineId: string, index: number): TimelineEvent {
   const date = parseDate(draft.dateRaw);
   if (draft.attrs.label) date.label = draft.attrs.label;
+  // `{age=17}` states the age outright when the date alone is too vague to compute it.
+  if (draft.attrs.age) date.label += `（${draft.attrs.age}歲）`;
 
   return {
     id: `${timelineId}-${index}`,
@@ -63,23 +65,31 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
   };
 }
 
-/** A frontmatter date such as `born: 1724-04-22`; YAML may already have turned it into a Date. */
-function frontmatterDate(value: unknown): TimePoint | undefined {
-  if (value instanceof Date) return parseDate(value.toISOString().slice(0, 10));
-  if (typeof value === 'string' || typeof value === 'number') return parseDate(String(value));
+/** A frontmatter date such as `born: 1724-04-22` as text; YAML may already have turned it into a Date. */
+function frontmatterDate(value: unknown): string | undefined {
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  if (typeof value === 'string' || typeof value === 'number') return String(value);
   return undefined;
 }
 
 /**
  * Append the person's age to each event label between `born` and `died`, e.g. 「1781年（57歲）」.
- * Year-only events count the age reached that year; events before the first birthday or after death get none.
+ * Year-only events count the age reached that year, and month-only events count the birthday as passed
+ * in the birth month; events before the first birthday or after death get none.
  */
-function addAges(events: TimelineEvent[], born: TimePoint, died?: TimePoint): void {
+function addAges(events: TimelineEvent[], bornRaw: string, diedRaw?: string): void {
+  const born = parseDate(bornRaw);
+  const died = diedRaw === undefined ? undefined : parseDate(diedRaw);
   const last = died ? (died.end ?? died.start) : Infinity;
+  const bornYear = Math.floor(born.start);
+  const bornMonth = (Number(bornRaw.match(/^-?\d+-(\d{1,2})/)?.[1]) || 1) - 1;
   for (const e of events) {
     const { start, precision } = e.date;
-    if (precision === 'approx' || precision === 'century' || start > last) continue;
-    const age = precision === 'year' ? Math.floor(start) - Math.floor(born.start) : Math.floor(start - born.start + 1e-9);
+    if (precision === 'approx' || precision === 'century' || start > last || e.date.label.endsWith('歲）')) continue;
+    const year = Math.floor(start);
+    const month = Math.floor((start - year) * 12 + 1e-9);
+    const age =
+      precision === 'year' ? year - bornYear : precision === 'month' ? year - bornYear - (month < bornMonth ? 1 : 0) : Math.floor(start - born.start + 1e-9);
     if (age > 0) e.date = { ...e.date, label: `${e.date.label}（${age}歲）` };
   }
 }

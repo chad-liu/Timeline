@@ -12,6 +12,8 @@ died: 1804-02-12
 ## 1781 | 年份事件
 ## 1770-03 | 生日前的月份事件
 ## 1770-05 | 生日後的月份事件
+## 1771-04 | 生日當月的月份事件
+## 1790 | 指定年齡 {age=65}
 ## 1804-02-12 | 逝世
 ## 1863 | 身後事件
 ## 18c | 世紀事件
@@ -24,6 +26,8 @@ describe('parseTimeline ages', () => {
     expect(labels).toContain('1781年（57歲）');
     expect(labels).toContain('1770年3月（45歲）');
     expect(labels).toContain('1770年5月（46歲）');
+    expect(labels).toContain('1771年4月（47歲）');
+    expect(labels).toContain('1790年（65歲）');
     expect(labels).toContain('1804年2月12日（79歲）');
   });
 
