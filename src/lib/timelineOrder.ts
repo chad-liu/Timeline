@@ -17,9 +17,18 @@ export interface TimelineGroup {
   timelines: Timeline[];
 }
 
+/** Tab order of the known categories; any other category follows them, and 未分類 comes last. */
+export const CATEGORY_ORDER = ['音樂家', '思想家', '東方歷史', '西方歷史'];
+
+function categoryRank(category: string): number {
+  if (category === UNCATEGORIZED) return CATEGORY_ORDER.length + 1;
+  const i = CATEGORY_ORDER.indexOf(category);
+  return i === -1 ? CATEGORY_ORDER.length : i;
+}
+
 /**
  * Group already-sorted timelines by `category`, keeping their order inside each group.
- * Groups appear in the order of their first timeline; uncategorized ones come last.
+ * Groups follow CATEGORY_ORDER; other categories keep the order of their first timeline.
  */
 export function groupTimelines(timelines: Timeline[]): TimelineGroup[] {
   const groups = new Map<string, Timeline[]>();
@@ -27,8 +36,7 @@ export function groupTimelines(timelines: Timeline[]): TimelineGroup[] {
     const key = t.category ?? UNCATEGORIZED;
     groups.set(key, [...(groups.get(key) ?? []), t]);
   }
-  const result = [...groups].map(([category, list]) => ({ category, timelines: list }));
-  return [...result.filter((g) => g.category !== UNCATEGORIZED), ...result.filter((g) => g.category === UNCATEGORIZED)];
+  return [...groups].map(([category, list]) => ({ category, timelines: list })).sort((a, b) => categoryRank(a.category) - categoryRank(b.category));
 }
 
 /** All tags used by these (already-sorted) timelines, in the order they first appear. */
