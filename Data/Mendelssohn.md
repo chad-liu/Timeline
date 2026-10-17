@@ -2,6 +2,8 @@
 title: 孟德爾頌生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1809-02-03
+died: 1847-11-04
 color: "#0a84ff"
 description: 費利克斯·孟德爾頌（Jakob Ludwig Felix Mendelssohn Bartholdy，1809–1847）
 cover: images/mendelssohn-cover.jpg

@@ -2,6 +2,8 @@
 title: 林姆斯基－高沙可夫生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1844-03-18
+died: 1908-06-21
 color: "#0077b6"
 description: 尼古拉·林姆斯基－高沙可夫（Nikolai Rimsky-Korsakov，1844–1908），俄國作曲家，「俄國五人組」成員
 cover: images/rimskykorsakov-cover.jpg

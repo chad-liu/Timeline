@@ -2,6 +2,8 @@
 title: 馬勒生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1860-07-07
+died: 1911-05-18
 color: "#d9480f"
 description: 古斯塔夫·馬勒（Gustav Mahler，1860–1911），奧地利作曲家、指揮家
 cover: images/mahler-cover.jpg

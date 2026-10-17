@@ -2,6 +2,8 @@
 title: 荀白克生平
 category: 音樂家
 tags: [近當代音樂]
+born: 1874-09-13
+died: 1951-07-13
 color: "#264653"
 description: 阿諾·荀白克（Arnold Schoenberg，1874–1951），奧地利裔美國作曲家，十二音技法的創始人
 cover: images/schoenberg-cover.jpg

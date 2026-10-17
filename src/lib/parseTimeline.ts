@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
 import { Marked } from 'marked';
-import type { Period, Timeline, TimelineEvent } from '../types';
+import type { Period, Timeline, TimelineEvent, TimePoint } from '../types';
 import { parseDate } from './parseDate';
 
 const DEFAULT_COLOR = '#6200ea';
@@ -63,9 +63,30 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
   };
 }
 
+/** A frontmatter date such as `born: 1724-04-22`; YAML may already have turned it into a Date. */
+function frontmatterDate(value: unknown): TimePoint | undefined {
+  if (value instanceof Date) return parseDate(value.toISOString().slice(0, 10));
+  if (typeof value === 'string' || typeof value === 'number') return parseDate(String(value));
+  return undefined;
+}
+
+/**
+ * Append the person's age to each event label between `born` and `died`, e.g. 「1781年（57歲）」.
+ * Year-only events count the age reached that year; events before the first birthday or after death get none.
+ */
+function addAges(events: TimelineEvent[], born: TimePoint, died?: TimePoint): void {
+  const last = died ? (died.end ?? died.start) : Infinity;
+  for (const e of events) {
+    const { start, precision } = e.date;
+    if (precision === 'approx' || precision === 'century' || start > last) continue;
+    const age = precision === 'year' ? Math.floor(start) - Math.floor(born.start) : Math.floor(start - born.start + 1e-9);
+    if (age > 0) e.date = { ...e.date, label: `${e.date.label}（${age}歲）` };
+  }
+}
+
 /**
  * Parse one Data\*.md file:
- *   frontmatter (title / color / description / cover / category / tags / sortLast),
+ *   frontmatter (title / color / description / cover / category / tags / sortLast / born / died),
  *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
@@ -132,6 +153,8 @@ export function parseTimeline(source: string, id: string): Timeline {
       }
     })
     .sort((a, b) => a.date.start - b.date.start);
+  const born = frontmatterDate(data.born);
+  if (born) addAges(events, born, frontmatterDate(data.died));
 
   const periods: Period[] = periodDrafts
     .map(({ period, body }) => ({ ...period, ...renderBody(body) }))

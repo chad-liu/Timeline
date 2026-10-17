@@ -2,6 +2,8 @@
 title: 巴赫生平
 category: 音樂家
 tags: [巴洛克時期]
+born: 1685-03-21
+died: 1750-07-28
 color: "#6200ea"
 description: 約翰·塞巴斯蒂安·巴赫（Johann Sebastian Bach，1685–1750）
 cover: images/bach-cover.jpg

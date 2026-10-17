@@ -2,6 +2,8 @@
 title: 舒伯特生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1797-01-31
+died: 1828-11-19
 color: "#b08900"
 description: 法蘭茲·舒伯特（Franz Peter Schubert，1797–1828），「歌曲之王」
 cover: images/schubert-cover.jpg

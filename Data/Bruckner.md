@@ -2,6 +2,8 @@
 title: 布魯克納生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1824-09-04
+died: 1896-10-11
 color: "#5c3d2e"
 description: 安東·布魯克納（Joseph Anton Bruckner，1824–1896），奧地利作曲家、管風琴家
 cover: images/bruckner-cover.jpg

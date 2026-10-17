@@ -2,6 +2,8 @@
 title: 蓋西文生平
 category: 音樂家
 tags: [近當代音樂]
+born: 1898-09-26
+died: 1937-07-11
 color: "#5f3dc4"
 description: 喬治·蓋西文（George Gershwin，1898–1937），美國作曲家、鋼琴家，融合爵士與古典音樂
 cover: images/gershwin-cover.jpg

@@ -2,6 +2,8 @@
 title: 坂本龍馬大事記
 category: 東方歷史
 tags: [人物]
+born: 1836-01-03
+died: 1867-12-10
 color: "#1b4965"
 description: 坂本龍馬（1836–1867），幕末土佐藩出身的維新志士，促成薩長同盟、推動大政奉還
 cover: images/ryoma-cover.jpg

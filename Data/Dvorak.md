@@ -2,6 +2,8 @@
 title: 德弗札克生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1841-09-08
+died: 1904-05-01
 color: "#0b7285"
 description: 安東寧·德弗札克（Antonín Leopold Dvořák，1841–1904），捷克民族樂派作曲家
 cover: images/dvorak-cover.jpg

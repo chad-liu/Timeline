@@ -2,6 +2,8 @@
 title: 舒曼生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1810-06-08
+died: 1856-07-29
 color: "#a0522d"
 description: 羅伯特·舒曼（Robert Schumann，1810–1856），德國作曲家、鋼琴家、音樂評論家
 cover: images/schumann-cover.jpg

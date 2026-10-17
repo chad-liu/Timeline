@@ -2,6 +2,8 @@
 title: 笛卡兒生平
 category: 思想家
 tags: [哲學]
+born: 1596-03-31
+died: 1650-02-11
 color: "#5c7cfa"
 description: 勒內·笛卡兒（René Descartes，1596–1650），法國哲學家、數學家與科學家，近代哲學與解析幾何的奠基者
 cover: images/descartes-cover.jpg

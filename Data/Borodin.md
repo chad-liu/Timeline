@@ -2,6 +2,8 @@
 title: 鮑羅定生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1833-11-12
+died: 1887-02-27
 color: "#8c6d1f"
 description: 亞歷山大·鮑羅定（Alexander Borodin，1833–1887），俄國作曲家兼化學家，「俄國五人組」成員
 cover: images/borodin-cover.jpg

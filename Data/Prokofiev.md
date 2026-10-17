@@ -2,6 +2,8 @@
 title: 普羅高菲夫生平
 category: 音樂家
 tags: [近當代音樂]
+born: 1891-04-27
+died: 1953-03-05
 color: "#7a5c00"
 description: 謝爾蓋·普羅高菲夫（Sergei Sergeyevich Prokofiev，1891–1953），俄國／蘇聯作曲家、鋼琴家與指揮家
 cover: images/prokofiev-cover.jpg

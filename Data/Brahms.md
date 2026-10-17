@@ -2,6 +2,8 @@
 title: 布拉姆斯生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1833-05-07
+died: 1897-04-03
 color: "#5c940d"
 description: 約翰尼斯·布拉姆斯（Johannes Brahms，1833–1897），與巴赫、貝多芬並稱「三B」
 cover: images/brahms-cover.jpg

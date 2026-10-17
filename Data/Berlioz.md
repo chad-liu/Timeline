@@ -2,6 +2,8 @@
 title: 白遼士生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1803-12-11
+died: 1869-03-08
 color: "#2b8a3e"
 description: 埃克托·白遼士（Louis-Hector Berlioz，1803–1869），法國浪漫派作曲家、指揮家與樂評家
 cover: images/berlioz-cover.jpg

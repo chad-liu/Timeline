@@ -2,6 +2,8 @@
 title: 蘇東坡生平大事記
 category: 東方歷史
 tags: [人物]
+born: 1037-01-08
+died: 1101-08-24
 color: "#9c6644"
 description: 蘇軾（1037–1101），字子瞻，號東坡居士，北宋文學家、書畫家與政治家，「唐宋八大家」之一
 cover: images/sudongpo-zhao-portrait.jpg

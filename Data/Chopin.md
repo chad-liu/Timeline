@@ -2,6 +2,8 @@
 title: 蕭邦生平
 category: 音樂家
 tags: [浪漫時期]
+born: 1810-03-01
+died: 1849-10-17
 color: "#1098ad"
 description: 弗雷德里克·蕭邦（Frédéric François Chopin，1810–1849），波蘭作曲家，「鋼琴詩人」
 cover: images/chopin-cover.jpg
