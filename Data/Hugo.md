@@ -37,6 +37,8 @@ https://zh.wikipedia.org/zh-tw/维克多·雨果
 - hug-tourgue.jpg：Victor Hugo La Tourgue.jpg
 - hug-grandkids.jpg：Victor Hugo et ses petits-enfants Georges et Jeanne.jpg
 - hug-funeral.jpg：Vue du catafalque sous l'Arc de Triomphe depuis l'avenue de la Grande Armée.jpg
+- hug-hernani.jpg：Jean-Jacques Grandville - Frenzied Romans at the First Performance of Hernani - WGA10359.jpg
+- hug-hunchback.jpg：Victor Hugo-Hunchback.jpg
 -->
 
 # Periods
@@ -80,9 +82,11 @@ https://zh.wikipedia.org/zh-tw/维克多·雨果
 出版小說《死囚末日記》，以第一人稱寫一名死刑犯在行刑前最後一天的恐懼與煎熬，刻意不交代他犯了什麼罪，好讓讀者把焦點放在死刑本身的殘酷。這是他終生反對死刑的開端。同年出版充滿異國情調的詩集《東方集》。
 
 ## 1830-02-25 | 《歐那尼》首演
+![](images/hug-hernani.jpg)
 詩劇《歐那尼》在法蘭西喜劇院首演。劇中大膽打破古典詩劇的格律與規範，支持古典派與浪漫派的觀眾在劇院裡叫罵、互丟東西，史稱「歐那尼之戰」；他的年輕支持者們穿著奇裝異服，在戲院坐了一整晚助陣。浪漫派大獲全勝，他從此成為浪漫主義的領袖。這場論戰不只是戲劇形式之爭，更象徵新舊文學觀念與藝術自由的衝突。這部戲後來被威爾第改編成歌劇《埃爾納尼》。
 
 ## 1831-03 | 《鐘樓怪人》
+![](images/hug-hunchback.jpg)
 出版小說《巴黎聖母院》（台灣通稱《鐘樓怪人》），以十五世紀的巴黎為背景，描寫外貌醜陋的敲鐘人加西莫多對吉普賽少女艾絲梅拉達的愛。他寫作時把自己關在房裡，只穿一件灰色的毛衣，據說還把外出的衣服鎖起來，逼自己趕稿。小說轟動全歐，也喚起了大眾對年久失修的巴黎聖母院的重視，促成了後來的大規模修復。
 
 ## 1832 | 《國王尋樂》遭禁

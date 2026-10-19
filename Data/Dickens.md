@@ -36,6 +36,7 @@ https://zh.wikipedia.org/zh-tw/查尔斯·狄更斯
 - dic-tickets.jpg：Buying tickets for a Charles Dickens reading at Steinway Hall, New York, New York, 1867.jpg
 - dic-poster.jpg：Dickensposter nottingham1869.jpg
 - dic-chair.jpg：Samuel Luke Fildes - The Empty Chair.jpg
+- dic-staplehurst.jpg：Staplehurst rail crash.jpg
 -->
 
 # Periods
@@ -144,6 +145,7 @@ https://zh.wikipedia.org/zh-tw/查尔斯·狄更斯
 連載最後一部完成的長篇小說《我們共同的朋友》，以泰晤士河上撈屍維生的船夫、一座座垃圾山堆成的財富與一筆遺產的繼承為主線，描寫金錢如何扭曲倫敦各階層的人際關係。
 
 ## 1865-06-09 | 斯台普赫斯特火車事故
+![](images/dic-staplehurst.jpg)
 與愛倫·特南母女從法國返英途中，乘坐的火車在肯特郡的斯台普赫斯特因鐵軌施工而出軌，多節車廂墜落橋下。他乘坐的車廂懸在橋邊，他平安脫險後，立刻爬回車廂取出《我們共同的朋友》的手稿，並在現場幫忙救助傷者。這次經歷讓他留下長期的心理創傷，此後坐火車都會感到恐懼。巧的是，他正好在五年後的同一天去世。
 
 ## 1867-11 | 第二次訪美巡迴朗讀

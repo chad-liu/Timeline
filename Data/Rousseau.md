@@ -31,7 +31,7 @@ https://zh.wikipedia.org/zh-tw/让-雅克·卢梭
 - rou-therese.jpg：Levasseur1.jpg
 - rou-latour.jpg：Maurice Quentin de La Tour - Portrait of Jean-Jacques Rousseau - adjusted.jpg
 - rou-devin.jpg：Le Devin du Village — Rousseau.png
-- rou-inegalite.jpg：DOI Rousseau.jpg（只保留右半邊的書名頁）
+- rou-inegalite.jpg：DOI Rousseau.jpg
 - rou-ermitage.jpg：ErmitageRousseau.jpg
 - rou-contrat.jpg：Rousseau pirated edition.jpg
 - rou-emile.jpg：EmileTitle.jpeg

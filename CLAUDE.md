@@ -48,7 +48,7 @@ npm run build                              # tsc 型別檢查 + vite build → d
 - 「加公有領域圖片」：
   - 只能用 Wikimedia Commons 上 Public domain／PD-US／CC0 的圖片，放在 `Data/images/`，並設定 `cover:`。
   - 圖片來源要補寫在檔案開頭的註解裡。
-  - 不用裸體圖（必要時裁切），也不用暴力、行刑、戰爭、災難、葬禮的圖。
+  - 含裸體或情色內容、暴力（行刑、戰爭、災難、葬禮等）的公有領域圖片都可以使用，不需要為此捨棄或裁切；選圖仍以和事件直接相關、最具代表性為準。
 - **不要 commit `圖表/`**（那裡是原始筆記），也不要 commit `圖表/Dashboard.png` 或 `Data/images/84cf78586f2293dd051cdd0ba37832d1.jpeg`。
 - 使用者沒有要求就不 commit／push。push 後用 `gh run watch` 確認部署成功。
 - 書籍網站是另一個 repo（`D:\Books`，chad-liu/books），兩邊刻意不整合，只透過 `related:`、books 端的 timeline 連結區塊，以及 `people.json` 互相連結。

@@ -34,6 +34,7 @@ https://zh.wikipedia.org/zh-tw/苏格拉底
 - soc-xanthippe.jpg：Luca Giordano - Xanthippe schuettet Sokrates Wasser in den Kragen.jpg
 - soc-trial.jpg：Socrates Pio-Clementino Inv314.jpg
 - soc-death.jpg：David - The Death of Socrates.jpg
+- soc-symposium.jpg：Anselm Feuerbach - Das Gastmahl. Nach Platon (zweite Fassung) - Google Art Project.jpg
 -->
 
 # Periods
@@ -74,6 +75,7 @@ https://zh.wikipedia.org/zh-tw/苏格拉底
 傳統記載他也參加了安菲波利斯戰役，這是他最後一次為雅典出征。他一生只為了服兵役離開過雅典，平時很少走出城門。
 
 ## -416 | 《會飲篇》的宴會 {label=約前416年}
+![](images/soc-symposium.jpg)
 悲劇詩人阿伽頌在戲劇比賽中獲勝，舉行宴會慶祝，柏拉圖的《會飲篇》就以這場宴會為背景：與會者輪流讚頌愛神，蘇格拉底轉述女祭司狄奧提瑪的教導，說明愛是從愛美的身體一步步上升到愛「美」本身的歷程。宴會最後喝醉的阿爾西比亞德斯闖入，發表了對蘇格拉底又愛又恨的頌詞。
 
 ## -420 | 與贊西佩成婚 {label=約前420年}

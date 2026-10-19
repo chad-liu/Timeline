@@ -30,7 +30,7 @@ https://zh.wikipedia.org/zh-tw/孟德斯鸠
 - mtq-labrede.jpg：La Brède - château de Montesquieu 2.jpg
 - mtq-persanes.jpg：Lettres persanes - tome 1 - Cologne (1721).jpg
 - mtq-labrede2.jpg：La Brède - château de Montesquieu 8.jpg
-- mtq-romains.jpg：Montesquieu book Consideration sur les causes de la grandeur des Romains et de leur decadence.png（只保留右半邊的書名頁，裁去左側有裸身小天使的扉頁插畫）
+- mtq-romains.jpg：Montesquieu book Consideration sur les causes de la grandeur des Romains et de leur decadence.png
 - mtq-esprit.jpg：Montesquieu, De l'Esprit des loix (1st ed, 1748, vol 1, title page).jpg
 -->
 

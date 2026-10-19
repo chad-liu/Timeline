@@ -31,6 +31,7 @@ https://zh.wikipedia.org/zh-tw/托马斯·霍布斯
 - hob-armada.jpg：Elizabeth I (Armada Portrait).jpg
 - hob-leviathan.jpg：Leviathan frontispiece cropped British Library.jpg
 - hob-hardwick.jpg：Hardwick Hall - picture gallery by George Washington Wilson (d 1893).jpg
+- hob-decive.jpg：Hobbes de cive.jpg
 -->
 
 # Periods
@@ -83,6 +84,7 @@ https://zh.wikipedia.org/zh-tw/托马斯·霍布斯
 長期國會召開，國會與國王的衝突迅速惡化，他擔心遭到政治迫害，在11月逃往巴黎，從此流亡十一年。他重新加入梅森的學術圈，並應梅森之邀，對笛卡兒的《第一哲學沉思集》提出反駁（收錄於1641年出版的書中，即「第三組反駁」），但兩人始終互不欣賞。
 
 ## 1642 | 《論公民》
+![](images/hob-decive.jpg)
 在巴黎以拉丁文出版《論公民》，原本只少量印刷給朋友傳閱，1647年在阿姆斯特丹擴充再版後廣泛流傳。同年英國內戰正式爆發，國王與國會兵戎相見，他最擔心的「內亂」成為現實。
 
 ## 1646 | 流亡王子的數學老師

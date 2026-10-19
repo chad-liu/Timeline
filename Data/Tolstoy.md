@@ -36,6 +36,7 @@ https://zh.wikipedia.org/zh-tw/列夫·托尔斯泰
 - tol-study.jpg：Leo Tolstoi v kabinetie.05.1908.ws.jpg
 - tol-gandhi.jpg：Gandhi Tolstoy Farm.jpg
 - tol-astapovo.jpg：Astapovo Train Station, On the Right is the House in Which Lev Nikolayevich (Tolstoy) Died MET DP238938.jpg
+- tol-funeral.jpg：The Lowering of the Coffin into the Grave with Kneeling Mourners MET DP237973.jpg
 -->
 
 # Periods
@@ -157,3 +158,5 @@ https://zh.wikipedia.org/zh-tw/列夫·托尔斯泰
 ## 1910-11-20 | 逝世@阿斯塔波沃車站
 ![](images/tol-astapovo.jpg)
 在火車上感染肺炎，被迫在梁贊–烏拉爾鐵路上的小站阿斯塔波沃下車，在站長的屋子裡臥床一週後去世，享年82歲。全世界的記者聚集在這座小車站，索菲婭趕到時，家人一度不讓她進屋，直到他陷入昏迷才得見最後一面。他被安葬在雅斯納雅·波利亞納森林中，傳說埋著「綠色小棒」的地方，墳上沒有十字架、也沒有墓碑，只有一座長滿青草的土丘。
+
+![](images/tol-funeral.jpg)

@@ -32,6 +32,7 @@ https://zh.wikipedia.org/zh-tw/柏拉图
 - pla-republic.jpg：Politeia beginning. Codex Parisinus graecus 1807.jpg
 - pla-timaeus.jpg：Timaeus stephanus pages 32 33.jpg
 - pla-death.jpg：Sanzio 01 Plato Aristotle.jpg
+- soc-symposium.jpg：Anselm Feuerbach - Das Gastmahl. Nach Platon (zweite Fassung) - Google Art Project.jpg（與蘇格拉底時間軸共用）
 -->
 
 # Periods
@@ -70,6 +71,7 @@ https://zh.wikipedia.org/zh-tw/柏拉图
 約四十歲時回到雅典，在城外西北方紀念英雄阿卡得摩斯的聖林附近創立「學院」（Academy），英文的 academy 一詞即由此而來。學院受畢達哥拉斯學派影響，重視算術、幾何、天文與聲學，鼓勵學生以論證和討論探究真理，而不是背誦教條；傳說門口寫著「不懂幾何者不得入內」。學院延續了九百多年，直到西元529年才被東羅馬皇帝查士丁尼關閉，是歐洲大學的遠祖。
 
 ## -385 | 《會飲篇》與《斐多篇》 {label=約前380年代}
+![](images/soc-symposium.jpg)
 進入創作的成熟期。《會飲篇》藉一場宴會上輪流讚頌愛神的演說，描繪愛如何從愛慕美的身體一步步上升到愛「美」本身——後世所說的「柏拉圖式的愛」即源於此，但原意並非單純排斥肉體；《斐多篇》記述蘇格拉底臨終前與朋友討論靈魂不朽；《美諾篇》則追問德性能不能教，並提出「學習就是回憶」。這時對話的主角仍是蘇格拉底，但思想已越來越屬於柏拉圖自己。
 
 ## -375 | 《理想國》 {label=約前375年}
