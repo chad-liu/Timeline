@@ -24,7 +24,7 @@ npm run build                              # tsc 型別檢查 + vite build → d
 
 - **建置時解析**：`vite-plugin-timelines.ts` 在 Node 端讀取 `Data/*.md`，用 `src/lib/parseTimeline.ts`（gray-matter + marked）解析後，以虛擬模組 `virtual:timelines` 提供給前端（型別宣告在 `src/virtual.d.ts`）。前端拿到的是已解析好的 `Timeline[]`，本身不含 markdown 或 yaml 解析器。這個 plugin 同時負責：
   - 在 dev 時以 `data/` 路徑提供 `Data/images/`，build 時把圖片 emit 到 `dist/data/`；
-  - 輸出 `people.json`（`src/lib/peopleIndex.ts`），供其他網站讀取人物生卒年。
+  - 輸出 `people.json`（`src/lib/peopleIndex.ts`），供其他網站讀取人物生卒年。books 站的 `tools/add_timeline_links.py` 會把每人的 `related` 反推成「哪些頁面要連回這條時間軸」，所以兩站的互連只需要維護 `related:`。
 - **日期**：統一轉成「小數年」（`src/lib/parseDate.ts`），支援西元前、世紀、區間、約略年代，不使用 JS `Date`。排序與座標換算都用這個數值。
 - **路由**：全部放在 URL hash，由 `src/lib/route.ts` 處理：
   - 不帶 `t` 參數是 Dashboard，例如 `#c=音樂家&tag=…`；

@@ -20,7 +20,7 @@ npm test         # 日期解析單元測試
 - 點標題旁的 ▾：點名稱切換時間軸，勾選多條則疊加比較（橫向檢視會分泳道、共用時間尺）
 - 網址 hash 會記住目前的檢視與時間軸，例如 `#v=horizontal&t=Bach|Handel`
 - **人物年表**（Dashboard 右上「人物年表」，`#p=lifespans`）：所有寫了 `born`/`died` 的時間軸畫成生卒年橫條，上方為西元年、左側依類別→標籤兩層分組（可個別收合，或用「全部展開／全部收合」）；沒有人物的長段年代（如古希臘到宋朝之間）會壓縮成斜線間隔；可縮放，滑過人物會標出他的生卒範圍以便對照同時代的人
-- **人物索引** `people.json`（建置時輸出，網址 https://chad-liu.github.io/Timeline/people.json ；本機 dev 為 /people.json）：所有寫了 `born`/`died` 的時間軸，依類別再依出生排序，每人含 id、name、title、category、tags、born、died（frontmatter 原文）、years、url（縱向檢視）、cover。給其他網站（如知識圖譜）讀取人物生卒年或產生連結用；兩邊不共用程式，只讀這份公開檔案
+- **人物索引** `people.json`（建置時輸出，網址 https://chad-liu.github.io/Timeline/people.json ；本機 dev 為 /people.json）：所有寫了 `born`/`died` 的時間軸，依類別再依出生排序，每人含 id、name、title、category、tags、born、died（frontmatter 原文）、years、url（縱向檢視）、related（frontmatter 的延伸閱讀連結）、cover。給其他網站（如知識圖譜）讀取人物生卒年或產生連結用；兩邊不共用程式，只讀這份公開檔案
 
 ## 資料格式
 

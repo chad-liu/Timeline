@@ -1,4 +1,4 @@
-import type { Timeline } from '../types';
+import type { RelatedLink, Timeline } from '../types';
 import { formatYear } from './parseDate';
 import { groupTimelines } from './timelineOrder';
 
@@ -17,6 +17,8 @@ export interface PersonEntry {
   years: string;
   /** Vertical view of this timeline. */
   url: string;
+  /** The timeline's `related:` links, so a linked site can find which of its pages mention this person. */
+  related: RelatedLink[];
   /** Absolute URL of the cover image, when the timeline has one. */
   cover?: string;
 }
@@ -52,6 +54,7 @@ export function buildPeopleIndex(timelines: Timeline[], site: string): PeopleInd
           died: t.diedDate!,
           years: `${formatYear(Math.floor(t.born!))}–${formatYear(Math.floor(t.died!))}`,
           url: `${site}#v=vertical&t=${encodeURIComponent(t.id)}`,
+          related: t.related,
         };
         if (t.cover) entry.cover = new URL(t.cover, site).href;
         return entry;

@@ -7,7 +7,7 @@ const timeline = (id: string, frontmatter: string) => parseTimeline(`---\n${fron
 describe('buildPeopleIndex', () => {
   const index = buildPeopleIndex(
     [
-      timeline('Kant', 'title: 康德生平\ncategory: 思想家\ntags: [德意志觀念論]\nborn: 1724-04-22\ndied: 1804-02-12\ncover: images/kant.jpg'),
+      timeline('Kant', 'title: 康德生平\ncategory: 思想家\ntags: [德意志觀念論]\nborn: 1724-04-22\ndied: 1804-02-12\ncover: images/kant.jpg\nrelated:\n  - 康德: https://example.com/books/kant.html'),
       timeline('Socrates', 'title: 蘇格拉底生平\ncategory: 思想家\nborn: -469\ndied: -399'),
       timeline('Bach', 'title: 巴赫生平\ncategory: 音樂家\nborn: 1685-03-21\ndied: 1750-07-28'),
       timeline('Japan', 'title: 日本史\ncategory: 東方歷史'),
@@ -31,6 +31,7 @@ describe('buildPeopleIndex', () => {
       died: '1804-02-12',
       years: '1724–1804',
       url: 'https://example.com/Timeline/#v=vertical&t=Kant',
+      related: [{ label: '康德', url: 'https://example.com/books/kant.html' }],
       cover: 'https://example.com/Timeline/data/images/kant.jpg',
     });
     expect(index.people[1]).toMatchObject({ name: '蘇格拉底', born: '-469', years: '前469–前399' });
