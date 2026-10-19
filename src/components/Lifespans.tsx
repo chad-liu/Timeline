@@ -3,7 +3,7 @@ import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
 import { dashboardHash, timelineHash } from '../lib/route';
 import { buildLifespanScale, lifespanTicks, BREAK_PX } from '../lib/lifespanScale';
-import { groupTimelines } from '../lib/timelineOrder';
+import { groupByTag, groupTimelines } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
 type Person = Timeline & { born: number; died: number };
@@ -25,7 +25,7 @@ function labelWidth(label: string): number {
   return [...label].reduce((w, ch) => w + (/[　-鿿＀-￯]/.test(ch) ? 11 : 6.2), 12);
 }
 
-/** Lifespan chart: every person timeline as a bar from birth to death, grouped by category. */
+/** Lifespan chart: every person timeline as a bar from birth to death, grouped by category and then by tag; both levels collapse. */
 export function Lifespans({ timelines }: { timelines: Timeline[] }) {
   const [zoom, setZoom] = useState(1);
   const [hovered, setHovered] = useState<Person | null>(null);
@@ -35,9 +35,21 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
 
   const people = useMemo(() => timelines.filter((t): t is Person => t.born !== undefined && t.died !== undefined), [timelines]);
   const groups = useMemo(
-    () => groupTimelines(people).map((g) => ({ category: g.category, people: [...(g.timelines as Person[])].sort((a, b) => a.born - b.born) })),
+    () =>
+      groupTimelines(people).map((g) => {
+        const sorted = [...(g.timelines as Person[])].sort((a, b) => a.born - b.born);
+        return { category: g.category, people: sorted, subgroups: groupByTag(sorted).map((s) => ({ tag: s.tag, people: s.timelines as Person[] })) };
+      }),
     [people],
   );
+  /** Collapsed keys: a category name, or `category/tag` for a tag subgroup. */
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  const toggle = (key: string) => {
+    const next = new Set(collapsed);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    setCollapsed(next);
+  };
   const scale = useMemo(() => buildLifespanScale(people.map((p) => [p.born, p.died]), ZOOMS[zoom]), [people, zoom]);
   const ticks = lifespanTicks(scale);
 
@@ -54,6 +66,32 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
     setZoom(next);
   };
 
+  /** One person row; a person with two tags (e.g. 貝多芬) appears under both, so the key includes the subgroup. */
+  const renderRow = (p: Person, groupKey: string) => {
+    const left = scale.xOf(p.born);
+    const width = Math.max(scale.xOf(p.died) - left, 2);
+    const href = timelineHash([p.id], 'vertical');
+    const label = lifeLabel(p);
+    const fits = labelWidth(label) <= width;
+    return (
+      <div key={`${groupKey}/${p.id}`} className={hovered?.id === p.id ? 'ls-row hovered' : 'ls-row'} onMouseEnter={() => setHovered(p)} onMouseLeave={() => setHovered(null)}>
+        <a className="ls-name" href={href} title={p.title}>
+          {personName(p)}
+        </a>
+        <div className="ls-track" style={{ width: scale.width }}>
+          <a className="ls-bar" href={href} style={{ left, width, background: p.color }} title={`${personName(p)} ${label}`}>
+            {fits && <span>{label}</span>}
+          </a>
+          {!fits && (
+            <span className="ls-outside" style={{ left: left + width + 4 }}>
+              {label}
+            </span>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="lifespans">
       <header className="topbar ls-topbar">
@@ -64,6 +102,14 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
         <h1 className="ls-title">
           人物年表 <small>{people.length} 人</small>
         </h1>
+        <div className="ls-fold" role="group" aria-label="展開或收合">
+          <button type="button" onClick={() => setCollapsed(new Set())} disabled={collapsed.size === 0}>
+            全部展開
+          </button>
+          <button type="button" onClick={() => setCollapsed(new Set(groups.map((g) => g.category)))}>
+            全部收合
+          </button>
+        </div>
         <div className="ls-zoom" role="group" aria-label="縮放">
           <button type="button" onClick={() => changeZoom(zoom - 1)} disabled={zoom === 0} aria-label="縮小">
             −
@@ -103,39 +149,37 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
               )}
             </div>
 
-            {groups.map((g) => (
-              <section key={g.category} className="ls-group">
-                <div className="ls-group-row">
-                  <h2 className="ls-group-name">
-                    {g.category} <small>{g.people.length}</small>
-                  </h2>
-                </div>
-                {g.people.map((p) => {
-                  const left = scale.xOf(p.born);
-                  const width = Math.max(scale.xOf(p.died) - left, 2);
-                  const href = timelineHash([p.id], 'vertical');
-                  const label = lifeLabel(p);
-                  const fits = labelWidth(label) <= width;
-                  return (
-                    <div key={p.id} className={hovered?.id === p.id ? 'ls-row hovered' : 'ls-row'} onMouseEnter={() => setHovered(p)} onMouseLeave={() => setHovered(null)}>
-                      <a className="ls-name" href={href} title={p.title}>
-                        {personName(p)}
-                      </a>
-                      <div className="ls-track" style={{ width: scale.width }}>
-                        <a className="ls-bar" href={href} style={{ left, width, background: p.color }} title={`${personName(p)} ${label}`}>
-                          {fits && <span>{label}</span>}
-                        </a>
-                        {!fits && (
-                          <span className="ls-outside" style={{ left: left + width + 4 }}>
-                            {label}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </section>
-            ))}
+            {groups.map((g) => {
+              const open = !collapsed.has(g.category);
+              return (
+                <section key={g.category} className="ls-group">
+                  <div className="ls-group-row">
+                    <button type="button" className="ls-group-name" onClick={() => toggle(g.category)} aria-expanded={open}>
+                      <span className="ls-chev">{open ? '▾' : '▸'}</span>
+                      {g.category} <small>{g.people.length}</small>
+                    </button>
+                  </div>
+                  {open &&
+                    g.subgroups.map((s) => {
+                      const key = `${g.category}/${s.tag}`;
+                      const subOpen = !s.tag || !collapsed.has(key);
+                      return (
+                        <div key={key} className="ls-subgroup">
+                          {s.tag && (
+                            <div className="ls-group-row">
+                              <button type="button" className="ls-subgroup-name" onClick={() => toggle(key)} aria-expanded={subOpen}>
+                                <span className="ls-chev">{subOpen ? '▾' : '▸'}</span>
+                                {s.tag} <small>{s.people.length}</small>
+                              </button>
+                            </div>
+                          )}
+                          {subOpen && s.people.map((p) => renderRow(p, key))}
+                        </div>
+                      );
+                    })}
+                </section>
+              );
+            })}
           </div>
         </div>
       </div>
