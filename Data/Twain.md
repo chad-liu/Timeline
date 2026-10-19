@@ -2,6 +2,8 @@
 title: 馬克·吐溫生平
 category: 文學家
 tags: [美國文學]
+related:
+  - 馬克吐溫: https://chad-liu.github.io/books/html/6-2.歐美文學家/馬克吐溫.html
 born: 1835-11-30
 died: 1910-04-21
 color: "#f59f00"

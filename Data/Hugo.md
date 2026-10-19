@@ -2,6 +2,8 @@
 title: 雨果生平
 category: 文學家
 tags: [法國文學]
+related:
+  - 雨果: https://chad-liu.github.io/books/html/6-2.歐美文學家/雨果.html
 born: 1802-02-26
 died: 1885-05-22
 color: "#364fc7"

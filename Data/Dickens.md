@@ -2,6 +2,8 @@
 title: 狄更斯生平
 category: 文學家
 tags: [英國文學]
+related:
+  - 狄更斯: https://chad-liu.github.io/books/html/6-2.歐美文學家/狄更斯.html
 born: 1812-02-07
 died: 1870-06-09
 color: "#5f3dc4"

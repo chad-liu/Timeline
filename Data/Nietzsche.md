@@ -1,7 +1,11 @@
 ---
 title: 尼采生平
 category: 思想家
-tags: [哲學]
+tags: [生命哲學]
+related:
+  - 尼采: https://chad-liu.github.io/books/html/2-2.哲學家/尼采.html
+  - 尼采時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/尼采時間軸.html
+  - 存在主義: https://chad-liu.github.io/books/html/2-1.哲學思想/存在主義.html
 born: 1844-10-15
 died: 1900-08-25
 color: "#e64980"

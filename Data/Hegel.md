@@ -1,7 +1,12 @@
 ---
 title: 黑格爾生平
 category: 思想家
-tags: [哲學]
+tags: [德意志觀念論]
+related:
+  - 黑格爾: https://chad-liu.github.io/books/html/2-2.哲學家/黑格爾.html
+  - 黑格爾時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/黑格爾時間軸.html
+  - 德意志觀念論: https://chad-liu.github.io/books/html/2-1.哲學思想/德意志觀念論.html
+  - 德意志觀念論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/德意志觀念論時間軸.html
 born: 1770-08-27
 died: 1831-11-14
 color: "#7950f2"

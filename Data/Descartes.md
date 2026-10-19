@@ -1,7 +1,15 @@
 ---
 title: 笛卡兒生平
 category: 思想家
-tags: [哲學]
+tags: [大陸理性論]
+related:
+  - 笛卡兒: https://chad-liu.github.io/books/html/2-2.哲學家/笛卡兒.html
+  - 笛卡兒時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/笛卡兒時間軸.html
+  - 笛卡兒-我思故我在: https://chad-liu.github.io/books/html/2-2.哲學家/笛卡兒-我思故我在.html
+  - 笛卡兒哲學研究: https://chad-liu.github.io/books/html/2-2.哲學家/笛卡兒哲學研究.html
+  - 大陸理性論: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論.html
+  - 大陸理性論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
 born: 1596-03-31
 died: 1650-02-11
 color: "#5c7cfa"

@@ -1423,3 +1423,57 @@ input {
     font-size: 12px;
   }
 }
+
+/* Further reading (frontmatter `related:`) under the timeline description */
+.related {
+  margin: 4px 0 8px;
+  font-size: 13px;
+}
+
+.related summary {
+  display: inline-block;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.related summary::-webkit-details-marker {
+  display: none;
+}
+
+.related summary::before {
+  content: '▸ ';
+}
+
+.related[open] summary::before {
+  content: '▾ ';
+}
+
+.related summary small {
+  color: var(--muted);
+}
+
+.related nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.related nav a {
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.related nav a::after {
+  content: ' ↗';
+  color: var(--muted);
+}
+
+.related nav a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

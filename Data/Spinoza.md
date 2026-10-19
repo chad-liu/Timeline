@@ -1,7 +1,14 @@
 ---
 title: 史賓諾莎生平
 category: 思想家
-tags: [哲學]
+tags: [大陸理性論]
+related:
+  - 史賓諾莎: https://chad-liu.github.io/books/html/2-2.哲學家/史賓諾莎.html
+  - 史賓諾莎時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/史賓諾莎時間軸.html
+  - 史賓諾莎-以幾何學方式證明: https://chad-liu.github.io/books/html/2-2.哲學家/史賓諾莎-以幾何學方式證明.html
+  - 大陸理性論: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論.html
+  - 大陸理性論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
 born: 1632-11-24
 died: 1677-02-21
 color: "#862e9c"

@@ -2,6 +2,8 @@
 title: 賽萬提斯生平
 category: 文學家
 tags: [西班牙文學]
+related:
+  - 塞萬提斯: https://chad-liu.github.io/books/html/6-2.歐美文學家/塞萬提斯.html
 born: 1547-09-29
 died: 1616-04-22
 color: "#c2255c"

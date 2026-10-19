@@ -1,7 +1,14 @@
 ---
 title: 萊布尼茲生平
 category: 思想家
-tags: [哲學]
+tags: [大陸理性論]
+related:
+  - 萊布尼茲: https://chad-liu.github.io/books/html/2-2.哲學家/萊布尼茲.html
+  - 萊布尼茲時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/萊布尼茲時間軸.html
+  - 萊布尼茲-單子論: https://chad-liu.github.io/books/html/2-2.哲學家/萊布尼茲-單子論.html
+  - 大陸理性論: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論.html
+  - 大陸理性論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/大陸理性論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
 born: 1646-07-01
 died: 1716-11-14
 color: "#e8590c"

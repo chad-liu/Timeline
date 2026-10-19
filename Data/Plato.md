@@ -1,7 +1,13 @@
 ---
 title: 柏拉圖生平
 category: 思想家
-tags: [哲學]
+tags: [古希臘哲學]
+related:
+  - 柏拉圖: https://chad-liu.github.io/books/html/2-2.哲學家/柏拉圖.html
+  - 柏拉圖時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/柏拉圖時間軸.html
+  - 柏拉圖的光譜圖: https://chad-liu.github.io/books/html/2-2.哲學家/柏拉圖的光譜圖.html
+  - 古希臘哲學家光譜圖: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家光譜圖.html
+  - 古希臘哲學家時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家時間軸.html
 born: -427
 died: -347
 color: "#0c8599"

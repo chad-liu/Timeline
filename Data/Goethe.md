@@ -2,6 +2,8 @@
 title: 歌德生平
 category: 文學家
 tags: [德國文學]
+related:
+  - 歌德: https://chad-liu.github.io/books/html/6-2.歐美文學家/歌德.html
 born: 1749-08-28
 died: 1832-03-22
 color: "#0b7285"

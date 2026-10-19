@@ -1,7 +1,18 @@
 ---
 title: 康德生平
 category: 思想家
-tags: [哲學]
+tags: [德意志觀念論]
+related:
+  - 康德: https://chad-liu.github.io/books/html/2-2.哲學家/康德.html
+  - 康德時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/康德時間軸.html
+  - 康德的純粹理性批判: https://chad-liu.github.io/books/html/2-2.哲學家/康德的純粹理性批判.html
+  - 康德的實踐理性批判: https://chad-liu.github.io/books/html/2-2.哲學家/康德的實踐理性批判.html
+  - 康德的判斷力批判: https://chad-liu.github.io/books/html/2-2.哲學家/康德的判斷力批判.html
+  - 康德的永久和平論: https://chad-liu.github.io/books/html/2-2.哲學家/康德的永久和平論.html
+  - 康德-理性的建築術: https://chad-liu.github.io/books/html/2-2.哲學家/康德-理性的建築術.html
+  - 德意志觀念論: https://chad-liu.github.io/books/html/2-1.哲學思想/德意志觀念論.html
+  - 德意志觀念論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/德意志觀念論時間軸.html
+  - 啟蒙運動: https://chad-liu.github.io/books/html/1-1.西方歷史/啟蒙運動.html
 born: 1724-04-22
 died: 1804-02-12
 color: "#4263eb"

@@ -2,6 +2,8 @@
 title: 莎士比亞生平
 category: 文學家
 tags: [英國文學]
+related:
+  - 莎士比亞: https://chad-liu.github.io/books/html/6-2.歐美文學家/莎士比亞.html
 born: 1564-04-23
 died: 1616-04-23
 color: "#9c36b5"

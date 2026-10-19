@@ -37,3 +37,31 @@ describe('parseTimeline ages', () => {
     expect(labels).toContain('18世紀');
   });
 });
+
+describe('parseTimeline related links', () => {
+  const related = parseTimeline(
+    `---
+title: 測試
+related:
+  - 康德: https://example.com/康德.html
+  - 不是網址: javascript:alert(1)
+  - 第三批判: http://example.com/kritik.html
+---
+
+# Events
+## 1781 | 事件
+`,
+    'test',
+  ).related;
+
+  it('keeps http(s) links in order and drops anything else', () => {
+    expect(related).toEqual([
+      { label: '康德', url: 'https://example.com/康德.html' },
+      { label: '第三批判', url: 'http://example.com/kritik.html' },
+    ]);
+  });
+
+  it('is empty when the frontmatter has no related list', () => {
+    expect(parseTimeline(source, 'test').related).toEqual([]);
+  });
+});

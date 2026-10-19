@@ -1,7 +1,11 @@
 ---
 title: 蒙田生平
 category: 思想家
-tags: [哲學]
+tags: [文藝復興]
+related:
+  - 蒙田: https://chad-liu.github.io/books/html/2-2.哲學家/蒙田.html
+  - 蒙田時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/蒙田時間軸.html
+  - 文藝復興: https://chad-liu.github.io/books/html/1-1.西方歷史/文藝復興.html
 born: 1533-02-28
 died: 1592-09-13
 color: "#5c940d"

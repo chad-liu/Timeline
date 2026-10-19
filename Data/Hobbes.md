@@ -1,7 +1,13 @@
 ---
 title: 霍布斯生平
 category: 思想家
-tags: [哲學]
+tags: [英國經驗論]
+related:
+  - 霍布斯: https://chad-liu.github.io/books/html/2-2.哲學家/霍布斯.html
+  - 霍布斯時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/霍布斯時間軸.html
+  - 英國經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論.html
+  - 英國經驗論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
 born: 1588-04-05
 died: 1679-12-04
 color: "#c92a2a"

@@ -1,7 +1,13 @@
 ---
 title: 亞里斯多德生平
 category: 思想家
-tags: [哲學]
+tags: [古希臘哲學]
+related:
+  - 亞里士多德: https://chad-liu.github.io/books/html/2-2.哲學家/亞里士多德.html
+  - 亞里士多德時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/亞里士多德時間軸.html
+  - 亞里士多德的光譜圖: https://chad-liu.github.io/books/html/2-2.哲學家/亞里士多德的光譜圖.html
+  - 古希臘哲學家光譜圖: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家光譜圖.html
+  - 古希臘哲學家時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家時間軸.html
 born: -384
 died: -322
 color: "#2f9e44"

@@ -2,6 +2,8 @@
 title: 卡夫卡生平
 category: 文學家
 tags: [德語文學]
+related:
+  - 卡夫卡: https://chad-liu.github.io/books/html/6-2.歐美文學家/卡夫卡.html
 born: 1883-07-03
 died: 1924-06-03
 color: "#343a40"

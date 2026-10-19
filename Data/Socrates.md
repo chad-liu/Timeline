@@ -1,7 +1,13 @@
 ---
 title: 蘇格拉底生平
 category: 思想家
-tags: [哲學]
+tags: [古希臘哲學]
+related:
+  - 蘇格拉底: https://chad-liu.github.io/books/html/2-2.哲學家/蘇格拉底.html
+  - 蘇格拉底時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/蘇格拉底時間軸.html
+  - 蘇格拉底的光譜圖: https://chad-liu.github.io/books/html/2-2.哲學家/蘇格拉底的光譜圖.html
+  - 古希臘哲學家光譜圖: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家光譜圖.html
+  - 古希臘哲學家時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/古希臘哲學家時間軸.html
 born: -469
 died: -399
 color: "#a9802f"

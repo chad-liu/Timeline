@@ -1,7 +1,14 @@
 ---
 title: 洛克生平
 category: 思想家
-tags: [哲學]
+tags: [英國經驗論]
+related:
+  - 洛克: https://chad-liu.github.io/books/html/2-2.哲學家/洛克.html
+  - 洛克時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/洛克時間軸.html
+  - 英國經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論.html
+  - 英國經驗論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
+  - 啟蒙運動: https://chad-liu.github.io/books/html/1-1.西方歷史/啟蒙運動.html
 born: 1632-08-29
 died: 1704-10-28
 color: "#1971c2"

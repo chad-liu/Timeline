@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
 import { Marked } from 'marked';
-import type { Period, Timeline, TimelineEvent } from '../types';
+import type { Period, RelatedLink, Timeline, TimelineEvent } from '../types';
 import { parseDate } from './parseDate';
 
 const DEFAULT_COLOR = '#6200ea';
@@ -65,6 +65,15 @@ function buildEvent(draft: DraftEvent, timelineId: string, index: number): Timel
   };
 }
 
+/** Frontmatter `related:` — a list of `- label: url` entries; anything that is not an http(s) link is dropped. */
+function relatedLinks(value: unknown): RelatedLink[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .flatMap((item) => (item && typeof item === 'object' ? Object.entries(item as Record<string, unknown>) : []))
+    .filter((entry): entry is [string, string] => typeof entry[1] === 'string' && /^https?:\/\//.test(entry[1]))
+    .map(([label, url]) => ({ label, url }));
+}
+
 /** A frontmatter date such as `born: 1724-04-22` as text; YAML may already have turned it into a Date. */
 function frontmatterDate(value: unknown): string | undefined {
   if (value instanceof Date) return value.toISOString().slice(0, 10);
@@ -96,7 +105,7 @@ function addAges(events: TimelineEvent[], bornRaw: string, diedRaw?: string): vo
 
 /**
  * Parse one Data\*.md file:
- *   frontmatter (title / color / description / cover / category / tags / sortLast / born / died),
+ *   frontmatter (title / color / description / cover / category / tags / related / sortLast / born / died),
  *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
@@ -179,6 +188,7 @@ export function parseTimeline(source: string, id: string): Timeline {
     cover: typeof data.cover === 'string' ? resolveAsset(data.cover) : undefined,
     category: typeof data.category === 'string' ? data.category : undefined,
     tags: (Array.isArray(data.tags) ? data.tags : [data.tags]).filter((t): t is string => typeof t === 'string' && t.length > 0),
+    related: relatedLinks(data.related),
     born: born ? parseDate(born).start : undefined,
     died: died ? parseDate(died).start : undefined,
     sortLast: data.sortLast === true,

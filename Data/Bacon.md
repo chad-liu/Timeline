@@ -1,7 +1,14 @@
 ---
 title: 培根生平
 category: 思想家
-tags: [哲學]
+tags: [英國經驗論]
+related:
+  - 培根: https://chad-liu.github.io/books/html/2-2.哲學家/培根.html
+  - 培根時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/培根時間軸.html
+  - 英國經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論.html
+  - 英國經驗論時間軸: https://chad-liu.github.io/books/html/2-1.哲學思想/英國經驗論時間軸.html
+  - 理性論與經驗論: https://chad-liu.github.io/books/html/2-1.哲學思想/理性論與經驗論.html
+  - 科學革命: https://chad-liu.github.io/books/html/1-1.西方歷史/科學革命.html
 born: 1561-01-22
 died: 1626-04-09
 color: "#a61e4d"

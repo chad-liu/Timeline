@@ -1,7 +1,12 @@
 ---
 title: 孟德斯鳩生平
 category: 思想家
-tags: [哲學]
+tags: [啟蒙運動]
+related:
+  - 孟德斯鳩: https://chad-liu.github.io/books/html/2-2.哲學家/孟德斯鳩.html
+  - 孟德斯鳩時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/孟德斯鳩時間軸.html
+  - 啟蒙運動: https://chad-liu.github.io/books/html/1-1.西方歷史/啟蒙運動.html
+  - 啟蒙運動時間軸: https://chad-liu.github.io/books/html/1-1.西方歷史/啟蒙運動時間軸.html
 born: 1689-01-18
 died: 1755-02-10
 color: "#e67700"

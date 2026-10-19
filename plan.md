@@ -31,6 +31,8 @@ description: 一行說明
 cover: images/bach-cover.jpg   # Dashboard 封面（可省略：改用第一張事件圖，再沒有就留白）
 category: 音樂家           # 選填：上層類別，Dashboard 與下拉選單依此分組（省略則歸入「未分類」；分頁順序見 src/lib/timelineOrder.ts 的 CATEGORY_ORDER）
 tags: [古典時期, 浪漫時期]  # 選填：類別內的標籤，可多個；Dashboard 可依標籤篩選
+related:                  # 選填：延伸閱讀連結（只接受 http/https），顯示在時間軸標題下方，可展開
+  - 康德的純粹理性批判: https://chad-liu.github.io/books/html/2-2.哲學家/康德的純粹理性批判.html
 born: 1685-03-21          # 選填：人物的出生日，事件日期後會自動加上年齡，如「1723年（38歲）」
 died: 1750-07-28          # 選填：逝世日，之後的事件不再顯示年齡（只寫年份的事件若年齡有明確記載，可在標題後加 {age=17} 指定）
 sortLast: true            # 選填：Dashboard 上排在最後（其餘依最早日期，即出生年排序）

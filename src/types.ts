@@ -31,6 +31,11 @@ export interface Period {
   image?: string;
 }
 
+export interface RelatedLink {
+  label: string;
+  url: string;
+}
+
 export interface Timeline {
   id: string;
   title: string;
@@ -42,6 +47,8 @@ export interface Timeline {
   category?: string;
   /** Labels within the category, e.g. 浪漫時期 (frontmatter `tags:`, a list or a single string). */
   tags: string[];
+  /** Further reading elsewhere, e.g. pages in the knowledge map (frontmatter `related:`, a list of `- label: url`). */
+  related: RelatedLink[];
   /** Birth and death of the person, as decimal years (frontmatter `born:` / `died:`); only set on person timelines. */
   born?: number;
   died?: number;

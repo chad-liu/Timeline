@@ -72,6 +72,20 @@ function TimelinePage({ initialView, initialIds }: { initialView: View; initialI
           <TimelinePicker timelines={timelines} selected={selected} onChange={setSelected} />
         </div>
         {!overlay && lanes[0]?.timeline.description && <p className="description">{lanes[0].timeline.description}</p>}
+        {!overlay && lanes[0] && lanes[0].timeline.related.length > 0 && (
+          <details className="related">
+            <summary>
+              延伸閱讀 <small>{lanes[0].timeline.related.length}</small>
+            </summary>
+            <nav aria-label="延伸閱讀">
+              {lanes[0].timeline.related.map((link) => (
+                <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </details>
+        )}
         <div className="header-bottom">
           <nav className="tabs">
             {VIEWS.map((v) => (

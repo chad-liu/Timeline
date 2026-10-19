@@ -2,6 +2,8 @@
 title: 海明威生平
 category: 文學家
 tags: [美國文學]
+related:
+  - 海明威: https://chad-liu.github.io/books/html/6-2.歐美文學家/海明威.html
 born: 1899-07-21
 died: 1961-07-02
 color: "#087f5b"
