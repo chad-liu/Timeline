@@ -44,12 +44,13 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
   );
   /** Collapsed keys: a category name, or `category/tag` for a tag subgroup. */
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
-  const toggle = (key: string) => {
-    const next = new Set(collapsed);
-    if (next.has(key)) next.delete(key);
-    else next.add(key);
-    setCollapsed(next);
-  };
+  const toggle = (key: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
   const scale = useMemo(() => buildLifespanScale(people.map((p) => [p.born, p.died]), ZOOMS[zoom]), [people, zoom]);
   const ticks = lifespanTicks(scale);
 
