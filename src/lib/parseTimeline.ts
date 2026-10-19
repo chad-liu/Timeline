@@ -191,6 +191,8 @@ export function parseTimeline(source: string, id: string): Timeline {
     related: relatedLinks(data.related),
     born: born ? parseDate(born).start : undefined,
     died: died ? parseDate(died).start : undefined,
+    bornDate: born,
+    diedDate: died,
     sortLast: data.sortLast === true,
     periods,
     events,

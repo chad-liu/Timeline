@@ -4,16 +4,12 @@ import { formatYear } from '../lib/parseDate';
 import { dashboardHash, timelineHash } from '../lib/route';
 import { buildLifespanScale, lifespanTicks, BREAK_PX } from '../lib/lifespanScale';
 import { groupByTag, groupTimelines } from '../lib/timelineOrder';
+import { personName } from '../lib/peopleIndex';
 import { Logo } from './Logo';
 
 type Person = Timeline & { born: number; died: number };
 
 const ZOOMS = [2, 3, 5, 8];
-
-/** 「巴赫生平」→「巴赫」、「蘇東坡生平大事記」→「蘇東坡」 */
-function personName(t: Timeline): string {
-  return t.title.replace(/(生平|大事記).*$/, '') || t.title;
-}
 
 function lifeLabel(p: Person): string {
   const age = Math.floor(p.died - p.born + 1e-9);

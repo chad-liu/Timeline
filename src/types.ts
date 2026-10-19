@@ -52,6 +52,9 @@ export interface Timeline {
   /** Birth and death of the person, as decimal years (frontmatter `born:` / `died:`); only set on person timelines. */
   born?: number;
   died?: number;
+  /** The same dates as written in the frontmatter, e.g. `1724-04-22` or `-469`. */
+  bornDate?: string;
+  diedDate?: string;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
   periods: Period[];

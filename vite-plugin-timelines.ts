@@ -3,10 +3,13 @@ import path from 'node:path';
 import type { Plugin } from 'vite';
 import { ASSET_PREFIX, parseTimeline } from './src/lib/parseTimeline';
 import { compareTimelines } from './src/lib/timelineOrder';
+import { buildPeopleIndex } from './src/lib/peopleIndex';
 import type { Timeline } from './src/types';
 
 const VIRTUAL_ID = 'virtual:timelines';
 const RESOLVED_ID = '\0' + VIRTUAL_ID;
+/** Public index of the people timelines, for other sites to link to (see buildPeopleIndex). */
+const PEOPLE_FILE = 'people.json';
 const MIME: Record<string, string> = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
@@ -47,9 +50,11 @@ function listAssets(dataDir: string): string[] {
 
 /**
  * Exposes Data\*.md as `virtual:timelines` (parsed at build time),
- * serves/emits Data\ images under `data/`, and reloads the page when Data\ changes in dev.
+ * serves/emits Data\ images under `data/` plus `people.json`, and reloads the page when Data\ changes in dev.
+ * `siteUrl` is the published address, used for the absolute links in `people.json`.
  */
-export function timelinesPlugin(dataDir: string): Plugin {
+export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
+  const peopleJson = () => JSON.stringify(buildPeopleIndex(loadTimelines(dataDir), siteUrl), null, 2);
   return {
     name: 'timelines',
 
@@ -76,6 +81,11 @@ export function timelinesPlugin(dataDir: string): Plugin {
 
       server.middlewares.use((req, res, next) => {
         const url = decodeURIComponent((req.url ?? '').split('?')[0]);
+        if (url === '/' + PEOPLE_FILE) {
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(peopleJson());
+          return;
+        }
         if (!url.startsWith('/' + ASSET_PREFIX)) return next();
         const file = path.resolve(dataDir, url.slice(ASSET_PREFIX.length + 1));
         // Only serve files inside Data\, and never the markdown sources.
@@ -89,6 +99,7 @@ export function timelinesPlugin(dataDir: string): Plugin {
     },
 
     generateBundle() {
+      this.emitFile({ type: 'asset', fileName: PEOPLE_FILE, source: peopleJson() });
       for (const rel of listAssets(dataDir)) {
         this.emitFile({ type: 'asset', fileName: ASSET_PREFIX + rel, source: fs.readFileSync(path.join(dataDir, rel)) });
       }
