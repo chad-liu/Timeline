@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { VIEWS, dashboardHash, timelineHash } from '../lib/route';
+import { LIFESPANS_HASH, VIEWS, dashboardHash, timelineHash } from '../lib/route';
 import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -117,9 +117,14 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
           <h1>
             我的時間軸 <small>{timelines.length}</small>
           </h1>
-          <button type="button" className="btn-primary" onClick={() => setShowHelp(true)}>
-            新增時間軸 +
-          </button>
+          <div className="dash-actions">
+            <a className="btn-secondary" href={LIFESPANS_HASH}>
+              人物年表
+            </a>
+            <button type="button" className="btn-primary" onClick={() => setShowHelp(true)}>
+              新增時間軸 +
+            </button>
+          </div>
         </div>
 
         {timelines.length === 0 ? (

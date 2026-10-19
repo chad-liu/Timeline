@@ -6,14 +6,15 @@ export const VIEWS: { id: View; label: string }[] = [
   { id: 'vertical', label: '縱向' },
 ];
 
-export type Route = { page: 'dashboard'; category?: string; tag?: string } | { page: 'timeline'; view: View; ids: string[] };
+export type Route = { page: 'dashboard'; category?: string; tag?: string } | { page: 'lifespans' } | { page: 'timeline'; view: View; ids: string[] };
 
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家&tag=浪漫時期` picks its category tab and tag filter),
- * `#v=horizontal&t=Bach|Handel` shows those timelines.
+ * `#v=horizontal&t=Bach|Handel` shows those timelines, and `#p=lifespans` shows the lifespan chart.
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
   const params = new URLSearchParams(hash.replace(/^#/, ''));
+  if (params.get('p') === 'lifespans') return { page: 'lifespans' };
   const ids = (params.get('t') ?? '').split('|').filter((id) => knownIds.includes(id));
   if (ids.length === 0) return { page: 'dashboard', category: params.get('c') ?? undefined, tag: params.get('tag') ?? undefined };
   const view = VIEWS.find((v) => v.id === params.get('v'))?.id ?? 'horizontal';
@@ -31,3 +32,5 @@ export function dashboardHash(category?: string, tag?: string): string {
   const query = params.toString();
   return query ? '#' + query : '#';
 }
+
+export const LIFESPANS_HASH = '#p=lifespans';

@@ -42,6 +42,9 @@ export interface Timeline {
   category?: string;
   /** Labels within the category, e.g. 浪漫時期 (frontmatter `tags:`, a list or a single string). */
   tags: string[];
+  /** Birth and death of the person, as decimal years (frontmatter `born:` / `died:`); only set on person timelines. */
+  born?: number;
+  died?: number;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
   periods: Period[];

@@ -164,7 +164,8 @@ export function parseTimeline(source: string, id: string): Timeline {
     })
     .sort((a, b) => a.date.start - b.date.start);
   const born = frontmatterDate(data.born);
-  if (born) addAges(events, born, frontmatterDate(data.died));
+  const died = frontmatterDate(data.died);
+  if (born) addAges(events, born, died);
 
   const periods: Period[] = periodDrafts
     .map(({ period, body }) => ({ ...period, ...renderBody(body) }))
@@ -178,6 +179,8 @@ export function parseTimeline(source: string, id: string): Timeline {
     cover: typeof data.cover === 'string' ? resolveAsset(data.cover) : undefined,
     category: typeof data.category === 'string' ? data.category : undefined,
     tags: (Array.isArray(data.tags) ? data.tags : [data.tags]).filter((t): t is string => typeof t === 'string' && t.length > 0),
+    born: born ? parseDate(born).start : undefined,
+    died: died ? parseDate(died).start : undefined,
     sortLast: data.sortLast === true,
     periods,
     events,

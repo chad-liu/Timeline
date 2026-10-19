@@ -1118,3 +1118,277 @@ input {
     padding: 24px 16px 48px;
   }
 }
+
+/* Dashboard actions */
+.dash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-secondary {
+  padding: 9px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-soft);
+}
+
+/* Lifespan chart (#p=lifespans) */
+.lifespans {
+  --ls-name-w: 132px;
+  --ls-row-h: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--surface);
+}
+
+.ls-topbar {
+  flex: none;
+  gap: 20px;
+}
+
+.ls-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ls-title small {
+  margin-left: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.ls-zoom {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.ls-zoom button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ls-zoom button:disabled {
+  color: var(--line);
+  cursor: default;
+}
+
+.ls-scroll {
+  flex: 1;
+  overflow: auto;
+}
+
+.ls-inner {
+  min-width: 100%;
+}
+
+.ls-axis-row {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  height: 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.ls-corner {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  flex: none;
+  width: var(--ls-name-w);
+  padding: 7px 12px;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ls-axis {
+  position: relative;
+  flex: none;
+}
+
+.ls-tick {
+  position: absolute;
+  top: 9px;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.ls-tick.major {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ls-body {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.ls-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--ls-name-w);
+  pointer-events: none;
+}
+
+.ls-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed var(--line);
+}
+
+.ls-line.major {
+  border-left-style: solid;
+}
+
+.ls-break,
+.ls-gap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(135deg, var(--bg) 0 6px, transparent 6px 12px);
+}
+
+.ls-span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 2px dotted;
+  border-left: 2px dotted;
+  background: rgba(98, 0, 234, 0.05);
+}
+
+.ls-group-row {
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.ls-group:first-child .ls-group-row {
+  border-top: 0;
+}
+
+.ls-group-name {
+  position: sticky;
+  left: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 10px 12px 4px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ls-group-name small {
+  margin-left: 4px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.ls-row {
+  position: relative;
+  display: flex;
+  height: var(--ls-row-h);
+}
+
+.ls-row.hovered {
+  background: rgba(98, 0, 234, 0.04);
+}
+
+.ls-name {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  flex: none;
+  overflow: hidden;
+  width: var(--ls-name-w);
+  padding: 0 12px;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  line-height: var(--ls-row-h);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ls-row.hovered .ls-name {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ls-track {
+  position: relative;
+  flex: none;
+}
+
+.ls-bar {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.ls-bar span {
+  padding: 0 6px;
+}
+
+.ls-outside {
+  position: absolute;
+  top: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: var(--ls-row-h);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ls-row.hovered .ls-bar {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+}
+
+@media (max-width: 600px) {
+  .lifespans {
+    --ls-name-w: 92px;
+  }
+
+  .ls-topbar {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .ls-topbar .brand {
+    font-size: 0;
+  }
+}

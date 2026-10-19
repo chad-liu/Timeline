@@ -4,6 +4,7 @@ import type { Lane, Period, Timeline, TimelineEvent } from './types';
 import { VIEWS, dashboardHash, parseHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
+import { Lifespans } from './components/Lifespans';
 import { Logo } from './components/Logo';
 import { TimelinePicker } from './components/TimelinePicker';
 import { HorizontalView } from './components/HorizontalView';
@@ -24,6 +25,7 @@ export function App() {
   }, []);
 
   if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} tag={route.tag} />;
+  if (route.page === 'lifespans') return <Lifespans timelines={timelines} />;
   return <TimelinePage key={timelineHash(route.ids, route.view)} initialView={route.view} initialIds={route.ids} />;
 }
 
