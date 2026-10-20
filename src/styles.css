@@ -1177,14 +1177,51 @@ input {
   min-width: 100%;
 }
 
-.ls-axis-row {
+/* Year axis and the Chinese rulers row stay together at the top while scrolling. */
+.ls-head {
   position: sticky;
   top: 0;
   z-index: 3;
-  display: flex;
-  height: 32px;
-  border-bottom: 1px solid var(--line);
   background: var(--surface);
+}
+
+.ls-axis-row,
+.ls-ruler-row {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+}
+
+.ls-axis-row {
+  height: 32px;
+}
+
+.ls-ruler-row {
+  height: 24px;
+}
+
+.ls-ruler-row .ls-corner {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+
+.ls-ruler {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-right: 1px solid var(--surface);
+  background: #fff4e6;
+  color: #7a4100;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ls-ruler.alt {
+  background: #ffe8cc;
 }
 
 .ls-corner {

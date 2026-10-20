@@ -5,6 +5,7 @@ import { dashboardHash, timelineHash } from '../lib/route';
 import { buildLifespanScale, lifespanTicks, BREAK_PX } from '../lib/lifespanScale';
 import { groupByTag, groupTimelines } from '../lib/timelineOrder';
 import { personName } from '../lib/peopleIndex';
+import { rulerBars } from '../lib/chineseRulers';
 import { Logo } from './Logo';
 
 type Person = Timeline & { born: number; died: number };
@@ -19,6 +20,12 @@ function lifeLabel(p: Person): string {
 /** Rough rendered width of a bar label at 11px: CJK characters are about twice as wide as digits. */
 function labelWidth(label: string): number {
   return [...label].reduce((w, ch) => w + (/[　-鿿＀-￯]/.test(ch) ? 11 : 6.2), 12);
+}
+
+/** 「康熙（1661–1722）」 when it fits the reign's width, else just 「康熙」, else nothing (the hover title still has it). */
+function rulerText(label: string, name: string, width: number): string {
+  if (labelWidth(label) <= width) return label;
+  return labelWidth(name) <= width ? name : '';
 }
 
 /** Lifespan chart: every person timeline as a bar from birth to death, grouped by category and then by tag; both levels collapse. */
@@ -49,6 +56,7 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
     });
   const scale = useMemo(() => buildLifespanScale(people.map((p) => [p.born, p.died]), ZOOMS[zoom]), [people, zoom]);
   const ticks = lifespanTicks(scale);
+  const rulers = useMemo(() => rulerBars(scale), [scale]);
 
   useLayoutEffect(() => {
     const el = scrollRef.current;
@@ -119,17 +127,32 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
 
       <div className="ls-scroll" ref={scrollRef}>
         <div className="ls-inner" style={{ width: `calc(var(--ls-name-w) + ${scale.width}px)` }}>
-          <div className="ls-axis-row">
-            <div className="ls-corner">人物</div>
-            <div className="ls-axis" style={{ width: scale.width }}>
-              {ticks.map((y) => (
-                <span key={y} className={y % 100 === 0 ? 'ls-tick major' : 'ls-tick'} style={{ left: scale.xOf(y) }}>
-                  {formatYear(y)}
-                </span>
-              ))}
-              {scale.segments.slice(1).map((s) => (
-                <span key={s.start} className="ls-break" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} title="中間略去沒有人物的年代" />
-              ))}
+          <div className="ls-head">
+            <div className="ls-axis-row">
+              <div className="ls-corner">人物</div>
+              <div className="ls-axis" style={{ width: scale.width }}>
+                {ticks.map((y) => (
+                  <span key={y} className={y % 100 === 0 ? 'ls-tick major' : 'ls-tick'} style={{ left: scale.xOf(y) }}>
+                    {formatYear(y)}
+                  </span>
+                ))}
+                {scale.segments.slice(1).map((s) => (
+                  <span key={s.start} className="ls-break" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} title="中間略去沒有人物的年代" />
+                ))}
+              </div>
+            </div>
+            <div className="ls-ruler-row">
+              <div className="ls-corner">中國帝王</div>
+              <div className="ls-axis" style={{ width: scale.width }}>
+                {rulers.map((b, i) => (
+                  <span key={`${b.ruler.dynasty}/${b.ruler.name}/${b.left}`} className={i % 2 ? 'ls-ruler alt' : 'ls-ruler'} style={{ left: b.left, width: b.width }} title={b.title}>
+                    {b.label && rulerText(b.label, b.ruler.name, b.width)}
+                  </span>
+                ))}
+                {scale.segments.slice(1).map((s) => (
+                  <span key={s.start} className="ls-break" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} />
+                ))}
+              </div>
             </div>
           </div>
 
