@@ -17,10 +17,13 @@ export interface Warp {
   gaps: Gap[];
 }
 
-/** Gaps longer than this many years between consecutive dates are squeezed (e.g. 舊石器 → 繩文 → 彌生 in Japan). */
-export const MIN_GAP = 2000;
+/**
+ * Gaps longer than this many years between consecutive dates are squeezed: 舊石器 → 繩文 → 彌生 in Japan, and in Taiwan
+ * also the 1300 years from 金屬器 to the first written records. Japan's 717 years after the 神武 legend stay to scale.
+ */
+export const MIN_GAP = 1000;
 /** Warped length of a squeezed gap, in years-equivalent. */
-export const GAP_SPAN = 300;
+export const GAP_SPAN = 100;
 
 /** Build the warp from every date that must keep its spacing (event and period starts and ends). */
 export function buildWarp(dates: number[]): Warp {
