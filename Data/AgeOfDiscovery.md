@@ -1,6 +1,6 @@
 ---
 title: 大航海時代
-category: 西方歷史
+category: 世界史
 tags: [時代史]
 related:
   - 大航海時代歷史因果分析: https://chad-liu.github.io/books/html/1-6-1.大航海時代/歷史因果分析.html

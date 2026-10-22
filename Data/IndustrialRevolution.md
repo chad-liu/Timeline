@@ -1,6 +1,6 @@
 ---
 title: 工業革命史
-category: 西方歷史
+category: 世界史
 tags: [科技史, 經濟史]
 related:
   - 工業革命史歷史因果分析: https://chad-liu.github.io/books/html/8-6.工業革命史/歷史因果分析.html
