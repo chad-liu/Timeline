@@ -2,6 +2,9 @@ import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, use
 import type { PointerEvent as ReactPointerEvent } from 'react';
 import type { Lane, Period, Timeline, TimelineEvent } from '../types';
 import { makeTicks } from '../lib/scale';
+import type { Tick } from '../lib/scale';
+import { buildWarp, visibleStretches } from '../lib/warp';
+import type { Warp } from '../lib/warp';
 import { stackRows } from '../lib/layout';
 import { PALETTE, readableText } from '../lib/color';
 import { EventCard } from './EventCard';
@@ -18,7 +21,11 @@ const LANE_GAP = 20;
 const MAX_PPY = 4000;
 const DRAG_THRESHOLD = 4;
 
-/** Visible window: decimal year at the left edge and zoom in pixels per year. */
+/**
+ * Visible window: warped position at the left edge and zoom in pixels per year.
+ * Positions are on the warp axis (see lib/warp), where long empty stretches such as 舊石器 → 繩文 are squeezed;
+ * elsewhere one unit is one year.
+ */
 interface Viewport {
   start: number;
   ppy: number;
@@ -47,6 +54,11 @@ interface Props {
   overlay: boolean;
   onSelect: (event: TimelineEvent) => void;
   onSelectPeriod: (period: Period, timeline: Timeline) => void;
+}
+
+/** 「2.2萬年」 or 「5000年」, for the label of a squeezed gap. */
+function gapYears(years: number): string {
+  return years >= 10000 ? `${Math.round(years / 1000) / 10}萬年` : `${Math.round(years)}年`;
 }
 
 function domainOf(timelines: Timeline[]): { min: number; max: number } {
@@ -81,8 +93,8 @@ function fitViewport(b: Bounds): Viewport {
   return { start: b.min - 30 / ppy, ppy };
 }
 
-function layoutLanes(lanes: Lane[], overlay: boolean, ppy: number, min: number): { layouts: LaneLayout[]; height: number } {
-  const wx = (year: number) => (year - min) * ppy;
+function layoutLanes(lanes: Lane[], overlay: boolean, ppy: number, min: number, warp: Warp): { layouts: LaneLayout[]; height: number } {
+  const wx = (year: number) => (warp.toU(year) - min) * ppy;
   let top = 12;
 
   const layouts = lanes.map((lane): LaneLayout => {
@@ -132,7 +144,11 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
 
   const timelineKey = lanes.map((l) => l.timeline.id).join('|');
   // Domain depends on the full timelines, not the search-filtered events, so typing doesn't re-zoom.
-  const domain = useMemo(() => domainOf(lanes.map((l) => l.timeline)), [timelineKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  const warp = useMemo(() => buildWarp(lanes.flatMap((l) => [...l.timeline.events, ...l.timeline.periods].flatMap((x) => [x.date.start, x.date.end ?? x.date.start]))), [timelineKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  const domain = useMemo(() => {
+    const years = domainOf(lanes.map((l) => l.timeline));
+    return { min: warp.toU(years.min), max: warp.toU(years.max) };
+  }, [timelineKey, warp]); // eslint-disable-line react-hooks/exhaustive-deps
   const boundsRef = useRef<Bounds>({ ...domain, width });
   boundsRef.current = { ...domain, width };
 
@@ -220,7 +236,7 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
   };
 
   const ppy = vp?.ppy ?? 1;
-  const { layouts, height } = useMemo(() => layoutLanes(lanes, overlay, ppy, domain.min), [lanes, overlay, ppy, domain.min]);
+  const { layouts, height } = useMemo(() => layoutLanes(lanes, overlay, ppy, domain.min, warp), [lanes, overlay, ppy, domain.min, warp]);
 
   // Overview bar spans the whole domain plus a margin.
   const pad = (domain.max - domain.min) * 0.05;
@@ -238,9 +254,13 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
 
   const offset = (vp.start - domain.min) * vp.ppy;
   const sx = (worldX: number) => worldX - offset;
-  const tickX = (year: number) => (year - vp.start) * vp.ppy;
+  const tickX = (year: number) => (warp.toU(year) - vp.start) * vp.ppy;
   const isVisible = (x0: number, x1: number) => x1 >= -50 && x0 <= width + 50;
-  const ticks = makeTicks(vp.start, vp.start + width / vp.ppy, vp.ppy);
+  // Ticks are laid out in real years within each unsqueezed stretch; squeezed gaps get a striped band instead.
+  const ticks: Tick[] = visibleStretches(warp, vp.start, vp.start + width / vp.ppy).flatMap(([from, to]) => makeTicks(from, to, vp.ppy));
+  const gaps = warp.gaps
+    .map((g) => ({ ...g, left: (g.uStart - vp.start) * vp.ppy, width: (g.uEnd - g.uStart) * vp.ppy }))
+    .filter((g) => isVisible(g.left, g.left + g.width));
   const windowLeft = ((vp.start - fullMin) / fullSpan) * 100;
   const windowWidth = (width / vp.ppy / fullSpan) * 100;
 
@@ -250,6 +270,9 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
         <div className="hview-content" style={{ height }}>
           {ticks.map((t) => (
             <div key={t.value} className={t.major ? 'hview-grid major' : 'hview-grid'} style={{ left: tickX(t.value) }} />
+          ))}
+          {gaps.map((g) => (
+            <div key={g.start} className="hview-gap" style={{ left: g.left, width: g.width }} title={`中間略去${gapYears(g.end - g.start)}`} />
           ))}
           {layouts.map((L) => (
             <Fragment key={L.lane.timeline.id}>
@@ -297,7 +320,7 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
                       {end !== undefined && (
                         <div
                           className="hview-range"
-                          style={{ left, top: L.baseY - 3, width: Math.max(2, (end - c.event.date.start) * vp.ppy), background: c.color }}
+                          style={{ left, top: L.baseY - 3, width: Math.max(2, (warp.toU(end) - warp.toU(c.event.date.start)) * vp.ppy), background: c.color }}
                         />
                       )}
                       <div className="hview-dot" style={{ left, top: L.baseY, background: c.color }} />
@@ -321,6 +344,11 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
             {t.label}
           </span>
         ))}
+        {gaps.map((g) => (
+          <span key={g.start} className="hview-gap-label" style={{ left: g.left + g.width / 2 }} title={`中間略去${gapYears(g.end - g.start)}`}>
+            {g.width >= 90 ? `略去${gapYears(g.end - g.start)}` : '⋯'}
+          </span>
+        ))}
       </div>
 
       <div className="hview-footer">
@@ -332,7 +360,7 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
         >
           {lanes.flatMap((l) =>
             l.events.map((e) => (
-              <span key={e.id} className="hview-overview-mark" style={{ left: `${((e.date.start - fullMin) / fullSpan) * 100}%` }} />
+              <span key={e.id} className="hview-overview-mark" style={{ left: `${((warp.toU(e.date.start) - fullMin) / fullSpan) * 100}%` }} />
             )),
           )}
           <div className="hview-window" style={{ left: `${windowLeft}%`, width: `${windowWidth}%` }} />
