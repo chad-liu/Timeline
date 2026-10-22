@@ -20,6 +20,8 @@ const LANE_HEAD = 36;
 const LANE_GAP = 20;
 const MAX_PPY = 4000;
 const DRAG_THRESHOLD = 4;
+/** Width of the striped break drawn in the middle of a squeezed gap. */
+const GAP_BREAK_PX = 14;
 
 /**
  * Visible window: warped position at the left edge and zoom in pixels per year.
@@ -256,11 +258,17 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
   const sx = (worldX: number) => worldX - offset;
   const tickX = (year: number) => (warp.toU(year) - vp.start) * vp.ppy;
   const isVisible = (x0: number, x1: number) => x1 >= -50 && x0 <= width + 50;
-  // Ticks are laid out in real years within each unsqueezed stretch; squeezed gaps get a striped band instead.
+  // Ticks are laid out in real years within each unsqueezed stretch; a squeezed gap keeps its plain background
+  // (prehistoric bands and events there stay readable) and gets a narrow striped break at its centre.
   const ticks: Tick[] = visibleStretches(warp, vp.start, vp.start + width / vp.ppy).flatMap(([from, to]) => makeTicks(from, to, vp.ppy));
   const gaps = warp.gaps
-    .map((g) => ({ ...g, left: (g.uStart - vp.start) * vp.ppy, width: (g.uEnd - g.uStart) * vp.ppy }))
-    .filter((g) => isVisible(g.left, g.left + g.width));
+    .map((g) => {
+      const left = (g.uStart - vp.start) * vp.ppy;
+      const w = (g.uEnd - g.uStart) * vp.ppy;
+      const breakW = Math.min(GAP_BREAK_PX, w);
+      return { ...g, center: left + w / 2, breakLeft: left + w / 2 - breakW / 2, breakW, wide: w >= 90 };
+    })
+    .filter((g) => isVisible(g.breakLeft, g.breakLeft + g.breakW));
   const windowLeft = ((vp.start - fullMin) / fullSpan) * 100;
   const windowWidth = (width / vp.ppy / fullSpan) * 100;
 
@@ -270,9 +278,6 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
         <div className="hview-content" style={{ height }}>
           {ticks.map((t) => (
             <div key={t.value} className={t.major ? 'hview-grid major' : 'hview-grid'} style={{ left: tickX(t.value) }} />
-          ))}
-          {gaps.map((g) => (
-            <div key={g.start} className="hview-gap" style={{ left: g.left, width: g.width }} title={`中間略去${gapYears(g.end - g.start)}`} />
           ))}
           {layouts.map((L) => (
             <Fragment key={L.lane.timeline.id}>
@@ -335,6 +340,9 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
                 })}
             </Fragment>
           ))}
+          {gaps.map((g) => (
+            <div key={g.start} className="hview-gap" style={{ left: g.breakLeft, width: g.breakW }} />
+          ))}
         </div>
       </div>
 
@@ -345,8 +353,8 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
           </span>
         ))}
         {gaps.map((g) => (
-          <span key={g.start} className="hview-gap-label" style={{ left: g.left + g.width / 2 }} title={`中間略去${gapYears(g.end - g.start)}`}>
-            {g.width >= 90 ? `略去${gapYears(g.end - g.start)}` : '⋯'}
+          <span key={g.start} className="hview-gap-label" style={{ left: g.center }} title={`中間略去${gapYears(g.end - g.start)}`}>
+            {g.wide ? `略去${gapYears(g.end - g.start)}` : '⋯'}
           </span>
         ))}
       </div>
