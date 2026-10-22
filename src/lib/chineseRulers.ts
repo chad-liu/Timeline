@@ -7,6 +7,8 @@ export interface Ruler {
   dynasty: string;
   start: number;
   end: number;
+  /** Own background colour (Japanese eras keep their timeline colours); Chinese reigns alternate two shades instead. */
+  color?: string;
 }
 
 type Reign = [name: string, start: number, end: number];
@@ -46,13 +48,13 @@ export interface RulerBar {
  * Lay the reigns out on the lifespan axis. Each reign is cut to the visible segments, and a reign that
  * overlaps the previous one (元世祖 began in 1260, before the Southern Song fell in 1279) starts where the previous one ends.
  */
-export function rulerBars(scale: LifespanScale, rulers: Ruler[] = CHINESE_RULERS): RulerBar[] {
+export function rulerBars(scale: LifespanScale, rulers: Ruler[] = CHINESE_RULERS, verb = '在位'): RulerBar[] {
   const bars: RulerBar[] = [];
   let prevEnd = -Infinity;
   for (const ruler of rulers) {
     const start = Math.max(ruler.start, prevEnd);
     prevEnd = Math.max(prevEnd, ruler.end);
-    const title = `${ruler.dynasty} ${ruler.name}（${formatYear(ruler.start)}–${formatYear(ruler.end)} 在位）`;
+    const title = `${ruler.dynasty} ${ruler.name}（${formatYear(ruler.start)}–${formatYear(ruler.end)}${verb && ` ${verb}`}）`;
     const pieces = scale.segments
       .map((s) => [Math.max(start, s.start), Math.min(ruler.end, s.end)])
       .filter(([a, b]) => a < b)

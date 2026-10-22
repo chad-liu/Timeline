@@ -6,6 +6,9 @@ import { buildLifespanScale, lifespanTicks, BREAK_PX } from '../lib/lifespanScal
 import { groupByTag, groupTimelines } from '../lib/timelineOrder';
 import { personName } from '../lib/peopleIndex';
 import { rulerBars } from '../lib/chineseRulers';
+import type { RulerBar } from '../lib/chineseRulers';
+import { eraChain, JAPAN_TIMELINE_ID } from '../lib/japanEras';
+import { readableText } from '../lib/color';
 import { Logo } from './Logo';
 
 type Person = Timeline & { born: number; died: number };
@@ -57,6 +60,7 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
   const scale = useMemo(() => buildLifespanScale(people.map((p) => [p.born, p.died]), ZOOMS[zoom]), [people, zoom]);
   const ticks = lifespanTicks(scale);
   const rulers = useMemo(() => rulerBars(scale), [scale]);
+  const japanEras = useMemo(() => rulerBars(scale, eraChain(timelines.find((t) => t.id === JAPAN_TIMELINE_ID)), ''), [scale, timelines]);
 
   useLayoutEffect(() => {
     const el = scrollRef.current;
@@ -70,6 +74,28 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
     if (el) leftYear.current = scale.yearAt(el.scrollLeft);
     setZoom(next);
   };
+
+  /** A row of reigns or eras under the year axis; bars with their own colour use it, the rest alternate two shades. */
+  const renderRulerRow = (label: string, bars: RulerBar[]) => (
+    <div className="ls-ruler-row">
+      <div className="ls-corner">{label}</div>
+      <div className="ls-axis" style={{ width: scale.width }}>
+        {bars.map((b, i) => (
+          <span
+            key={`${b.ruler.dynasty}/${b.ruler.name}/${b.left}`}
+            className={i % 2 ? 'ls-ruler alt' : 'ls-ruler'}
+            style={{ left: b.left, width: b.width, ...(b.ruler.color && { background: b.ruler.color, color: readableText(b.ruler.color) }) }}
+            title={b.title}
+          >
+            {b.label && rulerText(b.label, b.ruler.name, b.width)}
+          </span>
+        ))}
+        {scale.segments.slice(1).map((s) => (
+          <span key={s.start} className="ls-break" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} />
+        ))}
+      </div>
+    </div>
+  );
 
   /** One person row; a person with two tags (e.g. 貝多芬) appears under both, so the key includes the subgroup. */
   const renderRow = (p: Person, groupKey: string) => {
@@ -141,19 +167,8 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
                 ))}
               </div>
             </div>
-            <div className="ls-ruler-row">
-              <div className="ls-corner">中國帝王</div>
-              <div className="ls-axis" style={{ width: scale.width }}>
-                {rulers.map((b, i) => (
-                  <span key={`${b.ruler.dynasty}/${b.ruler.name}/${b.left}`} className={i % 2 ? 'ls-ruler alt' : 'ls-ruler'} style={{ left: b.left, width: b.width }} title={b.title}>
-                    {b.label && rulerText(b.label, b.ruler.name, b.width)}
-                  </span>
-                ))}
-                {scale.segments.slice(1).map((s) => (
-                  <span key={s.start} className="ls-break" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} />
-                ))}
-              </div>
-            </div>
+            {renderRulerRow('中國帝王', rulers)}
+            {japanEras.length > 0 && renderRulerRow('日本時代', japanEras)}
           </div>
 
           <div className="ls-body">
