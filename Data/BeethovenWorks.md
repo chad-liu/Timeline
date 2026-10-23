@@ -2,6 +2,7 @@
 title: 貝多芬主要曲目
 category: 音樂家
 tags: [古典時期, 浪漫時期]
+follows: Beethoven
 related:
   - 貝多芬主要曲目（知識圖譜）: https://chad-liu.github.io/books/html/9-2.曲目/貝多芬主要曲目.html
 color: "#e8590c"

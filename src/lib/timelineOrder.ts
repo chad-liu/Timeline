@@ -10,6 +10,32 @@ export function compareTimelines(a: Timeline, b: Timeline): number {
   return Number(a.sortLast) - Number(b.sortLast) || startOf(a) - startOf(b);
 }
 
+/**
+ * Sort with compareTimelines, then move each timeline with `follows: <id>` right after that timeline,
+ * so a works list (貝多芬主要曲目, which starts with his first work) stays next to the biography it belongs to.
+ * A `follows` naming a missing timeline is ignored.
+ */
+export function orderTimelines(timelines: Timeline[]): Timeline[] {
+  const ids = new Set(timelines.map((t) => t.id));
+  const isFollower = (t: Timeline) => t.follows !== undefined && t.follows !== t.id && ids.has(t.follows);
+  const ordered = timelines.filter((t) => !isFollower(t)).sort(compareTimelines);
+  const followers = timelines.filter(isFollower).sort(compareTimelines);
+  // Keep placing followers whose target is already in the list (a follower may itself be followed).
+  while (followers.length > 0) {
+    const i = followers.findIndex((f) => ordered.some((t) => t.id === f.follows));
+    if (i === -1) {
+      ordered.push(...followers);
+      break;
+    }
+    const [f] = followers.splice(i, 1);
+    const at = ordered.findIndex((t) => t.id === f.follows);
+    let end = at + 1;
+    while (end < ordered.length && ordered[end].follows === f.follows) end++;
+    ordered.splice(end, 0, f);
+  }
+  return ordered;
+}
+
 export const UNCATEGORIZED = '未分類';
 
 export interface TimelineGroup {
