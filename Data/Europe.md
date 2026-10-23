@@ -1,6 +1,6 @@
 ---
 title: 歐洲史
-category: 歐洲歷史
+category: 西方歷史
 tags: [通史]
 related:
   - 歐洲史歷史因果分析: https://chad-liu.github.io/books/html/1-6-5.歐洲史/歷史因果分析.html
