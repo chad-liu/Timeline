@@ -5,6 +5,7 @@ tags: [古典時期, 浪漫時期]
 related:
   - 貝多芬主要曲目（知識圖譜）: https://chad-liu.github.io/books/html/9-2.曲目/貝多芬主要曲目.html
 color: "#e8590c"
+cover: images/bw-moonlight.jpg
 description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首交響曲、鋼琴奏鳴曲、協奏曲、弦樂四重奏、歌劇與宗教音樂
 ---
 
@@ -16,6 +17,19 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 - 第九號交響曲 Op. 125 在交響曲與宗教音樂兩表都有，只收一次；筆記「推薦的入門聆聽順序」中的五首作品另註明順序。
 - 時期依筆記的早期（約1792–1802）、中期（約1803–1814）、晚期（約1815–1827）三期；1792年以前的少年作品另加「波昂時期」。
 - 生平事件見「貝多芬生平」時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域作品，多為手稿、初版樂譜與首演海報；封面為《月光》奏鳴曲初版書名頁；註明「共用」者沿用貝多芬生平時間軸的圖片）：
+- bw-pathetique.jpg：Beethoven - Sonata Pathetique.jpg（《悲愴》奏鳴曲初版書名頁，1799）
+- bw-moonlight.jpg：Beethoven Piano Sonata 14 - title page 1802.jpg（《月光》奏鳴曲初版書名頁，1802，題獻給茱麗葉塔·圭恰迪）
+- bw-kreutzer.jpg：Beethoven Opus 47 Kreutzer frontispiece.jpg（《克羅采》奏鳴曲初版書名頁，1805）
+- beethoven-1804-eroica.jpg（《英雄》交響曲手稿書名頁（與貝多芬生平共用））
+- bw-fifth.jpg：BeethovenSinfonia5autografo.jpg（第五號交響曲手稿）
+- bw-pastoral.jpg：Beethoven Symphony No 6, fourth movement, bars 3-8.png（第六號交響曲《田園》第四樂章〈暴風雨〉的樂譜片段）
+- bw-fidelio.jpg：Fidelio18140523.jpg（1814年5月23日《費德里奧》修訂版首演的海報）
+- bw-wellington.jpg：Beethoven Akademie 2 Jan 1814 Plakat.jpg（1814年1月2日貝多芬音樂會海報，曲目包括《威靈頓的勝利》）
+- bw-archduke.jpg：Sketches for the third and fourth movements of Piano Trio, op. 97, ('Archduke'), Beethoven, 1810-1811, musical autograph - Morgan Library & Museum - New York City - DSC06706 (cropped).jpg（《大公》三重奏第三、四樂章草稿，1810–1811（摩根圖書館藏））
+- bw-missa.jpg：Beethoven, Missa solemnis, Kyrie.jpg（《莊嚴彌撒》〈垂憐經〉手稿）
+- beethoven-1824-ninth.jpg（第九號交響曲（與貝多芬生平共用））
+- bw-grossefuge.jpg：Grosse Fuge Artaria title page.jpg（《大賦格》1827年阿塔利亞版書名頁）
 -->
 
 # Periods
@@ -37,15 +51,18 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：交響曲（交響曲）。
 
 ## 1803 ~ 1804 | Op. 55 第三號交響曲《英雄》，降 E 大調 {color=#c92a2a}
+![](images/beethoven-1804-eroica.jpg)
 類別：交響曲（交響曲）。
 
 ## 1806 | Op. 60 第四號交響曲，降 B 大調 {color=#c92a2a}
 類別：交響曲（交響曲）。
 
 ## 1804 ~ 1808 | Op. 67 第五號交響曲《命運》，C 小調 {color=#c92a2a}
+![](images/bw-fifth.jpg)
 類別：交響曲（交響曲）。入門推薦聆聽第 1 首。
 
 ## 1807 ~ 1808 | Op. 68 第六號交響曲《田園》，F 大調 {color=#c92a2a}
+![](images/bw-pastoral.jpg)
 類別：交響曲（交響曲）。入門推薦聆聽第 3 首。
 
 ## 1811 ~ 1812 | Op. 92 第七號交響曲，A 大調 {color=#c92a2a}
@@ -55,6 +72,7 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：交響曲（交響曲）。
 
 ## 1822 ~ 1824 | Op. 125 第九號交響曲《合唱》，D 小調 {color=#c92a2a}
+![](images/beethoven-1824-ninth.jpg)
 類別：交響曲、合唱（交響曲）。入門推薦聆聽第 5 首。
 
 ## 1793 ~ 1795 | Op. 2 No. 1–3 第一至第三號鋼琴奏鳴曲 {color=#1971c2}
@@ -70,6 +88,7 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：鋼琴奏鳴曲（鋼琴奏鳴曲）。
 
 ## 1798 ~ 1799 | Op. 13 第八號《悲愴》奏鳴曲，C 小調 {color=#1971c2}
+![](images/bw-pathetique.jpg)
 類別：鋼琴奏鳴曲（鋼琴奏鳴曲）。
 
 ## 1798 ~ 1799 | Op. 14 No. 1–2 第九、十號鋼琴奏鳴曲 {color=#1971c2}
@@ -85,6 +104,7 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：鋼琴奏鳴曲（鋼琴奏鳴曲）。
 
 ## 1801 | Op. 27 No. 2 第十四號《月光》奏鳴曲，升 C 小調 {color=#1971c2}
+![](images/bw-moonlight.jpg)
 類別：鋼琴奏鳴曲（鋼琴奏鳴曲）。入門推薦聆聽第 2 首。
 
 ## 1801 | Op. 28 第十五號《田園》奏鳴曲，D 大調 {color=#1971c2}
@@ -187,6 +207,7 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：弦樂四重奏（室內樂）。
 
 ## 1825 ~ 1826 | Op. 133 《大賦格》，降 B 大調 {color=#2f9e44}
+![](images/bw-grossefuge.jpg)
 類別：弦樂四重奏、賦格（室內樂）。
 
 ## 1826 | Op. 135 第十六號弦樂四重奏，F 大調 {color=#2f9e44}
@@ -199,12 +220,14 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：大提琴奏鳴曲（室內樂）。
 
 ## 1802 ~ 1803 | Op. 47 《克羅采》奏鳴曲，A 大調 {color=#2f9e44}
+![](images/bw-kreutzer.jpg)
 類別：小提琴奏鳴曲（室內樂）。
 
 ## 1807 ~ 1808 | Op. 69 大提琴奏鳴曲第三號，A 大調 {color=#2f9e44}
 類別：大提琴奏鳴曲（室內樂）。
 
 ## 1810 ~ 1811 | Op. 97 《大公》鋼琴三重奏，降 B 大調 {color=#2f9e44}
+![](images/bw-archduke.jpg)
 類別：鋼琴三重奏（室內樂）。
 
 ## 1815 | Op. 102 No. 1–2 大提琴奏鳴曲第四、五號 {color=#2f9e44}
@@ -217,12 +240,14 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：音樂會序曲（序曲與舞台音樂）。
 
 ## 1804 ~ 1814 | Op. 72 《費德里奧》歌劇 {color=#862e9c label="1804–1805（修訂至1814）"}
+![](images/bw-fidelio.jpg)
 類別：歌劇（序曲與舞台音樂）。
 
 ## 1809 ~ 1810 | Op. 84 《艾格蒙》戲劇配樂 {color=#862e9c}
 類別：戲劇配樂（序曲與舞台音樂）。
 
 ## 1813 | Op. 91 《威靈頓的勝利》 {color=#862e9c}
+![](images/bw-wellington.jpg)
 類別：管弦樂、戰爭音樂（序曲與舞台音樂）。
 
 ## 1811 | Op. 115 《雅典的廢墟》序曲及配樂 {color=#862e9c}
@@ -253,6 +278,7 @@ description: 貝多芬代表作的 Op. 編號、創作年代與類別：九首�
 類別：合唱與管弦樂（宗教音樂與聲樂）。
 
 ## 1819 ~ 1823 | Op. 123 《莊嚴彌撒》 {color=#0c8599}
+![](images/bw-missa.jpg)
 類別：大型宗教合唱作品（宗教音樂與聲樂）。
 
 ## 1810 | WoO 59 《給愛麗絲》 {color=#868e96 label="約1810"}
