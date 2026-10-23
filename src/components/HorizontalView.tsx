@@ -3,7 +3,7 @@ import type { PointerEvent as ReactPointerEvent } from 'react';
 import type { Lane, Period, Timeline, TimelineEvent } from '../types';
 import { makeTicks } from '../lib/scale';
 import type { Tick } from '../lib/scale';
-import { buildWarp, visibleStretches } from '../lib/warp';
+import { buildWarp, MIN_GAP, visibleStretches } from '../lib/warp';
 import type { Warp } from '../lib/warp';
 import { stackRows } from '../lib/layout';
 import { PALETTE, readableText } from '../lib/color';
@@ -146,7 +146,15 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
 
   const timelineKey = lanes.map((l) => l.timeline.id).join('|');
   // Domain depends on the full timelines, not the search-filtered events, so typing doesn't re-zoom.
-  const warp = useMemo(() => buildWarp(lanes.flatMap((l) => [...l.timeline.events, ...l.timeline.periods].flatMap((x) => [x.date.start, x.date.end ?? x.date.start]))), [timelineKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  // When several timelines are overlaid, the smallest `squeeze` among them applies.
+  const warp = useMemo(
+    () =>
+      buildWarp(
+        lanes.flatMap((l) => [...l.timeline.events, ...l.timeline.periods].flatMap((x) => [x.date.start, x.date.end ?? x.date.start])),
+        Math.min(MIN_GAP, ...lanes.map((l) => l.timeline.squeeze ?? MIN_GAP)),
+      ),
+    [timelineKey], // eslint-disable-line react-hooks/exhaustive-deps
+  );
   const domain = useMemo(() => {
     const years = domainOf(lanes.map((l) => l.timeline));
     return { min: warp.toU(years.min), max: warp.toU(years.max) };

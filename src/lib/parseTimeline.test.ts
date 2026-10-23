@@ -65,3 +65,17 @@ related:
     expect(parseTimeline(source, 'test').related).toEqual([]);
   });
 });
+
+describe('parseTimeline squeeze', () => {
+  const withSqueeze = (value: string) => parseTimeline(`---\ntitle: 音樂史\nsqueeze: ${value}\n---\n\n# Events\n## 1607 | 奧菲歐\n`, 'music');
+
+  it('reads a positive number of years', () => {
+    expect(withSqueeze('100').squeeze).toBe(100);
+  });
+
+  it('ignores anything else', () => {
+    expect(withSqueeze('abc').squeeze).toBeUndefined();
+    expect(withSqueeze('0').squeeze).toBeUndefined();
+    expect(parseTimeline(source, 'test').squeeze).toBeUndefined();
+  });
+});

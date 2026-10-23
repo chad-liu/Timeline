@@ -24,6 +24,15 @@ describe('buildWarp', () => {
     for (const y of [-40000, -20000, -14000, -5000, -800, 1600, 2030]) expect(warp.toYear(warp.toU(y))).toBeCloseTo(y, 6);
   });
 
+  it('takes a lower threshold for a sparse timeline, with narrower breaks', () => {
+    // Shaped like 音樂史: ancient events centuries apart, then dense from 1550 on.
+    const music = buildWarp([-1400, -550, -300, 590, 1025, 1150, 1550, 1607, 1685], 100);
+    expect(music.gaps.map((g) => g.start)).toEqual([-1400, -550, -300, 590, 1025, 1150]);
+    expect(music.toU(-550) - music.toU(-1400)).toBe(40);
+    expect(music.toU(1685) - music.toU(1607)).toBe(78);
+    expect(buildWarp([-1400, -550], 1000).gaps).toEqual([]);
+  });
+
   it('is the identity without gaps', () => {
     const plain = buildWarp([1685, 1750]);
     expect(plain.gaps).toEqual([]);

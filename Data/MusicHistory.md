@@ -3,6 +3,7 @@ title: 音樂史
 category: 世界史
 tags: [文化史]
 color: "#862e9c"
+squeeze: 100
 cover: images/mus-cover.jpg
 description: 從泥版上的頌歌到串流上的演算法：記譜、複音、歌劇、交響曲、爵士、搖滾到 AI 音樂，三千多年的音樂史
 ---

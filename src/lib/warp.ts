@@ -25,8 +25,13 @@ export const MIN_GAP = 1000;
 /** Warped length of a squeezed gap, in years-equivalent. */
 export const GAP_SPAN = 100;
 
-/** Build the warp from every date that must keep its spacing (event and period starts and ends). */
-export function buildWarp(dates: number[]): Warp {
+/**
+ * Build the warp from every date that must keep its spacing (event and period starts and ends).
+ * `minGap` lowers the threshold for one timeline (frontmatter `squeeze`, e.g. 100 for the sparse ancient part of 音樂史);
+ * a squeezed gap then shrinks to 40% of it, so it stays narrower than the gaps it replaces.
+ */
+export function buildWarp(dates: number[], minGap: number = MIN_GAP): Warp {
+  const gapSpan = Math.min(GAP_SPAN, minGap * 0.4);
   const anchors = [...new Set(dates)].sort((a, b) => a - b);
   // Breakpoints (year, u); between them the map is linear, and outside them it has slope 1.
   const years: number[] = [];
@@ -36,9 +41,9 @@ export function buildWarp(dates: number[]): Warp {
   anchors.forEach((year, i) => {
     if (i > 0) {
       const span = year - anchors[i - 1];
-      if (span > MIN_GAP) {
-        gaps.push({ start: anchors[i - 1], end: year, uStart: u, uEnd: u + GAP_SPAN });
-        u += GAP_SPAN;
+      if (span > minGap) {
+        gaps.push({ start: anchors[i - 1], end: year, uStart: u, uEnd: u + gapSpan });
+        u += gapSpan;
       } else {
         u += span;
       }

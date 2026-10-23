@@ -57,6 +57,8 @@ export interface Timeline {
   diedDate?: string;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
+  /** Horizontal view: squeeze gaps longer than this many years instead of the default (frontmatter `squeeze: 100`). */
+  squeeze?: number;
   periods: Period[];
   events: TimelineEvent[];
 }
