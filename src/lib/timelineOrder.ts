@@ -12,7 +12,7 @@ export function compareTimelines(a: Timeline, b: Timeline): number {
 
 /**
  * Sort with compareTimelines, then move each timeline with `follows: <id>` right after that timeline,
- * so a works list (貝多芬主要曲目, which starts with his first work) stays next to the biography it belongs to.
+ * so a works list (貝多芬主要作品, which starts with his first work) stays next to the biography it belongs to.
  * A `follows` naming a missing timeline is ignored.
  */
 export function orderTimelines(timelines: Timeline[]): Timeline[] {
