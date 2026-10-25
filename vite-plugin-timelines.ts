@@ -6,6 +6,8 @@ import { orderTimelines } from './src/lib/timelineOrder';
 import { buildPeopleIndex } from './src/lib/peopleIndex';
 import { parseExtraPeople } from './src/lib/extraPeople';
 import type { ExtraPerson } from './src/lib/extraPeople';
+import { parseTopics } from './src/lib/topicIndex';
+import type { Topic } from './src/lib/topicIndex';
 import type { Timeline } from './src/types';
 
 const VIRTUAL_ID = 'virtual:timelines';
@@ -14,6 +16,10 @@ const RESOLVED_ID = '\0' + VIRTUAL_ID;
 const EXTRA_ID = 'virtual:index-people';
 const RESOLVED_EXTRA_ID = '\0' + EXTRA_ID;
 const EXTRA_FILE = path.join('index', 'people.md');
+/** The topic index's list of topics. */
+const TOPICS_ID = 'virtual:index-topics';
+const RESOLVED_TOPICS_ID = '\0' + TOPICS_ID;
+const TOPICS_FILE = path.join('index', 'topics.md');
 /** Public index of the people timelines, for other sites to link to (see buildPeopleIndex). */
 const PEOPLE_FILE = 'people.json';
 const MIME: Record<string, string> = {
@@ -57,6 +63,17 @@ function loadExtraPeople(dataDir: string): ExtraPerson[] {
   }
 }
 
+/** The topic index's topics (Data\index\topics.md), or none when the file is missing. */
+function loadTopics(dataDir: string): Topic[] {
+  const file = path.join(dataDir, TOPICS_FILE);
+  if (!fs.existsSync(file)) return [];
+  try {
+    return parseTopics(fs.readFileSync(file, 'utf8'));
+  } catch (err) {
+    throw new Error(`Data\\${TOPICS_FILE} ${(err as Error).message}`);
+  }
+}
+
 /** Non-markdown files under Data\ (images), as posix paths relative to Data\. */
 function listAssets(dataDir: string): string[] {
   return fs
@@ -66,8 +83,8 @@ function listAssets(dataDir: string): string[] {
 }
 
 /**
- * Exposes Data\*.md as `virtual:timelines` (parsed at build time) and Data\index\people.md as `virtual:index-people`,
- * serves/emits Data\ images under `data/` plus `people.json`, and reloads the page when Data\ changes in dev.
+ * Exposes Data\*.md as `virtual:timelines` (parsed at build time), Data\index\people.md as `virtual:index-people`
+ * and Data\index\topics.md as `virtual:index-topics`, serves/emits Data\ images under `data/` plus `people.json`, and reloads the page when Data\ changes in dev.
  * `siteUrl` is the published address, used for the absolute links in `people.json`.
  */
 export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
@@ -78,19 +95,21 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
     resolveId(id) {
       if (id === VIRTUAL_ID) return RESOLVED_ID;
       if (id === EXTRA_ID) return RESOLVED_EXTRA_ID;
+      if (id === TOPICS_ID) return RESOLVED_TOPICS_ID;
       return undefined;
     },
 
     load(id) {
       if (id === RESOLVED_ID) return `export default ${JSON.stringify(loadTimelines(dataDir))};`;
       if (id === RESOLVED_EXTRA_ID) return `export default ${JSON.stringify(loadExtraPeople(dataDir))};`;
+      if (id === RESOLVED_TOPICS_ID) return `export default ${JSON.stringify(loadTopics(dataDir))};`;
       return undefined;
     },
 
     configureServer(server) {
       const onDataChange = (file: string) => {
         if (!path.resolve(file).startsWith(dataDir)) return;
-        for (const id of [RESOLVED_ID, RESOLVED_EXTRA_ID]) {
+        for (const id of [RESOLVED_ID, RESOLVED_EXTRA_ID, RESOLVED_TOPICS_ID]) {
           const mod = server.moduleGraph.getModuleById(id);
           if (mod) server.moduleGraph.invalidateModule(mod);
         }

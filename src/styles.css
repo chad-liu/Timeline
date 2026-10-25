@@ -1801,3 +1801,15 @@ input {
 .modal-years:hover {
   text-decoration: underline;
 }
+
+/* Topic index (#p=topics) */
+.ti-group h2 {
+  margin: 24px 0 4px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ti-group .ni-years {
+  flex: 1 1 16em;
+}

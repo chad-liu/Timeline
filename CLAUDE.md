@@ -31,6 +31,7 @@ npm run build                              # tsc 型別檢查 + vite build → d
   - `#v=horizontal&t=Bach|Handel` 開啟一條或多條時間軸，多條時會疊加比較；
   - `#p=lifespans` 是人物年表。
   - `#p=index` 是人名索引；時間軸網址加上 `&e=事件id`（如 `&e=Voltaire-6`）會直接開啟該事件。
+  - `#p=topics` 是主題索引（`topicIndex.ts` + `TopicIndex.tsx`）：主題清單寫在 `Data/index/topics.md`，以 `virtual:index-topics` 提供，比對事件標題與內文；主題的專屬時間軸（`timeline:`）只附連結，不重複列出事件。新增主題時先掃一遍比對結果，用 `notTerms` 排除同字詞。
   - `#p=years&y=1789&s=10` 是年代對照（`src/lib/yearIndex.ts` + `YearIndex.tsx`）：`s` 為 1／10／100（單年／十年／百年），列出各時間軸在該段期間的事件與同時在世的人物。只寫到世紀的事件只在百年檢視出現。事件詳細內容底部有連結可跳到這一頁。
 - **排序與分組**：`src/lib/timelineOrder.ts` 是唯一依據。
   - `compareTimelines`：依最早日期排序，`sortLast` 排最後。

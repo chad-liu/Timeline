@@ -7,3 +7,8 @@ declare module 'virtual:index-people' {
   const people: import('./lib/extraPeople').ExtraPerson[];
   export default people;
 }
+
+declare module 'virtual:index-topics' {
+  const topics: import('./lib/topicIndex').Topic[];
+  export default topics;
+}
