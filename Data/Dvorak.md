@@ -2,6 +2,7 @@
 title: 德弗札克生平
 category: 音樂家
 tags: [浪漫時期]
+notNames: [法蘭提謝克·德弗札克]
 born: 1841-09-08
 died: 1904-05-01
 color: "#0b7285"

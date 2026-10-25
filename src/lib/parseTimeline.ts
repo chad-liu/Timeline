@@ -74,6 +74,11 @@ function relatedLinks(value: unknown): RelatedLink[] {
     .map(([label, url]) => ({ label, url }));
 }
 
+/** A frontmatter list of words, e.g. `aliases: [巴哈]`; a single string counts as a one-item list. */
+function stringList(value: unknown): string[] {
+  return (Array.isArray(value) ? value : [value]).filter((s): s is string => typeof s === 'string' && s.length > 0);
+}
+
 /** A frontmatter date such as `born: 1724-04-22` as text; YAML may already have turned it into a Date. */
 function frontmatterDate(value: unknown): string | undefined {
   if (value instanceof Date) return value.toISOString().slice(0, 10);
@@ -105,7 +110,7 @@ function addAges(events: TimelineEvent[], bornRaw: string, diedRaw?: string): vo
 
 /**
  * Parse one Data\*.md file:
- *   frontmatter (title / color / description / cover / category / tags / related / sortLast / follows / squeeze / born / died),
+ *   frontmatter (title / color / description / cover / category / tags / related / sortLast / follows / squeeze / born / died / aliases / notNames),
  *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
@@ -187,7 +192,9 @@ export function parseTimeline(source: string, id: string): Timeline {
     description: typeof data.description === 'string' ? data.description : '',
     cover: typeof data.cover === 'string' ? resolveAsset(data.cover) : undefined,
     category: typeof data.category === 'string' ? data.category : undefined,
-    tags: (Array.isArray(data.tags) ? data.tags : [data.tags]).filter((t): t is string => typeof t === 'string' && t.length > 0),
+    tags: stringList(data.tags),
+    aliases: stringList(data.aliases),
+    notNames: stringList(data.notNames),
     related: relatedLinks(data.related),
     born: born ? parseDate(born).start : undefined,
     died: died ? parseDate(died).start : undefined,

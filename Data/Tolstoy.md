@@ -2,6 +2,7 @@
 title: 托爾斯泰生平
 category: 文學家
 tags: [俄國文學]
+notNames: [阿列克謝·托爾斯泰, 亞歷克賽·托爾斯泰]
 related:
   - 托爾斯泰: https://chad-liu.github.io/books/html/6-2.歐美文學家/托爾斯泰.html
 born: 1828-09-09

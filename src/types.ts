@@ -57,6 +57,10 @@ export interface Timeline {
   diedDate?: string;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
+  /** Other spellings of a person's name, matched by the name index (frontmatter `aliases: [巴哈]`). */
+  aliases: string[];
+  /** Longer words that contain the name but mean something else, e.g. 巴洛克 for 洛克 (frontmatter `notNames:`). */
+  notNames: string[];
   /** Keep this timeline right after the one with this id (frontmatter `follows: Beethoven`), e.g. a works list after its biography. */
   follows?: string;
   /** Horizontal view: squeeze gaps longer than this many years instead of the default (frontmatter `squeeze: 100`). */

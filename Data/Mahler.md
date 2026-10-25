@@ -2,6 +2,7 @@
 title: 馬勒生平
 category: 音樂家
 tags: [浪漫時期]
+notNames: [阿爾瑪·馬勒, 馬勒伯朗士]
 born: 1860-07-07
 died: 1911-05-18
 color: "#d9480f"

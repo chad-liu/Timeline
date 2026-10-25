@@ -2,6 +2,7 @@
 title: 洛克生平
 category: 思想家
 tags: [英國經驗論]
+notNames: [巴洛克, 帕洛克, 麥卡洛克, 西姆洛克, 洛克希德, 洛克菲勒, 貝洛克]
 related:
   - 洛克: https://chad-liu.github.io/books/html/2-2.哲學家/洛克.html
   - 洛克時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/洛克時間軸.html

@@ -2,6 +2,7 @@
 title: 康德生平
 category: 思想家
 tags: [德意志觀念論]
+notNames: [康德爾]
 related:
   - 康德: https://chad-liu.github.io/books/html/2-2.哲學家/康德.html
   - 康德時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/康德時間軸.html

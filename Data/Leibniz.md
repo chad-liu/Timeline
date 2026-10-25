@@ -2,6 +2,7 @@
 title: 萊布尼茲生平
 category: 思想家
 tags: [大陸理性論]
+aliases: [萊布尼茨]
 related:
   - 萊布尼茲: https://chad-liu.github.io/books/html/2-2.哲學家/萊布尼茲.html
   - 萊布尼茲時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/萊布尼茲時間軸.html

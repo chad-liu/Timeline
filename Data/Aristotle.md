@@ -2,6 +2,7 @@
 title: 亞里斯多德生平
 category: 思想家
 tags: [古希臘哲學]
+aliases: [亞里士多德]
 related:
   - 亞里士多德: https://chad-liu.github.io/books/html/2-2.哲學家/亞里士多德.html
   - 亞里士多德時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/亞里士多德時間軸.html

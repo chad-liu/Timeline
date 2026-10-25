@@ -8,6 +8,8 @@ export interface PersonEntry {
   /** Display name without the 「生平」/「大事記」 suffix, e.g. 康德. */
   name: string;
   title: string;
+  /** Other spellings of the name used in the timelines (frontmatter `aliases:`), e.g. 巴哈 for 巴赫. */
+  aliases: string[];
   category: string;
   tags: string[];
   /** As written in the frontmatter: `1724-04-22`, `1685`, or a negative year for BC. */
@@ -48,6 +50,7 @@ export function buildPeopleIndex(timelines: Timeline[], site: string): PeopleInd
           id: t.id,
           name: personName(t),
           title: t.title,
+          aliases: t.aliases,
           category: g.category,
           tags: t.tags,
           born: t.bornDate!,

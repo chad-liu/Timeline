@@ -1539,3 +1539,151 @@ input {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* Name index (#p=index) */
+.dash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.name-index {
+  min-height: 100%;
+  background: var(--surface);
+}
+
+.ni-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+}
+
+.ni-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ni-controls .dash-tag-filter {
+  margin: 0;
+}
+
+.ni-controls .tag-chip {
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ni-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ni-tools .search {
+  margin-bottom: 0;
+}
+
+.ls-fold button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.ni-person {
+  border-bottom: 1px solid var(--line);
+}
+
+.ni-person summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 10px 4px;
+  cursor: pointer;
+}
+
+.ni-person summary:hover {
+  background: var(--accent-soft);
+}
+
+.ni-name {
+  padding-left: 8px;
+  border-left: 4px solid var(--accent);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.ni-name small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.ni-years,
+.ni-count {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.ni-count {
+  margin-left: auto;
+}
+
+.ni-body {
+  padding: 0 4px 16px 16px;
+}
+
+.ni-own {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 4px 0 8px;
+}
+
+.ni-own a,
+.ni-timeline a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.ni-own a:hover,
+.ni-timeline a:hover {
+  text-decoration: underline;
+}
+
+.ni-timeline h3 {
+  margin: 12px 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ni-timeline h3 small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.ni-timeline ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.ni-timeline li {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.ni-timeline li a {
+  color: var(--text);
+}
+
+.ni-date {
+  display: inline-block;
+  min-width: 7em;
+  margin-right: 8px;
+  color: var(--muted);
+}

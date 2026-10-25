@@ -2,6 +2,7 @@
 title: 尼采生平
 category: 思想家
 tags: [生命哲學]
+notNames: [董尼采第, 唐尼采第, 茲洛尼采, 布肯尼采]
 related:
   - 尼采: https://chad-liu.github.io/books/html/2-2.哲學家/尼采.html
   - 尼采時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/尼采時間軸.html

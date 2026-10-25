@@ -2,6 +2,7 @@
 title: 賽萬提斯生平
 category: 文學家
 tags: [西班牙文學]
+aliases: [塞萬提斯]
 related:
   - 塞萬提斯: https://chad-liu.github.io/books/html/6-2.歐美文學家/塞萬提斯.html
 born: 1547-09-29

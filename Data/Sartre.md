@@ -2,6 +2,7 @@
 title: 沙特生平
 category: 思想家
 tags: [存在主義]
+notNames: [沙特萊]
 related:
   - 沙特: https://chad-liu.github.io/books/html/2-2.哲學家/沙特.html
   - 沙特時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/沙特時間軸.html

@@ -2,6 +2,7 @@
 title: 史賓諾莎生平
 category: 思想家
 tags: [大陸理性論]
+aliases: [斯賓諾莎]
 related:
   - 史賓諾莎: https://chad-liu.github.io/books/html/2-2.哲學家/史賓諾莎.html
   - 史賓諾莎時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/史賓諾莎時間軸.html

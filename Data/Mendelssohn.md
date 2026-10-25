@@ -2,6 +2,7 @@
 title: 孟德爾頌生平
 category: 音樂家
 tags: [浪漫時期]
+notNames: [米拉·孟德爾松]
 born: 1809-02-03
 died: 1847-11-04
 color: "#0a84ff"

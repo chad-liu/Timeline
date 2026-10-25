@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { LIFESPANS_HASH, VIEWS, dashboardHash, timelineHash } from '../lib/route';
+import { INDEX_HASH, LIFESPANS_HASH, VIEWS, dashboardHash, timelineHash } from '../lib/route';
 import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -66,9 +66,14 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
           <h1>
             我的時間軸 <small>{timelines.length}</small>
           </h1>
-          <a className="btn-secondary" href={LIFESPANS_HASH}>
-            人物年表
-          </a>
+          <div className="dash-actions">
+            <a className="btn-secondary" href={INDEX_HASH}>
+              人名索引
+            </a>
+            <a className="btn-secondary" href={LIFESPANS_HASH}>
+              人物年表
+            </a>
+          </div>
         </div>
 
         {timelines.length === 0 ? (

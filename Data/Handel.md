@@ -2,6 +2,7 @@
 title: 韓德爾生平
 category: 音樂家
 tags: [巴洛克時期]
+aliases: [亨德爾]
 born: 1685-02-23
 died: 1759-04-14
 color: "#1864ab"

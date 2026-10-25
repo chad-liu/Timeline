@@ -2,6 +2,7 @@
 title: 柏拉圖生平
 category: 思想家
 tags: [古希臘哲學]
+notNames: [新柏拉圖, 柏拉圖神學]
 related:
   - 柏拉圖: https://chad-liu.github.io/books/html/2-2.哲學家/柏拉圖.html
   - 柏拉圖時間軸: https://chad-liu.github.io/books/html/2-2.哲學家/柏拉圖時間軸.html

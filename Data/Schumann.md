@@ -2,6 +2,7 @@
 title: 舒曼生平
 category: 音樂家
 tags: [浪漫時期]
+notNames: [克拉拉·舒曼]
 born: 1810-06-08
 died: 1856-07-29
 color: "#a0522d"
