@@ -21,7 +21,7 @@ description: 德布西（1862–1918）代表作的L.（Lesure）編號、創作
 圖片（皆沿用「德布西生平」時間軸中的 Wikimedia Commons 公有領域圖片，原始檔名見該時間軸）：
 - debussy-1905-nadar.jpg（納達爾拍攝的德布西）
 - debussy-1894-faune.jpg（《喜劇畫報》以牧神浮雕為封面介紹《牧神午後前奏曲》）
-- debussy-1902-pelleas.jpg（《佩利亞斯與梅麗桑德》的樂譜封面）
+- debussy-1902-pelleas.jpg（羅什格羅斯為1902年《佩利亞斯與梅麗桑德》首演繪製的海報）
 - debussy-1905-la-mer.jpg（《海》初版樂譜封面，採用葛飾北齋〈神奈川沖浪裏〉）
 -->
 

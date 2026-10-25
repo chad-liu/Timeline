@@ -19,12 +19,12 @@ description: 白遼士（1803–1869）代表作的H.（Holoman）編號、創�
 - 筆記「優先聆聽」清單中的作品另註明順序。
 - 沒有年份、無法放上時間軸的條目未收錄：H.?? 《聖母頌》（Tantum ergo）等宗教合唱作品（不同年份）；無 《薩拉班德與詠嘆調》等早期歌曲（不同年份）。
 - 以 follows 排在「白遼士生平」之後；生平事件見該時間軸。
-圖片（皆沿用「白遼士生平」時間軸中的 Wikimedia Commons 公有領域圖片，原始檔名見該時間軸）：
+圖片（皆為 Wikimedia Commons 公有領域作品；未附檔名者沿用「白遼士生平」時間軸的圖片，原始檔名見該時間軸）：
 - berlioz-1850-courbet.jpg（庫爾貝所繪白遼士像，1850）
 - berlioz-1830-idee-fixe.jpg（《幻想交響曲》的「固定樂思」主題）
 - berlioz-1837-requiem.jpg（《安魂曲》手稿中的定音鼓編制）
 - berlioz-1838-cellini.jpg（1838年9月10日《本韋努托·切利尼》首演的海報）
-- berlioz-1863-troyens.jpg（《特洛伊人》的插畫）
+- mw-berlioz-troyens-1863.jpg：Les Troyens de Berlioz.png（1863年抒情劇院《特洛伊人》首演的海報）
 - berlioz-1862-beatrice.jpg（《貝雅特麗絲與班尼狄克》的樂譜）
 -->
 
@@ -93,7 +93,7 @@ description: 白遼士（1803–1869）代表作的H.（Holoman）編號、創�
 類別：未完成歌劇（歌劇與舞台作品）。
 
 ## 1856 ~ 1858 | H.133a 《特洛伊人》（Les Troyens） {color=#1971c2 label="1856–1858，後續修訂"}
-![](images/berlioz-1863-troyens.jpg)
+![](images/mw-berlioz-troyens-1863.jpg)
 類別：五幕史詩歌劇（歌劇與舞台作品）。入門推薦聆聽第 10 首。
 
 ## 1860 ~ 1862 | H.138／Op.27 《貝雅特麗絲與班尼狄克》（Béatrice et Bénédict） {color=#1971c2}

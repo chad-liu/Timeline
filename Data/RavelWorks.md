@@ -18,7 +18,9 @@ description: 拉威爾（1875–1937）代表作的M.（Marnat）編號、創作
 - 時期沿用「拉威爾生平」時間軸的主要時期（重疊的細分時期不列）。
 - 筆記「優先聆聽」清單中的作品另註明順序。
 - 以 follows 排在「拉威爾生平」之後；生平事件見該時間軸。
-圖片（皆沿用「拉威爾生平」時間軸中的 Wikimedia Commons 公有領域圖片，原始檔名見該時間軸）：
+圖片（皆為 Wikimedia Commons 公有領域／CC0 作品；未附檔名者沿用「拉威爾生平」時間軸的圖片，原始檔名見該時間軸）：
+- mw-ravel-concerto-sol-1932.jpg：Affiche de la première audition du Concerto en sol de Maurice Ravel.jpg（1932年1月14日普雷耶音樂廳《G 大調鋼琴協奏曲》首演的海報）
+- mw-ballets-russes-1912.jpg：Programme de la septième saison des Ballets russes au théâtre du châtelet, mai-juin 1912. GT.155 (02 of 72).jpg（俄羅斯芭蕾舞團1912年夏特萊劇院演出季的節目冊封面，《達夫尼與克羅伊》在這一季首演；封面是巴克斯特畫的《牧神的午後》尼金斯基）
 - ravel-1913-portrait.jpg（拉威爾，1913）
 - ravel-1911-heure-espagnole.jpg（《西班牙時光》首演相關人物的速寫，1911）
 - ravel-1912-daphnis.jpg（巴克斯特為《達夫尼與克羅伊》設計的舞台布景）
@@ -92,6 +94,7 @@ description: 拉威爾（1875–1937）代表作的M.（Marnat）編號、創作
 類別：管弦樂組曲第四樂章（管弦樂作品）。
 
 ## 1909 ~ 1912 | M.57 《達夫尼與克羅伊》芭蕾全曲 {color=#c92a2a}
+![](images/mw-ballets-russes-1912.jpg)
 類別：芭蕾舞劇（管弦樂作品）。入門推薦聆聽第 2 首。
 
 ## 1911 | M.57a 《達夫尼與克羅伊》第一管弦樂組曲 {color=#c92a2a label="約1911"}
@@ -194,6 +197,7 @@ description: 拉威爾（1875–1937）代表作的M.（Marnat）編號、創作
 類別：單手鋼琴與管弦樂協奏曲（鋼琴與管弦樂協奏作品）。
 
 ## 1929 ~ 1931 | M.83 《G 大調鋼琴協奏曲》（Concerto en sol majeur） {color=#e67700}
+![](images/mw-ravel-concerto-sol-1932.jpg)
 類別：鋼琴與管弦樂協奏曲（鋼琴與管弦樂協奏作品）。入門推薦聆聽第 9 首。
 
 ## 1897 | M.12 《A 小調小提琴奏鳴曲》第一號（Sonate pour violon et piano） {color=#2f9e44}
