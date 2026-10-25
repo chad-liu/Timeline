@@ -7,6 +7,7 @@ import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
 import { NameIndex } from './components/NameIndex';
+import { YearIndex } from './components/YearIndex';
 import { Logo } from './components/Logo';
 import { TimelinePicker } from './components/TimelinePicker';
 import { HorizontalView } from './components/HorizontalView';
@@ -29,6 +30,7 @@ export function App() {
   if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} tag={route.tag} />;
   if (route.page === 'lifespans') return <Lifespans timelines={timelines} />;
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
+  if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
     <TimelinePage key={timelineHash(route.ids, route.view, route.event)} initialView={route.view} initialIds={route.ids} initialEvent={route.event} />
   );

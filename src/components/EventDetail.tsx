@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import type { TimePoint, Timeline } from '../types';
 import { sanitize } from '../lib/sanitize';
+import { yearsHash } from '../lib/route';
 
 /** Anything with a date and a markdown body: an event or a period. */
 export interface DetailItem {
@@ -38,6 +39,9 @@ export function EventDetail({ item, timeline, onClose }: Props) {
         </p>
         <h2 className="modal-title">{item.title}</h2>
         <div className="md" dangerouslySetInnerHTML={{ __html: sanitize(item.html) }} />
+        <a className="modal-years" href={yearsHash(Math.floor(item.date.start), item.date.precision === 'century' ? 100 : 1)}>
+          同時期的其他時間軸 →
+        </a>
       </article>
     </div>
   );

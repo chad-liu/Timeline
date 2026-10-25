@@ -1699,3 +1699,105 @@ input {
 .ni-note {
   color: var(--muted);
 }
+
+/* Year comparison (#p=years) */
+.yi-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.yi-picker .btn-secondary {
+  min-width: 36px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.yi-picker form {
+  margin: 0;
+}
+
+.yi-picker .yi-year {
+  width: 7em;
+  margin: 0;
+  text-align: center;
+}
+
+.yi-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 20px 0 8px;
+  font-size: 26px;
+}
+
+.yi-heading small {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.yi-living h3,
+.yi-category > h3 {
+  margin: 16px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+
+.yi-living h3 small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.yi-living p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.yi-living a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.yi-living a:hover {
+  text-decoration: underline;
+}
+
+.yi-living small {
+  margin-left: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.yi-filter {
+  margin: 16px 0 0;
+}
+
+.yi-filter .tag-chip {
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.yi-category .ni-timeline h3 a {
+  padding-left: 6px;
+  border-left: 3px solid var(--accent);
+}
+
+.modal-years {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.modal-years:hover {
+  text-decoration: underline;
+}
