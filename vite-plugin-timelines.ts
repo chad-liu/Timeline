@@ -4,10 +4,16 @@ import type { Plugin } from 'vite';
 import { ASSET_PREFIX, parseTimeline } from './src/lib/parseTimeline';
 import { orderTimelines } from './src/lib/timelineOrder';
 import { buildPeopleIndex } from './src/lib/peopleIndex';
+import { parseExtraPeople } from './src/lib/extraPeople';
+import type { ExtraPerson } from './src/lib/extraPeople';
 import type { Timeline } from './src/types';
 
 const VIRTUAL_ID = 'virtual:timelines';
 const RESOLVED_ID = '\0' + VIRTUAL_ID;
+/** Supplementary people for the name index: people mentioned often who have no timeline of their own. */
+const EXTRA_ID = 'virtual:index-people';
+const RESOLVED_EXTRA_ID = '\0' + EXTRA_ID;
+const EXTRA_FILE = path.join('index', 'people.md');
 /** Public index of the people timelines, for other sites to link to (see buildPeopleIndex). */
 const PEOPLE_FILE = 'people.json';
 const MIME: Record<string, string> = {
@@ -40,6 +46,17 @@ function loadTimelines(dataDir: string): Timeline[] {
   return orderTimelines(timelines);
 }
 
+/** The name index's supplementary people (Data\index\people.md), or none when the file is missing. */
+function loadExtraPeople(dataDir: string): ExtraPerson[] {
+  const file = path.join(dataDir, EXTRA_FILE);
+  if (!fs.existsSync(file)) return [];
+  try {
+    return parseExtraPeople(fs.readFileSync(file, 'utf8'));
+  } catch (err) {
+    throw new Error(`Data\\${EXTRA_FILE} ${(err as Error).message}`);
+  }
+}
+
 /** Non-markdown files under Data\ (images), as posix paths relative to Data\. */
 function listAssets(dataDir: string): string[] {
   return fs
@@ -49,7 +66,7 @@ function listAssets(dataDir: string): string[] {
 }
 
 /**
- * Exposes Data\*.md as `virtual:timelines` (parsed at build time),
+ * Exposes Data\*.md as `virtual:timelines` (parsed at build time) and Data\index\people.md as `virtual:index-people`,
  * serves/emits Data\ images under `data/` plus `people.json`, and reloads the page when Data\ changes in dev.
  * `siteUrl` is the published address, used for the absolute links in `people.json`.
  */
@@ -59,19 +76,24 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
     name: 'timelines',
 
     resolveId(id) {
-      return id === VIRTUAL_ID ? RESOLVED_ID : undefined;
+      if (id === VIRTUAL_ID) return RESOLVED_ID;
+      if (id === EXTRA_ID) return RESOLVED_EXTRA_ID;
+      return undefined;
     },
 
     load(id) {
-      if (id !== RESOLVED_ID) return undefined;
-      return `export default ${JSON.stringify(loadTimelines(dataDir))};`;
+      if (id === RESOLVED_ID) return `export default ${JSON.stringify(loadTimelines(dataDir))};`;
+      if (id === RESOLVED_EXTRA_ID) return `export default ${JSON.stringify(loadExtraPeople(dataDir))};`;
+      return undefined;
     },
 
     configureServer(server) {
       const onDataChange = (file: string) => {
         if (!path.resolve(file).startsWith(dataDir)) return;
-        const mod = server.moduleGraph.getModuleById(RESOLVED_ID);
-        if (mod) server.moduleGraph.invalidateModule(mod);
+        for (const id of [RESOLVED_ID, RESOLVED_EXTRA_ID]) {
+          const mod = server.moduleGraph.getModuleById(id);
+          if (mod) server.moduleGraph.invalidateModule(mod);
+        }
         server.ws.send({ type: 'full-reload' });
       };
       server.watcher.add(dataDir);

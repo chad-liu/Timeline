@@ -36,7 +36,7 @@ npm run build                              # tsc 型別檢查 + vite build → d
   - `CATEGORY_ORDER`：分頁順序，新增類別要改這裡。
   - `groupByTag`：tag 依首次出現的順序分組。
   - Dashboard、下拉選單、人物年表、people.json 都共用這幾個函式。
-- **人物**：frontmatter 有 `born`／`died` 的時間軸視為人物，它的事件會自動加上年齡。只有年份的日期年齡可能不準，可以用 `{age=N}` 指定，或把日期寫到月或日。人物年表（`Lifespans.tsx` + `lifespanScale.ts`）會把沒有人物的年代壓縮成間隔。人名索引（`NameIndex.tsx` + `nameIndex.ts`）列出每位人物在其他時間軸被提到的事件，比對本名與 `aliases`，並排除 `notNames` 裡的詞；新增人物時間軸時，先掃一遍其他時間軸的譯名差異與同字詞。
+- **人物**：frontmatter 有 `born`／`died` 的時間軸視為人物，它的事件會自動加上年齡。只有年份的日期年齡可能不準，可以用 `{age=N}` 指定，或把日期寫到月或日。人物年表（`Lifespans.tsx` + `lifespanScale.ts`）會把沒有人物的年代壓縮成間隔。人名索引（`NameIndex.tsx` + `nameIndex.ts`）列出每位人物在其他時間軸被提到的事件，比對本名與 `aliases`，並排除 `notNames` 裡的詞；新增人物時間軸時，先掃一遍其他時間軸的譯名差異與同字詞。沒有獨立時間軸的常見人物（如梅迪奇家族成員、拿破崙）寫在 `Data/index/people.md` 的補充名單，由 `extraPeople.ts` 解析、以 `virtual:index-people` 提供；它不是時間軸，也不會寫進 people.json。
 - **安全**：事件內文是 HTML，渲染前一律經過 `src/lib/sanitize.ts`（DOMPurify）。`related:` 連結只接受 http/https。
 
 ## 內容工作慣例

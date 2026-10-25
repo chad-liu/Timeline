@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import timelines from 'virtual:timelines';
+import extraPeople from 'virtual:index-people';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
 import { VIEWS, dashboardHash, parseHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
@@ -27,7 +28,7 @@ export function App() {
 
   if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} tag={route.tag} />;
   if (route.page === 'lifespans') return <Lifespans timelines={timelines} />;
-  if (route.page === 'index') return <NameIndex timelines={timelines} />;
+  if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   return (
     <TimelinePage key={timelineHash(route.ids, route.view, route.event)} initialView={route.view} initialIds={route.ids} initialEvent={route.event} />
   );

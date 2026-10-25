@@ -1687,3 +1687,15 @@ input {
   margin-right: 8px;
   color: var(--muted);
 }
+
+.ni-group {
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.ni-note {
+  color: var(--muted);
+}

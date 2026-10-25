@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { parseExtraPeople } from './extraPeople';
 import { buildNameIndex, mentions } from './nameIndex';
 import { parseTimeline } from './parseTimeline';
 
@@ -35,5 +36,53 @@ describe('buildNameIndex', () => {
     expect(locke.mentions.map((m) => m.timeline.id)).toEqual(['Art']);
     expect(locke.mentions[0].events.map((e) => e.title)).toEqual(['啟蒙']);
     expect(locke.count).toBe(1);
+    expect(locke.links.map((t) => t.id)).toEqual(['Locke', 'LockeWorks']);
+    expect(locke.years).toBe('1632–1704');
+  });
+});
+
+describe('supplementary people', () => {
+  const timelines = [
+    timeline('Medici', 'title: 梅迪奇家族', '## 1464 | 科西莫去世\n科西莫被尊為祖國之父。\n\n## 1569 | 托斯卡尼大公\n科西莫一世受封大公。\n'),
+    timeline('TSMC', 'title: 台積電', '## 1987 | 台積電成立\n張忠謀任董事長。\n'),
+  ];
+  const extras = parseExtraPeople(`---
+people:
+  - name: 科西莫·德·梅迪奇（老科西莫）
+    terms: [科西莫]
+    notNames: [科西莫一世]
+    born: 1389
+    died: 1464
+    category: 西方歷史
+    group: 梅迪奇家族
+    timeline: Medici
+    note: 祖國之父
+  - name: 張忠謀
+    terms: [張忠謀]
+    born: 1931
+    category: 經濟商業
+---
+`);
+  const index = buildNameIndex(timelines, extras);
+
+  it('parses the list', () => {
+    expect(extras[0]).toMatchObject({ terms: ['科西莫'], notNames: ['科西莫一世'], born: 1389, died: 1464, group: '梅迪奇家族' });
+    expect(extras[1].died).toBeUndefined();
+  });
+
+  it('matches terms, skips notNames and includes the linked timeline itself', () => {
+    const cosimo = index.find((e) => e.name.startsWith('科西莫'))!;
+    expect(cosimo.mentions.map((m) => m.timeline.id)).toEqual(['Medici']);
+    expect(cosimo.mentions[0].events.map((e) => e.title)).toEqual(['科西莫去世']);
+    expect(cosimo.links.map((t) => t.id)).toEqual(['Medici']);
+    expect(cosimo.aliases).toEqual([]);
+  });
+
+  it('shows an open end for someone alive', () => {
+    expect(index.find((e) => e.name === '張忠謀')!.years).toBe('1931–');
+  });
+
+  it('rejects an entry without terms', () => {
+    expect(() => parseExtraPeople('---\npeople:\n  - name: 某人\n    born: 1900\n---\n')).toThrow('第 1 筆');
   });
 });

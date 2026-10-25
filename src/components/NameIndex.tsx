@@ -1,37 +1,40 @@
 import { useMemo, useState } from 'react';
 import type { Timeline } from '../types';
+import type { ExtraPerson } from '../lib/extraPeople';
 import { buildNameIndex } from '../lib/nameIndex';
 import type { NameEntry } from '../lib/nameIndex';
-import { formatYear } from '../lib/parseDate';
 import { dashboardHash, timelineHash } from '../lib/route';
-import { CATEGORY_ORDER, UNCATEGORIZED } from '../lib/timelineOrder';
+import { CATEGORY_ORDER } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
 type Sort = 'born' | 'stroke';
 
 const STROKE = new Intl.Collator('zh-Hant-TW-u-co-stroke');
 
-function years(t: Timeline): string {
-  return `${formatYear(Math.floor(t.born!))}–${formatYear(Math.floor(t.died!))}`;
-}
-
-function PersonCard({ entry, works, open }: { entry: NameEntry; works?: Timeline; open: boolean }) {
-  const { person, name, mentions, count } = entry;
+function PersonCard({ entry, open }: { entry: NameEntry; open: boolean }) {
+  const { name, aliases, years, color, group, note, links, mentions, count } = entry;
   return (
     <details className="ni-person" open={open}>
       <summary>
-        <span className="ni-name" style={{ borderColor: person.color }}>
+        <span className="ni-name" style={{ borderColor: color }}>
           {name}
-          {person.aliases.length > 0 && <small>（{person.aliases.join('、')}）</small>}
+          {aliases.length > 0 && <small>（{aliases.join('、')}）</small>}
         </span>
-        <span className="ni-years">{years(person)}</span>
+        <span className="ni-years">{years}</span>
+        {group && <span className="ni-group">{group}</span>}
         <span className="ni-count">{count > 0 ? `${mentions.length} 條時間軸・${count} 則事件` : '其他時間軸未提到'}</span>
       </summary>
       <div className="ni-body">
-        <p className="ni-own">
-          <a href={timelineHash([person.id], 'vertical')}>{person.title}</a>
-          {works && <a href={timelineHash([works.id], 'vertical')}>{works.title}</a>}
-        </p>
+        {(note || links.length > 0) && (
+          <p className="ni-own">
+            {note && <span className="ni-note">{note}</span>}
+            {links.map((t) => (
+              <a key={t.id} href={timelineHash([t.id], 'vertical')}>
+                {t.title}
+              </a>
+            ))}
+          </p>
+        )}
         {mentions.map(({ timeline, events }) => (
           <section key={timeline.id} className="ni-timeline">
             <h3>
@@ -54,23 +57,22 @@ function PersonCard({ entry, works, open }: { entry: NameEntry; works?: Timeline
   );
 }
 
-/** The name index (#p=index): every person timeline and the events of other timelines that mention the person. */
-export function NameIndex({ timelines }: { timelines: Timeline[] }) {
-  const index = useMemo(() => buildNameIndex(timelines), [timelines]);
+/** The name index (#p=index): every person timeline and supplementary person, with the events that mention them. */
+export function NameIndex({ timelines, extras }: { timelines: Timeline[]; extras: ExtraPerson[] }) {
+  const index = useMemo(() => buildNameIndex(timelines, extras), [timelines, extras]);
   const [category, setCategory] = useState<string | null>(null);
   const [sort, setSort] = useState<Sort>('born');
   const [query, setQuery] = useState('');
 
-  const categoryOf = (t: Timeline) => t.category ?? UNCATEGORIZED;
-  const categories = [...new Set(index.map((e) => categoryOf(e.person)))].sort(
+  const categories = [...new Set(index.map((e) => e.category))].sort(
     (a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99),
   );
 
   const q = query.trim();
   const shown = index
-    .filter((e) => !category || categoryOf(e.person) === category)
-    .filter((e) => !q || [e.name, ...e.person.aliases].some((n) => n.includes(q)))
-    .sort((a, b) => (sort === 'born' ? a.person.born! - b.person.born! : STROKE.compare(a.name, b.name)));
+    .filter((e) => !category || e.category === category)
+    .filter((e) => !q || [e.name, ...e.aliases, e.group ?? ''].some((n) => n.includes(q)))
+    .sort((a, b) => (sort === 'born' ? a.born - b.born : STROKE.compare(a.name, b.name)));
 
   return (
     <div className="name-index">
@@ -92,7 +94,7 @@ export function NameIndex({ timelines }: { timelines: Timeline[] }) {
             </button>
             {categories.map((c) => (
               <button key={c} type="button" className={c === category ? 'tag-chip active' : 'tag-chip'} onClick={() => setCategory(c)}>
-                {c} <small>{index.filter((e) => categoryOf(e.person) === c).length}</small>
+                {c} <small>{index.filter((e) => e.category === c).length}</small>
               </button>
             ))}
           </nav>
@@ -105,21 +107,14 @@ export function NameIndex({ timelines }: { timelines: Timeline[] }) {
                 依筆畫
               </button>
             </div>
-            <input className="search" type="search" placeholder="搜尋人名…" value={query} onChange={(e) => setQuery(e.target.value)} />
+            <input className="search" type="search" placeholder="搜尋人名或家族…" value={query} onChange={(e) => setQuery(e.target.value)} />
           </div>
         </div>
 
         {shown.length === 0 ? (
           <p className="empty">找不到符合的人名。</p>
         ) : (
-          shown.map((entry) => (
-            <PersonCard
-              key={entry.person.id}
-              entry={entry}
-              works={timelines.find((t) => t.follows === entry.person.id)}
-              open={q.length > 0 && shown.length <= 3}
-            />
-          ))
+          shown.map((entry) => <PersonCard key={entry.key} entry={entry} open={q.length > 0 && shown.length <= 3} />)
         )}
       </main>
     </div>
