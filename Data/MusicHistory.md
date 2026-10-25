@@ -9,7 +9,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 ---
 
 <!--
-內容整理自本機筆記《音樂史》（D:\Books\md\歷史\文化史\音樂史，網頁版在知識圖譜的「9-1.音樂史」）。
+內容整理自本機筆記《音樂史》（D:\Books\md\歷史\文化史\音樂史，網頁版在知識圖譜的「5-1.音樂史」）。
 - 34個年份檔各成一則事件，說明採用該檔的「案件摘要」（-0300古希臘音樂理論的段落名稱是「案件現場」），並附上 README 年表中的「關鍵推動力」；結尾以「→ 對外連結」連到知識圖譜上的完整案件卷宗（在新分頁開啟）。
 - 時期依 README「案件總覽」的六段。README 各段沒有標註年代範圍，這裡以下一段第一個事件的年代為界：上古與中世紀至1550年、文藝復興與巴洛克至1750年（巴赫逝世）、古典與浪漫至1899年、二十世紀前半至1950年、二十世紀後半至2000年。
 - -0300古希臘音樂理論沒有列在 README 年表中，沒有「關鍵推動力」。
@@ -64,7 +64,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：胡里人祭儀、楔形文字泥版
 
-[→ 對外連結：前 1400 - Hurrian 頌歌：最古老的樂譜失蹤案](https://chad-liu.github.io/books/html/9-1.音樂史/-1400-Hurrian頌歌.html)
+[→ 對外連結：前 1400 - Hurrian 頌歌：最古老的樂譜失蹤案](https://chad-liu.github.io/books/html/5-1.音樂史/-1400-Hurrian頌歌.html)
 
 ## -550 | Pythagoras音程
 ![](images/mus-pythagoras.jpg)
@@ -72,13 +72,13 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：畢達哥拉斯學派、單弦琴
 
-[→ 對外連結：前 550 - 畢達哥拉斯音程：把音樂變成數學的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/-0550-Pythagoras音程.html)
+[→ 對外連結：前 550 - 畢達哥拉斯音程：把音樂變成數學的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/-0550-Pythagoras音程.html)
 
 ## -300 | 古希臘音樂理論
 ![](images/mus-vase.jpg)
 證物一：單弦琴（monochord）實驗——弦長比 2:1 得八度、3:2 得五度、4:3 得四度。證物二：畢達哥拉斯學派的宇宙論——天體距離依同樣比例，故有「諸天和聲」（harmonia mundi）。證物三：到了前 4–前 3 世紀，亞里斯多塞諾斯（Aristoxenus）寫出《和聲學》，系統整理音階、調式與旋律倫理學——**音樂理論作為一門學科的判決書在此落款**。
 
-[→ 對外連結：古希臘音樂理論](https://chad-liu.github.io/books/html/9-1.音樂史/-0300-古希臘音樂理論.html)
+[→ 對外連結：古希臘音樂理論](https://chad-liu.github.io/books/html/5-1.音樂史/-0300-古希臘音樂理論.html)
 
 ## 590 | 額我略聖歌
 ![](images/mus-gregory.jpg)
@@ -86,7 +86,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：教宗額我略一世、基督教會
 
-[→ 對外連結：590 - 額我略聖歌：教會音樂統一運動的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/0590-額我略聖歌.html)
+[→ 對外連結：590 - 額我略聖歌：教會音樂統一運動的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/0590-額我略聖歌.html)
 
 ## 1025 | Guido記譜法
 ![](images/mus-guido.jpg)
@@ -94,7 +94,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：本篤會修道院、教會音樂教育
 
-[→ 對外連結：Guido 記譜法：音樂學習十年的縮短案](https://chad-liu.github.io/books/html/9-1.音樂史/1025-Guido記譜法.html)
+[→ 對外連結：Guido 記譜法：音樂學習十年的縮短案](https://chad-liu.github.io/books/html/5-1.音樂史/1025-Guido記譜法.html)
 
 ## 1150 | 聖母院樂派
 ![](images/mus-perotin.jpg)
@@ -102,7 +102,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：巴黎主教座堂、哥德建築
 
-[→ 對外連結：聖母院樂派：複音音樂大教堂的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1150-聖母院樂派.html)
+[→ 對外連結：聖母院樂派：複音音樂大教堂的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1150-聖母院樂派.html)
 
 ## 1322 | ArsNova新藝術
 ![](images/mus-machaut.jpg)
@@ -110,14 +110,14 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：教宗 若望二十二世爭議、法國宮廷
 
-[→ 對外連結：Ars Nova 新藝術：節奏自由化的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1322-ArsNova新藝術.html)
+[→ 對外連結：Ars Nova 新藝術：節奏自由化的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1322-ArsNova新藝術.html)
 
 ## 1501 | Petrucci印刷樂譜
 1501 年，威尼斯出版商**奧塔維亞諾·佩特魯奇**（Ottaviano Petrucci）出版《Harmonice Musices Odhecaton》——史上第一本**活字印刷的複音樂譜集**，收錄 100 首世俗歌曲。**音樂從教堂與宮廷的專屬品，變成可販賣、可攜帶、可跨境的商品。** 這是音樂工業的創業第一天。
 
 關鍵推動力：威尼斯出版業、印刷術
 
-[→ 對外連結：Petrucci 印刷樂譜：音樂工業誕生的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1501-Petrucci印刷樂譜.html)
+[→ 對外連結：Petrucci 印刷樂譜：音樂工業誕生的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1501-Petrucci印刷樂譜.html)
 
 ## 1562 | Palestrina彌撒
 ![](images/mus-palestrina.jpg)
@@ -125,7 +125,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：特倫托會議、教廷
 
-[→ 對外連結：Palestrina 彌撒：複音音樂救贖案的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1562-Palestrina彌撒.html)
+[→ 對外連結：Palestrina 彌撒：複音音樂救贖案的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1562-Palestrina彌撒.html)
 
 ## 1607 | 奧菲歐
 ![](images/mus-orfeo.jpg)
@@ -133,7 +133,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：佛羅倫斯 Camerata、曼圖亞宮廷
 
-[→ 對外連結：奧菲歐：歌劇誕生案的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1607-奧菲歐.html)
+[→ 對外連結：奧菲歐：歌劇誕生案的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1607-奧菲歐.html)
 
 ## 1685 | 巴哈韓德爾誕生
 ![](images/bach-cover.jpg)
@@ -141,7 +141,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：路德宗教會、宮廷音樂體制
 
-[→ 對外連結：巴哈與韓德爾誕生：巴洛克雙峰的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1685-巴哈韓德爾誕生.html)
+[→ 對外連結：巴哈與韓德爾誕生：巴洛克雙峰的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1685-巴哈韓德爾誕生.html)
 
 ## 1721 | 布蘭登堡協奏曲
 ![](images/bach-1717-kothen.jpg)
@@ -149,7 +149,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：布蘭登侯爵委託、柯騰宮廷
 
-[→ 對外連結：布蘭登堡協奏曲：一封石沉大海的求職信](https://chad-liu.github.io/books/html/9-1.音樂史/1721-布蘭登堡協奏曲.html)
+[→ 對外連結：布蘭登堡協奏曲：一封石沉大海的求職信](https://chad-liu.github.io/books/html/5-1.音樂史/1721-布蘭登堡協奏曲.html)
 
 ## 1742 | 彌賽亞首演
 ![](images/handel-1742-dublin.jpg)
@@ -157,7 +157,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：慈善音樂會、都柏林市民
 
-[→ 對外連結：彌賽亞首演：慈善音樂會的奇蹟](https://chad-liu.github.io/books/html/9-1.音樂史/1742-彌賽亞首演.html)
+[→ 對外連結：彌賽亞首演：慈善音樂會的奇蹟](https://chad-liu.github.io/books/html/5-1.音樂史/1742-彌賽亞首演.html)
 
 ## 1786 | 費加洛婚禮
 ![](images/mozart-cover.jpg)
@@ -165,7 +165,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：啟蒙思想、維也納宮廷歌劇
 
-[→ 對外連結：費加洛婚禮：僕人當主角的階級反轉](https://chad-liu.github.io/books/html/9-1.音樂史/1786-費加洛婚禮.html)
+[→ 對外連結：費加洛婚禮：僕人當主角的階級反轉](https://chad-liu.github.io/books/html/5-1.音樂史/1786-費加洛婚禮.html)
 
 ## 1808 | 命運交響曲
 ![](images/beethoven-cover.jpg)
@@ -173,7 +173,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：貝多芬、維也納訂閱音樂會
 
-[→ 對外連結：命運交響曲：四小時混亂中誕生的哲學](https://chad-liu.github.io/books/html/9-1.音樂史/1808-命運交響曲.html)
+[→ 對外連結：命運交響曲：四小時混亂中誕生的哲學](https://chad-liu.github.io/books/html/5-1.音樂史/1808-命運交響曲.html)
 
 ## 1824 | 第九交響曲
 ![](images/beethoven-1824-ninth.jpg)
@@ -181,7 +181,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：維也納愛國委員會、聽障的作曲家
 
-[→ 對外連結：第九交響曲：全聾作曲家與歡樂頌](https://chad-liu.github.io/books/html/9-1.音樂史/1824-第九交響曲.html)
+[→ 對外連結：第九交響曲：全聾作曲家與歡樂頌](https://chad-liu.github.io/books/html/5-1.音樂史/1824-第九交響曲.html)
 
 ## 1828 | Paganini炫技
 ![](images/berlioz-1838-paganini.jpg)
@@ -189,7 +189,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：維也納/巴黎音樂會市場、媒體
 
-[→ 對外連結：帕格尼尼炫技：明星演奏家時代的誕生](https://chad-liu.github.io/books/html/9-1.音樂史/1828-Paganini炫技.html)
+[→ 對外連結：帕格尼尼炫技：明星演奏家時代的誕生](https://chad-liu.github.io/books/html/5-1.音樂史/1828-Paganini炫技.html)
 
 ## 1853 | 茶花女
 ![](images/verdi-cover.jpg)
@@ -197,7 +197,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：威尼斯鳳凰劇院、市民歌劇
 
-[→ 對外連結：茶花女：交際花登上宮廷劇院的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1853-茶花女.html)
+[→ 對外連結：茶花女：交際花登上宮廷劇院的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1853-茶花女.html)
 
 ## 1876 | 拜魯特音樂節
 ![](images/wagner-1876-festspielhaus.jpg)
@@ -205,7 +205,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：華格納、巴伐利亞國王路德維希二世
 
-[→ 對外連結：拜魯特音樂節：一間為一個人而建的劇院](https://chad-liu.github.io/books/html/9-1.音樂史/1876-拜魯特音樂節.html)
+[→ 對外連結：拜魯特音樂節：一間為一個人而建的劇院](https://chad-liu.github.io/books/html/5-1.音樂史/1876-拜魯特音樂節.html)
 
 ## 1899 | 楓葉拉格
 ![](images/mus-mapleleaf.jpg)
@@ -213,7 +213,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：美國黑人音樂、密蘇里出版
 
-[→ 對外連結：楓葉拉格：一頁樂譜引爆的美國音樂革命](https://chad-liu.github.io/books/html/9-1.音樂史/1899-楓葉拉格.html)
+[→ 對外連結：楓葉拉格：一頁樂譜引爆的美國音樂革命](https://chad-liu.github.io/books/html/5-1.音樂史/1899-楓葉拉格.html)
 
 ## 1913 | 春之祭
 ![](images/stravinsky-1913-rite.jpg)
@@ -221,7 +221,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：Stravinsky、Diaghilev、前衛
 
-[→ 對外連結：春之祭：巴黎劇場暴動的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1913-春之祭.html)
+[→ 對外連結：春之祭：巴黎劇場暴動的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1913-春之祭.html)
 
 ## 1920 | 瘋狂藍調
 ![](images/mus-crazyblues.jpg)
@@ -229,7 +229,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：種族唱片市場、Okeh 唱片
 
-[→ 對外連結：瘋狂藍調：第一張藍調唱片的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1920-瘋狂藍調.html)
+[→ 對外連結：瘋狂藍調：第一張藍調唱片的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1920-瘋狂藍調.html)
 
 ## 1923 | 十二音列法
 ![](images/schoenberg-cover.jpg)
@@ -237,7 +237,7 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：維也納第二學派、無調性危機
 
-[→ 對外連結：十二音列法：用數學重建音樂的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1923-十二音列法.html)
+[→ 對外連結：十二音列法：用數學重建音樂的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1923-十二音列法.html)
 
 ## 1924 | 藍色狂想曲
 ![](images/gershwin-1924-rhapsody.jpg)
@@ -245,14 +245,14 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：爵士與古典跨界、Whiteman 樂團
 
-[→ 對外連結：藍色狂想曲：爵士與古典的跨界宣言](https://chad-liu.github.io/books/html/9-1.音樂史/1924-藍色狂想曲.html)
+[→ 對外連結：藍色狂想曲：爵士與古典的跨界宣言](https://chad-liu.github.io/books/html/5-1.音樂史/1924-藍色狂想曲.html)
 
 ## 1931 | 電吉他誕生
 1931 年，洛杉磯的發明家 **George Beauchamp** 與 **Adolph Rickenbacker** 做出「**Frying Pan**」（煎鍋）——最早的商業化電吉他：鋁製圓盤琴身、電磁拾音器、接上擴大機與揚聲器。1932 年正式投產。**這樁案子的關鍵：吉他被銅管樂團淹沒了三十年，一群工程師用無線電技術救了它——並在三十年後引爆搖滾革命。**
 
 關鍵推動力：Rickenbacker、廣播與大樂團時代
 
-[→ 對外連結：電吉他誕生：把樂團裡的配角變成主角](https://chad-liu.github.io/books/html/9-1.音樂史/1931-電吉他誕生.html)
+[→ 對外連結：電吉他誕生：把樂團裡的配角變成主角](https://chad-liu.github.io/books/html/5-1.音樂史/1931-電吉他誕生.html)
 
 ## 1954 | 貓王SunRecords
 ![](images/mus-elvis.jpg)
@@ -260,14 +260,14 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：Sam Phillips、孟菲斯黑人/白人音樂交界
 
-[→ 對外連結：貓王 Sun Records：搖滾樂誕生的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1954-貓王SunRecords.html)
+[→ 對外連結：貓王 Sun Records：搖滾樂誕生的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1954-貓王SunRecords.html)
 
 ## 1959 | KindOfBlue
 1959 年 3 月 2 日與 4 月 22 日，紐約哥倫比亞 30 街錄音室。**Miles Davis** 帶領七人黃金陣容錄下《**Kind of Blue**》：幾乎沒有排練、幾乎全是一 take、樂手進錄音室時只拿到幾張寫著「音階」的草圖。結果：爵士史上最暢銷的專輯、調式爵士（modal jazz）的憲法文件。**這是一樁以「減法」完成的犯罪——Miles 殺死的不是別人，正是和弦進行本身。**
 
 關鍵推動力：哥倫比亞唱片、現代爵士巔峰
 
-[→ 對外連結：Kind of Blue：調式爵士的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1959-KindOfBlue.html)
+[→ 對外連結：Kind of Blue：調式爵士的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1959-KindOfBlue.html)
 
 ## 1963 | 披頭四
 ![](images/mus-beatles.jpg)
@@ -275,21 +275,21 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：Parlophone、Merseybeat、電視
 
-[→ 對外連結：披頭四：Beatlemania 的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1963-披頭四.html)
+[→ 對外連結：披頭四：Beatlemania 的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1963-披頭四.html)
 
 ## 1969 | Woodstock
 1969 年 8 月 15-18 日，紐約州 Bethel 的乳牛場。**40 萬人**湧入一個為 5 萬人設計的場地：高速公路癱瘓、雨中泥濘、食物短缺，卻奇蹟般地只發生零星暴力——官方記錄僅兩起意外死亡與零起暴動。「**三天和平與音樂**」成為反文化的最高圖騰。**這是一樁商業計畫失控後的意外奇蹟：出資者想辦音樂節賺錢，歷史卻給了他們一場無法複製的烏托邦。**
 
 關鍵推動力：反文化運動、青年市場
 
-[→ 對外連結：Woodstock：四十萬人的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1969-Woodstock.html)
+[→ 對外連結：Woodstock：四十萬人的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1969-Woodstock.html)
 
 ## 1976 | 龐克革命
 1976-77 年，倫敦。**Sex Pistols** 以《**Anarchy in the UK**》（1976 年 11 月）與《**God Save the Queen**》（1977）把無政府主義唱進主流，在女王銀禧年（Silver Jubilee）遭 BBC 全面禁播，卻照樣賣上排行榜。三個和弦、兩分鐘、一件皮夾克——**這是一樁策展出來的革命：Malcolm McLaren 佈局引爆，但燃料是整個英國的失業與憤怒。**
 
 關鍵推動力：英國階級憤怒、獨立廠牌
 
-[→ 對外連結：龐克革命：三個和弦的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1976-龐克革命.html)
+[→ 對外連結：龐克革命：三個和弦的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1976-龐克革命.html)
 
 ## 1982 | CD誕生
 ![](images/mus-cd.jpg)
@@ -297,25 +297,25 @@ description: 從泥版上的頌歌到串流上的演算法：記譜、複音、�
 
 關鍵推動力：數位音訊、家電工業
 
-[→ 對外連結：CD 誕生：數位音訊的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1982-CD誕生.html)
+[→ 對外連結：CD 誕生：數位音訊的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1982-CD誕生.html)
 
 ## 1999 | NapsterMP3
 1999 年 6 月，波士頓。18 歲的 **Shawn Fanning** 發布 **Napster**：一個讓任何人在網路上免費抓取任何歌曲的軟體。一年內用戶破千萬、兩年內破 8,000 萬；唱片銷售開始崩盤；2001 年法院下令關閉。**這是一樁技術鏈條與法律炸彈同時引爆的案件：Fanning 只寫了程式，但整個時代的寬頻、MP3 與 CD 都是他的共犯。**
 
 關鍵推動力：P2P 網路、音樂工業地震
 
-[→ 對外連結：Napster 與 MP3：音樂工業地震的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/1999-NapsterMP3.html)
+[→ 對外連結：Napster 與 MP3：音樂工業地震的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/1999-NapsterMP3.html)
 
 ## 2015 | 串流霸權
 2015 年，全球錄音產業報告出爐：**串流（streaming）營收正式超越下載**，成為數位音樂的最大收入來源。**Spotify** 時代的經濟法則確立：訂閱費按播放次數分成、playlist 取代電台、**播放量即影響力**。**這是一樁以「授權」完成的和平演變：Spotify 吸收了 Napster 的革命（見 `1999-NapsterMP3`），卻把戰利品還給了唱片公司。**
 
 關鍵推動力：Spotify、訂閱經濟
 
-[→ 對外連結：串流霸權：播放量經濟的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/2015-串流霸權.html)
+[→ 對外連結：串流霸權：播放量經濟的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/2015-串流霸權.html)
 
 ## 2023 | AI音樂生成
 2023 年起，**Suno**、**Udio** 等生成式 AI 服務爆發：輸入一句文字，幾秒後輸出完整歌曲——人聲、歌詞、編曲、混音一次到位。任何人都能「寫」一首歌。**這是一樁訓練資料來源成謎的案件：模型的燃料是數十年的人類錄音，而帳單至今沒有人付。**
 
 關鍵推動力：生成式 AI、版權爭議
 
-[→ 對外連結：AI 音樂生成：音與數終極回歸的偵查檔案](https://chad-liu.github.io/books/html/9-1.音樂史/2023-AI音樂生成.html)
+[→ 對外連結：AI 音樂生成：音與數終極回歸的偵查檔案](https://chad-liu.github.io/books/html/5-1.音樂史/2023-AI音樂生成.html)
