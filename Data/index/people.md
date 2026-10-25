@@ -163,6 +163,7 @@ people:
     born: 1769
     died: 1821
     category: 西方歷史
+    timeline: NapoleonicWars
     note: 法國皇帝，《拿破崙法典》與拿破崙戰爭
   - name: 梅特涅
     terms: [梅特涅]

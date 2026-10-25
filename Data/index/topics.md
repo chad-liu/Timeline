@@ -124,6 +124,7 @@ topics:
   - name: 十字軍
     group: 政治與戰爭
     terms: [十字軍]
+    timeline: Crusades
     note: 1096 年起西歐對地中海東岸的宗教戰爭
   - name: 大航海時代
     group: 政治與戰爭
@@ -150,10 +151,12 @@ topics:
   - name: 法國大革命
     group: 政治與戰爭
     terms: [法國大革命, 巴士底, 恐怖統治]
+    timeline: FrenchRevolution
     note: 1789 年推翻舊制度，影響整個十九世紀的歐洲
   - name: 拿破崙戰爭
     group: 政治與戰爭
     terms: [拿破崙戰爭, 滑鐵盧, 奧斯特利茨, 維也納會議]
+    timeline: NapoleonicWars
     note: 1803–1815 年拿破崙與反法同盟的戰爭，以維也納會議重整歐洲秩序
   - name: 鴉片戰爭
     group: 政治與戰爭
