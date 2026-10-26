@@ -147,6 +147,7 @@ topics:
   - name: 美國獨立
     group: 政治與戰爭
     terms: [美國獨立, 獨立宣言, 美國革命]
+    timeline: AmericanIndependence
     note: 1776 年北美十三州宣布脫離英國
   - name: 法國大革命
     group: 政治與戰爭

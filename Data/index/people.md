@@ -182,6 +182,7 @@ people:
     born: 1815
     died: 1898
     category: 西方歷史
+    timeline: GermanUnification
     note: 普魯士「鐵血宰相」，統一德意志並創設社會保險
   - name: 列寧
     terms: [列寧]
