@@ -9,9 +9,11 @@ export interface Ruler {
   end: number;
   /** Own background colour (Japanese eras keep their timeline colours); Chinese reigns alternate two shades instead. */
   color?: string;
+  /** Ming and Qing reigns are named by era: the era's first year (元年), usually the year after accession. */
+  eraStart?: number;
 }
 
-type Reign = [name: string, start: number, end: number];
+type Reign = [name: string, start: number, end: number, eraStart?: number];
 
 /**
  * Reigns of the unified dynasties, in order (Eastern Zhou kings from 周敬王 on; Ming and Qing by era name).
@@ -28,11 +30,32 @@ const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['北宋', [['宋太祖', 960, 976], ['宋太宗', 976, 997], ['宋真宗', 997, 1022], ['宋仁宗', 1022, 1063], ['宋英宗', 1063, 1067], ['宋神宗', 1067, 1085], ['宋哲宗', 1085, 1100], ['宋徽宗', 1100, 1126], ['宋欽宗', 1126, 1127]]],
   ['南宋', [['宋高宗', 1127, 1162], ['宋孝宗', 1162, 1189], ['宋光宗', 1189, 1194], ['宋寧宗', 1194, 1224], ['宋理宗', 1224, 1264], ['宋度宗', 1264, 1274], ['宋恭帝', 1274, 1276], ['宋端宗', 1276, 1278], ['宋末帝', 1278, 1279]]],
   ['元', [['元世祖', 1260, 1294], ['元成宗', 1294, 1307], ['元武宗', 1307, 1311], ['元仁宗', 1311, 1320], ['元英宗', 1320, 1323], ['泰定帝', 1323, 1328], ['元文宗', 1328, 1332], ['元順帝', 1333, 1368]]],
-  ['明', [['洪武', 1368, 1398], ['建文', 1398, 1402], ['永樂', 1402, 1424], ['宣德', 1425, 1435], ['正統', 1435, 1449], ['景泰', 1449, 1457], ['天順', 1457, 1464], ['成化', 1464, 1487], ['弘治', 1487, 1505], ['正德', 1505, 1521], ['嘉靖', 1521, 1567], ['隆慶', 1567, 1572], ['萬曆', 1572, 1620], ['天啟', 1620, 1627], ['崇禎', 1627, 1644]]],
-  ['清', [['順治', 1644, 1661], ['康熙', 1661, 1722], ['雍正', 1722, 1735], ['乾隆', 1735, 1796], ['嘉慶', 1796, 1820], ['道光', 1820, 1850], ['咸豐', 1850, 1861], ['同治', 1861, 1875], ['光緒', 1875, 1908], ['宣統', 1908, 1912]]],
+  ['明', [['洪武', 1368, 1398, 1368], ['建文', 1398, 1402, 1399], ['永樂', 1402, 1424, 1403], ['洪熙', 1424, 1425, 1425], ['宣德', 1425, 1435, 1426], ['正統', 1435, 1449, 1436], ['景泰', 1449, 1457, 1450], ['天順', 1457, 1464, 1457], ['成化', 1464, 1487, 1465], ['弘治', 1487, 1505, 1488], ['正德', 1505, 1521, 1506], ['嘉靖', 1521, 1567, 1522], ['隆慶', 1567, 1572, 1567], ['萬曆', 1572, 1620, 1573], ['天啟', 1620, 1627, 1621], ['崇禎', 1627, 1644, 1628]]],
+  ['清', [['順治', 1644, 1661, 1644], ['康熙', 1661, 1722, 1662], ['雍正', 1722, 1735, 1723], ['乾隆', 1735, 1796, 1736], ['嘉慶', 1796, 1820, 1796], ['道光', 1820, 1850, 1821], ['咸豐', 1850, 1861, 1851], ['同治', 1861, 1875, 1862], ['光緒', 1875, 1908, 1875], ['宣統', 1908, 1912, 1909]]],
 ];
 
-export const CHINESE_RULERS: Ruler[] = DYNASTIES.flatMap(([dynasty, reigns]) => reigns.map(([name, start, end]) => ({ name, dynasty, start, end })));
+export const CHINESE_RULERS: Ruler[] = DYNASTIES.flatMap(([dynasty, reigns]) =>
+  reigns.map(([name, start, end, eraStart]) => (eraStart === undefined ? { name, dynasty, start, end } : { name, dynasty, start, end, eraStart })),
+);
+
+/**
+ * The Chinese rulers of the years [from, to), one string per dynasty.
+ * A single year names the era year for Ming and Qing (「清乾隆54年」, 「清順治元年」) and the emperor with his reign otherwise
+ * (「北宋 宋真宗（997–1022 在位）」); a longer slice lists the reigns (「清：雍正、乾隆」). Years outside the list give none.
+ */
+export function reignsInSlice(from: number, to: number, rulers: Ruler[] = CHINESE_RULERS): string[] {
+  const dynasties = new Map<string, Ruler[]>();
+  for (const r of rulers.filter((r) => r.start < to && r.end >= from)) dynasties.set(r.dynasty, [...(dynasties.get(r.dynasty) ?? []), r]);
+  return [...dynasties].map(([dynasty, reigns]) => {
+    if (to - from > 1) return `${dynasty}：${reigns.map((r) => r.name).join('、')}`;
+    const era = reigns.filter((r) => r.eraStart !== undefined && r.eraStart <= from).at(-1);
+    if (era) {
+      const n = from - era.eraStart! + 1;
+      return `${dynasty}${era.name}${n === 1 ? '元' : n}年`;
+    }
+    return reigns.map((r) => `${dynasty} ${r.name}（${formatYear(r.start)}–${formatYear(r.end)} 在位）`).join('、');
+  });
+}
 
 export interface RulerBar {
   ruler: Ruler;

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildLifespanScale } from './lifespanScale';
-import { CHINESE_RULERS, rulerBars } from './chineseRulers';
+import { CHINESE_RULERS, reignsInSlice, rulerBars } from './chineseRulers';
 
 describe('CHINESE_RULERS', () => {
   it('lists reigns in order (a reign may begin before the previous dynasty ends, like 元世祖)', () => {
@@ -39,5 +39,35 @@ describe('rulerBars', () => {
     const shizu = rulerBars(wide).find((b) => b.ruler.name === '元世祖')!;
     expect(shizu.left).toBe(wide.xOf(1279));
     expect(shizu.title).toBe('元 元世祖（1260–1294 在位）');
+  });
+});
+
+describe('reignsInSlice', () => {
+  it('names the era year for Ming and Qing', () => {
+    expect(reignsInSlice(1789, 1790)).toEqual(['清乾隆54年']);
+    expect(reignsInSlice(1736, 1737)).toEqual(['清乾隆元年']);
+    // The accession year still counts in the old era.
+    expect(reignsInSlice(1735, 1736)).toEqual(['清雍正13年']);
+    expect(reignsInSlice(1425, 1426)).toEqual(['明洪熙元年']);
+  });
+
+  it('names the emperor and his reign for the other dynasties', () => {
+    expect(reignsInSlice(1000, 1001)).toEqual(['北宋 宋真宗（997–1022 在位）']);
+    expect(reignsInSlice(997, 998)).toEqual(['北宋 宋太宗（976–997 在位）、北宋 宋真宗（997–1022 在位）']);
+    expect(reignsInSlice(-221, -220)).toEqual(['秦 秦始皇（前221–前210 在位）']);
+  });
+
+  it('gives one entry per dynasty when two overlap', () => {
+    expect(reignsInSlice(1644, 1645)).toEqual(['明崇禎17年', '清順治元年']);
+  });
+
+  it('lists the reigns of a decade or century', () => {
+    expect(reignsInSlice(1730, 1740)).toEqual(['清：雍正、乾隆']);
+    expect(reignsInSlice(1600, 1700)).toEqual(['明：萬曆、天啟、崇禎', '清：順治、康熙']);
+  });
+
+  it('gives nothing for periods of division or before the list', () => {
+    expect(reignsInSlice(230, 231)).toEqual([]);
+    expect(reignsInSlice(-600, -599)).toEqual([]);
   });
 });

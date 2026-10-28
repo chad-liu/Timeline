@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { FormEvent } from 'react';
 import type { Timeline } from '../types';
 import type { ExtraPerson } from '../lib/extraPeople';
+import { reignsInSlice } from '../lib/chineseRulers';
 import { formatYear } from '../lib/parseDate';
 import { dashboardHash, timelineHash, yearsHash } from '../lib/route';
 import { groupTimelines } from '../lib/timelineOrder';
@@ -26,6 +27,7 @@ function parseYearInput(text: string): number | null {
 export function YearIndex({ timelines, extras, year, span }: { timelines: Timeline[]; extras: ExtraPerson[]; year: number; span: Span }) {
   const { from, to } = sliceOf(year, span);
   const slices = useMemo(() => eventsInSlice(timelines, from, to), [timelines, from, to]);
+  const reigns = reignsInSlice(from, to);
   const living = useMemo(() => livingInSlice(timelines, extras, from, to), [timelines, extras, from, to]);
   const [category, setCategory] = useState<string | null>(null);
   const [input, setInput] = useState(formatYear(year));
@@ -90,6 +92,7 @@ export function YearIndex({ timelines, extras, year, span }: { timelines: Timeli
 
         <h2 className="yi-heading">
           {sliceLabel(from, span)}
+          {reigns.length > 0 && <span className="yi-reign">{reigns.join('、')}</span>}
           <small>
             {slices.length} 條時間軸・{eventCount} 則事件
           </small>

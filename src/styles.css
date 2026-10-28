@@ -1733,6 +1733,12 @@ input {
   font-size: 26px;
 }
 
+.yi-heading .yi-reign {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 500;
+}
+
 .yi-heading small {
   color: var(--muted);
   font-size: 14px;
