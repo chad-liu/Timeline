@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期]
 follows: Lalo
 color: "#c2255c"
+cover: images/lalo-cover.jpg
 description: 拉羅（1823–1892）代表作的編號、創作年代與類別
 ---
 
@@ -16,6 +17,11 @@ description: 拉羅（1823–1892）代表作的編號、創作年代與類別
 - 時期沿用「拉羅生平」時間軸的主要時期（重疊的細分時期不列）。
 - 筆記推薦清單中的作品另註明順序。
 - 以 follows 排在「拉羅生平」之後；生平事件見該時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，沿用生平時間軸的圖片）：
+- lalo-cover.jpg：Édouard Lalo.jpg（拉羅像）（與拉羅生平共用）
+- lalo-sarasate.jpg：Whistler - Arrangement in Black Portrait of Señor Pablo de Sarasate, 1884, 96.2.jpg（惠斯勒〈黑色的編排：薩拉沙泰像〉，1884）（與拉羅生平共用）
+- lalo-namouna.jpg：Namouna, ballet archipelliculaire, par MM. Nuitter et Petipa, orchestration de M. Lalo - les pointes par la diva Sangalli, ballades par mademoiselle Subra, parade par mademoiselle Invernizzi... - estampe - Lefman... - btv1b53116941c.jpg（《戲劇畫報》上的芭蕾舞劇《納穆娜》，1882）（與拉羅生平共用）
+- lalo-roidys.jpg：Le Roi d'Ys. Poème de Edouard Blau. Musique de E. Lalo Paris, G. Hartmann et Cie affiche, Aug. F. Gorguet.jpg（戈爾蓋所繪歌劇《伊斯王》海報（裁去色票））（與拉羅生平共用）
 -->
 
 # Periods
@@ -36,6 +42,7 @@ description: 拉羅（1823–1892）代表作的編號、創作年代與類別
 類別：小提琴協奏曲（協奏曲與管弦樂作品）。
 
 ## 1874 | Op. 21 D小調《西班牙交響曲》（Symphonie espagnole） {color=#c92a2a}
+![](images/lalo-sarasate.jpg)
 類別：小提琴與管弦樂（協奏曲與管弦樂作品）。入門推薦聆聽第 1 首。
 
 ## 1876 ~ 1877 | D小調大提琴協奏曲（Cello Concerto in D minor） {color=#c92a2a}
@@ -66,9 +73,11 @@ description: 拉羅（1823–1892）代表作的編號、創作年代與類別
 類別：三幕大歌劇；生前未正式上演（歌劇與芭蕾舞劇）。
 
 ## 1881 ~ 1882 | 《納穆娜》（Namouna） {color=#1971c2}
+![](images/lalo-namouna.jpg)
 類別：芭蕾舞劇（歌劇與芭蕾舞劇）。入門推薦聆聽第 4 首。
 
 ## 1875 ~ 1888 | 《伊斯王》（Le Roi d’Ys） {color=#1971c2}
+![](images/lalo-roidys.jpg)
 類別：三幕歌劇（歌劇與芭蕾舞劇）。入門推薦聆聽第 3 首。
 
 ## 1891 ~ 1892 | 《雅克雷之亂》（La Jacquerie） {color=#1971c2}

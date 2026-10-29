@@ -7,6 +7,7 @@ died: 1892-04-22
 notNames: [德拉羅什, 拉羅歇爾]
 color: "#c2255c"
 description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫時期作曲家，以《西班牙交響曲》與歌劇《伊斯王》聞名
+cover: images/lalo-cover.jpg
 ---
 
 <!--
@@ -16,6 +17,12 @@ description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫�
 - 筆記的代表作表把 Fantaisie norvégienne 譯為「《挪威狂想曲》」，時間軸中譯為「《挪威幻想曲》」，這裡用《挪威幻想曲》。
 - 筆記只寫「約1839」「1830年代初期」「1860年代後期」等約略年代的事件，日期依此設定並以顯示文字標明。
 - 人名索引以 notNames 排除畫家「德拉羅什」與城市「拉羅歇爾」；其他時間軸提到的「拉洛」是他的兒子、樂評家皮耶·拉洛，不列為別名。
+圖片來源（皆為 Wikimedia Commons 公有領域作品）：
+- lalo-cover.jpg：Édouard Lalo.jpg（拉羅像）
+- lalo-habeneck.jpg：(François-Antoine) Habeneck - Lith. von Lange - btv1b84543103.jpg（朗格所繪阿貝內克石版畫像）
+- lalo-sarasate.jpg：Whistler - Arrangement in Black Portrait of Señor Pablo de Sarasate, 1884, 96.2.jpg（惠斯勒〈黑色的編排：薩拉沙泰像〉，1884）
+- lalo-namouna.jpg：Namouna, ballet archipelliculaire, par MM. Nuitter et Petipa, orchestration de M. Lalo - les pointes par la diva Sangalli, ballades par mademoiselle Subra, parade par mademoiselle Invernizzi... - estampe - Lefman... - btv1b53116941c.jpg（《戲劇畫報》上的芭蕾舞劇《納穆娜》，1882）
+- lalo-roidys.jpg：Le Roi d'Ys. Poème de Edouard Blau. Musique de E. Lalo Paris, G. Hartmann et Cie affiche, Aug. F. Gorguet.jpg（戈爾蓋所繪歌劇《伊斯王》海報（裁去色票））
 -->
 
 # Periods
@@ -42,6 +49,7 @@ description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫�
 在里爾音樂學院的小提琴學習中成績優異，據傳記記載獲得一等獎，年紀輕輕已具備成熟的演奏能力。
 
 ## 1839 | 離家前往巴黎 {label=約1839年}
+![](images/lalo-habeneck.jpg)
 父親希望他依家族傳統從軍，他卻執意走音樂這條路，十六歲左右離開家鄉前往巴黎。1840年代初，他在巴黎音樂學院等處學小提琴與作曲，曾師從指揮家阿貝內克。
 
 ## 1847 | 參加羅馬大獎
@@ -72,6 +80,7 @@ description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫�
 為西班牙小提琴家薩拉沙泰寫作《西班牙交響曲》。這次合作成為他走向國際的關鍵。
 
 ## 1875-02-07 | 《西班牙交響曲》首演
+![](images/lalo-sarasate.jpg)
 《西班牙交響曲》在巴黎首演，由薩拉沙泰擔任獨奏。作品雖名為交響曲，實際上是以小提琴獨奏為核心的五樂章協奏性作品，融合炫技、法國式的管弦樂寫作與西班牙舞蹈的節奏色彩，很快就受到注意，至今仍是他最著名的作品。
 
 ## 1877 | D小調大提琴協奏曲
@@ -81,6 +90,7 @@ description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫�
 寫下《挪威幻想曲》與《俄羅斯協奏曲》等作品，除了西班牙風格，他也嘗試吸收其他民族音樂的特色。
 
 ## 1882 | 芭蕾舞劇《納穆娜》
+![](images/lalo-namouna.jpg)
 芭蕾舞劇《納穆娜》在巴黎歌劇院上演。它的管弦樂色彩受到後來的法國作曲家重視，德布西也對其配器表示肯定。
 
 ## 1884 | 榮譽軍團勳章
@@ -90,6 +100,7 @@ description: 愛德華·拉羅（Édouard Lalo，1823–1892），法國浪漫�
 寫成G小調交響曲，繼續探索大型管弦樂的形式。
 
 ## 1888 | 《伊斯王》首演
+![](images/lalo-roidys.jpg)
 取材自布列塔尼傳說的歌劇《伊斯王》，經過多年努力，終於在巴黎喜歌劇院首演並獲得成功。這是他歌劇生涯最重要的突破，也讓他在晚年得到更廣泛的知名度。
 
 ## 1890 ~ 1891 | 晚年 {label=1890年代初期}

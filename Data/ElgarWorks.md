@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期]
 follows: Elgar
 color: "#7048e8"
+cover: images/elgar-cover.jpg
 description: 艾爾加（1857–1934）代表作的編號、創作年代與類別
 ---
 
@@ -17,6 +18,12 @@ description: 艾爾加（1857–1934）代表作的編號、創作年代與類�
 - 筆記推薦清單中的作品另註明順序。
 - 沒有年份、無法放上時間軸的條目未收錄：《總是與處處》（Always and Everywhere）（早期作品）。
 - 以 follows 排在「艾爾加生平」之後；生平事件見該時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，沿用生平時間軸的圖片）：
+- elgar-cover.jpg：Edward Elgar.jpg（艾爾加像）（與艾爾加生平共用）
+- elgar-enigma.jpg：Enigma theme.png（《謎語變奏曲》的主題）（與艾爾加生平共用）
+- elgar-pomp.jpg：Land of Hope and Glory by Elgar song cover 1902.jpg（〈希望與榮耀的國土〉樂譜封面，1902）（與艾爾加生平共用）
+- elgar-falstaff.jpg：Elgar- Falstaff theme.jpg（《法斯塔夫》的主題）（與艾爾加生平共用）
+- elgar-gerontius.jpg：Edward Elgar - Last page of Gerontius score with quotation.jpg（《傑隆修斯之夢》總譜的最後一頁，艾爾加在上面抄錄了羅斯金的話）（與艾爾加生平共用）
 -->
 
 # Periods
@@ -58,9 +65,11 @@ description: 艾爾加（1857–1934）代表作的編號、創作年代與類�
 類別：管弦樂進行曲（管弦樂作品）。
 
 ## 1898 ~ 1899 | Op. 36 《謎語變奏曲》（Variations on an Original Theme, “Enigma”） {color=#c92a2a}
+![](images/elgar-enigma.jpg)
 類別：管弦樂變奏曲（管弦樂作品）。入門推薦聆聽第 2 首。
 
 ## 1901 ~ 1939 | Op. 39 《威風凜凜進行曲》（Pomp and Circumstance Marches） {color=#c92a2a label="1901–1930年代初"}
+![](images/elgar-pomp.jpg)
 類別：管弦樂進行曲組曲（管弦樂作品）。入門推薦聆聽第 5 首。
 
 ## 1900 ~ 1901 | Op. 40 《倫敦城》（Cockaigne: In London Town） {color=#c92a2a}
@@ -82,6 +91,7 @@ description: 艾爾加（1857–1934）代表作的編號、創作年代與類�
 類別：弦樂合奏（管弦樂作品）。
 
 ## 1913 | Op. 68 《法斯塔夫》（Falstaff） {color=#c92a2a}
+![](images/elgar-falstaff.jpg)
 類別：交響研究曲（管弦樂作品）。入門推薦聆聽第 11 首。
 
 ## 1885 | 《蘇格蘭序曲》（Scottish Overture） {color=#c92a2a}
@@ -145,6 +155,7 @@ description: 艾爾加（1857–1934）代表作的編號、創作年代與類�
 類別：女低音與管弦樂歌曲套曲（神劇、清唱劇與大型合唱作品）。入門推薦聆聽第 3 首。
 
 ## 1899 ~ 1900 | Op. 38 《傑隆修斯之夢》（The Dream of Gerontius） {color=#e67700}
+![](images/elgar-gerontius.jpg)
 類別：神劇（神劇、清唱劇與大型合唱作品）。入門推薦聆聽第 4 首。
 
 ## 1901 ~ 1902 | Op. 44 《加冕頌》（Coronation Ode） {color=#e67700 label="1901–1902；1911修訂"}

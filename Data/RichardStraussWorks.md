@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期, 近當代音樂]
 follows: RichardStrauss
 color: "#5c940d"
+cover: images/strauss-1888.jpg
 description: 理查·史特勞斯（1864–1949）代表作的編號、創作年代與類別
 ---
 
@@ -17,6 +18,12 @@ description: 理查·史特勞斯（1864–1949）代表作的編號、創作年
 - 筆記沒有推薦聆聽清單。
 - 沒有年份、無法放上時間軸的條目未收錄：TrV 280 《小提琴與管弦樂的幻想曲》相關作品（晚期目錄作品）。
 - 以 follows 排在「理查·史特勞斯生平」之後；生平事件見該時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，沿用生平時間軸的圖片）：
+- strauss-1888.jpg：Richard Strauss-1888.jpg（24歲的理查·史特勞斯，1888）（與理查·史特勞斯生平共用）
+- strauss-zarathustra.jpg：Strauss "Also Sprach Zarathustra" ending.png（《查拉圖斯特拉如是說》的結尾樂譜）（與理查·史特勞斯生平共用）
+- strauss-alpine.jpg：Alois Kolb Alpensymphonie Radierung.jpg（阿洛伊斯·科爾布為《阿爾卑斯交響曲》所作的蝕刻版畫）（與理查·史特勞斯生平共用）
+- strauss-elektra.jpg：Richard Strauss - Elektra - titlepage of the libretto - drawing by Lovis Corinth - 1909.png（科林特為《厄蕾克特拉》劇本所繪的封面，1909）（與理查·史特勞斯生平共用）
+- strauss-rosenkavalier.jpg：Zander Labisch Rosenkavalier Uraufführung 1911.jpg（《玫瑰騎士》1911年德勒斯登首演的製作群合影，前排中為理查·史特勞斯）（與理查·史特勞斯生平共用）
 -->
 
 # Periods
@@ -55,6 +62,7 @@ description: 理查·史特勞斯（1864–1949）代表作的編號、創作年
 類別：交響詩（交響詩與管弦樂作品）。
 
 ## 1896 | Op. 30（TrV 176） 《查拉圖斯特拉如是說》（Also sprach Zarathustra） {color=#c92a2a}
+![](images/strauss-zarathustra.jpg)
 類別：交響詩（交響詩與管弦樂作品）。
 
 ## 1897 | Op. 35（TrV 184） 《唐吉訶德》（Don Quixote） {color=#c92a2a}
@@ -67,6 +75,7 @@ description: 理查·史特勞斯（1864–1949）代表作的編號、創作年
 類別：交響詩式管弦樂作品（交響詩與管弦樂作品）。
 
 ## 1911 ~ 1915 | Op. 64（TrV 233） 《阿爾卑斯交響曲》（Eine Alpensinfonie） {color=#c92a2a}
+![](images/strauss-alpine.jpg)
 類別：大型管弦樂作品（交響詩與管弦樂作品）。
 
 ## 1925 | Op. 74（TrV 254） 《家庭交響曲》的附篇（Parergon zur Sinfonia domestica） {color=#c92a2a}
@@ -85,9 +94,11 @@ description: 理查·史特勞斯（1864–1949）代表作的編號、創作年
 類別：一幕歌劇（歌劇作品）。
 
 ## 1906 ~ 1908 | Op. 58（TrV 223） 《厄蕾克特拉》（Elektra） {color=#1971c2}
+![](images/strauss-elektra.jpg)
 類別：一幕歌劇（歌劇作品）。
 
 ## 1909 ~ 1910 | Op. 59（TrV 227） 《玫瑰騎士》（Der Rosenkavalier） {color=#1971c2}
+![](images/strauss-rosenkavalier.jpg)
 類別：三幕歌劇（歌劇作品）。
 
 ## 1911 ~ 1912 | Op. 60（TrV 228） 《納克索斯島的阿麗雅德妮》（Ariadne auf Naxos） {color=#1971c2 label="1911–1912；1916修訂版"}

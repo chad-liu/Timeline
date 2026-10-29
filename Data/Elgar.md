@@ -6,6 +6,7 @@ born: 1857-06-02
 died: 1934-02-23
 color: "#7048e8"
 description: 愛德華·艾爾加（Edward Elgar，1857–1934），英國晚期浪漫樂派作曲家，以《謎語變奏曲》與《威風凜凜進行曲》聞名
+cover: images/elgar-cover.jpg
 ---
 
 <!--
@@ -15,6 +16,15 @@ description: 愛德華·艾爾加（Edward Elgar，1857–1934），英國晚期
 - 筆記第一節（階段概述）與第二節（詳細年表）重疊，事件以第二節為準，第一節的內容補進時期說明與相關事件。
 - 1860年代、1870年代等約略年代的事件，日期以區間呈現。
 - 第三號交響曲由安東尼·佩恩依草稿補完一事，寫進最後一則事件。
+圖片來源（皆為 Wikimedia Commons 公有領域作品）：
+- elgar-cover.jpg：Edward Elgar.jpg（艾爾加像）
+- elgar-worcester.jpg：Cathedral, S. W., Worcester, England-LCCN2002708274.jpg（伍斯特主教座堂，1890年代的彩色照相版）
+- elgar-enigma.jpg：Enigma theme.png（《謎語變奏曲》的主題）
+- elgar-gerontius.jpg：Edward Elgar - Last page of Gerontius score with quotation.jpg（《傑隆修斯之夢》總譜的最後一頁，艾爾加在上面抄錄了羅斯金的話）
+- elgar-pomp.jpg：Land of Hope and Glory by Elgar song cover 1902.jpg（〈希望與榮耀的國土〉樂譜封面，1902）
+- elgar-falstaff.jpg：Elgar- Falstaff theme.jpg（《法斯塔夫》的主題）
+- elgar-1917.jpg：Edward Elgar 1917.jpg（艾爾加，1917）
+- elgar-cello.jpg：Elgar-cello-concerto-manuscript.jpg（大提琴協奏曲手稿）
 -->
 
 # Periods
@@ -32,6 +42,7 @@ description: 愛德華·艾爾加（Edward Elgar，1857–1934），英國晚期
 # Events
 
 ## 1857-06-02 | 出生@下布羅德希斯
+![](images/elgar-worcester.jpg)
 生於英格蘭伍斯特附近的下布羅德希斯。父親在伍斯特經營樂器與樂譜店，也替人調音、在教堂演奏，他從小就在樂器與樂譜之間長大。
 
 ## 1860 ~ 1869 | 音樂啟蒙 {label=1860年代}
@@ -62,12 +73,15 @@ description: 愛德華·艾爾加（Edward Elgar，1857–1934），英國晚期
 神劇《生命之光》等大型合唱作品陸續問世，他逐漸建立英國合唱音樂作曲家的聲譽，但要靠作曲維生仍不容易。
 
 ## 1899 | 《謎語變奏曲》首演
+![](images/elgar-enigma.jpg)
 1898年至1899年間寫成的《謎語變奏曲》首演大獲成功。作品以一個主題發展出一連串變奏，每段描繪他身邊的一位朋友，其中的〈寧錄〉尤其動人。年過四十的艾爾加終於得到長期追求的認可，成為英國樂壇的重要人物。同年的聲樂套曲《海之畫》，為女低音與管弦樂團寫下海洋的意象。
 
 ## 1900 | 《傑隆修斯之夢》首演
+![](images/elgar-gerontius.jpg)
 根據約翰·亨利·紐曼的宗教詩作寫成的神劇《傑隆修斯之夢》首演，初演反應不佳，後來卻逐漸被肯定，成為英國宗教音樂的重要里程碑。
 
 ## 1901 | 《威風凜凜進行曲》第一、二號
+![](images/elgar-pomp.jpg)
 《威風凜凜進行曲》第一、第二號問世。第一號的中段旋律後來配上歌詞〈希望與榮耀的國土〉，成為英國典禮音樂的代表旋律。
 
 ## 1902 | 《加冕頌》
@@ -98,15 +112,18 @@ B小調小提琴協奏曲首演，篇幅龐大，既要求高超技巧，也重�
 降E大調第二號交響曲首演，比第一號更個人化、更內省，英雄氣概中夾雜著不安。
 
 ## 1913 | 交響研究曲《法斯塔夫》
+![](images/elgar-falstaff.jpg)
 以莎士比亞筆下的胖騎士為題的交響研究曲《法斯塔夫》問世，展現他以管弦樂敘事的功力。
 
 ## 1914 ~ 1918 | 第一次世界大戰
+![](images/elgar-1917.jpg)
 戰爭的沉重氛圍讓他的創作量減少，音樂也透出更深的內省與憂鬱；《英格蘭精神》等作品反映戰爭與民族情感。
 
 ## 1918 | 小提琴奏鳴曲
 寫下小提琴奏鳴曲，是他晚期室內樂的重要作品，情緒沉思內斂。
 
 ## 1919 | 鋼琴五重奏與大提琴協奏曲
+![](images/elgar-cello.jpg)
 寫成鋼琴五重奏與E小調大提琴協奏曲。大提琴協奏曲深沉、哀傷而富歌唱性，後來被視為他最動人的晚期傑作。
 
 ## 1920 | 愛麗絲去世

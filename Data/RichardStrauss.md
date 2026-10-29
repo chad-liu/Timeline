@@ -6,6 +6,7 @@ born: 1864-06-11
 died: 1949-09-08
 color: "#5c940d"
 description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作曲家、指揮家，以交響詩與《莎樂美》、《玫瑰騎士》等歌劇聞名
+cover: images/strauss-1888.jpg
 ---
 
 <!--
@@ -16,6 +17,15 @@ description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作
 - 筆記列為「約」的年份（約1868、約1870）以顯示文字標明。
 - 納粹時期出任帝國音樂局局長一事，依筆記並陳他的妥協與後來被迫辭職，不作單方面評斷。
 - 劇作家史蒂芬·褚威格、指揮家畢勤的譯名與其他時間軸一致（筆記作茨威格、比徹姆）。
+圖片來源（皆為 Wikimedia Commons 公有領域作品）：
+- strauss-1888.jpg：Richard Strauss-1888.jpg（24歲的理查·史特勞斯，1888）
+- strauss-bulow.jpg：Franz von Lenbach (1836-1904) - Porträt Hans von Bülow - 0593 - Führermuseum.jpg（倫巴赫所繪漢斯·馮·畢羅像）
+- strauss-pauline.jpg：Pauline Strauss de Ahna.jpg（女高音寶琳·德·阿赫納）
+- strauss-zarathustra.jpg：Strauss "Also Sprach Zarathustra" ending.png（《查拉圖斯特拉如是說》的結尾樂譜）
+- strauss-hofmannsthal.jpg：Nicola Perscheid - Hugo von Hofmannsthal 1910 (cropped).jpg（佩爾沙伊德拍攝的霍夫曼斯塔爾，1910）
+- strauss-elektra.jpg：Richard Strauss - Elektra - titlepage of the libretto - drawing by Lovis Corinth - 1909.png（科林特為《厄蕾克特拉》劇本所繪的封面，1909）
+- strauss-rosenkavalier.jpg：Zander Labisch Rosenkavalier Uraufführung 1911.jpg（《玫瑰騎士》1911年德勒斯登首演的製作群合影，前排中為理查·史特勞斯）
+- strauss-alpine.jpg：Alois Kolb Alpensymphonie Radierung.jpg（阿洛伊斯·科爾布為《阿爾卑斯交響曲》所作的蝕刻版畫）
 -->
 
 # Periods
@@ -51,6 +61,7 @@ description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作
 進入慕尼黑大學修讀哲學、美學與藝術史，後來把重心轉回音樂；文學與哲學成為他日後創作的重要背景。同年首次到拜羅伊特，聆賞華格納的《帕西法爾》。
 
 ## 1884 | 畢羅指揮《管樂小夜曲》
+![](images/strauss-bulow.jpg)
 指揮家漢斯·馮·畢羅指揮他的《降E大調管樂小夜曲》，畢羅成為他早期事業的重要支持者。
 
 ## 1885 | 邁寧根助理指揮
@@ -63,15 +74,18 @@ description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作
 寫下《馬克白》與《唐璜》等管弦樂作品，確立以文學題材與戲劇情境為基礎的交響詩路線。
 
 ## 1889 | 《唐璜》一鳴驚人
+![](images/strauss-1888.jpg)
 在拜羅伊特音樂節擔任助理指揮，《唐璜》首演大受矚目，成為他早期最重要的突破之作。1890年代初，他在慕尼黑、威瑪等地擔任指揮，作曲與指揮的聲望同步上升。
 
 ## 1894 | 《貢特拉姆》與結婚
+![](images/strauss-pauline.jpg)
 第一部歌劇《貢特拉姆》上演；同年與女高音寶琳·德·阿赫納結婚。妻子的歌聲影響了他大量的藝術歌曲與歌劇。
 
 ## 1895 | 《蒂爾的惡作劇》
 交響詩《蒂爾的惡作劇》完成並首演，以幽默諷刺與靈活的管弦樂描寫一位民間惡作劇者，法國號與木管把角色寫得活靈活現。
 
 ## 1896 | 《查拉圖斯特拉如是說》
+![](images/strauss-zarathustra.jpg)
 交響詩《查拉圖斯特拉如是說》首演，以宏大的音響與哲學構想著稱；開場的日出樂段後來因電影《2001太空漫遊》而家喻戶曉。
 
 ## 1897 | 《唐吉訶德》
@@ -81,6 +95,7 @@ description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作
 完成《英雄生涯》，把英雄形象、衝突與自我反思融入交響詩，是他晚期浪漫主義管弦樂風格的高峰。
 
 ## 1900 | 結識霍夫曼斯塔爾
+![](images/strauss-hofmannsthal.jpg)
 與詩人、劇作家雨果·馮·霍夫曼斯塔爾建立關係，兩人後來合作多部歌劇，成為二十世紀歌劇史上最著名的搭檔之一。
 
 ## 1901 | 《火荒》
@@ -96,15 +111,18 @@ description: 理查·史特勞斯（Richard Strauss，1864–1949），德國作
 遷居巴伐利亞的加米施，同時在柏林擔任重要指揮職務，此時他已是歐洲最具影響力的作曲家兼指揮家之一。
 
 ## 1909 | 《厄蕾克特拉》首演
+![](images/strauss-elektra.jpg)
 與霍夫曼斯塔爾合作的《厄蕾克特拉》首演，以高度緊張的和聲、強烈的戲劇衝突與龐大的管弦樂編制，把音樂推向更激進的表現。
 
 ## 1911 | 《玫瑰騎士》首演
+![](images/strauss-rosenkavalier.jpg)
 《玫瑰騎士》首演，以圓舞曲、懷舊氣氛與細膩的喜劇手法，展現與《厄蕾克特拉》截然不同的面貌，成為他最受歡迎的歌劇。
 
 ## 1912 | 《納克索斯島的阿麗雅德妮》
 《納克索斯島的阿麗雅德妮》首演，1916年推出修訂版；作品把義大利即興喜劇、古典神話與「歌劇如何演出」這件事本身結合在一起，結構獨特。
 
 ## 1915 | 《阿爾卑斯交響曲》首演
+![](images/strauss-alpine.jpg)
 以大型管弦樂描寫一日登山、自然景觀與暴風雨的《阿爾卑斯交響曲》首演，是他最後的大型交響詩式作品。
 
 ## 1919 | 維也納國家歌劇院

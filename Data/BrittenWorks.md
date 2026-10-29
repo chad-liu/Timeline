@@ -4,6 +4,7 @@ category: 音樂家
 tags: [近當代音樂]
 follows: Britten
 color: "#1864ab"
+cover: images/britten-cover.jpg
 description: 布列頓（1913–1976）代表作的編號、創作年代與類別
 ---
 
@@ -17,6 +18,14 @@ description: 布列頓（1913–1976）代表作的編號、創作年代與類�
 - 筆記推薦清單中的作品另註明順序。
 - 沒有年份、無法放上時間軸的條目未收錄：Op. 47 《引子與快板》並非布列頓作品，故不列入（—）。
 - 以 follows 排在「布列頓生平」之後；生平事件見該時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，沿用生平時間軸的圖片）：
+- britten-cover.jpg：Benjamin Britten, London Records 1968 publicity photo for Wikipedia (restored).jpg（布列頓，1968年倫敦唱片公司的宣傳照）（與布列頓生平共用）
+- britten-crabbe.jpg：George Crabbe 1826.jpg（詩人喬治·克拉布像，1826）（與布列頓生平共用）
+- britten-purcell.jpg：Henry Purcell Closterman.jpg（克洛斯特曼所繪普賽爾像）（與布列頓生平共用）
+- britten-melville.jpg：Herman Melville 1846-47.jpg（赫爾曼·梅爾維爾像，1846–1847）（與布列頓生平共用）
+- britten-james.jpg：Henry James by John Singer Sargent cleaned.jpg（沙金特所繪亨利·詹姆斯像，1913）（與布列頓生平共用）
+- britten-midsummer.jpg：Oberon, Titania and Puck with Fairies Dancing. William Blake. c.1786.jpg（布萊克〈奧伯龍、泰坦妮亞與帕克和群仙共舞〉，約1786）（與布列頓生平共用）
+- britten-coventry.jpg：Coventry Cathedral, 15 November 1940 - John Piper - 1940.jpg（約翰·派珀〈考文垂大教堂，1940年11月15日〉，大轟炸次日的廢墟）（與布列頓生平共用）
 -->
 
 # Periods
@@ -39,6 +48,7 @@ description: 布列頓（1913–1976）代表作的編號、創作年代與類�
 類別：英語歌劇／音樂劇式歌劇（歌劇）。
 
 ## 1944 ~ 1945 | Op. 33 《彼得·格萊姆斯》（Peter Grimes） {color=#c92a2a}
+![](images/britten-crabbe.jpg)
 類別：三幕歌劇（歌劇）。
 
 ## 1946 | Op. 37 《盧克麗霞受辱》（The Rape of Lucretia） {color=#c92a2a}
@@ -51,15 +61,18 @@ description: 布列頓（1913–1976）代表作的編號、創作年代與類�
 類別：歌劇改編（歌劇）。
 
 ## 1950 ~ 1951 | Op. 50 《比利·巴德》（Billy Budd） {color=#c92a2a label="1950–1951；1960修訂"}
+![](images/britten-melville.jpg)
 類別：四幕歌劇；後修訂為兩幕版本（歌劇）。
 
 ## 1952 ~ 1953 | Op. 53 《葛羅麗安娜》（Gloriana） {color=#c92a2a}
 類別：三幕歌劇（歌劇）。
 
 ## 1954 | Op. 54 《螺絲在擰緊》（The Turn of the Screw） {color=#c92a2a}
+![](images/britten-james.jpg)
 類別：室內歌劇（歌劇）。入門推薦聆聽第 13 首。
 
 ## 1959 ~ 1960 | Op. 64 《仲夏夜之夢》（A Midsummer Night’s Dream） {color=#c92a2a}
+![](images/britten-midsummer.jpg)
 類別：三幕歌劇（歌劇）。
 
 ## 1964 | Op. 71 《曲流河》（Curlew River） {color=#c92a2a}
@@ -102,6 +115,7 @@ description: 布列頓（1913–1976）代表作的編號、創作年代與類�
 類別：交響作品（交響曲與大型管弦樂作品）。入門推薦聆聽第 5 首。
 
 ## 1945 ~ 1946 | Op. 34 《青少年管弦樂指南》（The Young Person’s Guide to the Orchestra） {color=#1971c2}
+![](images/britten-purcell.jpg)
 類別：管弦樂變奏曲與賦格（交響曲與大型管弦樂作品）。入門推薦聆聽第 10 首。
 
 ## 1948 ~ 1949 | Op. 44 《春天交響曲》（Spring Symphony） {color=#1971c2}
@@ -165,6 +179,7 @@ description: 布列頓（1913–1976）代表作的編號、創作年代與類�
 類別：獨唱、合唱與室內管弦樂（合唱與宗教音樂）。
 
 ## 1961 ~ 1962 | Op. 66 《戰爭安魂曲》（War Requiem） {color=#2f9e44}
+![](images/britten-coventry.jpg)
 類別：獨唱、合唱、童聲合唱、管弦樂與室內管弦樂（合唱與宗教音樂）。入門推薦聆聽第 14 首。
 
 ## 1930 | 《聖母頌歌》（Hymn to the Virgin） {color=#2f9e44 label="1930；1934修訂"}

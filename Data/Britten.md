@@ -8,6 +8,7 @@ aliases: [布瑞頓]
 notNames: [布列頓森林]
 color: "#1864ab"
 description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國作曲家、指揮家與鋼琴家，戰後英國歌劇復興的核心人物
+cover: images/britten-cover.jpg
 ---
 
 <!--
@@ -18,6 +19,17 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 - 筆記中只寫「持續創作」「持續推動音樂節」等沒有具體事件的年份（1950、1955、1956、1959、1964），未另立事件。
 - 1952年的榮譽勳位（Companion of Honour）依筆記的年份。
 - 人名用·分隔；指揮家畢勤、大提琴家羅斯托波維奇等譯名與其他時間軸一致。人名索引以 notNames 排除「布列頓森林」（1944年布列頓森林會議），並以 aliases 比對另一譯名「布瑞頓」。
+圖片來源（皆為 Wikimedia Commons 公有領域作品）：
+- britten-cover.jpg：Benjamin Britten, London Records 1968 publicity photo for Wikipedia (restored).jpg（布列頓，1968年倫敦唱片公司的宣傳照）
+- britten-lowestoft.jpg：HMS 'Watchful', Gunboat, Lowestoft Harbour - The Graphic 1889.jpg（《圖像週報》插圖：洛斯托夫特港，1889）
+- britten-child.jpg：Benjamin Britten in 1921.jpg（童年的布列頓在鋼琴前，1921）
+- britten-auden.jpg：AudenVanVechten1939.jpg（卡爾·范維克滕拍攝的奧登，1939）
+- britten-crabbe.jpg：George Crabbe 1826.jpg（詩人喬治·克拉布像，1826）
+- britten-purcell.jpg：Henry Purcell Closterman.jpg（克洛斯特曼所繪普賽爾像）
+- britten-melville.jpg：Herman Melville 1846-47.jpg（赫爾曼·梅爾維爾像，1846–1847）
+- britten-james.jpg：Henry James by John Singer Sargent cleaned.jpg（沙金特所繪亨利·詹姆斯像，1913）
+- britten-midsummer.jpg：Oberon, Titania and Puck with Fairies Dancing. William Blake. c.1786.jpg（布萊克〈奧伯龍、泰坦妮亞與帕克和群仙共舞〉，約1786）
+- britten-coventry.jpg：Coventry Cathedral, 15 November 1940 - John Piper - 1940.jpg（約翰·派珀〈考文垂大教堂，1940年11月15日〉，大轟炸次日的廢墟）
 -->
 
 # Periods
@@ -37,9 +49,11 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 # Events
 
 ## 1913-11-22 | 出生@洛斯托夫特
+![](images/britten-lowestoft.jpg)
 愛德華·班傑明·布列頓生於英格蘭薩福克郡的海港洛斯托夫特，這天正好是音樂主保聖人聖則濟利亞的紀念日。母親是業餘歌手與鋼琴愛好者，家中音樂氣氛濃厚；北海的海岸景色日後成為他音樂想像的重要來源。
 
 ## 1919 | 開始作曲
+![](images/britten-child.jpg)
 五、六歲就開始寫曲子，展現驚人的音樂記憶力與作曲能力。1920年代初，他學習鋼琴與樂理，寫下大量少年習作，其中的旋律後來被他整理成《簡易交響曲》。
 
 ## 1924 | 聽到布里奇的《海》
@@ -58,6 +72,7 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 1933年寫成的聖誕合唱曲《一個男孩誕生了》由BBC歌手合唱團演出，《幻想四重奏》也在佛羅倫斯上演，他開始受到專業樂界注意。
 
 ## 1935 | 郵政總局電影部門與奧登
+![](images/britten-auden.jpg)
 進入英國郵政總局（GPO）電影部門，為紀錄片與短片配樂，並與詩人W. H. 奧登合作。電影配樂讓他學會以精準、經濟的手法營造氣氛，也讓他接觸到社會議題，為日後的歌劇打下基礎。
 
 ## 1936 | 《我們的狩獵祖先》
@@ -79,9 +94,11 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 與奧登合作的歌劇《保羅·班揚》在美國上演，是他早期重要的舞台作品。1941年至1942年間，他又以奧登的詩寫了合唱曲〈聖則濟利亞頌〉，延續英國的合唱傳統。
 
 ## 1942 | 返回英國
+![](images/britten-crabbe.jpg)
 返回英國，以良心拒服兵役者的身分獲准免服兵役，繼續作曲。1943年起，他根據詩人喬治·克拉布筆下的漁村人物，構思歌劇《彼得·格萊姆斯》。
 
 ## 1945 | 《彼得·格萊姆斯》首演
+![](images/britten-purcell.jpg)
 《彼得·格萊姆斯》在倫敦首演，描寫與漁村社會格格不入的漁夫，大獲成功。布列頓從此成為國際知名的歌劇作曲家，也證明英國作曲家能寫出兼具戲劇張力與心理深度的現代歌劇。同年寫的《青少年管弦樂指南》以普賽爾的主題變奏介紹管弦樂團的各種樂器，成為音樂教育的經典。
 
 ## 1946 | 《盧克麗霞受辱》與英國歌劇團
@@ -97,6 +114,7 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 寫下可讓兒童參與演出的音樂劇《小煙囪清掃工》，把音樂教育融入劇場實踐。
 
 ## 1951 | 《比利·巴德》首演
+![](images/britten-melville.jpg)
 改編自梅爾維爾小說的歌劇《比利·巴德》首演，透過一位水手的命運，探討善惡、法律、權力與人性的衝突。
 
 ## 1952 | 獲頒榮譽勳位
@@ -106,6 +124,7 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 為伊莉莎白二世加冕而作的歌劇《葛羅麗安娜》，以伊莉莎白一世與埃塞克斯伯爵的故事，探討王權、政治與個人情感。
 
 ## 1954 | 《螺絲在擰緊》首演
+![](images/britten-james.jpg)
 改編自亨利·詹姆斯小說的室內歌劇《螺絲在擰緊》，以精密的音樂結構營造心理懸疑與不安，是他成熟期的代表作。
 
 ## 1957 | 《諾亞方舟》
@@ -115,9 +134,11 @@ description: 班傑明·布列頓（Benjamin Britten，1913–1976），英國�
 為男高音與管弦樂團而作的《夜曲》，以多位詩人的作品探索睡眠、夢境與夜晚。
 
 ## 1960 | 《仲夏夜之夢》首演
+![](images/britten-midsummer.jpg)
 改編自莎士比亞的歌劇《仲夏夜之夢》首演，結合幻想、喜劇與細緻的音色設計。
 
 ## 1962 | 《戰爭安魂曲》首演
+![](images/britten-coventry.jpg)
 1961年動筆的《戰爭安魂曲》，在新建成的考文垂大教堂祝聖典禮期間首演。作品把拉丁文安魂彌撒與英國詩人威爾弗雷德·歐文的戰爭詩交錯並置，讓宗教儀式中的死亡與戰場上的苦難直接對話，成為20世紀最重要的反戰作品之一。
 
 ## 1963 | 《大提琴交響曲》

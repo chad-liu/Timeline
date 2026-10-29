@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期]
 follows: Franck
 color: "#5f3dc4"
+cover: images/franck-cover.jpg
 description: 法朗克（1822–1890）代表作的編號、創作年代與類別
 ---
 
@@ -17,6 +18,8 @@ description: 法朗克（1822–1890）代表作的編號、創作年代與類�
 - 筆記推薦清單中的作品另註明順序。
 - 沒有年份、無法放上時間軸的條目未收錄：FWV 57 《聖母頌》（Ave Maria）（不同版本年代不一）。
 - 以 follows 排在「法朗克生平」之後；生平事件見該時間軸。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，沿用生平時間軸的圖片）：
+- franck-cover.jpg：César Franck by Pierre Petit.jpg（皮耶·佩蒂拍攝的法朗克）（與法朗克生平共用）
 -->
 
 # Periods
