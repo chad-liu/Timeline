@@ -9,6 +9,7 @@ died: 1987-10-19
 aliases: [賈桂琳·杜普蕾]
 color: "#0c8599"
 description: 賈桂琳·杜普蕾（Jacqueline du Pré，1945–1987），生於牛津的英國大提琴家，以艾爾加《大提琴協奏曲》成為傳奇，二十八歲因多發性硬化症告別舞台
+cover: images/dupre-cover.jpg
 ---
 
 <!--
