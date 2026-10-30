@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期, 近當代音樂]
 related:
   - 理查·史特勞斯（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/理查·史特勞斯(1864~1949，Richard%20Strauss).html
+  - 理查·史特勞斯主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/理查史特勞斯主要作品.html
 born: 1864-06-11
 died: 1949-09-08
 color: "#5c940d"

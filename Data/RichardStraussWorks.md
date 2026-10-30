@@ -2,6 +2,8 @@
 title: 理查·史特勞斯主要作品
 category: 音樂家
 tags: [浪漫時期, 近當代音樂]
+related:
+  - 理查·史特勞斯主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/理查史特勞斯主要作品.html
 follows: RichardStrauss
 color: "#5c940d"
 cover: images/strauss-1888.jpg

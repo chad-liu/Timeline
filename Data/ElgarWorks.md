@@ -2,6 +2,8 @@
 title: 艾爾加主要作品
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 艾爾加主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/艾爾加（Edward%20Elgar）主要作品.html
 follows: Elgar
 color: "#7048e8"
 cover: images/elgar-cover.jpg

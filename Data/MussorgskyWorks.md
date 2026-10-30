@@ -2,6 +2,8 @@
 title: 穆索斯基主要作品
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 穆索斯基主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/穆索斯基主要作品.html
 follows: Mussorgsky
 color: "#6b705c"
 cover: images/mussorgsky-cover.jpg

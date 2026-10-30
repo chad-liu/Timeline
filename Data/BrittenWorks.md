@@ -2,6 +2,8 @@
 title: 布列頓主要作品
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 布列頓主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/布列頓主要作品.html
 follows: Britten
 color: "#1864ab"
 cover: images/britten-cover.jpg

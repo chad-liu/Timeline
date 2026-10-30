@@ -5,6 +5,7 @@ tags: [浪漫時期]
 follows: Verdi
 related:
   - 1853 《茶花女》: https://chad-liu.github.io/books/html/5-1.音樂史/1853-茶花女.html
+  - 威爾第主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/威爾第主要作品.html
 color: "#087f5b"
 cover: images/verdi-cover.jpg
 description: 威爾第（1813–1901）代表作的編號、創作年代與類別

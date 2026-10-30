@@ -2,6 +2,8 @@
 title: 普契尼主要作品
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 普契尼主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/普契尼主要作品.html
 follows: Puccini
 color: "#b5179e"
 cover: images/puccini-cover.jpg

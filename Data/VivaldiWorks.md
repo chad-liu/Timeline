@@ -2,6 +2,8 @@
 title: 韋瓦第主要作品
 category: 音樂家
 tags: [巴洛克時期]
+related:
+  - 韋瓦第主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/韋瓦第主要作品.html
 follows: Vivaldi
 color: "#a61e4d"
 cover: images/vivaldi-cover.jpg

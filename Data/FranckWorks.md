@@ -2,6 +2,8 @@
 title: 法朗克主要作品
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 法朗克主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/法朗克主要作品.html
 follows: Franck
 color: "#5f3dc4"
 cover: images/franck-cover.jpg

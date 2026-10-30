@@ -2,6 +2,8 @@
 title: 拉羅主要作品
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 拉羅主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/拉羅主要作品.html
 follows: Lalo
 color: "#c2255c"
 cover: images/lalo-cover.jpg

@@ -5,6 +5,7 @@ tags: [巴洛克時期]
 follows: Handel
 related:
   - 1742 《彌賽亞》首演: https://chad-liu.github.io/books/html/5-1.音樂史/1742-彌賽亞首演.html
+  - 韓德爾主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/韓德爾主要作品.html
 color: "#1864ab"
 cover: images/handel-cover.jpg
 description: 韓德爾（1685–1759）代表作的編號、創作年代與類別

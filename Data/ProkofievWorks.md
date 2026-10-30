@@ -2,6 +2,8 @@
 title: 普羅高菲夫主要作品
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 普羅高菲夫主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/普羅高菲夫主要作品.html
 follows: Prokofiev
 color: "#7a5c00"
 cover: images/prokofiev-cover.jpg

@@ -2,6 +2,8 @@
 title: 史特拉汶斯基生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 史特拉汶斯基主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/史特拉汶斯基主要作品.html
 born: 1882-06-17
 died: 1971-04-06
 color: "#862e9c"

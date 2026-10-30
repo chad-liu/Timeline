@@ -4,6 +4,7 @@ category: 音樂家
 tags: [浪漫時期]
 related:
   - 法朗克（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/法朗克(1822~1890，César%20Franck).html
+  - 法朗克主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/法朗克主要作品.html
 born: 1822-12-10
 died: 1890-11-08
 color: "#5f3dc4"
