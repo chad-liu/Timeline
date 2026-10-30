@@ -4,6 +4,7 @@ category: 東方歷史
 tags: [思想史]
 related:
   - 魏晉玄學: https://chad-liu.github.io/books/html/1-2.中國歷史/魏晉玄學.html
+  - 魏晉玄學大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/魏晉玄學大事記.html
   - 東晉玄佛合流: https://chad-liu.github.io/books/html/2-7.佛教/漢傳佛教/東晉玄佛合流.html
 color: "#0b7285"
 description: 從東漢末年的經學反思、正始清談，到竹林名士、西晉有無之辯與東晉玄佛合流（約180–420）

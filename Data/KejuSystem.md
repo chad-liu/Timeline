@@ -5,6 +5,7 @@ tags: [制度史]
 related:
   - 科舉與中國官僚帝國: https://chad-liu.github.io/books/html/1-6-0.世界簡史/0605-科舉與中國官僚帝國.html
   - 科舉制與階層流動: https://chad-liu.github.io/books/html/1-6-8.社會結構史/0605-科舉制與階層流動.html
+  - 中國科舉制度大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/中國科舉制度大事記.html
 color: "#8d5524"
 description: 從漢代察舉、隋唐形成到1905年廢除：延續約一千三百年、把教育、選才與社會流動綁在一起的考試取士制度
 cover: images/keju-palace.jpg

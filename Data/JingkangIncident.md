@@ -2,6 +2,8 @@
 title: 北宋靖康之變大事記
 category: 東方歷史
 tags: [戰爭與革命]
+related:
+  - 北宋靖康之變大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/北宋靖康之變大事記.html
 color: "#c92a2a"
 description: 從聯金滅遼、金軍兩次南下，到北宋滅亡與南宋建立（1115–1127）：外交、軍事與決策失誤如何導致首都陷落
 cover: images/jingkang-qingming.jpg

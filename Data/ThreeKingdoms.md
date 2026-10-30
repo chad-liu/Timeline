@@ -2,6 +2,8 @@
 title: 漢末三國大事記
 category: 東方歷史
 tags: [時代史]
+related:
+  - 漢末三國大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/漢末三國大事記.html
 color: "#d9480f"
 description: 從黃巾之亂、董卓專權到三國鼎立與西晉統一（184–280）：中央集權瓦解後，各地軍事勢力如何爭奪正統、領土與資源
 cover: images/sanguo-cover.jpg

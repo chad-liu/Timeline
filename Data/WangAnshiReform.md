@@ -5,6 +5,7 @@ tags: [改革與政爭]
 related:
   - 王安石變法: https://chad-liu.github.io/books/html/1-2.中國歷史/王安石變法.html
   - 北宋新舊黨人物: https://chad-liu.github.io/books/html/1-2.中國歷史/北宋新舊黨人物.html
+  - 北宋王安石變法大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/北宋王安石變法大事記.html
   - 王安石變法（法律與制度史）: https://chad-liu.github.io/books/html/1-6-4.法律與制度史/1069-王安石變法.html
 color: "#1971c2"
 description: 從改革背景、熙寧新法到新舊黨爭與新法廢除（960–1127）：一場理想、執行與政治支持彼此拉扯的制度改革

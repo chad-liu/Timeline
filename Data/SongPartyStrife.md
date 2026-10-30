@@ -5,6 +5,7 @@ tags: [改革與政爭]
 related:
   - 北宋新舊黨人物: https://chad-liu.github.io/books/html/1-2.中國歷史/北宋新舊黨人物.html
   - 王安石變法: https://chad-liu.github.io/books/html/1-2.中國歷史/王安石變法.html
+  - 北宋新舊黨爭大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/北宋新舊黨爭大事記.html
 color: "#7048e8"
 description: 從熙寧變法、元祐更化、紹聖紹述到崇寧黨禁（1069–1127）：從改革政策的分歧，演變成政治派系清算的長期鬥爭
 cover: images/dangzheng-tingqin.jpg
