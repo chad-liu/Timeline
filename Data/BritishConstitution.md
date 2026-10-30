@@ -4,7 +4,6 @@ category: 西方歷史
 tags: [戰爭與革命]
 related:
   - 英國立憲運動大事記（1215—1928）: https://chad-liu.github.io/books/html/1-1.西方歷史/英國立憲運動大事記（1215—1928）.html
-  - 英國立憲運動時間軸: https://chad-liu.github.io/books/html/1-1.西方歷史/英國立憲運動時間軸.html
   - 英國歷史總覽: https://chad-liu.github.io/books/html/1-1.西方歷史/英國歷史總覽.html
 color: "#2b8a3e"
 description: 從《大憲章》、英國內戰與光榮革命，到內閣制、三次改革法案與男女平等選舉權（1215–1928）
