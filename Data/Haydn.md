@@ -2,6 +2,9 @@
 title: 海頓生平
 category: 音樂家
 tags: [古典時期]
+related:
+  - 海頓（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/海頓(1732~1809，Franz%20Joseph%20Haydn).html
+  - 海頓主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/海頓主要作品.html
 born: 1732-03-31
 died: 1809-05-31
 color: "#00a884"

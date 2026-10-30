@@ -2,6 +2,8 @@
 title: 威爾第生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 威爾第（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/威爾第(1813~1901，Giuseppe%20Verdi).html
 born: 1813-10-10
 died: 1901-01-27
 color: "#087f5b"

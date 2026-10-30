@@ -2,6 +2,9 @@
 title: 巴赫生平
 category: 音樂家
 tags: [巴洛克時期]
+related:
+  - 巴赫（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/巴赫(1685~1750，Johann%20Sebastian%20Bach).html
+  - 巴赫主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/巴赫主要作品.html
 aliases: [巴哈]
 notNames: [巴哈馬, 古巴哈瓦那, 奧芬巴哈, 費爾巴哈, 奧爾巴赫, 維特爾斯巴赫, 邁巴赫, 施坦巴赫, 杜爾巴赫, J.C.巴赫, 克里斯蒂安·巴赫]
 born: 1685-03-21

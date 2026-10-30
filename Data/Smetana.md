@@ -2,6 +2,8 @@
 title: 史麥塔納生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 史麥塔納（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/史麥塔納(1824~1884，Bedřich%20Smetana).html
 born: 1824-03-02
 died: 1884-05-12
 color: "#0f4c81"

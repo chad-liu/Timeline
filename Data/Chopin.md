@@ -2,6 +2,9 @@
 title: 蕭邦生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 蕭邦（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/蕭邦(1810~1849，Frédéric%20François%20Chopin).html
+  - 蕭邦主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/蕭邦主要作品.html
 born: 1810-03-01
 died: 1849-10-17
 color: "#1098ad"

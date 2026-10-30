@@ -2,6 +2,9 @@
 title: 白遼士生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 白遼士（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/白遼士(1803~1869，Louis-Hector%20Berlioz).html
+  - 白遼士主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/白遼士主要作品.html
 born: 1803-12-11
 died: 1869-03-08
 color: "#2b8a3e"

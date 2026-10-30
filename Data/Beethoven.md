@@ -2,6 +2,9 @@
 title: 貝多芬生平
 category: 音樂家
 tags: [古典時期, 浪漫時期]
+related:
+  - 貝多芬（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/貝多芬(1770~1827，Ludwig%20van%20Beethoven).html
+  - 貝多芬主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/貝多芬主要作品.html
 born: 1770-12-16
 died: 1827-03-26
 color: "#e8590c"

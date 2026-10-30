@@ -2,6 +2,8 @@
 title: 艾爾加生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 艾爾加（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/艾爾加(1857~1934，Edward%20Elgar).html
 born: 1857-06-02
 died: 1934-02-23
 color: "#7048e8"

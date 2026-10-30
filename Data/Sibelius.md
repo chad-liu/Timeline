@@ -2,6 +2,9 @@
 title: 西貝流士生平
 category: 音樂家
 tags: [浪漫時期, 近當代音樂]
+related:
+  - 西貝流士（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/西貝流士(1865~1957，Jean%20Sibelius).html
+  - 西貝流士主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/西貝流士主要作品.html
 born: 1865-12-08
 died: 1957-09-20
 color: "#3d5a80"

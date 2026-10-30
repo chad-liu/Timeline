@@ -2,6 +2,8 @@
 title: 荀白克生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 荀白克（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/荀白克(1874~1951，Arnold%20Schoenberg).html
 born: 1874-09-13
 died: 1951-07-13
 color: "#264653"

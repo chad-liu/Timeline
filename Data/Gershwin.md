@@ -2,6 +2,8 @@
 title: 蓋西文生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 蓋西文（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/蓋西文(1898~1937，George%20Gershwin).html
 born: 1898-09-26
 died: 1937-07-11
 color: "#5f3dc4"

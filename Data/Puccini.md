@@ -2,6 +2,8 @@
 title: 普契尼生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 普契尼（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/普契尼(1858~1924，Giacomo%20Puccini).html
 born: 1858-12-22
 died: 1924-11-29
 color: "#b5179e"

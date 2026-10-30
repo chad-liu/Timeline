@@ -2,6 +2,9 @@
 title: 德布西生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 德布西（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/德布西(1862~1918，Achille%20Claude%20Debussy).html
+  - 德布西主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/德布西主要作品.html
 born: 1862-08-22
 died: 1918-03-25
 color: "#9775fa"

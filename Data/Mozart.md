@@ -2,6 +2,9 @@
 title: 莫札特生平
 category: 音樂家
 tags: [古典時期]
+related:
+  - 莫札特（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/莫札特(1756~1791，Wolfgang%20Amadeus%20Mozart).html
+  - 莫札特主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/莫札特主要作品.html
 born: 1756-01-27
 died: 1791-12-05
 color: "#d6336c"

@@ -2,6 +2,9 @@
 title: 德弗札克生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 德弗札克（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/德弗札克(1841~1904，Antonín%20Leopold%20Dvořák).html
+  - 德弗札克主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/德弗札克主要作品.html
 notNames: [法蘭提謝克·德弗札克]
 born: 1841-09-08
 died: 1904-05-01

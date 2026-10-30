@@ -2,6 +2,8 @@
 title: 比才生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 比才（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/比才(1838~1875，Georges%20Bizet).html
 born: 1838-10-25
 died: 1875-06-03
 color: "#e5383b"

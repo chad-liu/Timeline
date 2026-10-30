@@ -2,6 +2,9 @@
 title: 舒伯特生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 舒伯特（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/舒伯特(1797~1828，Franz%20Peter%20Schubert).html
+  - 舒伯特主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/舒伯特主要作品.html
 born: 1797-01-31
 died: 1828-11-19
 color: "#b08900"

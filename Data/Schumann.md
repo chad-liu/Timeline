@@ -2,6 +2,9 @@
 title: 舒曼生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 舒曼（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/舒曼(1810~1856，Robert%20Schumann).html
+  - 舒曼主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/舒曼主要作品.html
 notNames: [克拉拉·舒曼]
 born: 1810-06-08
 died: 1856-07-29

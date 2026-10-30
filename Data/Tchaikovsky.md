@@ -2,6 +2,9 @@
 title: 柴可夫斯基生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 柴可夫斯基（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/柴可夫斯基(1840~1893，Pyotr%20Ilyich%20Tchaikovsky).html
+  - 柴可夫斯基主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/柴可夫斯基主要作品.html
 born: 1840-05-07
 died: 1893-11-06
 color: "#f59f00"

@@ -2,6 +2,9 @@
 title: 布拉姆斯生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 布拉姆斯（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/布拉姆斯(1833~1897，Johannes%20Brahms).html
+  - 布拉姆斯主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/布拉姆斯主要作品.html
 born: 1833-05-07
 died: 1897-04-03
 color: "#5c940d"

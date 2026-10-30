@@ -2,6 +2,9 @@
 title: 孟德爾頌生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 孟德爾頌（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/孟德爾頌(1809~1847，Jakob%20Ludwig%20Felix%20Mendelssohn%20Bartholdy).html
+  - 孟德爾頌主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/孟德爾頌主要作品.html
 notNames: [米拉·孟德爾松]
 born: 1809-02-03
 died: 1847-11-04

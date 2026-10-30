@@ -2,6 +2,9 @@
 title: 馬勒生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 馬勒（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/馬勒(1860~1911，Gustav%20Mahler).html
+  - 馬勒主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/馬勒主要作品.html
 notNames: [阿爾瑪·馬勒, 馬勒伯朗士]
 born: 1860-07-07
 died: 1911-05-18

@@ -2,6 +2,9 @@
 title: 巴爾托克生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 巴爾托克（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/巴爾托克(1881~1945，Bartók%20Béla).html
+  - 巴爾托克主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/巴爾托克主要作品.html
 born: 1881-03-25
 died: 1945-09-26
 color: "#386641"

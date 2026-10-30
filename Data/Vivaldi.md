@@ -2,6 +2,8 @@
 title: 韋瓦第生平
 category: 音樂家
 tags: [巴洛克時期]
+related:
+  - 韋瓦第（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/韋瓦第(1678~1741，Antonio%20Lucio%20Vivaldi).html
 born: 1678-03-04
 died: 1741-07-28
 color: "#a61e4d"

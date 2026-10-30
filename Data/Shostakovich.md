@@ -2,6 +2,9 @@
 title: 蕭士塔高維奇生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 蕭士塔高維奇（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/蕭士塔高維奇(1906~1975，Dmitri%20Dmitriyevich%20Shostakovich).html
+  - 蕭士塔高維奇主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/蕭士塔高維奇主要作品.html
 born: 1906-09-25
 died: 1975-08-09
 color: "#b02525"

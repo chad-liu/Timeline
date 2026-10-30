@@ -2,6 +2,8 @@
 title: 葛利格生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 葛利格（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/葛利格(1843~1907，Edvard%20Hagerup%20Grieg).html
 born: 1843-06-15
 died: 1907-09-04
 color: "#6d597a"

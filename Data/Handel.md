@@ -2,6 +2,8 @@
 title: 韓德爾生平
 category: 音樂家
 tags: [巴洛克時期]
+related:
+  - 韓德爾（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/韓德爾(1685~1759，George%20Frideric%20Handel).html
 aliases: [亨德爾]
 born: 1685-02-23
 died: 1759-04-14

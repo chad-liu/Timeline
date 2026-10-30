@@ -2,6 +2,8 @@
 title: 布列頓生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 布列頓（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/布列頓(1913~1976，Benjamin%20Britten).html
 born: 1913-11-22
 died: 1976-12-04
 aliases: [布瑞頓]

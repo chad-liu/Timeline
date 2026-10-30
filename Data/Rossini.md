@@ -2,6 +2,8 @@
 title: 羅西尼生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 羅西尼（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/羅西尼(1792~1868，Gioachino%20Antonio%20Rossini).html
 born: 1792-02-29
 died: 1868-11-13
 color: "#ae3ec9"

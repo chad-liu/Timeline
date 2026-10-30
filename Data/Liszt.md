@@ -2,6 +2,9 @@
 title: 李斯特生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 李斯特（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/李斯特(1811~1886，Liszt%20Ferenc／Franz%20Liszt).html
+  - 李斯特主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/李斯特主要作品.html
 born: 1811-10-22
 died: 1886-07-31
 color: "#c92a2a"

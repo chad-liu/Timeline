@@ -2,6 +2,9 @@
 title: 華格納生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 華格納（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/華格納(1813~1883，Wilhelm%20Richard%20Wagner).html
+  - 華格納主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/華格納主要作品.html
 born: 1813-05-22
 died: 1883-02-13
 color: "#364fc7"

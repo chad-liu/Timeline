@@ -2,6 +2,8 @@
 title: 鮑羅定生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 鮑羅定（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/鮑羅定(1833~1887，Alexander%20Borodin).html
 born: 1833-11-12
 died: 1887-02-27
 color: "#8c6d1f"

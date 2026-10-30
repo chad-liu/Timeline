@@ -2,6 +2,9 @@
 title: 拉威爾生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 拉威爾（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/拉威爾(1875~1937，Joseph%20Maurice%20Ravel).html
+  - 拉威爾主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/拉威爾主要作品.html
 born: 1875-03-07
 died: 1937-12-28
 color: "#495057"

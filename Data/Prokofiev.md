@@ -2,6 +2,8 @@
 title: 普羅高菲夫生平
 category: 音樂家
 tags: [近當代音樂]
+related:
+  - 普羅高菲夫（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/普羅高菲夫(1891~1953，Sergei%20Sergeyevich%20Prokofiev).html
 born: 1891-04-27
 died: 1953-03-05
 color: "#7a5c00"

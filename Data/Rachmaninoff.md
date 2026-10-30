@@ -2,6 +2,9 @@
 title: 拉赫曼尼諾夫生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 拉赫曼尼諾夫（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/拉赫曼尼諾夫(1873~1943，Sergei%20Vasilyevich%20Rachmaninoff).html
+  - 拉赫曼尼諾夫主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/拉赫曼尼諾夫主要作品.html
 born: 1873-04-01
 died: 1943-03-28
 color: "#1c7ed6"

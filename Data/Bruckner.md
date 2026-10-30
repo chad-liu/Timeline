@@ -2,6 +2,9 @@
 title: 布魯克納生平
 category: 音樂家
 tags: [浪漫時期]
+related:
+  - 布魯克納（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/布魯克納(1824~1896，Joseph%20Anton%20Bruckner).html
+  - 布魯克納主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/布魯克納主要作品.html
 born: 1824-09-04
 died: 1896-10-11
 color: "#5c3d2e"
