@@ -1,6 +1,6 @@
 # Liu's Timeline
 
-仿 [Timetoast](https://www.timetoast.com/) 的個人時間軸網站，收錄世界史、西方與東方歷史、音樂家、思想家、文學家、經濟商業等一百多條時間軸。
+仿 [Timetoast](https://www.timetoast.com/) 的個人時間軸網站，收錄世界史、西方與東方歷史、音樂家、藝術家、思想家、文學家、經濟商業等一百多條時間軸。
 
 **網站：https://chad-liu.github.io/Timeline/**
 

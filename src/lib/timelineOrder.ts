@@ -44,7 +44,7 @@ export interface TimelineGroup {
 }
 
 /** Tab order of the known categories; any other category follows them, and 未分類 comes last. */
-export const CATEGORY_ORDER = ['世界史', '西方歷史', '東方歷史', '音樂家', '思想家', '文學家'];
+export const CATEGORY_ORDER = ['世界史', '西方歷史', '東方歷史', '音樂家', '藝術家', '思想家', '文學家'];
 
 function categoryRank(category: string): number {
   if (category === UNCATEGORIZED) return CATEGORY_ORDER.length + 1;

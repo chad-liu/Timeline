@@ -251,25 +251,6 @@ people:
     died: 1510
     category: 世界史
     note: 〈維納斯的誕生〉的畫家，梅迪奇家族的御用畫家
-  - name: 達文西
-    terms: [達文西]
-    born: 1452
-    died: 1519
-    category: 世界史
-    note: 〈最後的晚餐〉〈蒙娜麗莎〉的作者
-  - name: 米開朗基羅
-    terms: [米開朗基羅]
-    born: 1475
-    died: 1564
-    category: 世界史
-    note: 〈大衛〉、西斯汀禮拜堂天頂畫的作者
-  - name: 拉斐爾
-    terms: [拉斐爾]
-    notNames: [拉斐爾前派]
-    born: 1483
-    died: 1520
-    category: 世界史
-    note: 〈雅典學院〉的作者
 
   # 音樂家
   - name: 帕格尼尼
