@@ -41,6 +41,7 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
   - `#p=lifespans` 是人物年表。
   - `#p=index` 是人名索引；時間軸網址加上 `&e=事件id`（如 `&e=Voltaire-6`）會直接開啟該事件。
   - `#p=topics` 是主題索引（`topicIndex.ts` + `TopicIndex.tsx`）：主題清單寫在 `Data/index/topics.md`，以 `virtual:index-topics` 提供，比對事件標題與內文；主題的專屬時間軸（`timeline:`）只附連結，不重複列出事件。新增主題時先掃一遍比對結果，用 `notTerms` 排除同字詞。
+  - `#p=graph` 是人物關係圖（`relationGraph.ts` + `RelationGraph.tsx`，`d3-force`／`d3-zoom`／`d3-drag`／`d3-selection`，不用整包 d3）：由 `buildNameIndex` 的結果反推，A 的自有時間軸（`links`）提到 B 就連線，權重是事件數；`#p=graph&c=音樂家&w=2` 篩類別與最小權重。D3 只管模擬與 SVG，選取與搜尋只切換 class，不重啟模擬；模擬穩定後會自動縮放到全圖可見（使用者操作過就不再動）。
   - `#p=years&y=1789&s=10` 是年代對照（`src/lib/yearIndex.ts` + `YearIndex.tsx`）：`s` 為 1／10／100（單年／十年／百年），列出各時間軸在該段期間的事件與同時在世的人物。跨度約百年以上的事件（如 `18世紀` 或 `1700 ~ 1799`）只在百年檢視出現。標題旁的中國帝王由 `chineseRulers.ts` 的 `reignsInSlice` 產生，和人物年表共用同一份帝王資料。明、清的年號紀年要用 `eraStart`（元年），它通常是即位的次年，例外是洪武、順治、天順、隆慶、嘉慶、光緒，元年與即位同年。事件詳細內容底部有連結可跳到這一頁。
 - **排序與分組**：`src/lib/timelineOrder.ts` 是唯一依據。
   - `compareTimelines`：依最早日期排序，`sortLast` 排最後。

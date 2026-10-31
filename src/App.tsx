@@ -8,6 +8,7 @@ import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
 import { NameIndex } from './components/NameIndex';
+import { RelationGraph } from './components/RelationGraph';
 import { YearIndex } from './components/YearIndex';
 import { TopicIndex } from './components/TopicIndex';
 import { Logo } from './components/Logo';
@@ -33,6 +34,7 @@ export function App() {
   if (route.page === 'lifespans') return <Lifespans timelines={timelines} />;
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
+  if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} />;
   if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
     <TimelinePage key={timelineHash(route.ids, route.view, route.event)} initialView={route.view} initialIds={route.ids} initialEvent={route.event} />

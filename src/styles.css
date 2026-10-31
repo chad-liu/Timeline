@@ -1819,3 +1819,226 @@ input {
 .ti-group .ni-years {
   flex: 1 1 16em;
 }
+
+/* Relation graph (#p=graph) */
+.relation-graph {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--surface);
+}
+
+.rg-controls {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rg-controls .dash-tag-filter {
+  margin: 0;
+}
+
+.rg-controls .tag-chip {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.rg-controls .ls-fold a {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.rg-controls .ls-fold a.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.rg-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rg-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.rg-links line {
+  stroke: var(--line);
+  stroke-opacity: 0.9;
+}
+
+.rg-node {
+  cursor: pointer;
+}
+
+.rg-node circle {
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.rg-node text {
+  display: none;
+  fill: var(--text);
+  font-size: 12px;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 3px;
+  pointer-events: none;
+}
+
+.rg-node.major text,
+.rg-svg.zoomed .rg-node text,
+.rg-node.near text,
+.rg-node.selected text,
+.rg-node.match text {
+  display: block;
+}
+
+.rg-svg.focus .rg-node:not(.near) {
+  opacity: 0.15;
+}
+
+.rg-svg.focus .rg-links line:not(.near) {
+  stroke-opacity: 0.1;
+}
+
+.rg-links line.near {
+  stroke: var(--accent);
+}
+
+.rg-node.selected circle,
+.rg-node.match circle {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.rg-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.rg-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+.rg-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: 280px;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.rg-panel h2 {
+  margin: 0;
+  padding-left: 8px;
+  border-left: 4px solid var(--accent);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rg-panel h3 {
+  margin: 16px 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rg-panel h3 small,
+.rg-meta,
+.rg-panel li small {
+  color: var(--muted);
+}
+
+.rg-meta {
+  margin: 4px 0 8px;
+  font-size: 13px;
+}
+
+.rg-own {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.rg-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rg-panel li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.rg-panel li button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.rg-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .rg-controls {
+    padding: 8px 12px;
+  }
+
+  .rg-panel {
+    top: auto;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    max-height: 45%;
+  }
+}
