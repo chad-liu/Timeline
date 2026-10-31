@@ -2063,3 +2063,38 @@ input {
   color: var(--muted);
   font-size: 12px;
 }
+
+/* Relation graph: see: links, timeline nodes and nodes shown only because they are linked to the selected category */
+.rg-links line.see {
+  stroke: var(--accent);
+  stroke-dasharray: 6 4;
+  stroke-opacity: 0.7;
+}
+
+.rg-node rect {
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.rg-node.outside circle,
+.rg-node.outside rect {
+  opacity: 0.55;
+}
+
+.rg-node.selected rect,
+.rg-node.match rect {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.rg-panel li button em {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.rg-controls .ni-tools .tag-chip {
+  font-size: 14px;
+  text-decoration: none;
+}

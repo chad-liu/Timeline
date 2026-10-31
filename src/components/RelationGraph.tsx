@@ -22,21 +22,26 @@ const MAJOR_LABELS = 25;
 
 const radius = (n: GraphNode) => 5 + Math.min(14, Math.sqrt(n.weight) * 1.6);
 
-/** The relation graph (#p=graph): people as nodes, linked when one's own timelines mention the other. */
+/**
+ * The relation graph (#p=graph): people as nodes, linked when one's own timelines mention the other (solid line)
+ * or a `see:` link joins their timelines (dashed line). A timeline that is nobody's own, such as a family, is a square node.
+ */
 export function RelationGraph({
   timelines,
   extras,
   category,
   minWeight,
+  cross,
 }: {
   timelines: Timeline[];
   extras: ExtraPerson[];
   category?: string;
   minWeight: number;
+  cross: boolean;
 }) {
   const index = useMemo(() => buildNameIndex(timelines, extras), [timelines, extras]);
-  const full = useMemo(() => buildRelationGraph(index), [index]);
-  const graph = useMemo(() => filterRelationGraph(full, { category, minWeight }), [full, category, minWeight]);
+  const full = useMemo(() => buildRelationGraph(index, timelines), [index, timelines]);
+  const graph = useMemo(() => filterRelationGraph(full, { category, minWeight, crossOnly: cross }), [full, category, minWeight, cross]);
   const categories = [...new Set(full.nodes.map((n) => n.category))].sort(
     (a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99),
   );
@@ -73,10 +78,12 @@ export function RelationGraph({
       .selectAll<SVGLineElement, SimLink>('line')
       .data(links)
       .join('line')
-      .attr('stroke-width', (d) => 1 + Math.min(6, Math.sqrt(d.weight)));
+      .attr('class', (d) => (d.see ? 'see' : null))
+      .attr('stroke-width', (d) => 1 + Math.min(6, Math.sqrt(d.weight)) + (d.see ? 1 : 0));
     link.append('title').text((d) => {
       const [a, b] = [nodes.find((n) => n.id === d.source), nodes.find((n) => n.id === d.target)];
-      return `${a?.name} → ${b?.name}：${d.forward} 則\n${b?.name} → ${a?.name}：${d.backward} 則`;
+      const mention = d.weight > 0 ? `${a?.name} → ${b?.name}：${d.forward} 則\n${b?.name} → ${a?.name}：${d.backward} 則` : '';
+      return [d.see ? `${a?.name} ⇄ ${b?.name}：相關時間軸（see:）` : '', mention].filter(Boolean).join('\n');
     });
 
     const node = root
@@ -84,18 +91,26 @@ export function RelationGraph({
       .selectAll<SVGGElement, SimNode>('g')
       .data(nodes)
       .join('g')
-      .attr('class', (d) => (d.degree >= majorDegree ? 'rg-node major' : 'rg-node'))
+      .attr('class', (d) =>
+        ['rg-node', d.degree >= majorDegree || d.kind === 'timeline' ? 'major' : '', d.kind === 'timeline' ? 'timeline' : '', d.outside ? 'outside' : '']
+          .filter(Boolean)
+          .join(' '),
+      )
       .attr('data-id', (d) => d.id);
-    node
-      .append('circle')
-      .attr('r', radius)
-      .attr('fill', (d) => d.color);
+    node.each(function (d) {
+      const r = radius(d);
+      const shape = select(this)
+        .append(d.kind === 'timeline' ? 'rect' : 'circle')
+        .attr('fill', d.color);
+      if (d.kind === 'timeline') shape.attr('x', -r).attr('y', -r).attr('width', 2 * r).attr('height', 2 * r).attr('rx', 3);
+      else shape.attr('r', r);
+    });
     node
       .append('text')
       .attr('dy', (d) => -radius(d) - 3)
       .attr('text-anchor', 'middle')
       .text((d) => d.name);
-    node.append('title').text((d) => `${d.name}（${d.years}）\n${d.category}・${d.degree} 人・${d.weight} 則事件`);
+    node.append('title').text((d) => `${d.name}${d.years ? `（${d.years}）` : ''}\n${d.category}・連到 ${d.degree} 個節點`);
 
     const highlight = (id: string | null) => {
       const near = id ? neighbors.get(id) : null;
@@ -193,16 +208,16 @@ export function RelationGraph({
   }, [graph, selected, q]);
 
   const byId = new Map(full.nodes.map((n) => [n.id, n]));
-  const entry = selected ? index.find((e) => e.key === selected) : undefined;
+  const entry = selected ? byId.get(selected) : undefined;
   const selectedLinks = selected
     ? graph.links
         .filter((l) => l.source === selected || l.target === selected)
         .map((l) => {
           const other = byId.get(l.source === selected ? l.target : l.source)!;
           const out = l.source === selected ? l.forward : l.backward;
-          return { other, out, in: l.weight - out, weight: l.weight };
+          return { other, out, in: l.weight - out, weight: l.weight, see: l.see };
         })
-        .sort((a, b) => b.weight - a.weight)
+        .sort((a, b) => Number(b.see) - Number(a.see) || b.weight - a.weight)
     : [];
 
   return (
@@ -215,26 +230,29 @@ export function RelationGraph({
         <h1 className="ls-title">
           人物關係圖{' '}
           <small>
-            {graph.nodes.length} 人・{graph.links.length} 條連線
+            {graph.nodes.length} 個節點・{graph.links.length} 條連線
           </small>
         </h1>
       </header>
 
       <div className="rg-controls">
         <nav className="dash-tag-filter" aria-label="類別">
-          <a className={category ? 'tag-chip' : 'tag-chip active'} href={graphHash(null, minWeight)}>
+          <a className={category ? 'tag-chip' : 'tag-chip active'} href={graphHash(null, minWeight, cross)}>
             全部
           </a>
           {categories.map((c) => (
-            <a key={c} className={c === category ? 'tag-chip active' : 'tag-chip'} href={graphHash(c, minWeight)}>
+            <a key={c} className={c === category ? 'tag-chip active' : 'tag-chip'} href={graphHash(c, minWeight, cross)}>
               {c}
             </a>
           ))}
         </nav>
         <div className="ni-tools">
+          <a className={cross ? 'tag-chip active' : 'tag-chip'} href={graphHash(category, minWeight, !cross)} title="只留下連到另一個類別的連線">
+            只看跨類別
+          </a>
           <div className="ls-fold" role="group" aria-label="最少提及事件數">
             {WEIGHTS.map((w) => (
-              <a key={w} className={w === minWeight ? 'active' : undefined} href={graphHash(category, w)}>
+              <a key={w} className={w === minWeight ? 'active' : undefined} href={graphHash(category, w, cross)}>
                 ≥{w}
               </a>
             ))}
@@ -246,7 +264,7 @@ export function RelationGraph({
       <div className="rg-stage">
         <svg ref={svgRef} className="rg-svg" role="img" aria-label="人物關係圖" />
         {graph.nodes.length === 0 && <p className="empty rg-empty">沒有符合條件的連線。</p>}
-        <p className="rg-hint">滾輪縮放、拖曳移動；點人物看連線，連線粗細＝提及的事件數</p>
+        <p className="rg-hint">滾輪縮放、拖曳移動；點節點看連線。實線＝提及（越粗事件越多），虛線＝相關時間軸（see:），方塊＝家族或時代等時間軸</p>
 
         {entry && (
           <aside className="rg-panel">
@@ -254,28 +272,29 @@ export function RelationGraph({
               ×
             </button>
             <h2 style={{ borderColor: entry.color }}>{entry.name}</h2>
-            <p className="rg-meta">
-              {entry.years}・{entry.category}
-            </p>
+            <p className="rg-meta">{[entry.years, entry.category].filter(Boolean).join('・')}</p>
             <p className="rg-own">
               {entry.links.map((t) => (
                 <a key={t.id} href={timelineHash([t.id], 'vertical')}>
                   {t.title}
                 </a>
               ))}
-              <a href={INDEX_HASH}>人名索引</a>
+              {entry.kind === 'person' && <a href={INDEX_HASH}>人名索引</a>}
             </p>
             <h3>
               連線 <small>{selectedLinks.length}</small>
             </h3>
             <ul>
-              {selectedLinks.map(({ other, out, in: back }) => (
+              {selectedLinks.map(({ other, out, in: back, weight, see }) => (
                 <li key={other.id}>
                   <button type="button" onClick={() => setSelected(other.id)}>
                     {other.name}
+                    {other.category !== entry.category && <em>{other.category}</em>}
                   </button>
                   <small>
-                    提到對方 {out}・被對方提到 {back}
+                    {see && '相關時間軸'}
+                    {see && weight > 0 && '・'}
+                    {weight > 0 && `提到對方 ${out}・被對方提到 ${back}`}
                   </small>
                 </li>
               ))}
