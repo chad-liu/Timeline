@@ -2,6 +2,7 @@
 title: 梅迪奇家族
 category: 西方歷史
 tags: [家族史]
+see: [Renaissance]
 related:
   - 梅迪奇家族——從藥商到佛羅倫斯之主: https://chad-liu.github.io/books/html/1-1.西方歷史/梅迪奇家族.html
   - 梅迪奇家族傳記——佛羅倫斯王朝: https://chad-liu.github.io/books/html/1-1.西方歷史/梅迪奇家族2.html

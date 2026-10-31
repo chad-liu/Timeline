@@ -12,6 +12,7 @@ import { RelationGraph } from './components/RelationGraph';
 import { YearIndex } from './components/YearIndex';
 import { TopicIndex } from './components/TopicIndex';
 import { Logo } from './components/Logo';
+import { RelatedTimelines } from './components/RelatedTimelines';
 import { TimelinePicker } from './components/TimelinePicker';
 import { HorizontalView } from './components/HorizontalView';
 import { VerticalView } from './components/VerticalView';
@@ -109,6 +110,7 @@ function TimelinePage({ initialView, initialIds, initialEvent }: { initialView: 
             </nav>
           </details>
         )}
+        {!overlay && lanes[0] && <RelatedTimelines timeline={lanes[0].timeline} timelines={timelines} extras={extraPeople} view={view} />}
         <div className="header-bottom">
           <nav className="tabs">
             {VIEWS.map((v) => (

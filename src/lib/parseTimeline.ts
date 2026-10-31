@@ -110,7 +110,7 @@ function addAges(events: TimelineEvent[], bornRaw: string, diedRaw?: string): vo
 
 /**
  * Parse one Data\*.md file:
- *   frontmatter (title / color / description / cover / category / tags / related / sortLast / follows / squeeze / born / died / aliases / notNames),
+ *   frontmatter (title / color / description / cover / category / tags / related / see / sortLast / follows / squeeze / born / died / aliases / notNames),
  *   `# Periods` list items `- date | title | color`, with indented lines below as the description,
  *   `# Events` with `## date | title {attrs}` headings followed by a markdown body.
  */
@@ -196,6 +196,7 @@ export function parseTimeline(source: string, id: string): Timeline {
     aliases: stringList(data.aliases),
     notNames: stringList(data.notNames),
     related: relatedLinks(data.related),
+    see: stringList(data.see),
     born: born ? parseDate(born).start : undefined,
     died: died ? parseDate(died).start : undefined,
     bornDate: born,

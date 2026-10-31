@@ -4,6 +4,7 @@ import type { Plugin } from 'vite';
 import { ASSET_PREFIX, parseTimeline } from './src/lib/parseTimeline';
 import { orderTimelines } from './src/lib/timelineOrder';
 import { buildPeopleIndex } from './src/lib/peopleIndex';
+import { unknownSeeIds } from './src/lib/relatedTimelines';
 import { parseExtraPeople } from './src/lib/extraPeople';
 import type { ExtraPerson } from './src/lib/extraPeople';
 import { parseTopics } from './src/lib/topicIndex';
@@ -49,6 +50,8 @@ function loadTimelines(dataDir: string): Timeline[] {
       }
     })
     .filter((t) => t.events.length > 0 || t.periods.length > 0);
+  const unknown = unknownSeeIds(timelines);
+  if (unknown.length > 0) throw new Error(`see: 找不到時間軸（來源 → 目標）：${unknown.join('、')}`);
   return orderTimelines(timelines);
 }
 

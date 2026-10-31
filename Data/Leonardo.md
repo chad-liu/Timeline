@@ -2,6 +2,7 @@
 title: 達文西生平
 category: 藝術家
 tags: [文藝復興]
+see: [Medici, Renaissance]
 related:
   - 達文西生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/達文西生平大事記.html
   - 達文西知識圖譜: https://chad-liu.github.io/books/html/9-2.藝術家/達文西知識圖譜.html

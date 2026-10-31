@@ -2042,3 +2042,24 @@ input {
     max-height: 45%;
   }
 }
+
+/* Links to other timelines (see: and mentioned people) reuse .related, but stay inside the site */
+.related.internal nav a::after {
+  content: none;
+}
+
+.related.internal nav a small {
+  margin-left: 6px;
+  color: var(--muted);
+}
+
+.related.internal nav a.compare {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.related-hint {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

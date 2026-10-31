@@ -57,6 +57,8 @@ export interface Timeline {
   diedDate?: string;
   /** Always list after the others on the dashboard (frontmatter `sortLast: true`). */
   sortLast?: boolean;
+  /** Ids of related timelines, in any category; the link shows on both sides (frontmatter `see: [Medici, Renaissance]`). */
+  see: string[];
   /** Other spellings of a person's name, matched by the name index (frontmatter `aliases: [巴哈]`). */
   aliases: string[];
   /** Longer words that contain the name but mean something else, e.g. 巴洛克 for 洛克 (frontmatter `notNames:`). */
