@@ -3,7 +3,7 @@ title: 米開朗基羅生平
 category: 藝術家
 tags: [文藝復興]
 related:
-  - 米開朗基羅生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/米開朗基羅生平大事記.html
+  - 米開朗基羅生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/米開朗基羅(1475~1564，Michelangelo Buonarroti).html
   - 米開朗基羅西斯汀天頂: https://chad-liu.github.io/books/html/9-3.藝術史/1508-米開朗基羅西斯汀天頂.html
   - 米開朗基羅最後的審判: https://chad-liu.github.io/books/html/9-3.藝術史/1541-米開朗基羅最後的審判.html
 born: 1475-03-06
@@ -14,7 +14,7 @@ description: 米開朗基羅·博納羅蒂（Michelangelo Buonarroti，1475–15
 ---
 
 <!--
-內容整理自 D:\Books\html\9-2.藝術家\米開朗基羅生平大事記.html（沒有對應的 md 筆記），以自己的話改寫。
+內容整理自 D:\Books\html\9-2.藝術家\米開朗基羅(1475~1564，Michelangelo Buonarroti).html（沒有對應的 md 筆記），以自己的話改寫。
 時期依頁面的七個階段歸納：出身與早年學藝、初赴羅馬與《聖殤》、佛羅倫斯時期、西斯汀天頂畫、教宗工程與美第奇陵墓、《最後的審判》與晚期藝術、建築事業與晚年；後兩段內容相近的部分合併。
 處理方式：
 - 頁面提醒帶「約」「前後」的年份是概略年代，不是精確到單一日期，這裡照寫，並用 label 保留；享年頁面寫「約88歲」。

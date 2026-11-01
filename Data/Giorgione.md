@@ -3,7 +3,7 @@ title: 喬久內生平
 category: 藝術家
 tags: [威尼斯畫派]
 related:
-  - 喬久內生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/喬久內生平大事記.html
+  - 喬久內生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/喬久內(約1477~1510，Giorgio Barbarelli da Castelfranco).html
 born: 1477
 died: 1510
 aliases: [喬爾喬內]
@@ -13,7 +13,7 @@ description: 喬久內（Giorgione，約1477／1478–1510），威尼斯畫派�
 ---
 
 <!--
-內容整理自 D:\Books\html\9-2.藝術家\喬久內生平大事記.html（沒有對應的 md 筆記），以自己的話改寫。
+內容整理自 D:\Books\html\9-2.藝術家\喬久內(約1477~1510，Giorgio Barbarelli da Castelfranco).html（沒有對應的 md 筆記），以自己的話改寫。
 時期依頁面的分段歸納為兩段：早年與學藝、創作成熟期（含晚年與身後）。
 處理方式：
 - 頁面強調喬久內的生平資料有限：確切的出生年份（約1477或1478年）、部分作品的年代與若干名畫的作者歸屬都有學術爭議。born 採1477，事件的年齡因此只是大約值；逝世年份寫1510（「1510年前後」，常見說法是死於瘟疫、年紀約三十出頭），沒有月日。

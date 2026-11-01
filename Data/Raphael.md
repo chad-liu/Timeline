@@ -3,7 +3,7 @@ title: 拉斐爾生平
 category: 藝術家
 tags: [文藝復興]
 related:
-  - 拉斐爾生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/拉斐爾生平大事記.html
+  - 拉斐爾生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/拉斐爾(1483~1520，Raphael Sanzio).html
   - 拉斐爾雅典學院: https://chad-liu.github.io/books/html/9-3.藝術史/1511-拉斐爾雅典學院.html
 born: 1483-04-06
 died: 1520-04-06
@@ -14,7 +14,7 @@ description: 拉斐爾·桑齊奧（Raphael Sanzio，1483–1520），文藝復�
 ---
 
 <!--
-內容整理自 D:\Books\html\9-2.藝術家\拉斐爾生平大事記.html（沒有對應的 md 筆記），以自己的話改寫。
+內容整理自 D:\Books\html\9-2.藝術家\拉斐爾(1483~1520，Raphael Sanzio).html（沒有對應的 md 筆記），以自己的話改寫。
 時期依頁面的七個階段歸納：出身與早年學藝、翁布里亞與早期成熟期、佛羅倫斯時期、羅馬時期、教廷壁畫與建築事業擴展、藝術聲望的高峰、晚期創作與逝世；後四段中羅馬時期的前兩段、聲望高峰與晚期合併為「羅馬」與「晚期」。
 處理方式：
 - 出生日期：頁面說明確切生日有不同說法，傳統上多採4月6日，也有3月28日或29日之說；born 採4月6日並在內文註明。1520年4月6日的逝世日期依頁面。
