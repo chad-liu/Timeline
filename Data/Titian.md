@@ -4,6 +4,7 @@ category: 藝術家
 tags: [威尼斯畫派]
 related:
   - 提香生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/提香(約1488~1576，Tiziano Vecellio).html
+  - 提香作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/提香作品列表.html
 born: 1488
 died: 1576-08-27
 color: "#e8590c"

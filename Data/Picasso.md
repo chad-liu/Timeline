@@ -4,6 +4,7 @@ category: 藝術家
 tags: [現代藝術]
 related:
   - 畢卡索生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/畢卡索(1881~1973，Pablo Picasso).html
+  - 畢卡索作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/畢卡索作品列表.html
 born: 1881-10-25
 died: 1973-04-08
 aliases: [巴勃羅·畢卡索, 帕布羅·畢卡索, 畢加索]

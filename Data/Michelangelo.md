@@ -4,6 +4,7 @@ category: 藝術家
 tags: [文藝復興]
 related:
   - 米開朗基羅生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/米開朗基羅(1475~1564，Michelangelo Buonarroti).html
+  - 米開朗基羅作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/米開朗基羅作品列表.html
   - 米開朗基羅西斯汀天頂: https://chad-liu.github.io/books/html/9-3.藝術史/1508-米開朗基羅西斯汀天頂.html
   - 米開朗基羅最後的審判: https://chad-liu.github.io/books/html/9-3.藝術史/1541-米開朗基羅最後的審判.html
 born: 1475-03-06

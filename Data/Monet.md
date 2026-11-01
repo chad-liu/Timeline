@@ -4,6 +4,7 @@ category: 藝術家
 tags: [印象派]
 related:
   - 莫內生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/莫內(1840~1926，Claude Monet).html
+  - 莫內作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/莫內作品列表.html
 born: 1840-11-14
 died: 1926-12-05
 aliases: [克洛德·莫內, 克勞德·莫內, 莫奈]

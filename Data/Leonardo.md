@@ -6,6 +6,7 @@ see: [Medici, Renaissance]
 related:
   - 達文西生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/達文西(1452~1519，Leonardo da Vinci).html
   - 達文西知識圖譜: https://chad-liu.github.io/books/html/9-2.藝術家/達文西知識圖譜.html
+  - 達文西作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/達文西作品列表.html
   - 達文西最後的晚餐: https://chad-liu.github.io/books/html/9-3.藝術史/1498-達文西最後的晚餐.html
   - 蒙娜麗莎: https://chad-liu.github.io/books/html/9-3.藝術史/1503-蒙娜麗莎.html
 born: 1452-04-15

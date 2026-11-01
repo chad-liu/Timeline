@@ -4,6 +4,7 @@ category: 藝術家
 tags: [後印象派]
 related:
   - 梵谷生平大事記: https://chad-liu.github.io/books/html/9-2.藝術家/梵谷(1853~1890，Vincent Willem van Gogh).html
+  - 梵谷作品列表: https://chad-liu.github.io/books/html/9-2-1.作品列表/梵谷作品列表.html
 born: 1853-03-30
 died: 1890-07-29
 aliases: [文生·梵谷, 文森·梵谷, 梵高]
