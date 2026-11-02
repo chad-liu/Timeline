@@ -10,7 +10,6 @@ related:
 color: "#1971c2"
 description: 從改革背景、熙寧新法到新舊黨爭與新法廢除（960–1127）：一場理想、執行與政治支持彼此拉扯的制度改革
 cover: images/sudongpo-wang-anshi.jpg
-sortLast: true
 ---
 
 <!--

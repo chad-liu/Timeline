@@ -1,7 +1,7 @@
 ---
 title: 豐臣秀吉生平
 category: 東方歷史
-tags: [人物]
+tags: [日本人物]
 see: [Japan]
 related:
   - 豐臣秀吉生平大事記: https://chad-liu.github.io/books/html/1-3-1.日本歷史人物/豐臣秀吉(約1537~1598).html

@@ -1,7 +1,7 @@
 ---
 title: 勝海舟生平
 category: 東方歷史
-tags: [人物]
+tags: [日本人物]
 see: [MeijiRestoration]
 related:
   - 勝海舟生平大事記: https://chad-liu.github.io/books/html/1-3-1.日本歷史人物/勝海舟(1823~1899).html

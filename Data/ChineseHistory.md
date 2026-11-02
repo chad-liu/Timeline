@@ -5,7 +5,6 @@ tags: [通史]
 color: "#c2255c"
 cover: images/jingkang-qingming.jpg
 description: 從北京山頂洞人、夏商周到清末，再到民國建立、國共內戰與兩岸關係：中國五千年的朝代更迭與重大事件
-sortLast: true
 ---
 
 <!--

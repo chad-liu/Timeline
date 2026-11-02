@@ -9,7 +9,6 @@ related:
 color: "#0b7285"
 description: 從東漢末年的經學反思、正始清談，到竹林名士、西晉有無之辯與東晉玄佛合流（約180–420）
 cover: images/xuanxue-sages.jpg
-sortLast: true
 ---
 
 <!--

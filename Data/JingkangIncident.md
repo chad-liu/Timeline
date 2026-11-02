@@ -7,7 +7,6 @@ related:
 color: "#c92a2a"
 description: 從聯金滅遼、金軍兩次南下，到北宋滅亡與南宋建立（1115–1127）：外交、軍事與決策失誤如何導致首都陷落
 cover: images/jingkang-qingming.jpg
-sortLast: true
 ---
 
 <!--

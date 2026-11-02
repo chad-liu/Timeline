@@ -9,7 +9,6 @@ related:
 color: "#8d5524"
 description: 從漢代察舉、隋唐形成到1905年廢除：延續約一千三百年、把教育、選才與社會流動綁在一起的考試取士制度
 cover: images/keju-palace.jpg
-sortLast: true
 ---
 
 <!--

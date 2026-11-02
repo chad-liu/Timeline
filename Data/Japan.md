@@ -5,7 +5,6 @@ tags: [通史]
 color: "#d6336c"
 description: 從舊石器、繩文時代到令和時代：日本列島三萬多年的歷史變遷
 cover: images/japan-cover.jpg
-sortLast: true
 related:
   - 日本歷史總覽: https://chad-liu.github.io/books/html/1-3.日本歷史/日本歷史總覽.html
   - 日本史歷史因果分析: https://chad-liu.github.io/books/html/1-3.日本歷史/歷史因果分析.html

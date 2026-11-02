@@ -1,7 +1,7 @@
 ---
 title: 福澤諭吉生平
 category: 東方歷史
-tags: [人物]
+tags: [日本人物]
 see: [MeijiRestoration]
 related:
   - 福澤諭吉生平大事記: https://chad-liu.github.io/books/html/1-3-1.日本歷史人物/福澤諭吉(1835~1901).html

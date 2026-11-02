@@ -1,7 +1,7 @@
 ---
 title: 成吉思汗生平
 category: 東方歷史
-tags: [人物]
+tags: [中國人物]
 related:
   - 成吉思汗生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/成吉思汗(約1162~1227).html
 born: 1162

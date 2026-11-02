@@ -5,7 +5,6 @@ tags: [時代史]
 color: "#b23a48"
 description: 從黑船來航到明治天皇逝世（1853–1912）：日本由幕藩體制轉型為近代中央集權國家與帝國的歷程
 cover: images/meiji-tomioka.jpg
-sortLast: true
 ---
 
 <!--

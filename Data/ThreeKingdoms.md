@@ -7,7 +7,6 @@ related:
 color: "#d9480f"
 description: 從黃巾之亂、董卓專權到三國鼎立與西晉統一（184–280）：中央集權瓦解後，各地軍事勢力如何爭奪正統、領土與資源
 cover: images/sanguo-cover.jpg
-sortLast: true
 ---
 
 <!--

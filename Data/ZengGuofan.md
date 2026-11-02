@@ -1,7 +1,7 @@
 ---
 title: 曾國藩生平
 category: 東方歷史
-tags: [人物]
+tags: [中國人物]
 related:
   - 曾國藩生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/曾國藩(1811~1872).html
 born: 1811-11-26

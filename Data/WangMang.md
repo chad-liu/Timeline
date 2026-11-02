@@ -1,7 +1,7 @@
 ---
 title: 王莽興亡大事記
 category: 東方歷史
-tags: [人物]
+tags: [中國人物]
 related:
   - 王莽興衰與改革: https://chad-liu.github.io/books/html/1-2.中國歷史/王莽興衰與改革.html
   - 王莽興亡大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/王莽興亡大事記.html
@@ -10,7 +10,6 @@ died: 23-10-06
 color: "#a61e4d"
 description: 王莽（前45–23），從西漢外戚權臣、托古改制到新朝滅亡：政治理想與實際治理之間的落差
 cover: images/wangmang-jialiang.jpg
-sortLast: true
 ---
 
 <!--

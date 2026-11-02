@@ -9,7 +9,6 @@ related:
 color: "#7048e8"
 description: 從熙寧變法、元祐更化、紹聖紹述到崇寧黨禁（1069–1127）：從改革政策的分歧，演變成政治派系清算的長期鬥爭
 cover: images/dangzheng-tingqin.jpg
-sortLast: true
 ---
 
 <!--
