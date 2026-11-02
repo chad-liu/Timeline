@@ -339,12 +339,6 @@ people:
     died: 1433
     category: 東方歷史
     note: 明朝宦官，七下西洋
-  - name: 織田信長
-    terms: [織田信長]
-    born: 1534
-    died: 1582
-    category: 東方歷史
-    note: 戰國大名，統一日本的奠基者，死於本能寺之變
   - name: 明治天皇
     terms: [明治天皇]
     born: 1852
