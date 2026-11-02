@@ -36,6 +36,7 @@ topics:
   - name: 印刷術
     group: 科技與發明
     terms: [印刷術, 活字, 古騰堡, 印刷革命]
+    timeline: PrintingHistory
     note: 古騰堡活字印刷讓書籍與小冊大量流通，為宗教改革與科學革命鋪路
   - name: 蒸汽機
     group: 科技與發明
@@ -120,6 +121,7 @@ topics:
   - name: 絲路
     group: 政治與戰爭
     terms: [絲路, 絲綢之路]
+    timeline: SilkRoad
     note: 連結中國與地中海的陸上貿易路線
   - name: 十字軍
     group: 政治與戰爭
