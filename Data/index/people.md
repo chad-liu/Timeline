@@ -286,12 +286,6 @@ people:
     died: 1630
     category: 科學家
     note: 提出行星運動三定律
-  - name: 牛頓
-    terms: [牛頓]
-    born: 1643
-    died: 1727
-    category: 科學家
-    note: 《自然哲學的數學原理》，萬有引力與運動定律
   - name: 古騰堡
     terms: [古騰堡]
     born: 1400
@@ -325,12 +319,6 @@ people:
     died: 1947
     category: 經濟商業
     note: 福特汽車創辦人，以流水線大量生產T型車
-  - name: 愛因斯坦
-    terms: [愛因斯坦]
-    born: 1879
-    died: 1955
-    category: 科學家
-    note: 相對論的提出者
 
   # 東亞
   - name: 鄭和
