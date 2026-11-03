@@ -215,7 +215,7 @@ people:
     terms: [哥倫布]
     born: 1451
     died: 1506
-    category: 世界史
+    category: 西方歷史
     note: 1492年抵達美洲，開啟哥倫布大交換
   - name: 馬丁·路德
     terms: [路德]
@@ -243,13 +243,13 @@ people:
     terms: [布魯內萊斯基]
     born: 1377
     died: 1446
-    category: 世界史
+    category: 藝術家
     note: 建成佛羅倫斯主教座堂圓頂，發現線性透視法
   - name: 波提且利
     terms: [波提且利, 波提切利]
     born: 1445
     died: 1510
-    category: 世界史
+    category: 藝術家
     note: 〈維納斯的誕生〉的畫家，梅迪奇家族的御用畫家
 
   # 音樂家
@@ -272,51 +272,51 @@ people:
     terms: [哥白尼]
     born: 1473
     died: 1543
-    category: 世界史
+    category: 科學家
     note: 《天體運行論》，提出日心說
   - name: 伽利略
     terms: [伽利略]
     born: 1564
     died: 1642
-    category: 世界史
+    category: 科學家
     note: 以望遠鏡觀測天體，因支持日心說受審
   - name: 克卜勒
     terms: [克卜勒]
     born: 1571
     died: 1630
-    category: 世界史
+    category: 科學家
     note: 提出行星運動三定律
   - name: 牛頓
     terms: [牛頓]
     born: 1643
     died: 1727
-    category: 世界史
+    category: 科學家
     note: 《自然哲學的數學原理》，萬有引力與運動定律
   - name: 古騰堡
     terms: [古騰堡]
     born: 1400
     died: 1468
-    category: 世界史
+    category: 科學家
     note: 發明活字印刷，印製古騰堡聖經
   - name: 瓦特
     terms: [瓦特]
     notNames: [格瓦特科夫, 瓦特堡]
     born: 1736
     died: 1819
-    category: 世界史
+    category: 科學家
     note: 改良蒸汽機，啟動工業革命
   - name: 達爾文
     terms: [達爾文]
     notNames: [社會達爾文主義]
     born: 1809
     died: 1882
-    category: 世界史
+    category: 科學家
     note: 《物種起源》，提出天擇演化論
   - name: 愛迪生
     terms: [愛迪生]
     born: 1847
     died: 1931
-    category: 世界史
+    category: 科學家
     note: 電燈、留聲機與電力系統的發明家
   - name: 亨利·福特
     terms: [福特]
@@ -329,7 +329,7 @@ people:
     terms: [愛因斯坦]
     born: 1879
     died: 1955
-    category: 世界史
+    category: 科學家
     note: 相對論的提出者
 
   # 東亞
