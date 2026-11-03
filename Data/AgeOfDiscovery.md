@@ -4,6 +4,7 @@ category: 世界史
 tags: [時代史]
 related:
   - 大航海時代歷史因果分析: https://chad-liu.github.io/books/html/1-6-1.大航海時代/歷史因果分析.html
+aliases: [地理大發現]
 color: "#1864ab"
 cover: images/aod-cover.jpg
 description: 從鄭和下西洋、葡萄牙攻下休達到荷蘭東印度公司解散：香料、白銀、蔗糖與奴隸織成第一張全球貿易網，股份公司、現代海軍與國際法應運而生

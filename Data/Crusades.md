@@ -5,6 +5,7 @@ tags: [戰爭與革命]
 related:
   - 十字軍東征（專題）: https://chad-liu.github.io/books/html/1-1.西方歷史/十字軍東征.html
   - 十字軍東征大事記（1095—1291）: https://chad-liu.github.io/books/html/1-1.西方歷史/十字軍東征大事記（1095—1291）.html
+aliases: [十字軍]
 color: "#a61e4d"
 description: 從克萊蒙會議到阿卡陷落：一種「可以被授予的身分」如何被指向聖地、君士坦丁堡與歐洲內部（1054–1291）
 cover: images/cru-constantinople.jpg

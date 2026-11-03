@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildNameIndex } from './nameIndex';
 import { parseExtraPeople } from './extraPeople';
-import { buildRelationGraph, filterRelationGraph, SEE_WEIGHT } from './relationGraph';
+import { buildRelationGraph, filterRelationGraph, SEE_WEIGHT, timelineTerms, TOPIC_MIN_EVENTS } from './relationGraph';
 import { parseTimeline } from './parseTimeline';
 
 const timeline = (id: string, frontmatter: string, events: string) => parseTimeline(`---\n${frontmatter}\n---\n\n# Events\n${events}`, id);
@@ -16,7 +16,7 @@ const graph = buildRelationGraph(buildNameIndex(timelines), timelines);
 
 describe('buildRelationGraph', () => {
   it('links two people once, counting events in both directions', () => {
-    expect(graph.links).toEqual([{ source: 'Locke', target: 'Newton', forward: 1, backward: 2, weight: 3, see: false }]);
+    expect(graph.links).toEqual([{ source: 'Locke', target: 'Newton', forward: 1, backward: 2, weight: 3, see: false, topic: false }]);
   });
 
   it('ignores mentions from timelines that belong to nobody and leaves out unlinked people', () => {
@@ -102,5 +102,48 @@ describe('filterRelationGraph', () => {
 
   it('shows nothing for a category that has no links', () => {
     expect(filterRelationGraph(graph, { category: '音樂家', minWeight: 1 })).toEqual({ nodes: [], links: [] });
+  });
+});
+
+describe('topic links', () => {
+  const all = [
+    timeline('Socrates', 'title: 蘇格拉底生平\nborn: -470\ndied: -399\ncategory: 思想家', '## -432 | 波提狄亞\n伯羅奔尼撒戰爭前夕出征。\n\n## -424 | 德利昂\n伯羅奔尼撒戰爭中撤退。\n\n## -399 | 受審\n被判死刑。\n'),
+    timeline('Plato', 'title: 柏拉圖生平\nborn: -427\ndied: -347\ncategory: 思想家', '## -404 | 少年\n伯羅奔尼撒戰爭結束，雅典投降。\n'),
+    timeline('PeloponnesianWar', 'title: 伯羅奔尼撒戰爭大事記\ncategory: 西方歷史', '## -431 | 開戰\n蘇格拉底參戰。\n'),
+    timeline('Greece', 'title: 希臘史\ncategory: 西方歷史', '## -500 | 城邦\n希臘城邦。\n'),
+    timeline('Hollywood', 'title: 好萊塢\naliases: [荷里活]\nnotNames: [好萊塢大道]', '## 1920 | 片廠\n電影業。\n'),
+    timeline('Gershwin', 'title: 蓋希文生平\nborn: 1898\ndied: 1937\ncategory: 音樂家', '## 1925 | 來到荷里活\n荷里活的片廠。\n\n## 1936 | 再赴荷里活\n在荷里活寫電影配樂。\n\n## 1937 | 紀念\n好萊塢大道上的首映。\n'),
+    timeline('Heifetz', 'title: 海飛茲生平\nborn: 1901\ndied: 1987\ncategory: 音樂家', '## 1950 | 演出\n好萊塢大道上的首映。\n\n## 1951 | 演出\n好萊塢大道旁的音樂會。\n'),
+  ];
+  const g = buildRelationGraph(buildNameIndex(all), all);
+
+  it('derives the words of a timeline from its title and aliases', () => {
+    expect(timelineTerms(all[2])).toEqual(['伯羅奔尼撒戰爭']);
+    expect(timelineTerms(all[3])).toEqual([]);
+    expect(timelineTerms(all[4])).toEqual(['好萊塢', '荷里活']);
+  });
+
+  it('links a person to a timeline nobody owns when enough of the person events mention it', () => {
+    expect(TOPIC_MIN_EVENTS).toBe(2);
+    const link = g.links.find((l) => l.topic && [l.source, l.target].includes('Socrates'))!;
+    expect([link.source, link.target].sort()).toEqual(['Socrates', 't:PeloponnesianWar']);
+    expect(link.weight).toBe(2);
+    expect(g.nodes.find((n) => n.id === 't:PeloponnesianWar')).toMatchObject({ kind: 'timeline', degree: 1 });
+  });
+
+  it('ignores a single passing mention, and a timeline whose title is too short to be a word', () => {
+    expect(g.links.some((l) => [l.source, l.target].includes('Plato'))).toBe(false);
+    expect(g.nodes.some((n) => n.id === 't:Greece')).toBe(false);
+  });
+
+  it('matches aliases, and a notNames word does not count', () => {
+    const link = g.links.find((l) => l.topic && [l.source, l.target].includes('Gershwin'))!;
+    expect(link.weight).toBe(2);
+    expect(g.links.some((l) => [l.source, l.target].includes('Heifetz'))).toBe(false);
+  });
+
+  it('keeps topic links under the minimum weight filter like any mention', () => {
+    expect(filterRelationGraph(g, { minWeight: 3 }).links.some((l) => l.topic)).toBe(false);
+    expect(filterRelationGraph(g, { minWeight: 2 }).links.some((l) => l.topic)).toBe(true);
   });
 });

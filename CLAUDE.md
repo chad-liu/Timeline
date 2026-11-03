@@ -23,6 +23,7 @@ npm test                                   # vitest run（全部）
 npx vitest run src/lib/parseDate.test.ts   # 單一測試檔
 npx vitest run -t "buildPeopleIndex"       # 依測試名稱
 npm run build                              # tsc 型別檢查 + vite build → dist/
+npm run scan:links                         # 列出內文提到、卻沒有 see: 的人物與戰爭／時代配對（可加時間軸 id 或 --all）
 ```
 
 Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run build` 裡的 `tsc`。內建瀏覽器預覽用 `.claude/launch.json` 的 `timeline-dev`。
@@ -41,9 +42,9 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
   - `#p=lifespans` 是人物年表。
   - `#p=index` 是人名索引；時間軸網址加上 `&e=事件id`（如 `&e=Voltaire-6`）會直接開啟該事件。
   - `#p=topics` 是主題索引（`topicIndex.ts` + `TopicIndex.tsx`）：主題清單寫在 `Data/index/topics.md`，以 `virtual:index-topics` 提供，比對事件標題與內文；主題的專屬時間軸（`timeline:`）只附連結，不重複列出事件。新增主題時先掃一遍比對結果，用 `notTerms` 排除同字詞。
-  - `#p=graph` 是人物關係圖（`relationGraph.ts` + `RelationGraph.tsx`，`d3-force`／`d3-zoom`／`d3-drag`／`d3-selection`，不用整包 d3）：由 `buildNameIndex` 的結果反推，A 的自有時間軸（`links`）提到 B 就連線，權重是事件數；frontmatter `see:` 另畫成虛線（不受最小權重影響），不屬於某個人的時間軸（如 12 位梅迪奇成員共用的 `Medici`，或 `Renaissance`）是方塊節點 `t:<id>`，共用同一條時間軸的補充人物不擁有它。`#p=graph&c=音樂家&w=2&x=1` 篩類別、最小權重與只看跨類別；選類別時保留連到其他類別的連線，另一端標為 `outside`。D3 只管模擬與 SVG，選取與搜尋只切換 class，不重啟模擬；模擬穩定後會自動縮放到全圖可見（使用者操作過就不再動）。
+  - `#p=graph` 是人物關係圖（`relationGraph.ts` + `RelationGraph.tsx`，`d3-force`／`d3-zoom`／`d3-drag`／`d3-selection`，不用整包 d3）：由 `buildNameIndex` 的結果反推，A 的自有時間軸（`links`）提到 B 就連線，權重是事件數；人物的自有時間軸若至少 `TOPIC_MIN_EVENTS`（2）則事件提到某條沒有主人的時間軸（戰爭、時代、家族）的標題（去掉結尾的大事記／生平／時間軸／史，剩下不到 3 個字就不用）或 `aliases`，就連一條 `topic` 線到它的方塊節點（`timelineTerms`；`notNames` 同樣生效），UI 是淡色細線；frontmatter `see:` 另畫成虛線（不受最小權重影響），不屬於某個人的時間軸（如 12 位梅迪奇成員共用的 `Medici`，或 `Renaissance`）是方塊節點 `t:<id>`，共用同一條時間軸的補充人物不擁有它。`#p=graph&c=音樂家&w=2&x=1` 篩類別、最小權重與只看跨類別；選類別時保留連到其他類別的連線，另一端標為 `outside`。D3 只管模擬與 SVG，選取與搜尋只切換 class，不重啟模擬；模擬穩定後會自動縮放到全圖可見（使用者操作過就不再動）。
   - `#p=years&y=1789&s=10` 是年代對照（`src/lib/yearIndex.ts` + `YearIndex.tsx`）：`s` 為 1／10／100（單年／十年／百年），列出各時間軸在該段期間的事件與同時在世的人物。跨度約百年以上的事件（如 `18世紀` 或 `1700 ~ 1799`）只在百年檢視出現。標題旁的中國帝王由 `chineseRulers.ts` 的 `reignsInSlice` 產生，和人物年表共用同一份帝王資料。明、清的年號紀年要用 `eraStart`（元年），它通常是即位的次年，例外是洪武、順治、天順、隆慶、嘉慶、光緒，元年與即位同年。事件詳細內容底部有連結可跳到這一頁。
-- **跨類別連結**：frontmatter `see: [id]` 是手動連結，`relatedTimelines.ts` 的 `seeAlso` 讓兩邊都顯示，`unknownSeeIds` 在 `vite-plugin-timelines.ts` 載入時檢查，id 打錯會讓建置失敗；人物時間軸另外以 `mentionedTimelines`（關係圖的連線）列出內文提到的人，只是提示。UI 在 `RelatedTimelines.tsx`，只在單條時間軸時顯示。新增跨類別的主題時間軸時，記得補 `see:`。
+- **跨類別連結**：frontmatter `see: [id]` 是手動連結，`relatedTimelines.ts` 的 `seeAlso` 讓兩邊都顯示，`unknownSeeIds` 在 `vite-plugin-timelines.ts` 載入時檢查，id 打錯會讓建置失敗；人物時間軸另外以 `mentionedTimelines`（關係圖的連線）列出內文提到的人與提到的戰爭、時代（`topic`），戰爭、時代的頁面則列出提到它的人（`mentioner`），都只是提示。`npm run scan:links`（`scripts/scan-links.ts`，可加時間軸 id 或 `--all`）列出已達門檻、卻沒有 `see:` 的配對與只提到 1 則的配對。UI 在 `RelatedTimelines.tsx`，只在單條時間軸時顯示。新增跨類別的主題時間軸時，記得補 `see:`。
 - **排序與分組**：`src/lib/timelineOrder.ts` 是唯一依據。
   - `compareTimelines`：依最早日期排序，`sortLast` 排最後。
   - `CATEGORY_ORDER`：分頁順序，新增類別要改這裡。
@@ -62,6 +63,7 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
   - 依類別加上 `category`／`tags`（思想家依學派、文學家依語言／國別、東方歷史的人物依國別，如 `中國人物`／`日本人物`），並在 `related:` 加上 https://chad-liu.github.io/books/ 的相關頁面。
   - 人名的分隔號一律用「·」（books 原稿常用「・」）。
   - 很早的背景（如詹姆斯鎮1607、希吉拉622）寫進第一則事件的內文，不另立事件。原因是橫向檢視只壓縮超過 `squeeze`（預設 1000 年）的空白，幾百年的空白會佔掉整個畫面。
+  - 新增戰爭、時代、家族等非人物時間軸時，跑一次 `npm run scan:links`，看哪些人物提到它：想強調的補 `see:`，常見的別名寫進它的 `aliases`；新增人物時間軸後也跑一次，看它提到哪些戰爭、時代。
   - 新增某個主題或人物的專屬時間軸時，順便在 `Data/index/topics.md` 或 `Data/index/people.md` 對應的條目加上 `timeline: <id>`。主題索引會因此只附連結、不再重複列出該時間軸的事件。
 - books 的 `related:` 連結與註解中的來源路徑，必須對應 `D:\Books\html\` 底下實際存在的檔案。books 的資料夾編號會調整（例如 `9-2.音樂家作品` 曾改成 `5-2.音樂家作品`），調整後要掃一遍 `Data/` 裡所有 `chad-liu.github.io/books/` 連結並更新。
 - 「加公有領域圖片」：

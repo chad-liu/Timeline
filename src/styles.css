@@ -2071,6 +2071,11 @@ input {
   stroke-opacity: 0.7;
 }
 
+.rg-links line.topic {
+  stroke: var(--muted);
+  stroke-opacity: 0.45;
+}
+
 .rg-node rect {
   stroke: #fff;
   stroke-width: 1.5;

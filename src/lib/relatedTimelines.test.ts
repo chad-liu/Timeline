@@ -47,3 +47,27 @@ describe('mentionedTimelines', () => {
     expect(mentionedTimelines(timeline('Age', 'title: 時代'), index, graph, new Set())).toEqual([]);
   });
 });
+
+describe('mentionedTimelines and topics', () => {
+  const all = [
+    timeline('Socrates', 'title: 蘇格拉底生平\nborn: -470\ndied: -399', '## -432 | 波提狄亞\n伯羅奔尼撒戰爭前夕出征。\n\n## -424 | 德利昂\n伯羅奔尼撒戰爭中撤退。\n'),
+    timeline('Plato', 'title: 柏拉圖生平\nborn: -427\ndied: -347', '## -404 | 少年\n伯羅奔尼撒戰爭結束。\n\n## -399 | 老師之死\n伯羅奔尼撒戰爭後的審判。\n'),
+    timeline('PeloponnesianWar', 'title: 伯羅奔尼撒戰爭大事記\ncategory: 西方歷史', '## -431 | 開戰\n開戰。\n'),
+  ];
+  const index = buildNameIndex(all);
+  const graph = buildRelationGraph(index, all);
+
+  it('lists the wars and periods a person events mention, apart from the people', () => {
+    const found = mentionedTimelines(all[0], index, graph, new Set(), all);
+    expect(found.map((m) => [m.timeline.id, m.kind, m.weight])).toEqual([['PeloponnesianWar', 'topic', 2]]);
+  });
+
+  it('lists the people whose events mention a timeline that is nobody', () => {
+    const found = mentionedTimelines(all[2], index, graph, new Set(), all);
+    expect(found.map((m) => [m.timeline.id, m.kind]).sort()).toEqual([['Plato', 'mentioner'], ['Socrates', 'mentioner']]);
+  });
+
+  it('leaves out what see: already shows', () => {
+    expect(mentionedTimelines(all[2], index, graph, new Set(['Plato', 'Socrates']), all)).toEqual([]);
+  });
+});

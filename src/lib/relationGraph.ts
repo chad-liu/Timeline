@@ -1,4 +1,5 @@
 import type { Timeline } from '../types';
+import { mentions } from './nameIndex';
 import type { NameEntry } from './nameIndex';
 import { UNCATEGORIZED } from './timelineOrder';
 
@@ -31,6 +32,11 @@ export interface GraphLink {
   weight: number;
   /** Linked by `see:` in either timeline's frontmatter. */
   see: boolean;
+  /**
+   * A person's own events mention a timeline that is nobody's own (a war, a period, a family) by its title or `aliases`.
+   * Then `weight` is the number of those events, and the link runs from the person to the timeline node.
+   */
+  topic: boolean;
 }
 
 export interface RelationGraph {
@@ -41,11 +47,24 @@ export interface RelationGraph {
 /** What a `see:` link adds to the size of the nodes it joins. */
 export const SEE_WEIGHT = 3;
 
+/** A person is linked to a timeline by name only when this many of the person's events mention it; one passing mention is too often a coincidence. */
+export const TOPIC_MIN_EVENTS = 2;
+
+/**
+ * The words that stand for a timeline that is nobody's own, when a person's events mention it: the title without a trailing
+ * 大事記／生平／時間軸／史 (when at least three characters are left, so 歐洲史 does not match every 歐洲), plus its `aliases`.
+ */
+export function timelineTerms(timeline: Timeline): string[] {
+  const derived = timeline.title.replace(/(大事記|生平|時間軸|史)$/, '').trim();
+  return [...(derived.length >= 3 ? [derived] : []), ...timeline.aliases];
+}
+
 const isExtra = (entry: NameEntry) => entry.key.startsWith('extra:');
 
 /**
  * Who is linked to whom, as an undirected graph. Two people are linked when events in the own timelines of one
- * (biography and works) mention the other. A `see:` link joins the nodes of two timelines whatever their categories: a person timeline is its
+ * (biography and works) mention the other. A person is also linked to a timeline that is nobody's own (a war, a period, a family)
+ * when at least {@link TOPIC_MIN_EVENTS} of the person's events mention its title or `aliases`. A `see:` link joins the nodes of two timelines whatever their categories: a person timeline is its
  * person, any other timeline (a family, a period) a node of its own. Other mentions from such timelines say nothing about
  * a relation between two people, so they are left out. Nodes without a link are not shown.
  */
@@ -67,7 +86,7 @@ export function buildRelationGraph(index: NameEntry[], timelines: Timeline[] = [
   const pair = (x: string, y: string) => {
     const [a, b] = x < y ? [x, y] : [y, x];
     const key = `${a}\n${b}`;
-    const link = pairs.get(key) ?? { source: a, target: b, forward: 0, backward: 0, weight: 0, see: false };
+    const link = pairs.get(key) ?? { source: a, target: b, forward: 0, backward: 0, weight: 0, see: false, topic: false };
     pairs.set(key, link);
     return link;
   };
@@ -80,6 +99,26 @@ export function buildRelationGraph(index: NameEntry[], timelines: Timeline[] = [
       if (source === link.source) link.forward += events.length;
       else link.backward += events.length;
       link.weight += events.length;
+    }
+  }
+
+  // A person's events that mention a timeline nobody owns, such as a war the person fought in.
+  const topics = timelines
+    .filter((t) => !owner.has(t.id))
+    .map((t) => ({ timeline: t, terms: timelineTerms(t) }))
+    .filter((x) => x.terms.length > 0);
+  for (const entry of index) {
+    if (isExtra(entry)) continue;
+    const own = new Set(entry.links.map((t) => t.id));
+    const sources = timelines.filter((t) => own.has(t.id));
+    for (const { timeline: topic, terms } of topics) {
+      const count = sources.reduce((n, s) => n + s.events.filter((e) => mentions(`${e.title}\n${e.text}`, terms, topic.notNames)).length, 0);
+      if (count < TOPIC_MIN_EVENTS) continue;
+      const link = pair(entry.key, `t:${topic.id}`);
+      link.topic = true;
+      if (entry.key === link.source) link.forward += count;
+      else link.backward += count;
+      link.weight += count;
     }
   }
 

@@ -6,6 +6,7 @@ see: [Greece, PeloponnesianWar, AlexanderTheGreat]
 related:
   - 波希戰爭: https://chad-liu.github.io/books/html/1-1.西方歷史/波希戰爭.html
   - 波希戰爭大事記: https://chad-liu.github.io/books/html/1-1.西方歷史/波希戰爭大事記.html
+aliases: [希波戰爭]
 color: "#e03131"
 cover: images/pw-cover.jpg
 description: 約前499至前449年，古希臘城邦與波斯帝國的一連串衝突：從伊奧尼亞起義、馬拉松、溫泉關與薩拉米斯，到普拉提亞、提洛同盟的反攻與卡利阿斯和約；希臘擋下波斯，也讓雅典的海上帝國與斯巴達的對立浮上檯面

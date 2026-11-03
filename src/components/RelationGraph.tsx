@@ -78,11 +78,16 @@ export function RelationGraph({
       .selectAll<SVGLineElement, SimLink>('line')
       .data(links)
       .join('line')
-      .attr('class', (d) => (d.see ? 'see' : null))
+      .attr('class', (d) => (d.see ? 'see' : d.topic ? 'topic' : null))
       .attr('stroke-width', (d) => 1 + Math.min(6, Math.sqrt(d.weight)) + (d.see ? 1 : 0));
     link.append('title').text((d) => {
       const [a, b] = [nodes.find((n) => n.id === d.source), nodes.find((n) => n.id === d.target)];
-      const mention = d.weight > 0 ? `${a?.name} → ${b?.name}：${d.forward} 則\n${b?.name} → ${a?.name}：${d.backward} 則` : '';
+      const [person, topic] = a?.kind === 'timeline' ? [b, a] : [a, b];
+      const mention = d.topic
+        ? `${person?.name} 的事件提到〈${topic?.name}〉：${d.weight} 則`
+        : d.weight > 0
+          ? `${a?.name} → ${b?.name}：${d.forward} 則\n${b?.name} → ${a?.name}：${d.backward} 則`
+          : '';
       return [d.see ? `${a?.name} ⇄ ${b?.name}：相關時間軸（see:）` : '', mention].filter(Boolean).join('\n');
     });
 
@@ -215,7 +220,7 @@ export function RelationGraph({
         .map((l) => {
           const other = byId.get(l.source === selected ? l.target : l.source)!;
           const out = l.source === selected ? l.forward : l.backward;
-          return { other, out, in: l.weight - out, weight: l.weight, see: l.see };
+          return { other, out, in: l.weight - out, weight: l.weight, see: l.see, topic: l.topic };
         })
         .sort((a, b) => Number(b.see) - Number(a.see) || b.weight - a.weight)
     : [];
@@ -264,7 +269,7 @@ export function RelationGraph({
       <div className="rg-stage">
         <svg ref={svgRef} className="rg-svg" role="img" aria-label="人物關係圖" />
         {graph.nodes.length === 0 && <p className="empty rg-empty">沒有符合條件的連線。</p>}
-        <p className="rg-hint">滾輪縮放、拖曳移動；點節點看連線。實線＝提及（越粗事件越多），虛線＝相關時間軸（see:），方塊＝家族或時代等時間軸</p>
+        <p className="rg-hint">滾輪縮放、拖曳移動；點節點看連線。實線＝人物互相提及（越粗事件越多），淡色細線＝人物的內文提到某個戰爭、時代等時間軸，虛線＝相關時間軸（see:），方塊＝家族或時代等時間軸</p>
 
         {entry && (
           <aside className="rg-panel">
@@ -285,7 +290,7 @@ export function RelationGraph({
               連線 <small>{selectedLinks.length}</small>
             </h3>
             <ul>
-              {selectedLinks.map(({ other, out, in: back, weight, see }) => (
+              {selectedLinks.map(({ other, out, in: back, weight, see, topic }) => (
                 <li key={other.id}>
                   <button type="button" onClick={() => setSelected(other.id)}>
                     {other.name}
@@ -294,7 +299,8 @@ export function RelationGraph({
                   <small>
                     {see && '相關時間軸'}
                     {see && weight > 0 && '・'}
-                    {weight > 0 && `提到對方 ${out}・被對方提到 ${back}`}
+                    {topic && `${entry.kind === 'person' ? '內文提到它' : '被它的內文提到'} ${weight} 則`}
+                    {!topic && weight > 0 && `提到對方 ${out}・被對方提到 ${back}`}
                   </small>
                 </li>
               ))}

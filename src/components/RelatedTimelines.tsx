@@ -8,15 +8,25 @@ import { timelineHash } from '../lib/route';
 import type { View } from '../lib/route';
 
 /**
- * Links from one timeline to others, across categories: those named by `see:` (either side), and for a person
- * the people linked in the relation graph (found by name, so only a hint).
+ * Links from one timeline to others, across categories: those named by `see:` (either side); for a person the people linked
+ * in the relation graph and the wars or periods its events mention; for a war or period the people whose events mention it
+ * (all found by name, so only a hint).
  */
 export function RelatedTimelines({ timeline, timelines, extras, view }: { timeline: Timeline; timelines: Timeline[]; extras: ExtraPerson[]; view: View }) {
   const manual = useMemo(() => seeAlso(timeline, timelines), [timeline, timelines]);
   const mentioned = useMemo(() => {
     const index = buildNameIndex(timelines, extras);
-    return mentionedTimelines(timeline, index, buildRelationGraph(index), new Set(manual.map((t) => t.id)));
+    return mentionedTimelines(timeline, index, buildRelationGraph(index, timelines), new Set(manual.map((t) => t.id)), timelines);
   }, [timeline, timelines, extras, manual]);
+
+  const people = mentioned.filter((m) => m.kind === 'person');
+  const topics = mentioned.filter((m) => m.kind === 'topic');
+  const mentioners = mentioned.filter((m) => m.kind === 'mentioner');
+  const hints = [
+    { items: people, label: '內文提到的人物（依姓名比對）' },
+    { items: topics, label: '內文提到的戰爭、時代等主題（依名稱比對）' },
+    { items: mentioners, label: '內文提到這條時間軸的人物（依名稱比對）' },
+  ].filter((h) => h.items.length > 0);
 
   if (manual.length === 0 && mentioned.length === 0) return null;
   return (
@@ -37,19 +47,19 @@ export function RelatedTimelines({ timeline, timelines, extras, view }: { timeli
           </a>
         </nav>
       )}
-      {mentioned.length > 0 && (
-        <>
-          <p className="related-hint">內文提到的人物（依姓名比對）</p>
-          <nav aria-label="內文提到的人物">
-            {mentioned.map(({ timeline: t, weight }) => (
+      {hints.map(({ items, label }) => (
+        <div key={label}>
+          <p className="related-hint">{label}</p>
+          <nav aria-label={label}>
+            {items.map(({ timeline: t, weight }) => (
               <a key={t.id} href={timelineHash([t.id], view)} title={`${weight} 則事件`}>
                 {t.title}
                 <small>{weight}</small>
               </a>
             ))}
           </nav>
-        </>
-      )}
+        </div>
+      ))}
     </details>
   );
 }
