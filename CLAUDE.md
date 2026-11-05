@@ -39,7 +39,7 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
 - **路由**：全部放在 URL hash，由 `src/lib/route.ts` 處理：
   - 不帶 `t` 參數是 Dashboard，例如 `#c=音樂家&tag=…`；
   - `#v=horizontal&t=Bach|Handel` 開啟一條或多條時間軸，多條時會疊加比較；
-  - `#p=lifespans` 是人物年表。
+  - `#p=lifespans` 是人物年表。`&g=era` 改成不分類別、依出生年排序的「依時代」排列（預設是依類別與標籤分組）；`&sel=<時間軸id>` 標出與該人物生存期重疊、或前後 `NEAR_YEARS`（50）年內的人（其餘變淡），`&only=1` 只留下這些人。元件用 `history.replaceState` 同步網址，所以 `App.tsx` 以 `lifespansHash(...)` 為 `key`，網址從外部改變時才會重新套用。
   - `#p=index` 是人名索引；時間軸網址加上 `&e=事件id`（如 `&e=Voltaire-6`）會直接開啟該事件。
   - `#p=topics` 是主題索引（`topicIndex.ts` + `TopicIndex.tsx`）：主題清單寫在 `Data/index/topics.md`，以 `virtual:index-topics` 提供，比對事件標題與內文；主題的專屬時間軸（`timeline:`）只附連結，不重複列出事件。新增主題時先掃一遍比對結果，用 `notTerms` 排除同字詞。
   - `#p=graph` 是人物關係圖（`relationGraph.ts` + `RelationGraph.tsx`，`d3-force`／`d3-zoom`／`d3-drag`／`d3-selection`，不用整包 d3）：由 `buildNameIndex` 的結果反推，A 的自有時間軸（`links`）提到 B 就連線，權重是事件數；人物的自有時間軸若至少 `TOPIC_MIN_EVENTS`（2）則事件提到某條沒有主人的時間軸（戰爭、時代、家族）的標題（去掉結尾的大事記／生平／時間軸／史，剩下不到 3 個字就不用）或 `aliases`，就連一條 `topic` 線到它的方塊節點（`timelineTerms`；`notNames` 同樣生效），UI 是淡色細線；frontmatter `see:` 另畫成虛線（不受最小權重影響），不屬於某個人的時間軸（如 12 位梅迪奇成員共用的 `Medici`，或 `Renaissance`）是方塊節點 `t:<id>`，共用同一條時間軸的補充人物不擁有它。`#p=graph&c=音樂家&w=2&x=1` 篩類別、最小權重與只看跨類別；選類別時保留連到其他類別的連線，另一端標為 `outside`。D3 只管模擬與 SVG，選取與搜尋只切換 class，不重啟模擬；模擬穩定後會自動縮放到全圖可見（使用者操作過就不再動）。

@@ -1,7 +1,8 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { dashboardHash, timelineHash } from '../lib/route';
+import { dashboardHash, lifespansHash, timelineHash } from '../lib/route';
+import type { LifespanMode } from '../lib/route';
 import { buildLifespanScale, lifespanTicks, BREAK_PX } from '../lib/lifespanScale';
 import { groupByTag, groupTimelines } from '../lib/timelineOrder';
 import { personName } from '../lib/peopleIndex';
@@ -31,22 +32,46 @@ function rulerText(label: string, name: string, width: number): string {
   return labelWidth(name) <= width ? name : '';
 }
 
-/** Lifespan chart: every person timeline as a bar from birth to death, grouped by category and then by tag; both levels collapse. */
-export function Lifespans({ timelines }: { timelines: Timeline[] }) {
+/** Two people count as contemporaries when their lives overlap or end/begin within this many years of each other (Confucius d. 479 BC, Socrates b. 469 BC). */
+const NEAR_YEARS = 50;
+
+function overlaps(a: Person, b: Person): boolean {
+  return a.born <= b.died + NEAR_YEARS && b.born <= a.died + NEAR_YEARS;
+}
+
+/**
+ * Lifespan chart: every person timeline as a bar from birth to death. `category` mode groups by category and then by tag (both levels
+ * collapse); `era` mode is one list ordered by birth year so contemporaries from different fields sit side by side. Picking a person
+ * (the ◎ button) dims everyone who did not live at the same time, or hides them with `only`. Mode and pick are kept in the URL.
+ */
+export function Lifespans({ timelines, mode: initialMode, selected, only: initialOnly }: { timelines: Timeline[]; mode: LifespanMode; selected?: string; only: boolean }) {
   const [zoom, setZoom] = useState(1);
+  const [mode, setMode] = useState<LifespanMode>(initialMode);
+  const [pickedId, setPickedId] = useState<string | undefined>(selected);
+  const [only, setOnly] = useState(initialOnly);
   const [hovered, setHovered] = useState<Person | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   /** Year shown at the left edge of the chart, kept when zooming; starts at the first person of the first group. */
   const leftYear = useRef<number | null>(null);
 
   const people = useMemo(() => timelines.filter((t): t is Person => t.born !== undefined && t.died !== undefined), [timelines]);
+  const picked = useMemo(() => people.find((p) => p.id === pickedId), [people, pickedId]);
+  /** Everyone shown: all people, or only the picked person's contemporaries. */
+  const shown = useMemo(() => (picked && only ? people.filter((p) => overlaps(p, picked)) : people), [people, picked, only]);
+  const contemporaries = useMemo(() => (picked ? people.filter((p) => p.id !== picked.id && overlaps(p, picked)).length : 0), [people, picked]);
+  const eraList = useMemo(() => [...shown].sort((a, b) => a.born - b.born), [shown]);
+
+  useEffect(() => {
+    history.replaceState(null, '', lifespansHash(mode, picked?.id, only));
+  }, [mode, picked, only]);
+
   const groups = useMemo(
     () =>
-      groupTimelines(people).map((g) => {
+      groupTimelines(shown).map((g) => {
         const sorted = [...(g.timelines as Person[])].sort((a, b) => a.born - b.born);
         return { category: g.category, people: sorted, subgroups: groupByTag(sorted).map((s) => ({ tag: s.tag, people: s.timelines as Person[] })) };
       }),
-    [people],
+    [shown],
   );
   /** Collapsed keys: a category name, or `category/tag` for a tag subgroup. */
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
@@ -65,7 +90,7 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
   useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const year = leftYear.current ?? (groups[0]?.people[0]?.born ?? 0) - 15;
+    const year = leftYear.current ?? (picked?.born ?? groups[0]?.people[0]?.born ?? 0) - 15;
     el.scrollLeft = scale.xOf(year);
   }, [scale, groups]);
 
@@ -104,11 +129,28 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
     const href = timelineHash([p.id], 'vertical');
     const label = lifeLabel(p);
     const fits = labelWidth(label) <= width;
+    const isPicked = picked?.id === p.id;
+    const dim = picked && !isPicked && !overlaps(p, picked);
+    const cls = ['ls-row', hovered?.id === p.id && 'hovered', isPicked && 'picked', dim && 'dim'].filter(Boolean).join(' ');
     return (
-      <div key={`${groupKey}/${p.id}`} className={hovered?.id === p.id ? 'ls-row hovered' : 'ls-row'} onMouseEnter={() => setHovered(p)} onMouseLeave={() => setHovered(null)}>
-        <a className="ls-name" href={href} title={p.title}>
-          {personName(p)}
-        </a>
+      <div key={`${groupKey}/${p.id}`} className={cls} onMouseEnter={() => setHovered(p)} onMouseLeave={() => setHovered(null)}>
+        <div className="ls-name">
+          <button
+            type="button"
+            className="ls-pick"
+            aria-pressed={isPicked}
+            title={isPicked ? '取消標示同時代的人' : '標示同時代的人'}
+            onClick={() => {
+              setPickedId(isPicked ? undefined : p.id);
+              if (isPicked) setOnly(false);
+            }}
+          >
+            ◎
+          </button>
+          <a href={href} title={mode === 'era' && p.category ? `${p.title}（${p.category}）` : p.title}>
+            {personName(p)}
+          </a>
+        </div>
         <div className="ls-track" style={{ width: scale.width }}>
           <a className="ls-bar" href={href} style={{ left, width, background: p.color }} title={`${personName(p)} ${label}`}>
             {fits && <span>{label}</span>}
@@ -133,14 +175,37 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
         <h1 className="ls-title">
           人物年表 <small>{people.length} 人</small>
         </h1>
-        <div className="ls-fold" role="group" aria-label="展開或收合">
-          <button type="button" onClick={() => setCollapsed(new Set())} disabled={collapsed.size === 0}>
-            全部展開
+        <div className="ls-mode" role="group" aria-label="排列方式">
+          <button type="button" aria-pressed={mode === 'category'} onClick={() => setMode('category')}>
+            依類別
           </button>
-          <button type="button" onClick={() => setCollapsed(new Set(groups.map((g) => g.category)))}>
-            全部收合
+          <button type="button" aria-pressed={mode === 'era'} onClick={() => setMode('era')}>
+            依時代
           </button>
         </div>
+        {picked && (
+          <div className="ls-picked" role="group" aria-label="同時代的人物">
+            <span>
+              與 <b>{personName(picked)}</b> 同時代（前後 {NEAR_YEARS} 年內）：{contemporaries} 人
+            </span>
+            <button type="button" aria-pressed={only} onClick={() => setOnly(!only)}>
+              只看同時代
+            </button>
+            <button type="button" aria-label="取消標示" title="取消標示" onClick={() => { setPickedId(undefined); setOnly(false); }}>
+              ✕
+            </button>
+          </div>
+        )}
+        {mode === 'category' && (
+          <div className="ls-fold" role="group" aria-label="展開或收合">
+            <button type="button" onClick={() => setCollapsed(new Set())} disabled={collapsed.size === 0}>
+              全部展開
+            </button>
+            <button type="button" onClick={() => setCollapsed(new Set(groups.map((g) => g.category)))}>
+              全部收合
+            </button>
+          </div>
+        )}
         <div className="ls-zoom" role="group" aria-label="縮放">
           <button type="button" onClick={() => changeZoom(zoom - 1)} disabled={zoom === 0} aria-label="縮小">
             −
@@ -179,12 +244,16 @@ export function Lifespans({ timelines }: { timelines: Timeline[] }) {
               {scale.segments.slice(1).map((s) => (
                 <span key={s.start} className="ls-gap" style={{ left: s.x - BREAK_PX, width: BREAK_PX }} />
               ))}
+              {picked && (
+                <span className="ls-span picked" style={{ left: scale.xOf(picked.born), width: scale.xOf(picked.died) - scale.xOf(picked.born), borderColor: picked.color }} />
+              )}
               {hovered && (
                 <span className="ls-span" style={{ left: scale.xOf(hovered.born), width: scale.xOf(hovered.died) - scale.xOf(hovered.born), borderColor: hovered.color }} />
               )}
             </div>
 
-            {groups.map((g) => {
+            {mode === 'era' && eraList.map((p) => renderRow(p, 'era'))}
+            {mode === 'category' && groups.map((g) => {
               const open = !collapsed.has(g.category);
               return (
                 <section key={g.category} className="ls-group">

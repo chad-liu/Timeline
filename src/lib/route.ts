@@ -1,5 +1,8 @@
 import type { Span } from './yearIndex';
 
+/** `category`: grouped by category and tag; `era`: one list ordered by birth year, so contemporaries sit next to each other. */
+export type LifespanMode = 'category' | 'era';
+
 export type View = 'grid' | 'horizontal' | 'vertical';
 
 export const VIEWS: { id: View; label: string }[] = [
@@ -10,7 +13,7 @@ export const VIEWS: { id: View; label: string }[] = [
 
 export type Route =
   | { page: 'dashboard'; category?: string; tag?: string }
-  | { page: 'lifespans' }
+  | { page: 'lifespans'; mode: LifespanMode; selected?: string; only: boolean }
   | { page: 'index' }
   | { page: 'topics' }
   | { page: 'graph'; category?: string; minWeight: number; cross: boolean }
@@ -19,12 +22,20 @@ export type Route =
 
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家&tag=浪漫時期` picks its category tab and tag filter),
- * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event), `#p=lifespans` shows the lifespan chart
+ * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event), `#p=lifespans` shows the lifespan chart (`&g=era` orders everyone by birth year, `&sel=Confucius` highlights who lived at the same time, `&only=1` hides the rest)
  * `#p=index` the name index, `#p=topics` the topic index, `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
   const params = new URLSearchParams(hash.replace(/^#/, ''));
-  if (params.get('p') === 'lifespans') return { page: 'lifespans' };
+  if (params.get('p') === 'lifespans') {
+    const selected = params.get('sel') ?? undefined;
+    return {
+      page: 'lifespans',
+      mode: params.get('g') === 'era' ? 'era' : 'category',
+      selected: selected && knownIds.includes(selected) ? selected : undefined,
+      only: params.get('only') === '1' && !!selected && knownIds.includes(selected),
+    };
+  }
   if (params.get('p') === 'index') return { page: 'index' };
   if (params.get('p') === 'topics') return { page: 'topics' };
   if (params.get('p') === 'graph') {
@@ -66,6 +77,14 @@ export function dashboardHash(category?: string, tag?: string): string {
 }
 
 export const LIFESPANS_HASH = '#p=lifespans';
+
+export function lifespansHash(mode: LifespanMode = 'category', selected?: string, only = false): string {
+  const params = new URLSearchParams({ p: 'lifespans' });
+  if (mode === 'era') params.set('g', 'era');
+  if (selected) params.set('sel', selected);
+  if (selected && only) params.set('only', '1');
+  return '#' + params.toString();
+}
 export const INDEX_HASH = '#p=index';
 export const TOPICS_HASH = '#p=topics';
 

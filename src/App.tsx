@@ -3,7 +3,7 @@ import timelines from 'virtual:timelines';
 import extraPeople from 'virtual:index-people';
 import topics from 'virtual:index-topics';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
-import { VIEWS, dashboardHash, parseHash, timelineHash } from './lib/route';
+import { VIEWS, dashboardHash, lifespansHash, parseHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
@@ -32,7 +32,7 @@ export function App() {
   }, []);
 
   if (route.page === 'dashboard') return <Dashboard timelines={timelines} category={route.category} tag={route.tag} />;
-  if (route.page === 'lifespans') return <Lifespans timelines={timelines} />;
+  if (route.page === 'lifespans') return <Lifespans key={lifespansHash(route.mode, route.selected, route.only)} timelines={timelines} mode={route.mode} selected={route.selected} only={route.only} />;
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
   if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} />;

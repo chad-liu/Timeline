@@ -1369,10 +1369,45 @@ input {
   font-size: 0.85em;
 }
 
-.ls-fold {
+.ls-fold,
+.ls-mode,
+.ls-picked {
   display: flex;
+  align-items: center;
   gap: 4px;
+}
+
+.ls-mode {
   margin-left: auto;
+}
+
+.ls-mode button,
+.ls-picked button {
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ls-mode button[aria-pressed='true'],
+.ls-picked button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.ls-picked {
+  gap: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.ls-picked b {
+  color: var(--accent);
 }
 
 .ls-fold button {
@@ -1405,21 +1440,65 @@ input {
   position: sticky;
   left: 0;
   z-index: 2;
+  display: flex;
   flex: none;
+  align-items: center;
   overflow: hidden;
   width: var(--ls-name-w);
-  padding: 0 12px;
+  padding: 0 8px 0 4px;
   border-right: 1px solid var(--line);
   background: var(--surface);
-  color: var(--text);
   font-size: 13px;
   line-height: var(--ls-row-h);
+}
+
+.ls-name a {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.ls-row.hovered .ls-name {
+.ls-pick {
+  flex: none;
+  width: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--line);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ls-row:hover .ls-pick,
+.ls-pick[aria-pressed='true'] {
+  color: var(--accent);
+}
+
+.ls-row.dim .ls-bar,
+.ls-row.dim .ls-name a,
+.ls-row.dim .ls-outside {
+  opacity: 0.25;
+}
+
+.ls-row.picked .ls-name {
+  background: rgba(98, 0, 234, 0.08);
+}
+
+.ls-row.picked .ls-name a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ls-span.picked {
+  border-right-style: dashed;
+  border-left-style: dashed;
+  background: rgba(98, 0, 234, 0.07);
+}
+
+.ls-row.hovered .ls-name a {
   color: var(--accent);
   font-weight: 600;
 }
@@ -1468,8 +1547,30 @@ input {
   }
 
   .ls-topbar {
-    gap: 12px;
-    padding: 0 16px;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+    gap: 6px 10px;
+    padding: 6px 16px;
+  }
+
+  .ls-title {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .ls-mode button,
+  .ls-picked button {
+    padding: 0 8px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .ls-picked {
+    flex-basis: 100%;
+    order: 9;
+    gap: 6px;
+    font-size: 12px;
   }
 
   .ls-topbar .brand {
