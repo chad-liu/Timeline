@@ -4,7 +4,7 @@ category: 科學家
 tags: [化學]
 see: [FrenchRevolution, Mendeleev, Science]
 related:
-  - 拉瓦節生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/拉瓦節（Antoine-Laurent de Lavoisier）生平大事記.html
+  - 拉瓦節生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/拉瓦節（Antoine-Laurent de Lavoisier）.html
   - 拉瓦節（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/拉瓦節.html
 born: 1743-08-26
 died: 1794-05-08
@@ -15,7 +15,7 @@ description: 安托萬-洛朗·德·拉瓦節（1743–1794），法國化學家
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\拉瓦節（Antoine-Laurent de Lavoisier）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\拉瓦節（Antoine-Laurent de Lavoisier）生平大事記.html，另有知識圖譜頁〈拉瓦節〉），並整合中文維基百科〈安托萬-洛朗·德·拉瓦錫〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\拉瓦節（Antoine-Laurent de Lavoisier）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\拉瓦節（Antoine-Laurent de Lavoisier）.html，另有知識圖譜頁〈拉瓦節〉），並整合中文維基百科〈安托萬-洛朗·德·拉瓦錫〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與早年、早期科學研究、燃燒理論、氧氣理論與現代化學、化學革命、大革命與處決。筆記的「主要科學貢獻」（質量守恆、氧化理論、氧氣、水的組成、命名制度、元素概念）寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 譯名：books與筆記作「拉瓦節」，維基百科作「拉瓦錫」，標題採「拉瓦節生平」（與books頁面一致），維基百科寫法與簡體寫法列入 aliases。
