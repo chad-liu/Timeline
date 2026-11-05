@@ -94,6 +94,19 @@ export function Lifespans({ timelines, mode: initialMode, selected, only: initia
     el.scrollLeft = scale.xOf(year);
   }, [scale, groups]);
 
+  /** Scroll so the person's bar sits in the middle of the visible chart, both across and down (the name column and the axis rows do not count). */
+  const centerOn = (p: Person, row: Element | null) => {
+    const el = scrollRef.current;
+    if (!el || !row) return;
+    const nameW = row.querySelector<HTMLElement>('.ls-name')?.offsetWidth ?? 0;
+    const headH = el.querySelector<HTMLElement>('.ls-head')?.offsetHeight ?? 0;
+    const left = Math.max(0, (scale.xOf(p.born) + scale.xOf(p.died)) / 2 - (el.clientWidth - nameW) / 2);
+    const rowMid = row.getBoundingClientRect().top - el.getBoundingClientRect().top + row.getBoundingClientRect().height / 2;
+    const top = Math.max(0, el.scrollTop + rowMid - (headH + (el.clientHeight - headH) / 2));
+    leftYear.current = scale.yearAt(left);
+    el.scrollTo({ left, top, behavior: 'smooth' });
+  };
+
   const changeZoom = (next: number) => {
     const el = scrollRef.current;
     if (el) leftYear.current = scale.yearAt(el.scrollLeft);
@@ -140,9 +153,10 @@ export function Lifespans({ timelines, mode: initialMode, selected, only: initia
             className="ls-pick"
             aria-pressed={isPicked}
             title={isPicked ? '取消標示同時代的人' : '標示同時代的人'}
-            onClick={() => {
+            onClick={(e) => {
               setPickedId(isPicked ? undefined : p.id);
               if (isPicked) setOnly(false);
+              else centerOn(p, e.currentTarget.closest('.ls-row'));
             }}
           >
             ◎
