@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Maxwell, Clausius, Kelvin, Einstein, Science]
 related:
-  - 波茲曼生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/波茲曼（Ludwig Boltzmann）生平大事記.html
+  - 波茲曼生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/波茲曼生平大事記.html
   - 波茲曼（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/波茲曼.html
 born: 1844-02-20
 died: 1906-09-05
@@ -15,7 +15,7 @@ description: 路德維希·波茲曼（1844–1906），奧地利物理學家與
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\波茲曼（Ludwig Boltzmann）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\波茲曼（Ludwig Boltzmann）生平大事記.html，另有知識圖譜頁〈波茲曼〉），並整合中文維基百科〈路德維希·玻爾茲曼〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\波茲曼（Ludwig Boltzmann）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\波茲曼生平大事記.html，另有知識圖譜頁〈波茲曼〉），並整合中文維基百科〈路德維希·玻爾茲曼〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與早年、維也納與格拉茨起步、氣體動力論、統計熵與史蒂芬—波茲曼定律、原子論爭論與德國任教、晚年。筆記的「主要科學貢獻」（統計力學、熵公式、波茲曼常數、波茲曼方程式）寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 譯名：books 與筆記作「波茲曼」，維基百科作「玻爾茲曼」，標題採「波茲曼生平」（與books頁面一致），維基百科的寫法與簡體寫法列入 aliases，讓人名索引對得上。

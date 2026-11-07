@@ -4,7 +4,7 @@ category: 科學家
 tags: [化學]
 see: [Lavoisier, Science]
 related:
-  - 門得列夫生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/門得列夫（Dmitri Mendeleev）生平大事記.html
+  - 門得列夫生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/門得列夫生平大事記.html
   - 門得列夫（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/門得列夫.html
 born: 1834-02-08
 died: 1907-02-02
@@ -15,7 +15,7 @@ description: 德米特里·門得列夫（1834–1907），俄羅斯化學家；
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\門得列夫（Dmitri Mendeleev）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\門得列夫（Dmitri Mendeleev）生平大事記.html，另有知識圖譜頁〈門得列夫〉），並整合中文維基百科〈德米特里·門捷列夫〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\門得列夫（Dmitri Mendeleev）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\門得列夫生平大事記.html，另有知識圖譜頁〈門得列夫〉），並整合中文維基百科〈德米特里·門捷列夫〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與早年、求學與早期學術、赴歐洲進修、建立元素週期表、預測未知元素與完善、晚年。筆記的「主要科學貢獻」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 譯名：books與筆記作「門得列夫」，維基百科作「門捷列夫」，標題採「門得列夫生平」（與books頁面一致），維基百科寫法列入 aliases。

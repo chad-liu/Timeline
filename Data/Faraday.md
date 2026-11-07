@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學, 化學]
 see: [Maxwell, Newton, Science]
 related:
-  - 法拉第生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/法拉第（Michael Faraday）生平大事記.html
+  - 法拉第生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/法拉第生平大事記.html
   - 法拉第（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/法拉第.html
 born: 1791-09-22
 died: 1867-08-25
@@ -15,7 +15,7 @@ description: 麥可·法拉第（1791–1867），英國實驗科學家；鐵匠
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\法拉第（Michael Faraday）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\法拉第（Michael Faraday）生平大事記.html，另有知識圖譜頁〈法拉第〉），並整合中文維基百科〈麥可·法拉第〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\法拉第（Michael Faraday）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\法拉第生平大事記.html，另有知識圖譜頁〈法拉第〉），並整合中文維基百科〈麥可·法拉第〉條目，以自己的話改寫。
 時期依筆記的章節歸納：貧寒的早年、進入皇家研究院、化學與電磁旋轉、電磁感應的突破、磁場與光學的探索、晚年。筆記的「六大科學貢獻」「法拉第與馬克士威的關係」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 生卒：筆記與維基百科一致：1791年9月22日生於倫敦南部的紐因頓巴茨，1867年8月25日在漢普頓宮的住所逝世，享年75歲。

@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Joule, Clausius, Carnot, Maxwell, Science]
 related:
-  - 開爾文生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/開爾文（William Thomson）生平大事.html
+  - 開爾文生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/開爾文生平大事記.html
 born: 1824-06-26
 died: 1907-12-17
 aliases: [威廉·湯姆森, 湯姆森, 開爾文勳爵, 克耳文勳爵, 克耳文男爵, 開爾文男爵]
@@ -14,7 +14,7 @@ description: 威廉·湯姆森，開爾文勳爵（1824–1907），英國物理
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\開爾文（William Thomson）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\開爾文（William Thomson）生平大事.html），並整合中文維基百科〈開爾文男爵〉（原頁名「克耳文勳爵」）條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\開爾文（William Thomson）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\開爾文生平大事記.html），並整合中文維基百科〈開爾文男爵〉（原頁名「克耳文勳爵」）條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與家庭、格拉斯哥與劍橋求學、教授與熱力學、跨大西洋電報、電磁學與潮汐、榮譽與晚年。筆記的「主要科學貢獻」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 稱呼：頁面標題與資料來源寫「威廉·湯姆森」，1892年受封開爾文男爵後通稱開爾文勳爵；維基百科作「克耳文」。標題採「開爾文生平」（與books頁面、筆記一致），其餘寫法列入 aliases。

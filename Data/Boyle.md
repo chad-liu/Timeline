@@ -4,7 +4,7 @@ category: 科學家
 tags: [化學, 物理學]
 see: [Newton, Lavoisier, Science]
 related:
-  - 波以耳生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/波以耳（Robert Boyle）生平大事記.html
+  - 波以耳生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/波以耳生平大事記.html
   - 波以耳（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/波以耳.html
 born: 1627-01-25
 died: 1691-12-31
@@ -16,7 +16,7 @@ description: 羅伯特·波以耳（1627–1691），愛爾蘭裔英國自然哲
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\波以耳（Robert Boyle）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\波以耳（Robert Boyle）生平大事記.html，另有知識圖譜頁〈波以耳〉），並整合中文維基百科〈羅伯特·波以耳〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\波以耳（Robert Boyle）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\波以耳生平大事記.html，另有知識圖譜頁〈波以耳〉），並整合中文維基百科〈羅伯特·波以耳〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與早年、歐洲旅行與思想形成、建立實驗研究方法、波以耳定律與現代化學、成熟與影響、晚年。筆記的「主要科學貢獻」（波以耳定律、現代化學、實驗科學方法）寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 譯名：books與筆記作「波以耳」，維基百科頁名亦作「波以耳」，另有「波意耳」「玻意耳」等譯法，列入 aliases。他的父親理查·波以耳（科克伯爵）放進 notNames，避免人名索引把父親的事件算到他頭上。

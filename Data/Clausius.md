@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Kelvin, Carnot, Joule, Boltzmann, Maxwell, Science]
 related:
-  - 克勞修斯生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/克勞修斯（Rudolf Clausius）生平大事記.html
+  - 克勞修斯生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/克勞修斯生平大事記.html
   - 克勞修斯（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/克勞修斯.html
 born: 1822-01-02
 died: 1888-08-24
@@ -15,7 +15,7 @@ description: 魯道夫·克勞修斯（1822–1888），德國物理學家；185
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\克勞修斯（Rudolf Clausius）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\克勞修斯（Rudolf Clausius）生平大事記.html，另有知識圖譜頁〈克勞修斯〉），並整合中文維基百科〈魯道夫·克勞修斯〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\克勞修斯（Rudolf Clausius）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\克勞修斯生平大事記.html，另有知識圖譜頁〈克勞修斯〉），並整合中文維基百科〈魯道夫·克勞修斯〉條目，以自己的話改寫。
 時期依筆記的章節歸納：早年教育、建立熱力學理論、蘇黎世到波昂的學術生涯、晚年。筆記的「主要科學理論與公式」「與其他科學家的關係」「主要著作與論文」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 生卒：筆記與維基百科一致：1822年1月2日生於普魯士波美拉尼亞的科斯林（今波蘭科沙林），1888年8月24日在波昂逝世，享年66歲。

@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Maxwell, Faraday, Einstein, Science]
 related:
-  - 赫茲生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/赫茲（Heinrich Rudolf Hertz）生平大事記.html
+  - 赫茲生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/赫茲生平大事記.html
   - 赫茲（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/赫茲.html
 born: 1857-02-22
 died: 1894-01-01
@@ -15,7 +15,7 @@ description: 海因里希·魯道夫·赫茲（1857–1894），德國物理學�
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\赫茲（Heinrich Rudolf Hertz）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\赫茲（Heinrich Rudolf Hertz）生平大事記.html，另有知識圖譜頁〈赫茲〉），並整合中文維基百科〈海因里希·魯道夫·赫茲〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\赫茲（Heinrich Rudolf Hertz）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\赫茲生平大事記.html，另有知識圖譜頁〈赫茲〉），並整合中文維基百科〈海因里希·魯道夫·赫茲〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與早年教育、柏林求學、基爾與卡爾斯魯厄、電磁波的實驗證實、波恩與晚年。筆記的「六大科學貢獻」「赫茲與法拉第、馬克士威的科學關係」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 生卒：筆記與維基百科一致：1857年2月22日生於漢堡，1894年1月1日在波昂逝世，享年36歲。死因：筆記只寫嚴重疾病；維基百科寫1892年被診斷出韋格納肉芽腫，1894年因敗血症去世，照維基百科補充。

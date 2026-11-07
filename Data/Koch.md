@@ -4,7 +4,7 @@ category: 科學家
 tags: [醫學, 生物學]
 see: [Pasteur, Science]
 related:
-  - 柯霍生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/柯霍（Robert Koch）生平大事記.html
+  - 柯霍生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/柯霍生平大事記.html
   - 柯霍（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/柯霍.html
 born: 1843-12-11
 died: 1910-05-27
@@ -16,7 +16,7 @@ description: 羅伯特·柯霍（1843–1910），德國醫師與微生物學家
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\柯霍（Robert Koch）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\柯霍（Robert Koch）生平大事記.html，另有知識圖譜頁〈柯霍〉），並整合中文維基百科〈羅伯特·科赫〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\柯霍（Robert Koch）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\柯霍生平大事記.html，另有知識圖譜頁〈柯霍〉），並整合中文維基百科〈羅伯特·科赫〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與求學、醫師生涯與炭疽病、細菌學方法的建立、霍亂與國際防疫、研究機構與晚年。筆記的「柯霍氏法則」「重要科學貢獻整理」「與其他科學家的關係」「歷史地位」寫進時期說明與相關事件，不另立事件。「柯霍氏法則」「柯霍研究所」放入 notNames，避免人名索引把方法與機構的名稱算成提到他本人。
 兩份資料出入與處理方式：
 - 譯名：books與筆記作「柯霍」，維基百科頁名作「羅伯特·科赫」，標題採「柯霍生平」（與books頁面一致），科赫列入 aliases。

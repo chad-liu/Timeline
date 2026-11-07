@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Kelvin, Faraday, Clausius, Science]
 related:
-  - 焦耳生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/焦耳（James Prescott Joule）生平大事記.html
+  - 焦耳生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/焦耳生平大事記.html
   - 焦耳（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/焦耳.html
 born: 1818-12-24
 died: 1889-10-11
@@ -15,7 +15,7 @@ description: 詹姆士·普雷斯科特·焦耳（1818–1889），英國物理�
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\焦耳（James Prescott Joule）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\焦耳（James Prescott Joule）生平大事記.html，另有知識圖譜頁〈焦耳〉），並整合中文維基百科〈詹姆士·普雷史考特·焦耳〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\焦耳（James Prescott Joule）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\焦耳生平大事記.html，另有知識圖譜頁〈焦耳〉），並整合中文維基百科〈詹姆士·普雷史考特·焦耳〉條目，以自己的話改寫。
 時期依筆記的章節歸納：早年、電學與實驗、熱功當量、能量守恆與焦耳—湯姆森效應、榮譽與晚年。筆記的「主要科學貢獻」「與其他科學家的關係」「十九世紀能量守恆理論的發展脈絡」（邁爾、焦耳、亥姆霍茲、克勞修斯）寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 卒日：筆記寫1889年10月11日，維基百科中文寫10月12日，英文維基百科與多數資料作10月11日，這裡採10月11日。逝世地為柴郡塞爾（Sale）。

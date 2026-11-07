@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Faraday, Hertz, Kelvin, Boltzmann, Einstein, Science]
 related:
-  - 馬克士威生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/馬克士威（James Clerk Maxwell）生平大事記.html
+  - 馬克士威生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/馬克士威生平大事記.html
   - 馬克士威（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/馬克士威.html
 born: 1831-06-13
 died: 1879-11-05
@@ -15,7 +15,7 @@ description: 詹姆斯·克拉克·馬克士威（1831–1879），蘇格蘭物�
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\馬克士威（James Clerk Maxwell）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\馬克士威（James Clerk Maxwell）生平大事記.html，另有知識圖譜頁〈馬克士威〉），並整合中文維基百科〈詹姆斯·克拉克·麥克斯韋〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\馬克士威（James Clerk Maxwell）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\馬克士威生平大事記.html，另有知識圖譜頁〈馬克士威〉），並整合中文維基百科〈詹姆斯·克拉克·麥克斯韋〉條目，以自己的話改寫。
 時期依筆記的階段歸納：早年教育、劍橋求學、土星環與氣體動力論、電磁理論成熟、卡文迪許實驗室與晚年。筆記的「五大科學貢獻」（方程組、光的電磁理論、速度分布、土星環粒子模型、彩色攝影）「重要人物與思想關係」「歷史地位」寫進時期說明與相關事件，不另立事件。
 兩份資料出入與處理方式：
 - 生卒：筆記與維基百科一致：1831年6月13日生於愛丁堡，1879年11月5日在劍橋因胃癌逝世（維基百科），享年48歲。

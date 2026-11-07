@@ -4,7 +4,7 @@ category: 科學家
 tags: [化學, 生物學, 醫學]
 see: [Koch, Lavoisier, Science]
 related:
-  - 巴斯德生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/巴斯德（Louis Pasteur）生平大事記.html
+  - 巴斯德生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/巴斯德生平大事記.html
   - 巴斯德（科學家）: https://chad-liu.github.io/books/html/8-2.科學家/巴斯德.html
 born: 1822-12-27
 died: 1895-09-28
@@ -16,7 +16,7 @@ description: 路易·巴斯德（1822–1895），法國化學家與微生物學
 ---
 
 <!--
-內容整理自 D:\Books\md\歷史\人物\科學家\巴斯德（Louis Pasteur）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\巴斯德（Louis Pasteur）生平大事記.html，另有知識圖譜頁〈巴斯德〉），並整合中文維基百科〈路易·巴斯德〉條目，以自己的話改寫。
+內容整理自 D:\Books\md\歷史\人物\科學家\巴斯德（Louis Pasteur）生平大事記.md（網頁版為 D:\Books\html\8-2.科學家\巴斯德生平大事記.html，另有知識圖譜頁〈巴斯德〉），並整合中文維基百科〈路易·巴斯德〉條目，以自己的話改寫。
 時期依筆記的章節歸納：出生與求學、立體化學、發酵與自然發生說、消毒法與蠶病、病原菌與疫苗、狂犬病疫苗、巴斯德研究所與晚年。筆記的「主要科學貢獻」寫進時期說明與相關事件，不另立事件。「巴斯德研究所」「巴斯德消毒法」放入 notNames，避免人名索引把機構與方法的名稱算成提到他本人。
 兩份資料出入與處理方式：
 - 生卒：筆記與維基百科一致：1822年12月27日生於法國汝拉省的多勒，1895年9月28日逝世，享年72歲。逝世地：筆記寫馬恩河畔聖克盧（Marnes-la-Coquette，位於巴黎西郊），維基百科寫巴黎，照筆記。
