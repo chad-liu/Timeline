@@ -2,7 +2,7 @@
 title: 穆罕默德生平
 category: 思想家
 tags: [伊斯蘭教]
-see: [Jesus, Crusades, SilkRoad]
+see: [Crusades, SilkRoad]
 related:
   - 穆罕默德(約570~632): https://chad-liu.github.io/books/html/2-6.西方宗教/穆罕默德(約570~632).html
   - 伊斯蘭教: https://chad-liu.github.io/books/html/2-6.西方宗教/伊斯蘭教.html
