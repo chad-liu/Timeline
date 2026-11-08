@@ -66,8 +66,15 @@ describe('reignsInSlice', () => {
     expect(reignsInSlice(1600, 1700)).toEqual(['明：萬曆、天啟、崇禎', '清：順治、康熙']);
   });
 
-  it('gives nothing for periods of division or before the list', () => {
-    expect(reignsInSlice(230, 231)).toEqual([]);
+  it('names only the dynasty between the Han and the Sui', () => {
+    expect(reignsInSlice(230, 231)).toEqual(['魏（220–265）']);
+    expect(reignsInSlice(500, 501)).toEqual(['南朝 齊（479–502）']);
+    expect(reignsInSlice(400, 500)).toEqual(['東晉', '南朝：宋、齊']);
+    expect(reignsInSlice(585, 586)).toEqual(['南朝 陳（557–589）', '隋 隋文帝（581–604 在位）']);
+  });
+
+  it('gives nothing before the list or for 五代十國', () => {
     expect(reignsInSlice(-600, -599)).toEqual([]);
+    expect(reignsInSlice(930, 931)).toEqual([]);
   });
 });

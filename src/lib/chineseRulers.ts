@@ -11,13 +11,16 @@ export interface Ruler {
   color?: string;
   /** Ming and Qing reigns are named by era: the era's first year (元年), usually the year after accession. */
   eraStart?: number;
+  /** A whole dynasty rather than one reign (魏 to 陳, between the Han and the Sui). */
+  whole?: true;
 }
 
 type Reign = [name: string, start: number, end: number, eraStart?: number];
 
 /**
  * Reigns of the unified dynasties, in order (Eastern Zhou kings from 周敬王 on; Ming and Qing by era name).
- * Periods of division (三國, 南北朝, 五代十國) have several rival courts and are left out, as are reigns of a few months.
+ * Between 漢獻帝 and 隋文帝 only the dynasties are listed (魏, 西晉, 東晉 and the Southern Dynasties), not each emperor;
+ * 五代十國 is left out, as are reigns of a few months.
  */
 const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['東周', [['周敬王', -519, -476], ['周元王', -475, -469], ['周貞定王', -468, -441], ['周考王', -440, -426], ['周威烈王', -425, -402], ['周安王', -401, -376], ['周烈王', -375, -369], ['周顯王', -368, -321], ['周慎靚王', -320, -315], ['周赧王', -314, -256]]],
@@ -25,6 +28,10 @@ const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['西漢', [['漢高祖', -202, -195], ['漢惠帝', -194, -188], ['呂后臨朝', -187, -180], ['漢文帝', -179, -157], ['漢景帝', -156, -141], ['漢武帝', -140, -87], ['漢昭帝', -86, -74], ['漢宣帝', -73, -49], ['漢元帝', -48, -33], ['漢成帝', -32, -7], ['漢哀帝', -6, -1], ['漢平帝', 1, 5]]],
   ['新', [['王莽', 9, 23]]],
   ['東漢', [['漢光武帝', 25, 57], ['漢明帝', 58, 75], ['漢章帝', 76, 88], ['漢和帝', 89, 105], ['漢安帝', 106, 125], ['漢順帝', 126, 144], ['漢桓帝', 147, 167], ['漢靈帝', 168, 189], ['漢獻帝', 189, 220]]],
+  ['魏', [['魏', 220, 265]]],
+  ['西晉', [['西晉', 265, 316]]],
+  ['東晉', [['東晉', 317, 420]]],
+  ['南朝', [['宋', 420, 479], ['齊', 479, 502], ['梁', 502, 557], ['陳', 557, 589]]],
   ['隋', [['隋文帝', 581, 604], ['隋煬帝', 604, 618]]],
   ['唐', [['唐高祖', 618, 626], ['唐太宗', 626, 649], ['唐高宗', 649, 683], ['唐睿宗', 684, 690], ['武則天', 690, 705], ['唐中宗', 705, 710], ['唐睿宗', 710, 712], ['唐玄宗', 712, 756], ['唐肅宗', 756, 762], ['唐代宗', 762, 779], ['唐德宗', 779, 805], ['唐憲宗', 805, 820], ['唐穆宗', 820, 824], ['唐敬宗', 824, 826], ['唐文宗', 826, 840], ['唐武宗', 840, 846], ['唐宣宗', 846, 859], ['唐懿宗', 859, 873], ['唐僖宗', 873, 888], ['唐昭宗', 888, 904], ['唐哀帝', 904, 907]]],
   ['北宋', [['宋太祖', 960, 976], ['宋太宗', 976, 997], ['宋真宗', 997, 1022], ['宋仁宗', 1022, 1063], ['宋英宗', 1063, 1067], ['宋神宗', 1067, 1085], ['宋哲宗', 1085, 1100], ['宋徽宗', 1100, 1126], ['宋欽宗', 1126, 1127]]],
@@ -34,9 +41,22 @@ const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['清', [['順治', 1644, 1661, 1644], ['康熙', 1661, 1722, 1662], ['雍正', 1722, 1735, 1723], ['乾隆', 1735, 1796, 1736], ['嘉慶', 1796, 1820, 1796], ['道光', 1820, 1850, 1821], ['咸豐', 1850, 1861, 1851], ['同治', 1861, 1875, 1862], ['光緒', 1875, 1908, 1875], ['宣統', 1908, 1912, 1909]]],
 ];
 
+const WHOLE_DYNASTIES = new Set(['魏', '西晉', '東晉', '南朝']);
+
 export const CHINESE_RULERS: Ruler[] = DYNASTIES.flatMap(([dynasty, reigns]) =>
-  reigns.map(([name, start, end, eraStart]) => (eraStart === undefined ? { name, dynasty, start, end } : { name, dynasty, start, end, eraStart })),
+  reigns.map(([name, start, end, eraStart]): Ruler => {
+    const ruler: Ruler = { name, dynasty, start, end };
+    if (eraStart !== undefined) ruler.eraStart = eraStart;
+    if (WHOLE_DYNASTIES.has(dynasty)) ruler.whole = true;
+    return ruler;
+  }),
 );
+
+/** 「北宋 宋真宗（997–1022 在位）」 for a reign, 「南朝 宋（420–479）」 or 「東晉（317–420）」 for a whole dynasty. */
+function fullName(r: Ruler, verb = '在位'): string {
+  const name = r.name === r.dynasty ? r.name : `${r.dynasty} ${r.name}`;
+  return `${name}（${formatYear(r.start)}–${formatYear(r.end)}${verb && !r.whole ? ` ${verb}` : ''}）`;
+}
 
 /**
  * The Chinese rulers of the years [from, to), one string per dynasty.
@@ -47,13 +67,13 @@ export function reignsInSlice(from: number, to: number, rulers: Ruler[] = CHINES
   const dynasties = new Map<string, Ruler[]>();
   for (const r of rulers.filter((r) => r.start < to && r.end >= from)) dynasties.set(r.dynasty, [...(dynasties.get(r.dynasty) ?? []), r]);
   return [...dynasties].map(([dynasty, reigns]) => {
-    if (to - from > 1) return `${dynasty}：${reigns.map((r) => r.name).join('、')}`;
+    if (to - from > 1) return reigns.every((r) => r.name === dynasty) ? dynasty : `${dynasty}：${reigns.map((r) => r.name).join('、')}`;
     const era = reigns.filter((r) => r.eraStart !== undefined && r.eraStart <= from).at(-1);
     if (era) {
       const n = from - era.eraStart! + 1;
       return `${dynasty}${era.name}${n === 1 ? '元' : n}年`;
     }
-    return reigns.map((r) => `${dynasty} ${r.name}（${formatYear(r.start)}–${formatYear(r.end)} 在位）`).join('、');
+    return reigns.map((r) => fullName(r)).join('、');
   });
 }
 
@@ -77,7 +97,7 @@ export function rulerBars(scale: LifespanScale, rulers: Ruler[] = CHINESE_RULERS
   for (const ruler of rulers) {
     const start = Math.max(ruler.start, prevEnd);
     prevEnd = Math.max(prevEnd, ruler.end);
-    const title = `${ruler.dynasty} ${ruler.name}（${formatYear(ruler.start)}–${formatYear(ruler.end)}${verb && ` ${verb}`}）`;
+    const title = fullName(ruler, verb);
     const pieces = scale.segments
       .map((s) => [Math.max(start, s.start), Math.min(ruler.end, s.end)])
       .filter(([a, b]) => a < b)
