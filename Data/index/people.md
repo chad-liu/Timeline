@@ -132,13 +132,6 @@ people:
     note: 倫敦分行的創立者，替反法同盟籌措戰費
 
   # 政治人物
-  - name: 尤利烏斯·凱撒
-    terms: [凱撒]
-    notNames: [凱撒·萊]
-    born: -100
-    died: -44
-    category: 西方歷史
-    note: 羅馬共和末期的將軍與獨裁官
   - name: 伊莉莎白一世
     terms: [伊莉莎白一世]
     born: 1533
@@ -165,12 +158,6 @@ people:
     category: 西方歷史
     timeline: NapoleonicWars
     note: 法國皇帝，《拿破崙法典》與拿破崙戰爭
-  - name: 梅特涅
-    terms: [梅特涅]
-    born: 1773
-    died: 1859
-    category: 西方歷史
-    note: 奧地利首相，維也納會議與「梅特涅體系」
   - name: 拿破崙三世
     terms: [拿破崙三世, 路易·拿破崙]
     born: 1808
