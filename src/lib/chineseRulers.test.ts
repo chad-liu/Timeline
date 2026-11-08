@@ -73,8 +73,12 @@ describe('reignsInSlice', () => {
     expect(reignsInSlice(585, 586)).toEqual(['南朝 陳（557–589）', '隋 隋文帝（581–604 在位）']);
   });
 
-  it('gives nothing before the list or for 五代十國', () => {
+  it('names only the dynasty for the Five Dynasties', () => {
+    expect(reignsInSlice(930, 931)).toEqual(['五代 後唐（923–936）']);
+    expect(reignsInSlice(950, 960)).toEqual(['五代：後漢、後周']);
+  });
+
+  it('gives nothing before the list', () => {
     expect(reignsInSlice(-600, -599)).toEqual([]);
-    expect(reignsInSlice(930, 931)).toEqual([]);
   });
 });

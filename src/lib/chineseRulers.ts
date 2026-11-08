@@ -11,7 +11,7 @@ export interface Ruler {
   color?: string;
   /** Ming and Qing reigns are named by era: the era's first year (元年), usually the year after accession. */
   eraStart?: number;
-  /** A whole dynasty rather than one reign (魏 to 陳, between the Han and the Sui). */
+  /** A whole dynasty rather than one reign (魏 to 陳 between the Han and the Sui, and the Five Dynasties). */
   whole?: true;
 }
 
@@ -19,8 +19,8 @@ type Reign = [name: string, start: number, end: number, eraStart?: number];
 
 /**
  * Reigns of the unified dynasties, in order (Eastern Zhou kings from 周敬王 on; Ming and Qing by era name).
- * Between 漢獻帝 and 隋文帝 only the dynasties are listed (魏, 西晉, 東晉 and the Southern Dynasties), not each emperor;
- * 五代十國 is left out, as are reigns of a few months.
+ * Between 漢獻帝 and 隋文帝 only the dynasties are listed (魏, 西晉, 東晉 and the Southern Dynasties), not each emperor,
+ * and likewise the Five Dynasties between 唐 and 宋 (the Ten Kingdoms are left out); reigns of a few months are left out too.
  */
 const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['東周', [['周敬王', -519, -476], ['周元王', -475, -469], ['周貞定王', -468, -441], ['周考王', -440, -426], ['周威烈王', -425, -402], ['周安王', -401, -376], ['周烈王', -375, -369], ['周顯王', -368, -321], ['周慎靚王', -320, -315], ['周赧王', -314, -256]]],
@@ -34,6 +34,7 @@ const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['南朝', [['宋', 420, 479], ['齊', 479, 502], ['梁', 502, 557], ['陳', 557, 589]]],
   ['隋', [['隋文帝', 581, 604], ['隋煬帝', 604, 618]]],
   ['唐', [['唐高祖', 618, 626], ['唐太宗', 626, 649], ['唐高宗', 649, 683], ['唐睿宗', 684, 690], ['武則天', 690, 705], ['唐中宗', 705, 710], ['唐睿宗', 710, 712], ['唐玄宗', 712, 756], ['唐肅宗', 756, 762], ['唐代宗', 762, 779], ['唐德宗', 779, 805], ['唐憲宗', 805, 820], ['唐穆宗', 820, 824], ['唐敬宗', 824, 826], ['唐文宗', 826, 840], ['唐武宗', 840, 846], ['唐宣宗', 846, 859], ['唐懿宗', 859, 873], ['唐僖宗', 873, 888], ['唐昭宗', 888, 904], ['唐哀帝', 904, 907]]],
+  ['五代', [['後梁', 907, 923], ['後唐', 923, 936], ['後晉', 936, 947], ['後漢', 947, 951], ['後周', 951, 960]]],
   ['北宋', [['宋太祖', 960, 976], ['宋太宗', 976, 997], ['宋真宗', 997, 1022], ['宋仁宗', 1022, 1063], ['宋英宗', 1063, 1067], ['宋神宗', 1067, 1085], ['宋哲宗', 1085, 1100], ['宋徽宗', 1100, 1126], ['宋欽宗', 1126, 1127]]],
   ['南宋', [['宋高宗', 1127, 1162], ['宋孝宗', 1162, 1189], ['宋光宗', 1189, 1194], ['宋寧宗', 1194, 1224], ['宋理宗', 1224, 1264], ['宋度宗', 1264, 1274], ['宋恭帝', 1274, 1276], ['宋端宗', 1276, 1278], ['宋末帝', 1278, 1279]]],
   ['元', [['元世祖', 1260, 1294], ['元成宗', 1294, 1307], ['元武宗', 1307, 1311], ['元仁宗', 1311, 1320], ['元英宗', 1320, 1323], ['泰定帝', 1323, 1328], ['元文宗', 1328, 1332], ['元順帝', 1333, 1368]]],
@@ -41,7 +42,7 @@ const DYNASTIES: [dynasty: string, reigns: Reign[]][] = [
   ['清', [['順治', 1644, 1661, 1644], ['康熙', 1661, 1722, 1662], ['雍正', 1722, 1735, 1723], ['乾隆', 1735, 1796, 1736], ['嘉慶', 1796, 1820, 1796], ['道光', 1820, 1850, 1821], ['咸豐', 1850, 1861, 1851], ['同治', 1861, 1875, 1862], ['光緒', 1875, 1908, 1875], ['宣統', 1908, 1912, 1909]]],
 ];
 
-const WHOLE_DYNASTIES = new Set(['魏', '西晉', '東晉', '南朝']);
+const WHOLE_DYNASTIES = new Set(['魏', '西晉', '東晉', '南朝', '五代']);
 
 export const CHINESE_RULERS: Ruler[] = DYNASTIES.flatMap(([dynasty, reigns]) =>
   reigns.map(([name, start, end, eraStart]): Ruler => {
