@@ -21,7 +21,7 @@ https://academy.snapask.com/zh-tw/post/高中歷史圖表一次看%20中華五�
 - jingkang-qingming.jpg（北宋張擇端《清明上河圖》局部（與北宋靖康之變大事記時間軸共用））
 - wd-qin.jpg（秦始皇像（19世紀）（與世界發展史時間軸共用））
 - cs-zhangqian.jpg（敦煌莫高窟壁畫中的張騫出使西域圖（與商業貿易史時間軸共用））
-- wangmang-guangwu.jpg（唐代帝王圖卷中的漢光武帝劉秀像（與王莽興亡大事記時間軸共用））
+- wangmang-guangwu.jpg（唐代帝王圖卷中的漢光武帝劉秀像（與王莽時間軸共用））
 - sanguo-yellow.jpg（《三國演義》版畫插圖：劉備、關羽、張飛與黃巾軍作戰（與漢末三國大事記時間軸共用））
 - sanguo-simayan.jpg（晉武帝司馬炎像（與漢末三國大事記時間軸共用））
 - keju-sui.jpg（唐代帝王圖卷中的隋煬帝像局部（與中國科舉制度大事記時間軸共用））

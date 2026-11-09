@@ -1,5 +1,5 @@
 ---
-title: 王莽興亡大事記
+title: 王莽
 category: 東方歷史
 tags: [中國人物]
 related:
