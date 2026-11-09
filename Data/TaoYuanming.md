@@ -1,7 +1,7 @@
 ---
 title: 陶淵明生平
-category: 東方歷史
-tags: [中國人物]
+category: 文學家
+tags: [中國文學]
 see: [ChineseHistory, Xuanxue, SuDongpo]
 related:
   - 陶淵明(365~427): https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/陶淵明(365~427).html

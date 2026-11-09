@@ -1,7 +1,7 @@
 ---
 title: 韓愈生平
-category: 東方歷史
-tags: [中國人物]
+category: 文學家
+tags: [中國文學]
 see: [ChineseHistory, OuyangXiu, SuDongpo, KejuSystem]
 related:
   - 韓愈(768~824): https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/韓愈(768~824).html

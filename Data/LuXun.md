@@ -1,7 +1,7 @@
 ---
 title: 魯迅生平
-category: 東方歷史
-tags: [中國人物]
+category: 文學家
+tags: [中國文學]
 related:
   - 魯迅生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/魯迅(1881~1936).html
 born: 1881-09-25
