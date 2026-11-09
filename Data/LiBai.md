@@ -29,6 +29,7 @@ description: 李白（701–762），字太白，號青蓮居士，盛唐浪漫�
 - lb-huanghelou.jpg：Xia Yong - Huang He Lou.jpg（夏永〈黃鶴樓圖〉，元代）
 - lb-jiange.jpg：Jiange Pass in Sichuan.tif（〈劍閣圖〉，17世紀（瑞典遠東古物博物館），蜀道之險）
 - lb-xuanzong.jpg：李隆基像.jpg（唐玄宗像）
+- lb-rebels.jpg：Rebel provinces post An Lushan.jpg（安史之亂後割據的藩鎮分布圖）
 -->
 
 # Periods
@@ -82,6 +83,7 @@ description: 李白（701–762），字太白，號青蓮居士，盛唐浪漫�
 李白北上幽州（今北京一帶），親眼看到安祿山的勢力日益坐大，對唐朝的政局與邊防感到憂慮。〈將進酒〉約作於這前後，「天生我材必有用，千金散盡還復來」，以縱酒高歌寫人生短暫與懷才不遇。
 
 ## 755 | 安史之亂爆發 {label="755年（天寶十四載）"}
+![](images/lb-rebels.jpg)
 安祿山在范陽起兵，唐朝由盛轉衰，洛陽、長安相繼陷落。李白此時不在朝廷，帶著家人避亂南下，隱居廬山一帶，仍希望能參與平亂、報效國家。〈贈汪倫〉約作於這前後。
 
 ## 756 | 加入永王幕府 {label="756年（至德元年）"}
