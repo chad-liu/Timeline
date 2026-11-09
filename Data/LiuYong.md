@@ -8,6 +8,7 @@ related:
 born: 984
 died: 1053
 aliases: [柳三變, 柳耆卿, 柳屯田, 柳七]
+cover: images/jingkang-qingming.jpg
 color: "#e64980"
 description: 柳永（約984–約1053），原名三變，字耆卿，排行第七，人稱「柳七」，北宋婉約詞人，慢詞的開創者；早年流連汴京歌樓、為歌妓樂工填詞，科舉屢敗，約五十歲才進士及第，以屯田員外郎終，世稱「柳屯田」，「凡有井水飲處，即能歌柳詞」
 ---
@@ -23,7 +24,8 @@ description: 柳永（約984–約1053），原名三變，字耆卿，排行第
 - 〈望海潮〉〈雨霖鈴〉：筆記放在約1040–1050年代的作品群；傳統上〈望海潮〉被認為是他早年遊杭州時的作品，〈雨霖鈴〉寫離開汴京時與戀人告別，這裡依傳統說法放在早年，並註明年代不確定。
 - 卒地：筆記寫傳統說法是約1053年逝世於潤州（今江蘇鎮江），葬地有不同說法，照此。
 - 人名與其他時間軸一致：蘇軾（SuDongpo）、李清照（LiQingzhao）、周邦彥（ZhouBangyan）；晏殊、宋仁宗沒有獨立時間軸。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- jingkang-qingming.jpg：Along the River During the Qingming Festival (detail of original).jpg（張擇端《清明上河圖》局部，北宋汴京的繁華（與北宋靖康之變大事記共用））
 -->
 
 # Periods
