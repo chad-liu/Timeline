@@ -223,6 +223,7 @@ people:
     born: 1883
     died: 1946
     category: 經濟商業
+    timeline: KeynesianEconomics
     note: 《一般理論》的作者，總體需求管理與布雷頓森林體系
 
   # 藝術家
