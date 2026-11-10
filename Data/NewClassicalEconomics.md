@@ -6,6 +6,7 @@ see: [Monetarism, ChicagoSchool, NewKeynesianEconomics, KeynesianEconomics]
 aliases: [新興古典學派, 新古典宏觀經濟學, 理性預期, 盧卡斯批判, 實質景氣循環]
 related:
   - 新興古典學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/新興古典學派.html
+cover: images/nce-cover.jpg
 color: "#364fc7"
 description: 1970年代挑戰凱因斯學派的理性預期革命：穆斯的理性預期、盧卡斯批判、薩金特與華萊士的政策無效命題、基德蘭與普雷斯科特的時間不一致與實質景氣循環，到動態隨機一般均衡（DSGE）模型
 ---
@@ -20,7 +21,8 @@ description: 1970年代挑戰凱因斯學派的理性預期革命：穆斯的理
 - 1979年「貨幣政策可信度研究」與1983年巴羅—戈登的聲譽模型合為一則；1986年羅默與1988年盧卡斯的內生成長研究合為一則。
 - 2010年以後的金融摩擦、零利率下限、異質性代理人（HANK）模型，屬於整個總體經濟學的發展，寫進最後一則事件；HANK 見「新凱因斯學派」時間軸。
 - 人名依 Books 原稿：穆斯、盧卡斯、薩金特、華萊士、巴羅、基德蘭、普雷斯科特；人名用·分隔。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- nce-cover.jpg：Marquette Plaza.jpg（前明尼亞波利斯聯邦準備銀行大樓（今 Marquette Plaza，1973年落成），1970年代薩金特、普雷斯科特、基德蘭在此發展理性預期與實質景氣循環理論）
 -->
 
 # Periods
