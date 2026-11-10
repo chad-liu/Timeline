@@ -6,6 +6,7 @@ see: [FinanceHistory, MonetarySystemHistory, Medici]
 aliases: [商人銀行, 綜合銀行, 巴塞爾協議]
 related:
   - 全球銀行的演進歷程: https://chad-liu.github.io/books/html/4-1.經濟知識/全球銀行的演進歷程.html
+cover: images/bk-cover.jpg
 color: "#0b7285"
 description: 從美索不達米亞的神廟借貸、羅馬的錢商、義大利的商人銀行與匯票，到阿姆斯特丹銀行、英格蘭銀行、德國綜合銀行、歐洲美元與巴塞爾協議，再到金融海嘯後的監理改革與數位銀行
 ---
@@ -19,7 +20,8 @@ description: 從美索不達米亞的神廟借貸、羅馬的錢商、義大利�
 - 巴爾迪、佩魯齊銀行在1340年代倒閉，原因依通行說法是英王愛德華三世拖欠戰爭借款，加上黑死病前夕的經濟收縮。
 - 2020年以後的網路銀行、純網銀、開放銀行與加密資產，筆記多為趨勢概述，寫進最後一則事件。
 - 人名用·分隔（原稿作・）。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- bk-cover.jpg：Massysm Quentin — The Moneylender and his Wife — 1514.jpg（昆丁·馬西斯〈放債人與他的妻子〉，1514（羅浮宮））
 -->
 
 # Periods

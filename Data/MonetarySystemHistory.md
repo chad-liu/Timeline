@@ -6,6 +6,7 @@ see: [BankingHistory, FinanceHistory, Monetarism, Keynes, Friedman]
 aliases: [金本位, 金本位制, 複本位制, 布列敦森林體系, 浮動匯率, 特別提款權, 央行數位貨幣]
 related:
   - 全球貨幣制度史: https://chad-liu.github.io/books/html/4-1.經濟知識/全球貨幣制度史.html
+cover: images/ss-croesus.jpg
 color: "#e67700"
 description: 從貝殼、牲畜等商品貨幣，到呂底亞的鑄幣、秦半兩、北宋交子、西班牙銀元，經古典金本位、布列敦森林體系、浮動匯率與歐元，再到比特幣、穩定幣與央行數位貨幣
 ---
@@ -20,7 +21,8 @@ description: 從貝殼、牲畜等商品貨幣，到呂底亞的鑄幣、秦半�
 - 1931年英國脫離金本位、1933年美國停止國內黃金兌換合為一則；1973年浮動匯率與1976年牙買加協定合為一則。
 - 筆記2009年以後的數位貨幣（比特幣、穩定幣、央行數位貨幣、貨幣多極化）合為三則。
 - 和「金融經濟史」時間軸有部分重疊，這裡著重貨幣制度本身的演變。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- ss-croesus.jpg：British Museum gold coin of Croesus.jpg（大英博物館藏的克羅伊斯金幣（與社會結構史時間軸共用））
 -->
 
 # Periods

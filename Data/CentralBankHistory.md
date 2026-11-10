@@ -6,6 +6,7 @@ see: [BankingHistory, MonetarySystemHistory, FinancialCrisisHistory, FinanceHist
 aliases: [中央銀行, 最後貸款人, 聯邦準備制度, 歐洲中央銀行, 量化寬鬆]
 related:
   - 世界中央銀行發展史: https://chad-liu.github.io/books/html/4-1.經濟知識/世界中央銀行發展史.html
+cover: images/cb-cover.jpg
 color: "#1864ab"
 description: 從瑞典國家銀行、英格蘭銀行與白芝浩的最後貸款人原則，到聯準會、大蕭條與布列敦森林，再到伏克爾的抗通膨、央行獨立與通膨目標制、歐洲央行，以及金融海嘯後的量化寬鬆與疫情後的升息
 ---
@@ -20,7 +21,8 @@ description: 從瑞典國家銀行、英格蘭銀行與白芝浩的最後貸款�
 - 1961年中華民國中央銀行在臺灣復業，依筆記收錄。
 - 熱那亞、威尼斯、阿姆斯特丹等早期公共銀行，詳見「全球銀行的演進」時間軸，這裡只在第一則事件提及。
 - 人名依 Books 原稿與台灣慣用譯名：伏克爾（原稿作沃爾克）、德拉吉、柏南克、白芝浩；人名用·分隔。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- cb-cover.jpg：Aerial cutaway view of Soane's Bank of England by JM Gandy 1830.jpg（甘迪所繪索恩設計的英格蘭銀行鳥瞰剖面圖，1830）
 -->
 
 # Periods
