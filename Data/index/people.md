@@ -218,13 +218,6 @@ people:
     died: 1883
     category: 思想家
     note: 《共產黨宣言》與《資本論》的作者
-  - name: 凱因斯
-    terms: [凱因斯, 凱恩斯]
-    born: 1883
-    died: 1946
-    category: 經濟商業
-    timeline: KeynesianEconomics
-    note: 《一般理論》的作者，總體需求管理與布雷頓森林體系
 
   # 藝術家
   - name: 布魯內萊斯基
