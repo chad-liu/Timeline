@@ -6,6 +6,8 @@ see: [Monetarism, ChicagoSchool, NewKeynesianEconomics, KeynesianEconomics]
 aliases: [新興古典學派, 新古典宏觀經濟學, 理性預期, 盧卡斯批判, 實質景氣循環]
 related:
   - 新興古典學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/新興古典學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/nce-cover.jpg
 color: "#364fc7"
 description: 1970年代挑戰凱因斯學派的理性預期革命：穆斯的理性預期、盧卡斯批判、薩金特與華萊士的政策無效命題、基德蘭與普雷斯科特的時間不一致與實質景氣循環，到動態隨機一般均衡（DSGE）模型

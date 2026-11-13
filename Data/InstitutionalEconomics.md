@@ -6,6 +6,8 @@ see: [ClassicalEconomics, ChicagoSchool, SocialistEconomics]
 aliases: [制度經濟學, 新制度經濟學, 交易成本, 寇斯定理, 公地悲劇]
 related:
   - 制度經濟學: https://chad-liu.github.io/books/html/4-1-1.經濟學派/制度經濟學.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/ie-veblen.jpg
 color: "#0b7285"
 description: 從德國歷史學派、凡勃倫《有閒階級論》與康芒斯的舊制度經濟學，到寇斯的交易成本、諾斯的制度變遷、奧斯特羅姆的公共資源治理，以及阿西莫格魯的《國家為什麼會失敗》

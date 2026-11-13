@@ -6,6 +6,8 @@ see: [Monetarism, NewClassicalEconomics, InstitutionalEconomics, SupplySideEcono
 aliases: [芝加哥學派, 芝加哥經濟學派, 芝加哥男孩, 效率市場假說]
 related:
   - 芝加哥學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/芝加哥學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/cs-harper.jpg
 color: "#862e9c"
 description: 從1892年芝加哥大學成立、奈特與西蒙斯的第一代，到傅利曼、史蒂格勒、貝克、寇斯、法瑪、盧卡斯：以價格理論與自由市場為核心，研究貨幣、管制、法律、人力資本與金融市場的經濟學派

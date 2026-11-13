@@ -6,6 +6,8 @@ see: [ClassicalEconomics, Monetarism, ChicagoSchool, KeynesianEconomics]
 aliases: [供給面經濟學, 供給學派, 拉弗曲線, 雷根經濟學, 涓滴經濟學]
 related:
   - 供給面經濟學: https://chad-liu.github.io/books/html/4-1-1.經濟學派/供給面經濟學.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/sse-erta.jpg
 color: "#5c940d"
 description: 從停滯性通膨中誕生的經濟學派：拉弗曲線、孟岱爾與萬尼斯基，雷根經濟學與1981年大減稅、1986年稅改，柴契爾改革，到小布希、川普減稅，以及晶片法、產業政策等新供給面政策

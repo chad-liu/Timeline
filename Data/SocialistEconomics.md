@@ -6,6 +6,8 @@ see: [ClassicalEconomics, RussianRevolution, InstitutionalEconomics]
 aliases: [社會主義經濟學, 計畫經濟, 空想社會主義, 資本論, 共產黨宣言, 新經濟政策, 五年計畫, 市場社會主義, 改革開放]
 related:
   - 社會主義經濟學: https://chad-liu.github.io/books/html/4-1-1.經濟學派/社會主義經濟學.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/soe-marx.jpg
 color: "#c92a2a"
 description: 從摩爾的《烏托邦》與空想社會主義，到馬克思《資本論》、蘇聯計畫經濟、社會主義經濟計算論爭、市場社會主義，以及中國改革開放與社會主義市場經濟

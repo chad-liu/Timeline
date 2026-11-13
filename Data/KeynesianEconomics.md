@@ -6,6 +6,8 @@ see: [ClassicalEconomics, Monetarism, NewKeynesianEconomics, FinanceHistory]
 aliases: [凱因斯學派, 凱因斯主義, 凱因斯革命, 有效需求, 乘數效果, 新古典綜合, 後凱因斯學派, 菲利普斯曲線]
 related:
   - 凱因斯學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/凱因斯學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/ke-keynes.jpg
 color: "#1971c2"
 description: 從凱因斯《和平的經濟後果》、大蕭條與1936年《通論》的凱因斯革命，到布列敦森林、新古典綜合派的黃金時代、停滯性通膨的挑戰，以及金融海嘯與疫情後凱因斯政策的復興

@@ -6,6 +6,8 @@ see: [KeynesianEconomics, NewClassicalEconomics, Monetarism]
 aliases: [新凱因斯學派, 新凱因斯主義, 價格僵固性, 菜單成本, 泰勒法則, 通膨目標制]
 related:
   - 新凱因斯學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/新凱因斯學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/nke-eccles.jpg
 color: "#1098ad"
 description: 在理性預期革命之後重建凱因斯經濟學的個體基礎：交錯契約、菜單成本、效率工資與信用配給，到泰勒法則、新凱因斯 DSGE 模型與通膨目標制，以及金融海嘯、量化寬鬆與 HANK 模型

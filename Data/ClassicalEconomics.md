@@ -6,6 +6,8 @@ see: [SocialistEconomics, IndustrialRevolution, Locke]
 aliases: [古典經濟學, 古典學派, 國富論, 看不見的手, 比較利益, 穀物法]
 related:
   - 古典經濟學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/古典經濟學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/ce-smith.jpg
 color: "#2b8a3e"
 description: 從重商主義、重農學派到亞當·斯密《國富論》，經馬爾薩斯、薩伊、李嘉圖到彌爾《政治經濟學原理》：自由市場、分工、比較利益與自由貿易的經濟學，直到1870年代的邊際革命

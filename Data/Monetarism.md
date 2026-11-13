@@ -6,6 +6,8 @@ see: [KeynesianEconomics, ChicagoSchool, NewClassicalEconomics, FinanceHistory]
 aliases: [貨幣學派, 貨幣主義, 貨幣數量論, 自然失業率]
 related:
   - 貨幣學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/貨幣學派.html
+  - 世界經濟思想學派: https://chad-liu.github.io/books/html/4-1-1.經濟學派/世界經濟思想學派.html
+  - 三大經濟學派比較: https://chad-liu.github.io/books/html/4-1-1.經濟學派/三大經濟學派比較.html
 cover: images/mo-friedman.jpg
 color: "#e67700"
 description: 從休謨與費雪的貨幣數量論，到傅利曼重新表述貨幣數量論、《美國貨幣史》與自然失業率假說，伏克爾的貨幣緊縮實驗，以及貨幣學派如何融入現代央行的通膨目標制
