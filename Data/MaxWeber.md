@@ -25,7 +25,7 @@ description: 馬克斯·韋伯（1864–1920），德國社會學家、經濟史
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
 - mw-cover.jpg：Max Weber, 1918.jpg（馬克斯·韋伯，1918）
 - mw-marianne.jpg：Max and Marianne Weber 1894.jpg（馬克斯與瑪麗安娜·韋伯，1894）
-- mw-lauenstein.jpg：Max Weber in Lauenstein, 1917.png（1917年在勞恩斯坦城堡的文化研討會上，韋伯（中，戴帽）與青年學生討論戰後的德國）
+- mw-lauenstein.jpg：Max Weber in Lauenstein, 1917.png（1917年在勞恩斯坦城堡的文化研討會上，韋伯與青年學生討論戰後的德國）
 -->
 
 # Periods
