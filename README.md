@@ -2,7 +2,7 @@
 
 仿 [Timetoast](https://www.timetoast.com/) 的個人時間軸網站，收錄世界史、西方與東方歷史、音樂家、藝術家、思想家、文學家、經濟商業等一百多條時間軸。
 
-**網站：https://chad-liu.github.io/Timeline/**
+**網站：https://liu-timeline.pages.dev/**
 
 每條時間軸都是 `Data/` 裡的一個 Markdown 檔。網站是純靜態、唯讀的：要修改內容，就直接編輯這些檔案。姊妹站是讀書筆記網站 [chad-liu.github.io/books](https://chad-liu.github.io/books/)，兩站以連結互通。
 
@@ -57,7 +57,7 @@
 
 ### 給其他網站用的人物資料
 
-網站建置時會輸出 [`people.json`](https://chad-liu.github.io/Timeline/people.json)，列出所有人物時間軸的生卒年、類別、網址與延伸閱讀。books 網站就是靠它產生「連回時間軸」的連結。
+網站建置時會輸出 [`people.json`](https://liu-timeline.pages.dev/people.json)，列出所有人物時間軸的生卒年、類別、網址與延伸閱讀。books 網站就是靠它產生「連回時間軸」的連結。
 
 ---
 
@@ -118,4 +118,6 @@ npm run build    # 型別檢查並建置到 dist/
 
 ### 部署
 
-push 到 `main` 後，GitHub Actions（[deploy.yml](.github/workflows/deploy.yml)）會先跑測試、再建置，最後部署到 GitHub Pages。
+push 到 `main` 後，GitHub Actions（[deploy.yml](.github/workflows/deploy.yml)）會先跑測試、再建置，最後用 wrangler 部署到 Cloudflare Pages（專案 `liu-timeline`）。repo 需要設定 `CLOUDFLARE_API_TOKEN`（權限：Account › Cloudflare Pages › Edit）與 `CLOUDFLARE_ACCOUNT_ID` 兩個 secret。
+
+舊網址 https://chad-liu.github.io/Timeline/ 仍由 GitHub Pages 提供，但只剩轉址頁（[redirect/](redirect/)，保留路徑與 `#` 之後的參數）、`people.json` 與 `data/` 圖片，讓 books 網站的舊連結不會失效。

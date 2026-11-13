@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 專案概要
 
-Liu's Timeline：仿 Timetoast 的個人時間軸網站（Vite + React + TypeScript，純靜態、唯讀）。`Data/*.md` 是唯一資料來源，一個檔案就是一條時間軸。push 到 `main` 後由 `.github/workflows/deploy.yml` 執行 `npm test` 與 `npm run build`，再部署到 GitHub Pages：https://chad-liu.github.io/Timeline/ （repo `chad-liu/Timeline` 是**公開**的）。
+Liu's Timeline：仿 Timetoast 的個人時間軸網站（Vite + React + TypeScript，純靜態、唯讀）。`Data/*.md` 是唯一資料來源，一個檔案就是一條時間軸。push 到 `main` 後由 `.github/workflows/deploy.yml` 執行 `npm test` 與 `npm run build`，再用 wrangler 部署到 Cloudflare Pages：https://liu-timeline.pages.dev/ （repo `chad-liu/Timeline` 是**公開**的；需要 `CLOUDFLARE_API_TOKEN`／`CLOUDFLARE_ACCOUNT_ID` 兩個 secret）。舊網址 https://chad-liu.github.io/Timeline/ 在同一個 workflow 裡改部署成轉址頁（`redirect/`），加上 `people.json` 與 `data/` 圖片，因為 books 網站還有連結與圖片指向舊網址；books 全部改成新網址後，可以拿掉 `data/` 或整個 GitHub Pages job。
 
 **資料格式**（frontmatter 欄位、Periods／Events 語法、日期寫法）完整寫在 [plan.md](plan.md)。新增或修改時間軸前先讀它，並以它為準。
 
@@ -72,7 +72,7 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
   - 圖片縮成最長邊 640px 的 JPEG，檔名用該時間軸的前綴（如 `cru-`、`fr-`、`nap-`）。
   - 沿用其他時間軸已有的圖片時，註明「（與X時間軸共用）」。
   - 含裸體或情色內容、暴力（行刑、戰爭、災難、葬禮等）的公有領域圖片都可以使用，不需要為此捨棄或裁切；選圖仍以和事件直接相關、最具代表性為準。
-  - 每次部署新增的圖片控制在 5 張左右，最多 7 張；一次要加很多時分批 push，每批確認部署成功再推下一批。2026-11-07 一次新增 9 張與 26 張時，GitHub Pages 都卡在 `syncing_files`，到 10 分鐘上限逾時（`deploy-pages` 的 `timeout` 不能調更長），重跑也沒用；同樣的圖分批就成功。原因尚未完全證實（11/6 曾一次成功新增 23 張），之後若有反例要更新這條。
+  - 每次部署新增的圖片控制在 5 張左右，最多 7 張；一次要加很多時分批 push，每批確認部署成功再推下一批。這條是 GitHub Pages 時期的限制：2026-11-07 一次新增 9 張與 26 張時，GitHub Pages 都卡在 `syncing_files`，到 10 分鐘上限逾時（`deploy-pages` 的 `timeout` 不能調更長），重跑也沒用；同樣的圖分批就成功。原因尚未完全證實（11/6 曾一次成功新增 23 張），之後若有反例要更新這條。轉址站仍會上傳 `data/` 圖片到 GitHub Pages，所以在拿掉它之前先維持分批。
 - **不要 commit `圖表/`**（那裡是原始筆記），也不要 commit `圖表/Dashboard.png` 或 `Data/images/84cf78586f2293dd051cdd0ba37832d1.jpeg`。
 - 使用者沒有要求就不 commit／push。push 後用 `gh run watch` 確認部署成功。
 - 書籍網站是另一個 repo（`D:\Books`，chad-liu/books），兩邊刻意不整合，只透過 `related:`、books 端的 timeline 連結區塊，以及 `people.json` 互相連結。

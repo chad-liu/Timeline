@@ -5,5 +5,5 @@ import { timelinesPlugin } from './vite-plugin-timelines';
 
 export default defineConfig({
   base: './',
-  plugins: [react(), timelinesPlugin(fileURLToPath(new URL('./Data', import.meta.url)), 'https://chad-liu.github.io/Timeline/')],
+  plugins: [react(), timelinesPlugin(fileURLToPath(new URL('./Data', import.meta.url)), 'https://liu-timeline.pages.dev/')],
 });
