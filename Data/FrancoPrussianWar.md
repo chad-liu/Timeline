@@ -6,6 +6,7 @@ see: [GermanUnification, Europe, NapoleonicWars, Marx, Hugo, Bizet, Debussy]
 aliases: [色當戰役, 巴黎圍城, 法蘭克福和約, 巴黎公社, 埃姆斯電報]
 related:
   - 普法戰爭: https://chad-liu.github.io/books/html/1-1.西方歷史/普法戰爭.html
+cover: images/gu-sedan.jpg
 color: "#495057"
 description: 1870年至1871年普魯士領導的德意志各邦與法蘭西第二帝國之戰：俾斯麥以埃姆斯電報激怒法國，德軍在色當俘虜拿破崙三世，巴黎被圍四個多月，德意志帝國在凡爾賽宮宣告成立，法國割讓亞爾薩斯—洛林，戰後爆發巴黎公社
 ---
@@ -19,7 +20,8 @@ description: 1870年至1871年普魯士領導的德意志各邦與法蘭西第�
 - 筆記1871年1月1日「德意志帝國憲制安排開始生效」寫進1月18日帝國成立一則。
 - 傷亡與賠款依維基百科：法國賠款五十億法郎、割讓亞爾薩斯與洛林東北部。
 - 人名與其他時間軸一致：俾斯麥、威廉一世、毛奇、拿破崙三世、甘必大、梯也爾；馬克思的《法蘭西內戰》見「馬克思生平」時間軸。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- gu-sedan.jpg：Wilhelm Camphausen - Napoleon III and Bismarck after the Battle of Sedan.jpg（坎普豪森〈色當戰役後的拿破崙三世與俾斯麥〉（與德意志統一運動時間軸共用））
 -->
 
 # Periods

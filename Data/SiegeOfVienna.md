@@ -6,6 +6,7 @@ see: [Europe, Crusades]
 aliases: [維也納之圍, 第二次維也納之圍, 卡倫山戰役, 卡洛維茨條約]
 related:
   - 維也納保衛戰: https://chad-liu.github.io/books/html/1-1.西方歷史/維也納保衛戰.html
+cover: images/vie-cover.jpg
 color: "#c92a2a"
 description: 1683年奧斯曼帝國大軍第二次圍攻哈布斯堡的維也納，守軍苦撐兩個月，波蘭國王索別斯基率領的聯軍在卡倫山一戰解圍；此後神聖同盟反攻，收復布達、森塔大捷，1699年卡洛維茨條約使奧斯曼首次割讓大片領土
 ---
@@ -18,7 +19,8 @@ description: 1683年奧斯曼帝國大軍第二次圍攻哈布斯堡的維也納
 - 筆記把1688年寫成「貝爾格勒失守」（從奧斯曼的角度），這裡寫成哈布斯堡軍攻下貝爾格勒。
 - 圍城期間的日期（7月14日包圍、9月12日決戰）與聯軍渡多瑙河、穿越維也納森林的經過，依筆記；各方兵力只寫約略數字。
 - 人名用·分隔（原稿作・）：卡拉·穆斯塔法、施塔倫貝格、索別斯基（揚三世）、洛林公爵查理、歐根親王。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- vie-cover.jpg：Pauwel Casteels - Battle of Vienna - Google Art Project.jpg（保羅·卡斯特爾斯〈維也納之戰〉，17世紀）
 -->
 
 # Periods
