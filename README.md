@@ -120,4 +120,4 @@ npm run build    # 型別檢查並建置到 dist/
 
 push 到 `main` 後，GitHub Actions（[deploy.yml](.github/workflows/deploy.yml)）會先跑測試、再建置，最後用 wrangler 部署到 Cloudflare Pages（專案 `liu-timeline`）。repo 需要設定 `CLOUDFLARE_API_TOKEN`（權限：Account › Cloudflare Pages › Edit）與 `CLOUDFLARE_ACCOUNT_ID` 兩個 secret。
 
-舊網址 https://chad-liu.github.io/Timeline/ 仍由 GitHub Pages 提供，但只剩轉址頁（[redirect/](redirect/)，保留路徑與 `#` 之後的參數）、`people.json` 與 `data/` 圖片，讓 books 網站的舊連結不會失效。
+舊網址 https://chad-liu.github.io/Timeline/ 仍由 GitHub Pages 提供，但只剩轉址頁（[redirect/](redirect/)，保留路徑與 `#` 之後的參數）與 `people.json`，讓舊連結不會失效。圖片只放在新網址。
