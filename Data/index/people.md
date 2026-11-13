@@ -211,13 +211,6 @@ people:
     died: 1546
     category: 西方歷史
     note: 發表《九十五條論綱》，掀起宗教改革
-  - name: 馬克思
-    terms: [馬克思]
-    notNames: [聖馬克思, 馬克思兄弟]
-    born: 1818
-    died: 1883
-    category: 思想家
-    note: 《共產黨宣言》與《資本論》的作者
 
   # 藝術家
   - name: 布魯內萊斯基
