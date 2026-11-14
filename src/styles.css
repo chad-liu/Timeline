@@ -1801,6 +1801,82 @@ input {
   color: var(--muted);
 }
 
+/* Full-text search (#p=search) */
+.topbar-search {
+  min-width: 0;
+  margin-left: auto;
+  padding-left: 16px;
+}
+
+.topbar .brand {
+  flex: none;
+}
+
+.topbar-search .search {
+  width: 100%;
+  min-width: 0;
+  max-width: 240px;
+  margin-bottom: 0;
+}
+
+.sr-input {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 10px 14px;
+  font-size: 16px;
+}
+
+.sr-summary {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sr-group {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sr-group h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 16px;
+}
+
+.sr-group li {
+  margin: 6px 0;
+}
+
+.sr-group mark {
+  padding: 0 1px;
+  border-radius: 2px;
+  background: #ffe58a;
+  color: inherit;
+}
+
+.sr-excerpt {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sr-more {
+  margin: 4px 0 0 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sr-more:hover {
+  text-decoration: underline;
+}
+
 /* Year comparison (#p=years) */
 .yi-picker {
   display: flex;
@@ -1907,6 +1983,62 @@ input {
 
 .modal-years:hover {
   text-decoration: underline;
+}
+
+.modal-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.modal-step {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.modal-step.next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.modal-step:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.modal-step:disabled {
+  color: var(--muted);
+  opacity: 0.5;
+  cursor: default;
+}
+
+.modal-step small {
+  overflow: hidden;
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal-position {
+  flex: none;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 /* Topic index (#p=topics) */

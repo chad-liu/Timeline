@@ -54,6 +54,8 @@ interface LaneLayout {
 interface Props {
   lanes: Lane[];
   overlay: boolean;
+  /** The event open in the detail: the view pans and scrolls to keep its card in sight. */
+  focus?: TimelineEvent;
   onSelect: (event: TimelineEvent) => void;
   onSelectPeriod: (period: Period, timeline: Timeline) => void;
 }
@@ -137,7 +139,7 @@ function layoutLanes(lanes: Lane[], overlay: boolean, ppy: number, min: number, 
   return { layouts, height: top };
 }
 
-export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Props) {
+export function HorizontalView({ lanes, overlay, focus, onSelect, onSelectPeriod }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const draggedRef = useRef(false);
@@ -247,6 +249,22 @@ export function HorizontalView({ lanes, overlay, onSelect, onSelectPeriod }: Pro
 
   const ppy = vp?.ppy ?? 1;
   const { layouts, height } = useMemo(() => layoutLanes(lanes, overlay, ppy, domain.min, warp), [lanes, overlay, ppy, domain.min, warp]);
+
+  // Stepping to another event in the detail (← →) centres its card when it is outside the window; a clicked card is already in sight.
+  const focusId = focus?.id;
+  useEffect(() => {
+    if (!focus || !vp) return;
+    const u = warp.toU(focus.date.start);
+    const x = (u - vp.start) * vp.ppy;
+    if (x < 0 || x > width - CARD_W) update((v) => ({ ...v, start: u - (width - CARD_W) / 2 / v.ppy }));
+    const el = scrollRef.current;
+    for (const L of layouts) {
+      const card = L.cards.find((c) => c.event.id === focus.id);
+      if (!card || !el) continue;
+      const top = L.cardsTop + (L.cardRows - 1 - card.row) * (CARD_H + ROW_GAP);
+      if (top < el.scrollTop || top + CARD_H > el.scrollTop + el.clientHeight) el.scrollTop = top - (el.clientHeight - CARD_H) / 2;
+    }
+  }, [focusId, ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Overview bar spans the whole domain plus a margin.
   const pad = (domain.max - domain.min) * 0.05;

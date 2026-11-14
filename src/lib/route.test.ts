@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lifespansHash, parseHash } from './route';
+import { lifespansHash, parseHash, searchHash } from './route';
 
 const IDS = ['Confucius', 'Socrates'];
 
@@ -21,5 +21,16 @@ describe('lifespans route', () => {
     expect(lifespansHash()).toBe('#p=lifespans');
     expect(lifespansHash('era', 'Socrates', true)).toBe('#p=lifespans&g=era&sel=Socrates&only=1');
     expect(parseHash(lifespansHash('era', 'Socrates', true), IDS)).toEqual({ page: 'lifespans', mode: 'era', selected: 'Socrates', only: true });
+  });
+});
+
+describe('search route', () => {
+  it('opens empty without a query', () => {
+    expect(parseHash('#p=search', IDS)).toEqual({ page: 'search', query: '' });
+    expect(searchHash('  ')).toBe('#p=search');
+  });
+
+  it('round-trips a query with spaces through searchHash', () => {
+    expect(parseHash(searchHash(' 巴赫 萊比錫 '), IDS)).toEqual({ page: 'search', query: '巴赫 萊比錫' });
   });
 });

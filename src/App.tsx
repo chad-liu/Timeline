@@ -3,7 +3,7 @@ import timelines from 'virtual:timelines';
 import extraPeople from 'virtual:index-people';
 import topics from 'virtual:index-topics';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
-import { VIEWS, dashboardHash, lifespansHash, parseHash, timelineHash } from './lib/route';
+import { VIEWS, dashboardHash, lifespansHash, parseHash, searchHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
@@ -11,6 +11,7 @@ import { NameIndex } from './components/NameIndex';
 import { RelationGraph } from './components/RelationGraph';
 import { YearIndex } from './components/YearIndex';
 import { TopicIndex } from './components/TopicIndex';
+import { Search } from './components/Search';
 import { Logo } from './components/Logo';
 import { RelatedTimelines } from './components/RelatedTimelines';
 import { TimelinePicker } from './components/TimelinePicker';
@@ -18,7 +19,7 @@ import { HorizontalView } from './components/HorizontalView';
 import { VerticalView } from './components/VerticalView';
 import { GridView } from './components/GridView';
 import { EventDetail } from './components/EventDetail';
-import type { DetailItem } from './components/EventDetail';
+import type { DetailItem, DetailNav } from './components/EventDetail';
 
 const KNOWN_IDS = timelines.map((t) => t.id);
 
@@ -35,6 +36,7 @@ export function App() {
   if (route.page === 'lifespans') return <Lifespans key={lifespansHash(route.mode, route.selected, route.only)} timelines={timelines} mode={route.mode} selected={route.selected} only={route.only} />;
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
+  if (route.page === 'search') return <Search key={searchHash(route.query)} timelines={timelines} query={route.query} />;
   if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} />;
   if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
@@ -83,6 +85,20 @@ function TimelinePage({ initialView, initialIds, initialEvent }: { initialView: 
   }, []);
   const selectPeriod = useCallback((period: Period, timeline: Timeline) => setDetail({ item: period, timeline }), []);
 
+  // The displayed events in date order, as every view lists them: what the detail's previous/next steps through.
+  const ordered = useMemo(() => lanes.flatMap((l) => l.events).sort((a, b) => a.date.start - b.date.start), [lanes]);
+  const nav: DetailNav | undefined = useMemo(() => {
+    const index = ordered.findIndex((e) => e.id === detailEvent);
+    if (index < 0) return undefined;
+    return { index, total: ordered.length, prev: ordered[index - 1], next: ordered[index + 1], go: selectEvent };
+  }, [ordered, detailEvent, selectEvent]);
+  const focus = nav && ordered[nav.index];
+
+  // Keep the open event in sight in the vertical and grid views (the horizontal view pans by itself).
+  useEffect(() => {
+    if (detailEvent) document.querySelector(`[data-event-id="${CSS.escape(detailEvent)}"]`)?.scrollIntoView({ block: 'nearest' });
+  }, [detailEvent, view]);
+
   const overlay = lanes.length > 1;
   const homeHash = dashboardHash(lanes[0]?.timeline.category);
 
@@ -124,12 +140,12 @@ function TimelinePage({ initialView, initialIds, initialEvent }: { initialView: 
       </header>
 
       <main className={view === 'horizontal' ? 'main fixed' : 'main'}>
-        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} onSelect={selectEvent} onSelectPeriod={selectPeriod} />}
+        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} focus={focus} onSelect={selectEvent} onSelectPeriod={selectPeriod} />}
         {view === 'vertical' && <VerticalView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
         {view === 'grid' && <GridView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
       </main>
 
-      {detail && <EventDetail item={detail.item} timeline={detail.timeline} onClose={closeDetail} />}
+      {detail && <EventDetail item={detail.item} timeline={detail.timeline} nav={nav} onClose={closeDetail} />}
     </div>
   );
 }

@@ -19,6 +19,7 @@ export function GridView({ lanes, overlay, onSelect }: Props) {
           type="button"
           key={event.id}
           className="gcard"
+          data-event-id={event.id}
           style={{ borderTopColor: event.color ?? (overlay ? timeline.color : PALETTE[i % PALETTE.length]) }}
           onClick={() => onSelect(event)}
         >

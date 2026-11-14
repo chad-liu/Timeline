@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, graphHash, timelineHash, yearsHash } from '../lib/route';
+import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, graphHash, searchHash, timelineHash, yearsHash } from '../lib/route';
 import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -46,6 +46,7 @@ function ProjectMenu({ timeline }: { timeline: Timeline }) {
 }
 
 export function Dashboard({ timelines, category, tag }: { timelines: Timeline[]; category?: string; tag?: string }) {
+  const [query, setQuery] = useState('');
   const groups = groupTimelines(timelines);
   const active = groups.find((g) => g.category === category) ?? groups[0];
   const tags = active ? tagsOf(active.timelines) : [];
@@ -59,6 +60,16 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
           <Logo />
           Liu's Timeline
         </a>
+        <form
+          className="topbar-search"
+          role="search"
+          onSubmit={(e) => {
+            e.preventDefault();
+            location.hash = searchHash(query);
+          }}
+        >
+          <input className="search" type="search" placeholder="搜尋所有時間軸…" aria-label="全站搜尋" value={query} onChange={(e) => setQuery(e.target.value)} />
+        </form>
       </header>
 
       <main className="dash-main">

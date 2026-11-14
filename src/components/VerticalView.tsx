@@ -48,7 +48,7 @@ export function VerticalView({ lanes, overlay, onSelect }: Props) {
           const { event, timeline } = row;
           const color = event.color ?? (overlay ? timeline.color : PALETTE[eventIndex++ % PALETTE.length]);
           return (
-            <li key={event.id} className="vview-item" style={{ '--c': color } as CSSProperties}>
+            <li key={event.id} className="vview-item" data-event-id={event.id} style={{ '--c': color } as CSSProperties}>
               <button
                 type="button"
                 className="vview-label"
