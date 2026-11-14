@@ -17,6 +17,7 @@ export type Route =
   | { page: 'index' }
   | { page: 'topics' }
   | { page: 'search'; query: string }
+  | { page: 'map'; year?: number; selected?: string }
   | { page: 'graph'; category?: string; minWeight: number; cross: boolean }
   | { page: 'years'; year: number; span: Span }
   | { page: 'timeline'; view: View; ids: string[]; event?: string; age: boolean };
@@ -24,7 +25,7 @@ export type Route =
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家&tag=浪漫時期` picks its category tab and tag filter),
  * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event, `&a=1` lines people up by age instead of by year), `#p=lifespans` shows the lifespan chart (`&g=era` orders everyone by birth year, `&sel=Confucius` highlights who lived at the same time, `&only=1` hides the rest)
- * `#p=index` the name index, `#p=topics` the topic index, `#p=search&q=波茨坦` the full-text search, `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
+ * `#p=index` the name index, `#p=topics` the topic index, `#p=search&q=波茨坦` the full-text search, `#p=map&y=1723&sel=Bach` the map (where the musicians were that year, and one person's route), `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
   const params = new URLSearchParams(hash.replace(/^#/, ''));
@@ -39,6 +40,15 @@ export function parseHash(hash: string, knownIds: string[]): Route {
   }
   if (params.get('p') === 'index') return { page: 'index' };
   if (params.get('p') === 'topics') return { page: 'topics' };
+  if (params.get('p') === 'map') {
+    const year = Number(params.get('y'));
+    const selected = params.get('sel') ?? undefined;
+    return {
+      page: 'map',
+      year: params.get('y') && Number.isInteger(year) ? year : undefined,
+      selected: selected && knownIds.includes(selected) ? selected : undefined,
+    };
+  }
   if (params.get('p') === 'search') return { page: 'search', query: params.get('q') ?? '' };
   if (params.get('p') === 'graph') {
     const minWeight = Number(params.get('w'));
@@ -90,6 +100,14 @@ export function lifespansHash(mode: LifespanMode = 'category', selected?: string
 }
 export const INDEX_HASH = '#p=index';
 export const TOPICS_HASH = '#p=topics';
+
+/** The map view: `y` is the year shown (the busiest one when left out), `sel` the person whose route is drawn. */
+export function mapHash(year?: number, selected?: string): string {
+  const params = new URLSearchParams({ p: 'map' });
+  if (year !== undefined) params.set('y', String(year));
+  if (selected) params.set('sel', selected);
+  return '#' + params.toString();
+}
 
 export function searchHash(query = ''): string {
   const params = new URLSearchParams({ p: 'search' });

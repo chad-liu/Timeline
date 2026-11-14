@@ -9,6 +9,8 @@ import { parseExtraPeople } from './src/lib/extraPeople';
 import type { ExtraPerson } from './src/lib/extraPeople';
 import { parseTopics } from './src/lib/topicIndex';
 import type { Topic } from './src/lib/topicIndex';
+import { parsePlaces } from './src/lib/places';
+import type { Place } from './src/lib/places';
 import type { Timeline } from './src/types';
 
 const VIRTUAL_ID = 'virtual:timelines';
@@ -21,6 +23,10 @@ const EXTRA_FILE = path.join('index', 'people.md');
 const TOPICS_ID = 'virtual:index-topics';
 const RESOLVED_TOPICS_ID = '\0' + TOPICS_ID;
 const TOPICS_FILE = path.join('index', 'topics.md');
+/** The map view's table of place names and coordinates. */
+const PLACES_ID = 'virtual:index-places';
+const RESOLVED_PLACES_ID = '\0' + PLACES_ID;
+const PLACES_FILE = path.join('index', 'places.md');
 /** Public index of the people timelines, for other sites to link to (see buildPeopleIndex). */
 const PEOPLE_FILE = 'people.json';
 /** Public index of the other timelines (wars, eras, schools…), the complement of people.json (see buildTimelineIndex). */
@@ -79,6 +85,17 @@ function loadTopics(dataDir: string): Topic[] {
   }
 }
 
+/** The map view's places (Data\index\places.md), or none when the file is missing. */
+function loadPlaces(dataDir: string): Place[] {
+  const file = path.join(dataDir, PLACES_FILE);
+  if (!fs.existsSync(file)) return [];
+  try {
+    return parsePlaces(fs.readFileSync(file, 'utf8'));
+  } catch (err) {
+    throw new Error(`Data\\${PLACES_FILE} ${(err as Error).message}`);
+  }
+}
+
 /** Non-markdown files under Data\ (images), as posix paths relative to Data\. */
 function listAssets(dataDir: string): string[] {
   return fs
@@ -89,7 +106,7 @@ function listAssets(dataDir: string): string[] {
 
 /**
  * Exposes Data\*.md as `virtual:timelines` (parsed at build time), Data\index\people.md as `virtual:index-people`
- * and Data\index\topics.md as `virtual:index-topics`, serves/emits Data\ images under `data/` plus `people.json` and `timelines.json`, and reloads the page when Data\ changes in dev.
+ * Data\index\topics.md as `virtual:index-topics` and Data\index\places.md as `virtual:index-places`, serves/emits Data\ images under `data/` plus `people.json` and `timelines.json`, and reloads the page when Data\ changes in dev.
  * `siteUrl` is the published address, used for the absolute links in `people.json` and `timelines.json`.
  */
 export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
@@ -102,6 +119,7 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
       if (id === VIRTUAL_ID) return RESOLVED_ID;
       if (id === EXTRA_ID) return RESOLVED_EXTRA_ID;
       if (id === TOPICS_ID) return RESOLVED_TOPICS_ID;
+      if (id === PLACES_ID) return RESOLVED_PLACES_ID;
       return undefined;
     },
 
@@ -109,13 +127,14 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
       if (id === RESOLVED_ID) return `export default ${JSON.stringify(loadTimelines(dataDir))};`;
       if (id === RESOLVED_EXTRA_ID) return `export default ${JSON.stringify(loadExtraPeople(dataDir))};`;
       if (id === RESOLVED_TOPICS_ID) return `export default ${JSON.stringify(loadTopics(dataDir))};`;
+      if (id === RESOLVED_PLACES_ID) return `export default ${JSON.stringify(loadPlaces(dataDir))};`;
       return undefined;
     },
 
     configureServer(server) {
       const onDataChange = (file: string) => {
         if (!path.resolve(file).startsWith(dataDir)) return;
-        for (const id of [RESOLVED_ID, RESOLVED_EXTRA_ID, RESOLVED_TOPICS_ID]) {
+        for (const id of [RESOLVED_ID, RESOLVED_EXTRA_ID, RESOLVED_TOPICS_ID, RESOLVED_PLACES_ID]) {
           const mod = server.moduleGraph.getModuleById(id);
           if (mod) server.moduleGraph.invalidateModule(mod);
         }

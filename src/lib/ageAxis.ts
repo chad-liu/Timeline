@@ -12,7 +12,11 @@ export function canAlignByAge(timelines: Timeline[]): boolean {
 export function toAgeAxis(timeline: Timeline): Timeline {
   const born = timeline.born;
   if (born === undefined) return timeline;
-  const shift = (date: TimePoint): TimePoint => ({ ...date, start: date.start - born, ...(date.end === undefined ? {} : { end: date.end - born }) });
+  const shift = (date: TimePoint): TimePoint => ({
+    ...date,
+    start: date.start - born,
+    ...(date.end === undefined ? {} : { end: date.end - born }),
+  });
   return {
     ...timeline,
     events: timeline.events.map((e) => ({ ...e, date: shift(e.date) })),

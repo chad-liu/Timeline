@@ -2,9 +2,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import timelines from 'virtual:timelines';
 import extraPeople from 'virtual:index-people';
 import topics from 'virtual:index-topics';
+import places from 'virtual:index-places';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
 import { canAlignByAge, toAgeAxis } from './lib/ageAxis';
-import { VIEWS, dashboardHash, lifespansHash, parseHash, searchHash, timelineHash } from './lib/route';
+import { VIEWS, dashboardHash, lifespansHash, mapHash, parseHash, searchHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
@@ -13,6 +14,7 @@ import { RelationGraph } from './components/RelationGraph';
 import { YearIndex } from './components/YearIndex';
 import { TopicIndex } from './components/TopicIndex';
 import { Search } from './components/Search';
+import { MapView } from './components/MapView';
 import { Logo } from './components/Logo';
 import { RelatedTimelines } from './components/RelatedTimelines';
 import { TimelinePicker } from './components/TimelinePicker';
@@ -38,6 +40,7 @@ export function App() {
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
   if (route.page === 'search') return <Search key={searchHash(route.query)} timelines={timelines} query={route.query} />;
+  if (route.page === 'map') return <MapView key={mapHash(route.year, route.selected)} timelines={timelines} places={places} year={route.year} selected={route.selected} />;
   if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} />;
   if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
