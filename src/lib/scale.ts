@@ -1,4 +1,5 @@
 import { formatYear } from './parseDate';
+import { formatAge } from './ageAxis';
 
 export interface Tick {
   value: number;
@@ -14,9 +15,11 @@ export function chooseStep(pxPerYear: number): number {
   return STEPS.find((s) => s * pxPerYear >= MIN_TICK_SPACING) ?? STEPS[STEPS.length - 1];
 }
 
-/** Ticks covering the decimal-year range [from, to] at the given zoom. */
-export function makeTicks(from: number, to: number, pxPerYear: number): Tick[] {
+/** Ticks covering the decimal-year range [from, to] at the given zoom; on the `age` axis the values are ages (see lib/ageAxis). */
+export function makeTicks(from: number, to: number, pxPerYear: number, axis: 'year' | 'age' = 'year'): Tick[] {
   const step = chooseStep(pxPerYear);
+  const yearLabel = axis === 'age' ? formatAge : formatYear;
+  const monthLabel = (month: number) => (axis === 'age' ? `${month}個月` : `${month + 1}月`);
   const ticks: Tick[] = [];
 
   if (step < 1) {
@@ -25,13 +28,13 @@ export function makeTicks(from: number, to: number, pxPerYear: number): Tick[] {
     for (let m = Math.ceil((from * 12) / months) * months; m / 12 <= to; m += months) {
       const year = Math.floor(m / 12);
       const month = m - year * 12;
-      ticks.push({ value: m / 12, label: month === 0 ? formatYear(year) : `${month + 1}月`, major: month === 0 });
+      ticks.push({ value: m / 12, label: month === 0 ? yearLabel(year) : monthLabel(month), major: month === 0 });
     }
     return ticks;
   }
 
   for (let v = Math.ceil(from / step) * step; v <= to; v += step) {
-    ticks.push({ value: v, label: formatYear(v), major: v % (step * 5) === 0 });
+    ticks.push({ value: v, label: yearLabel(v), major: v % (step * 5) === 0 });
   }
   return ticks;
 }

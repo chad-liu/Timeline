@@ -2336,3 +2336,12 @@ input {
   font-size: 14px;
   text-decoration: none;
 }
+
+/* Age comparison toggle beside the view tabs */
+.age-toggle {
+  align-self: center;
+  margin-left: 12px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}

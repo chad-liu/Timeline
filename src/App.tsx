@@ -3,6 +3,7 @@ import timelines from 'virtual:timelines';
 import extraPeople from 'virtual:index-people';
 import topics from 'virtual:index-topics';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
+import { canAlignByAge, toAgeAxis } from './lib/ageAxis';
 import { VIEWS, dashboardHash, lifespansHash, parseHash, searchHash, timelineHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
@@ -40,7 +41,13 @@ export function App() {
   if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} />;
   if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
-    <TimelinePage key={timelineHash(route.ids, route.view, route.event)} initialView={route.view} initialIds={route.ids} initialEvent={route.event} />
+    <TimelinePage
+      key={timelineHash(route.ids, route.view, route.event, route.age)}
+      initialView={route.view}
+      initialIds={route.ids}
+      initialEvent={route.event}
+      initialAge={route.age}
+    />
   );
 }
 
@@ -54,36 +61,51 @@ function findEvent(id: string | undefined): { item: TimelineEvent; timeline: Tim
   return null;
 }
 
-function TimelinePage({ initialView, initialIds, initialEvent }: { initialView: View; initialIds: string[]; initialEvent?: string }) {
+interface TimelinePageProps {
+  initialView: View;
+  initialIds: string[];
+  initialEvent?: string;
+  initialAge: boolean;
+}
+
+function TimelinePage({ initialView, initialIds, initialEvent, initialAge }: TimelinePageProps) {
   const [view, setView] = useState<View>(initialView);
   const [selected, setSelected] = useState<string[]>(initialIds);
   const [query, setQuery] = useState('');
+  const [age, setAge] = useState(initialAge);
   const [detail, setDetail] = useState<{ item: DetailItem; timeline: Timeline } | null>(() => findEvent(initialEvent));
 
   // In-page changes replace the history entry, so Back returns to the dashboard; an open event stays in the URL.
   const detailEvent = detail && 'id' in detail.item && typeof detail.item.id === 'string' ? detail.item.id : undefined;
+
+  // Age comparison: people overlaid on one axis counted from each one's birth. Only offered when every lane is a person.
+  const picked = useMemo(() => timelines.filter((t) => selected.includes(t.id)), [selected]);
+  const canAge = canAlignByAge(picked);
+  const byAge = age && canAge;
   useEffect(() => {
-    history.replaceState(null, '', timelineHash(selected, view, detailEvent));
-  }, [view, selected, detailEvent]);
+    history.replaceState(null, '', timelineHash(selected, view, detailEvent, byAge));
+  }, [view, selected, detailEvent, byAge]);
 
   const lanes: Lane[] = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return timelines
-      .filter((t) => selected.includes(t.id))
+    return picked
+      .map((t) => (byAge ? toAgeAxis(t) : t))
       .map((timeline) => ({
         timeline,
         events: q
           ? timeline.events.filter((e) => `${e.date.label} ${e.title} ${e.text}`.toLowerCase().includes(q))
           : timeline.events,
       }));
-  }, [selected, query]);
+  }, [picked, byAge, query]);
 
+  // The views may hand back items on the age axis, so the detail looks up the original (calendar-dated) event or period.
   const closeDetail = useCallback(() => setDetail(null), []);
-  const selectEvent = useCallback((event: TimelineEvent) => {
-    const timeline = timelines.find((t) => t.id === event.timelineId);
-    if (timeline) setDetail({ item: event, timeline });
+  const selectEvent = useCallback((event: TimelineEvent) => setDetail(findEvent(event.id)), []);
+  const selectPeriod = useCallback((period: Period, lane: Timeline) => {
+    const timeline = timelines.find((t) => t.id === lane.id);
+    const item = timeline?.periods.find((p) => p.title === period.title && p.date.label === period.date.label);
+    if (timeline && item) setDetail({ item, timeline });
   }, []);
-  const selectPeriod = useCallback((period: Period, timeline: Timeline) => setDetail({ item: period, timeline }), []);
 
   // The displayed events in date order, as every view lists them: what the detail's previous/next steps through.
   const ordered = useMemo(() => lanes.flatMap((l) => l.events).sort((a, b) => a.date.start - b.date.start), [lanes]);
@@ -134,13 +156,24 @@ function TimelinePage({ initialView, initialIds, initialEvent }: { initialView: 
                 {v.label}
               </button>
             ))}
+            {canAge && (
+              <button
+                type="button"
+                className={byAge ? 'tag-chip age-toggle active' : 'tag-chip age-toggle'}
+                aria-pressed={byAge}
+                title="把每個人的出生對齊，橫軸改成年齡"
+                onClick={() => setAge(!byAge)}
+              >
+                同齡對照
+              </button>
+            )}
           </nav>
           <input className="search" type="search" placeholder="搜尋事件…" value={query} onChange={(e) => setQuery(e.target.value)} />
         </div>
       </header>
 
       <main className={view === 'horizontal' ? 'main fixed' : 'main'}>
-        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} focus={focus} onSelect={selectEvent} onSelectPeriod={selectPeriod} />}
+        {view === 'horizontal' && <HorizontalView lanes={lanes} overlay={overlay} axis={byAge ? 'age' : 'year'} focus={focus} onSelect={selectEvent} onSelectPeriod={selectPeriod} />}
         {view === 'vertical' && <VerticalView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
         {view === 'grid' && <GridView lanes={lanes} overlay={overlay} onSelect={selectEvent} />}
       </main>

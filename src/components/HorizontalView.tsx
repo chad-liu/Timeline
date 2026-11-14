@@ -54,6 +54,8 @@ interface LaneLayout {
 interface Props {
   lanes: Lane[];
   overlay: boolean;
+  /** `age`: the lanes' dates are ages (lib/ageAxis), so the ticks read 「30歲」. */
+  axis: 'year' | 'age';
   /** The event open in the detail: the view pans and scrolls to keep its card in sight. */
   focus?: TimelineEvent;
   onSelect: (event: TimelineEvent) => void;
@@ -139,14 +141,14 @@ function layoutLanes(lanes: Lane[], overlay: boolean, ppy: number, min: number, 
   return { layouts, height: top };
 }
 
-export function HorizontalView({ lanes, overlay, focus, onSelect, onSelectPeriod }: Props) {
+export function HorizontalView({ lanes, overlay, axis, focus, onSelect, onSelectPeriod }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const draggedRef = useRef(false);
   const [width, setWidth] = useState(0);
   const [vp, setVp] = useState<Viewport | null>(null);
 
-  const timelineKey = lanes.map((l) => l.timeline.id).join('|');
+  const timelineKey = `${axis}:${lanes.map((l) => l.timeline.id).join('|')}`;
   // Domain depends on the full timelines, not the search-filtered events, so typing doesn't re-zoom.
   // When several timelines are overlaid, the smallest `squeeze` among them applies.
   const warp = useMemo(
@@ -286,7 +288,7 @@ export function HorizontalView({ lanes, overlay, focus, onSelect, onSelectPeriod
   const isVisible = (x0: number, x1: number) => x1 >= -50 && x0 <= width + 50;
   // Ticks are laid out in real years within each unsqueezed stretch; a squeezed gap keeps its plain background
   // (prehistoric bands and events there stay readable) and gets a narrow striped break at its centre.
-  const ticks: Tick[] = visibleStretches(warp, vp.start, vp.start + width / vp.ppy).flatMap(([from, to]) => makeTicks(from, to, vp.ppy));
+  const ticks: Tick[] = visibleStretches(warp, vp.start, vp.start + width / vp.ppy).flatMap(([from, to]) => makeTicks(from, to, vp.ppy, axis));
   const gaps = warp.gaps
     .map((g) => {
       const left = (g.uStart - vp.start) * vp.ppy;

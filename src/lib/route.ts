@@ -19,11 +19,11 @@ export type Route =
   | { page: 'search'; query: string }
   | { page: 'graph'; category?: string; minWeight: number; cross: boolean }
   | { page: 'years'; year: number; span: Span }
-  | { page: 'timeline'; view: View; ids: string[]; event?: string };
+  | { page: 'timeline'; view: View; ids: string[]; event?: string; age: boolean };
 
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家&tag=浪漫時期` picks its category tab and tag filter),
- * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event), `#p=lifespans` shows the lifespan chart (`&g=era` orders everyone by birth year, `&sel=Confucius` highlights who lived at the same time, `&only=1` hides the rest)
+ * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event, `&a=1` lines people up by age instead of by year), `#p=lifespans` shows the lifespan chart (`&g=era` orders everyone by birth year, `&sel=Confucius` highlights who lived at the same time, `&only=1` hides the rest)
  * `#p=index` the name index, `#p=topics` the topic index, `#p=search&q=波茨坦` the full-text search, `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
@@ -61,12 +61,13 @@ export function parseHash(hash: string, knownIds: string[]): Route {
   const ids = (params.get('t') ?? '').split('|').filter((id) => knownIds.includes(id));
   if (ids.length === 0) return { page: 'dashboard', category: params.get('c') ?? undefined, tag: params.get('tag') ?? undefined };
   const view = VIEWS.find((v) => v.id === params.get('v'))?.id ?? 'horizontal';
-  return { page: 'timeline', view, ids, event: params.get('e') ?? undefined };
+  return { page: 'timeline', view, ids, event: params.get('e') ?? undefined, age: params.get('a') === '1' };
 }
 
-export function timelineHash(ids: string[], view: View = 'horizontal', event?: string): string {
+export function timelineHash(ids: string[], view: View = 'horizontal', event?: string, age = false): string {
   const params = new URLSearchParams({ v: view, t: ids.join('|') });
   if (event) params.set('e', event);
+  if (age) params.set('a', '1');
   return '#' + params.toString();
 }
 
