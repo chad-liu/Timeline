@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseTimeline } from './parseTimeline';
-import { buildStays, busiestYear, locate, parsePlaces, placesInTitle, routeOf, stayInYear, titleWithoutPlace } from './places';
+import { buildPersonStays, buildStays, busiestYear, locate, parsePlaces, placesInTitle, routeOf, stayInYear, titleWithoutPlace } from './places';
 
 const places = parsePlaces(`---
 places:
@@ -99,5 +99,37 @@ describe('buildStays', () => {
     ).stays;
     expect(busiestYear([stays, other], 1800)).toBe(1723);
     expect(busiestYear([], 1800)).toBe(1800);
+  });
+});
+
+describe('buildPersonStays', () => {
+  const trips = parseTimeline(
+    `---
+title: 巴赫行旅
+routeOf: Bach
+---
+
+# Events
+## 1705-10 ~ 1706-02 | 前往呂貝克聽布克斯特胡德@Lübeck
+## 1713-12 | 試奏@Leipzig
+`,
+    'BachTravels',
+  );
+
+  it('adds the places of a trips timeline to the person, in date order', () => {
+    const { stays, unknown } = buildPersonStays(bach, [trips], places);
+    expect(unknown).toEqual(['科騰', 'Lübeck']);
+    expect(stays.map((s) => `${s.timelineId}:${s.place.name}`)).toEqual([
+      'Bach:埃森納赫',
+      'Bach:埃森納赫',
+      'Bach:威瑪',
+      'BachTravels:萊比錫',
+      'Bach:萊比錫',
+      'Bach:萊比錫',
+    ]);
+  });
+
+  it('is the same as buildStays when there are no trips', () => {
+    expect(buildPersonStays(bach, [], places)).toEqual(buildStays(bach, places));
   });
 });

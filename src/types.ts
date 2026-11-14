@@ -65,6 +65,8 @@ export interface Timeline {
   notNames: string[];
   /** Keep this timeline right after the one with this id (frontmatter `follows: Beethoven`), e.g. a works list after its biography. */
   follows?: string;
+  /** The person (a timeline id) whose journeys this timeline lists: the map adds its `@place` stays to that person's route (frontmatter `routeOf: Mozart`). */
+  routeOf?: string;
   /** Horizontal view: squeeze gaps longer than this many years instead of the default (frontmatter `squeeze: 100`). */
   squeeze?: number;
   periods: Period[];

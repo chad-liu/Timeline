@@ -93,6 +93,15 @@ export function buildStays(timeline: Timeline, places: Place[]): { stays: Stay[]
   return { stays, unknown };
 }
 
+/**
+ * A person's stays on the map: those of the person's own timeline plus those of the timelines that list journeys for them
+ * (`routeOf: <id>`, e.g. 莫札特行旅), in date order. At the same moment the person's own stay comes first.
+ */
+export function buildPersonStays(timeline: Timeline, trips: Timeline[], places: Place[]): { stays: Stay[]; unknown: string[] } {
+  const parts = [buildStays(timeline, places), ...trips.map((t) => buildStays(t, places))];
+  return { stays: parts.flatMap((p) => p.stays).sort((a, b) => a.start - b.start), unknown: parts.flatMap((p) => p.unknown) };
+}
+
 /** Where the person was during calendar year `year`: the stay overlapping it that began last (the latest move), if any. */
 export function stayInYear(stays: Stay[], year: number): Stay | undefined {
   let found: Stay | undefined;

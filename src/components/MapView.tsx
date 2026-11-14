@@ -7,7 +7,7 @@ import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import worldUrl from 'world-atlas/countries-50m.json?url';
 import type { Timeline } from '../types';
-import { buildStays, busiestYear, routeOf, stayInYear } from '../lib/places';
+import { buildPersonStays, busiestYear, routeOf, stayInYear } from '../lib/places';
 import type { Place, Stay } from '../lib/places';
 import { dashboardHash, mapHash, timelineHash } from '../lib/route';
 import { Logo } from './Logo';
@@ -35,6 +35,8 @@ const project = (place: Place): [number, number] => projection([place.lon, place
 
 interface Person {
   timeline: Timeline;
+  /** Timelines listing this person's journeys (`routeOf`). */
+  trips: Timeline[];
   name: string;
   stays: Stay[];
   unknown: string[];
@@ -61,7 +63,10 @@ export function MapView({
     () =>
       timelines
         .filter((t) => t.category === CATEGORY && t.born !== undefined)
-        .map((timeline) => ({ timeline, name: shortName(timeline.title), ...buildStays(timeline, places) })),
+        .map((timeline) => {
+          const trips = timelines.filter((t) => t.routeOf === timeline.id);
+          return { timeline, trips, name: shortName(timeline.title), ...buildPersonStays(timeline, trips, places) };
+        }),
     [timelines, places],
   );
   const located = useMemo(() => people.filter((p) => p.stays.length > 0), [people]);
@@ -319,6 +324,17 @@ export function MapView({
               <h2>
                 <a href={timelineHash([selected.timeline.id])}>{selected.name}</a>
               </h2>
+              {selected.trips.length > 0 && (
+                <p className="mv-meta">
+                  行旅：
+                  {selected.trips.map((trip, i) => (
+                    <span key={trip.id}>
+                      {i > 0 && '、'}
+                      <a href={timelineHash([trip.id])}>{trip.title}</a>
+                    </span>
+                  ))}
+                </p>
+              )}
               <p className="mv-meta">{here ? `${year} 年在${here.place.name}（${here.title}）` : `${year} 年沒有所在地的紀錄`}</p>
               <ol className="mv-stops">
                 {route.map((stop, i) => (
