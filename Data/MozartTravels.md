@@ -7,6 +7,7 @@ routeOf: Mozart
 see: [Mozart, MozartWorks]
 related:
   - 莫札特生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2.音樂家/莫札特行旅.html
+cover: images/mzt-cover.jpg
 color: "#1c7ed6"
 description: 莫札特（1756–1791）三十五年生命中的足跡：六歲起的神童巡演、橫跨德意志、法國、英國、荷蘭與瑞士的三年半大旅行、三次義大利之旅、慕尼黑—曼海姆—巴黎的求職之旅，以及定居維也納後前往薩爾茲堡、布拉格、柏林與法蘭克福的旅程；每一站都標有地點，可以在「地圖」頁看到他每一年的所在地與路線
 ---
@@ -32,7 +33,8 @@ description: 莫札特（1756–1791）三十五年生命中的足跡：六歲�
 - 筆記說莫札特1787年4月在維也納見到年輕的貝多芬，並說「兩人的接觸並無確切紀錄」；依中文維基百科〈貝多芬〉條目，貝多芬1787年初到維也納，3、4月就離開，兩人是否見過面沒有確切史料，這裡只寫傳說。
 - 1790年法蘭克福與1791年布拉格的行程，筆記與通行年表一致，照寫。
 - 人名與其他時間軸一致：李奧波德·莫札特、南妮兒、康絲坦茲、阿羅伊齊亞·韋伯、柯羅雷多（薩爾茲堡大主教）、約瑟夫二世、達·彭特、蘇斯邁爾；海頓（Haydn）、貝多芬（Beethoven）等沒有在這條時間軸展開。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- mzt-cover.jpg：Louis Carrogis dit Carmontelle - Portrait de Wolfgang Amadeus Mozart (Salzbourg, 1756-Vienne, 1791) jouant à Paris avec son père Jean... - Google Art Project.jpg（卡蒙泰爾1763年在巴黎所繪的水彩〈莫札特與父親、姊姊的演奏〉）
 -->
 
 # Periods
