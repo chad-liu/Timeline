@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseTimeline } from './parseTimeline';
-import { buildPeopleIndex } from './peopleIndex';
+import { buildPeopleIndex, buildTimelineIndex } from './peopleIndex';
 
 const timeline = (id: string, frontmatter: string) => parseTimeline(`---\n${frontmatter}\n---\n\n# Events\n## 1800 | 事件\n`, id);
 
@@ -38,5 +38,40 @@ describe('buildPeopleIndex', () => {
     expect(index.people[1]).toMatchObject({ name: '蘇格拉底', born: '-469', years: '前469–前399' });
     expect(index.people[1].cover).toBeUndefined();
     expect(index.people[0].aliases).toEqual(['巴哈']);
+  });
+});
+
+describe('buildTimelineIndex', () => {
+  const dated = (id: string, date: string, frontmatter: string) => parseTimeline(`---\n${frontmatter}\n---\n\n# Events\n## ${date} | 事件\n`, id);
+  const index = buildTimelineIndex(
+    [
+      timeline('Kant', 'title: 康德生平\ncategory: 思想家\nborn: 1724-04-22\ndied: 1804-02-12'),
+      dated(
+        'OpiumWars',
+        '1839',
+        'title: 鴉片戰爭大事記\ncategory: 東方歷史\ntags: [戰爭與革命]\ncover: images/opi.jpg\nrelated:\n  - 鴉片戰爭: https://example.com/books/opium.html',
+      ),
+      dated('Japan', '1600', 'title: 日本史\ncategory: 東方歷史'),
+      dated('Europe', '1800', 'title: 歐洲史\ncategory: 西方歷史'),
+    ],
+    'https://example.com/Timeline/',
+  );
+
+  it('lists only non-person timelines, in category order and then by date', () => {
+    expect(index.count).toBe(3);
+    expect(index.timelines.map((t) => t.id)).toEqual(['Europe', 'Japan', 'OpiumWars']);
+  });
+
+  it('describes each timeline with title, absolute links and related pages', () => {
+    expect(index.timelines[2]).toEqual({
+      id: 'OpiumWars',
+      title: '鴉片戰爭大事記',
+      category: '東方歷史',
+      tags: ['戰爭與革命'],
+      url: 'https://example.com/Timeline/#v=vertical&t=OpiumWars',
+      related: [{ label: '鴉片戰爭', url: 'https://example.com/books/opium.html' }],
+      cover: 'https://example.com/Timeline/data/images/opi.jpg',
+    });
+    expect(index.timelines[0].cover).toBeUndefined();
   });
 });

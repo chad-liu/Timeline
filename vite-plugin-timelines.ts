@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { Plugin } from 'vite';
 import { ASSET_PREFIX, parseTimeline } from './src/lib/parseTimeline';
 import { orderTimelines } from './src/lib/timelineOrder';
-import { buildPeopleIndex } from './src/lib/peopleIndex';
+import { buildPeopleIndex, buildTimelineIndex } from './src/lib/peopleIndex';
 import { unknownSeeIds } from './src/lib/relatedTimelines';
 import { parseExtraPeople } from './src/lib/extraPeople';
 import type { ExtraPerson } from './src/lib/extraPeople';
@@ -23,6 +23,8 @@ const RESOLVED_TOPICS_ID = '\0' + TOPICS_ID;
 const TOPICS_FILE = path.join('index', 'topics.md');
 /** Public index of the people timelines, for other sites to link to (see buildPeopleIndex). */
 const PEOPLE_FILE = 'people.json';
+/** Public index of the other timelines (wars, eras, schools…), the complement of people.json (see buildTimelineIndex). */
+const TIMELINES_FILE = 'timelines.json';
 const MIME: Record<string, string> = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
@@ -87,11 +89,12 @@ function listAssets(dataDir: string): string[] {
 
 /**
  * Exposes Data\*.md as `virtual:timelines` (parsed at build time), Data\index\people.md as `virtual:index-people`
- * and Data\index\topics.md as `virtual:index-topics`, serves/emits Data\ images under `data/` plus `people.json`, and reloads the page when Data\ changes in dev.
- * `siteUrl` is the published address, used for the absolute links in `people.json`.
+ * and Data\index\topics.md as `virtual:index-topics`, serves/emits Data\ images under `data/` plus `people.json` and `timelines.json`, and reloads the page when Data\ changes in dev.
+ * `siteUrl` is the published address, used for the absolute links in `people.json` and `timelines.json`.
  */
 export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
   const peopleJson = () => JSON.stringify(buildPeopleIndex(loadTimelines(dataDir), siteUrl), null, 2);
+  const timelinesJson = () => JSON.stringify(buildTimelineIndex(loadTimelines(dataDir), siteUrl), null, 2);
   return {
     name: 'timelines',
 
@@ -130,6 +133,11 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
           res.end(peopleJson());
           return;
         }
+        if (url === '/' + TIMELINES_FILE) {
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(timelinesJson());
+          return;
+        }
         if (!url.startsWith('/' + ASSET_PREFIX)) return next();
         const file = path.resolve(dataDir, url.slice(ASSET_PREFIX.length + 1));
         // Only serve files inside Data\, and never the markdown sources.
@@ -144,6 +152,7 @@ export function timelinesPlugin(dataDir: string, siteUrl: string): Plugin {
 
     generateBundle() {
       this.emitFile({ type: 'asset', fileName: PEOPLE_FILE, source: peopleJson() });
+      this.emitFile({ type: 'asset', fileName: TIMELINES_FILE, source: timelinesJson() });
       for (const rel of listAssets(dataDir)) {
         this.emitFile({ type: 'asset', fileName: ASSET_PREFIX + rel, source: fs.readFileSync(path.join(dataDir, rel)) });
       }

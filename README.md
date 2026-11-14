@@ -55,9 +55,9 @@
 | `#p=graph&c=音樂家&w=2` | 人物關係圖：`c` 是類別，`w` 是連線至少要有幾則事件（預設 1），`x=1` 只看跨類別的連線 |
 | `#p=years&y=1789&s=10` | 年代對照：`s` 是 `1`（單年）、`10`（十年）或 `100`（百年） |
 
-### 給其他網站用的人物資料
+### 給其他網站用的索引
 
-網站建置時會輸出 [`people.json`](https://liu-timeline.pages.dev/people.json)，列出所有人物時間軸的生卒年、類別、網址與延伸閱讀。books 網站就是靠它產生「連回時間軸」的連結。
+網站建置時會輸出兩份索引：[`people.json`](https://liu-timeline.pages.dev/people.json) 列出所有人物時間軸的生卒年、類別、網址與延伸閱讀；[`timelines.json`](https://liu-timeline.pages.dev/timelines.json) 列出其餘的時間軸（戰爭、時代、學派、主題等）的標題、類別、網址與延伸閱讀。books 網站就是靠這兩份檔案，在頁面底部產生「生平時間軸」與「相關時間軸」的連結。
 
 ---
 

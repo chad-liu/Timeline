@@ -34,7 +34,7 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
 
 - **建置時解析**：`vite-plugin-timelines.ts` 在 Node 端讀取 `Data/*.md`，用 `src/lib/parseTimeline.ts`（gray-matter + marked）解析後，以虛擬模組 `virtual:timelines` 提供給前端（型別宣告在 `src/virtual.d.ts`）。前端拿到的是已解析好的 `Timeline[]`，本身不含 markdown 或 yaml 解析器。這個 plugin 同時負責：
   - 在 dev 時以 `data/` 路徑提供 `Data/images/`，build 時把圖片 emit 到 `dist/data/`；
-  - 輸出 `people.json`（`src/lib/peopleIndex.ts`），供其他網站讀取人物生卒年。books 站的 `tools/add_timeline_links.py` 會把每人的 `related` 反推成「哪些頁面要連回這條時間軸」，所以兩站的互連只需要維護 `related:`。
+  - 輸出 `people.json` 與 `timelines.json`（`src/lib/peopleIndex.ts`；前者是人物，後者是其餘的戰爭、時代、學派等時間軸），供其他網站讀取。books 站的 `tools/add_timeline_links.py` 會把每條時間軸的 `related` 反推成「哪些頁面要連回這條時間軸」（人物列在「生平時間軸」，其餘列在「相關時間軸」），所以兩站的互連只需要維護 `related:`。改了 `related:` 並部署後，要在 `D:\Books` 重跑 `python tools/add_timeline_links.py` 再 commit books。
 - **日期**：統一轉成「小數年」（`src/lib/parseDate.ts`），支援西元前、世紀、區間、約略年代，不使用 JS `Date`。排序與座標換算都用這個數值。
 - **路由**：全部放在 URL hash，由 `src/lib/route.ts` 處理：
   - 不帶 `t` 參數是 Dashboard，例如 `#c=音樂家&tag=…`；
@@ -75,4 +75,4 @@ Node.js 22（與 CI 相同）。沒有 lint 設定；型別檢查只靠 `npm run
   - 使用者要求「分批 commit 並 push」時照做，每批確認部署成功再推下一批。過去「每批最多 7 張」是 GitHub Pages 時期的限制（整站 2,400 多張圖每次都要重新同步，常在 `syncing_files` 逾時）；改用 Cloudflare Pages（增量上傳）、轉址站也不再上傳 `data/` 後，這個限制已不需要，但每批仍以一兩條時間軸為單位，方便出錯時回溯。
 - **不要 commit `圖表/`**（那裡是原始筆記），也不要 commit `圖表/Dashboard.png` 或 `Data/images/84cf78586f2293dd051cdd0ba37832d1.jpeg`。
 - 使用者沒有要求就不 commit／push。push 後用 `gh run watch` 確認部署成功。
-- 書籍網站是另一個 repo（`D:\Books`，chad-liu/books），兩邊刻意不整合，只透過 `related:`、books 端的 timeline 連結區塊，以及 `people.json` 互相連結。
+- 書籍網站是另一個 repo（`D:\Books`，chad-liu/books），兩邊刻意不整合，只透過 `related:`、books 端的 timeline 連結區塊，以及 `people.json`／`timelines.json` 互相連結。
