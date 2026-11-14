@@ -6,7 +6,7 @@ follows: Chopin
 related:
   - 蕭邦主要作品（知識圖譜）: https://chad-liu.github.io/books/html/5-2-1.音樂家作品/蕭邦主要作品.html
 color: "#1098ad"
-cover: images/chopin-1838-delacroix.jpg
+cover: images/chopin-works-cover.jpg
 description: 蕭邦（1810–1849）代表作的Op.／B.／KK編號、創作年代與類別
 ---
 
@@ -18,8 +18,9 @@ description: 蕭邦（1810–1849）代表作的Op.／B.／KK編號、創作年�
 - 時期沿用「蕭邦生平」時間軸的主要時期（重疊的細分時期不列）。
 - 筆記「優先聆聽」清單中的作品另註明順序。
 - 以 follows 排在「蕭邦生平」之後；生平事件見該時間軸。
-圖片（皆沿用「蕭邦生平」時間軸中的 Wikimedia Commons 公有領域圖片，原始檔名見該時間軸）：
-- chopin-1838-delacroix.jpg（德拉克洛瓦所繪蕭邦像，1838）
+圖片（皆為 Wikimedia Commons 公有領域作品）：
+- chopin-works-cover.jpg：Chopin, by Wodzinska.JPG（瑪麗亞·沃津斯卡所繪蕭邦像，1835年水彩，裁成3:2、600×400）
+- 以下沿用「蕭邦生平」時間軸的圖片，原始檔名見該時間軸：
 - chopin-1842-op53.jpg（蕭邦親筆題贈的樂譜片段，1845年5月25日於巴黎）
 -->
 
