@@ -4,15 +4,13 @@ category: 經濟商業
 tags: [經濟史]
 see: [BankingHistory, MonetarySystemHistory, FinancialCrisisHistory, FinanceHistory, Monetarism]
 aliases: [中央銀行, 最後貸款人, 聯邦準備制度, 歐洲中央銀行, 量化寬鬆]
-related:
-  - 世界中央銀行發展史: https://chad-liu.github.io/books/html/4-1.經濟知識/世界中央銀行發展史.html
 cover: images/cb-cover.jpg
 color: "#1864ab"
 description: 從瑞典國家銀行、英格蘭銀行與白芝浩的最後貸款人原則，到聯準會、大蕭條與布列敦森林，再到伏克爾的抗通膨、央行獨立與通膨目標制、歐洲央行，以及金融海嘯後的量化寬鬆與疫情後的升息
 ---
 
 <!--
-內容整理自本機筆記〈世界中央銀行發展史〉（D:\Books\md\歷史\術語\經濟學\世界中央銀行發展史.md；html 版在 D:\Books\html\4-1.經濟知識），並參考中文維基百科〈中央銀行〉條目，以自己的話改寫。
+內容整理自本機筆記〈世界中央銀行發展史〉（D:\Books\md\歷史\術語\經濟學\世界中央銀行發展史.md；html 版已從 Books 移除，所以沒有 related: 連結），並參考中文維基百科〈中央銀行〉條目，以自己的話改寫。
 時期依筆記的大事記章節：中央銀行的前身、中央銀行的建立、金本位與聯準會、大戰與布列敦森林、信用貨幣與央行獨立、金融海嘯以後。
 兩份資料出入與處理方式：
 - 日本銀行負利率：筆記的2008－2019年事件表寫2015年；日本銀行是2016年1月宣布、2月實施負利率，這裡依此。
