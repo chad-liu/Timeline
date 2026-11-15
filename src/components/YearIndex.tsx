@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import type { Timeline } from '../types';
 import type { ExtraPerson } from '../lib/extraPeople';
 import { reignsInSlice } from '../lib/chineseRulers';
+import { japanInSlice } from '../lib/japanRulers';
 import { formatYear } from '../lib/parseDate';
 import { dashboardHash, timelineHash, yearsHash } from '../lib/route';
 import { groupTimelines } from '../lib/timelineOrder';
@@ -28,6 +29,7 @@ export function YearIndex({ timelines, extras, year, span }: { timelines: Timeli
   const { from, to } = sliceOf(year, span);
   const slices = useMemo(() => eventsInSlice(timelines, from, to), [timelines, from, to]);
   const reigns = reignsInSlice(from, to);
+  const japan = japanInSlice(from, to);
   const living = useMemo(() => livingInSlice(timelines, extras, from, to), [timelines, extras, from, to]);
   const [category, setCategory] = useState<string | null>(null);
   const [input, setInput] = useState(formatYear(year));
@@ -93,6 +95,7 @@ export function YearIndex({ timelines, extras, year, span }: { timelines: Timeli
         <h2 className="yi-heading">
           {sliceLabel(from, span)}
           {reigns.length > 0 && <span className="yi-reign">{reigns.join('、')}</span>}
+          {japan.length > 0 && <span className="yi-reign">{japan.join('、')}</span>}
           <small>
             {slices.length} 條時間軸・{eventCount} 則事件
           </small>
