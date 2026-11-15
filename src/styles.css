@@ -2756,3 +2756,27 @@ a.rg-close {
   border-left: 2px solid #e8590c;
   font-size: 12px;
 }
+
+/* Works index (#p=works) */
+.wi-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ti-group h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ti-group h2 a:hover {
+  color: var(--accent);
+}
+
+.wi-more {
+  display: block;
+  margin: 20px auto 0;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}

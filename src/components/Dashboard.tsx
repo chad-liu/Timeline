@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, graphHash, mapHash, searchHash, timelineHash, yearsHash } from '../lib/route';
+import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, graphHash, mapHash, searchHash, timelineHash, worksHash, yearsHash } from '../lib/route';
 import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -86,6 +86,9 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
             </a>
             <a className="btn-secondary" href={TOPICS_HASH}>
               主題索引
+            </a>
+            <a className="btn-secondary" href={worksHash()}>
+              作品索引
             </a>
             <a className="btn-secondary" href={yearsHash()}>
               年代對照
