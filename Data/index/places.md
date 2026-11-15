@@ -16,7 +16,7 @@ places:
   - { name: 呂貝克, aliases: [Lübeck], lat: 53.87, lon: 10.69 }
   - { name: 德勒斯登, aliases: [Dresden], lat: 51.05, lon: 13.74 }
   - { name: 威瑪, aliases: [Weimar], lat: 50.98, lon: 11.33 }
-  - { name: 埃森納赫, aliases: [Eisenach], lat: 50.97, lon: 10.32 }
+  - { name: 埃森納赫, aliases: [Eisenach, 艾森納赫], lat: 50.97, lon: 10.32 }
   - { name: 奧德魯夫, aliases: [Ohrdruf], lat: 50.83, lon: 10.73 }
   - { name: 阿恩施塔特, aliases: [Arnstadt], lat: 50.83, lon: 10.95 }
   - { name: 哈雷, aliases: [Halle], lat: 51.48, lon: 11.97 }
@@ -26,7 +26,7 @@ places:
   - { name: 杜塞道夫, aliases: [Düsseldorf], lat: 51.23, lon: 6.78 }
   - { name: 慕尼黑, aliases: [München, Munich], lat: 48.14, lon: 11.58 }
   - { name: 加米施, aliases: [Garmisch], lat: 47.49, lon: 11.10 }
-  - { name: 拜魯特, aliases: [Bayreuth], lat: 49.95, lon: 11.58 }
+  - { name: 拜魯特, aliases: [Bayreuth, 拜羅伊特, 拜雷特], lat: 49.95, lon: 11.58 }
   - { name: 海德堡, aliases: [Heidelberg], lat: 49.40, lon: 8.67 }
   - { name: 埃伯施泰因堡, aliases: [Ebersteinburg], lat: 48.78, lon: 8.27 }
   - { name: 科隆, aliases: [Köln, Cologne], lat: 50.94, lon: 6.96 }
@@ -56,6 +56,16 @@ places:
   - { name: 邁寧根, aliases: [Meiningen], lat: 50.57, lon: 10.42 }
   - { name: 威斯巴登, aliases: [Wiesbaden], lat: 50.08, lon: 8.24 }
   - { name: 不萊梅, aliases: [不來梅, 布萊梅, Bremen], lat: 53.08, lon: 8.80 }
+  - { name: 呂內堡, aliases: [呂訥堡, Lüneburg], lat: 53.25, lon: 10.41 }
+  - { name: 桑格豪森, aliases: [Sangerhausen], lat: 51.47, lon: 11.30 }
+  - { name: 米爾豪森, aliases: [Mühlhausen], lat: 51.21, lon: 10.46 }
+  - { name: 多恩海姆, aliases: [Dornheim], lat: 50.88, lon: 10.93 }
+  - { name: 科騰, aliases: [克滕, Köthen], lat: 51.75, lon: 11.97 }
+  - { name: 斯圖加特, aliases: [Stuttgart], lat: 48.78, lon: 9.18 }
+  - { name: 波嫩韋爾特, aliases: [Nonnenwerth], lat: 50.62, lon: 7.22 }
+  - { name: 基爾, aliases: [Kiel], lat: 54.32, lon: 10.14 }
+  - { name: 松德斯豪森, aliases: [Sondershausen], lat: 51.37, lon: 10.87 }
+  - { name: 安特衛普, aliases: [Antwerp, Antwerpen], lat: 51.22, lon: 4.40 }
 
   # 奧地利
   - { name: 維也納, aliases: [Vienna, Wien], lat: 48.21, lon: 16.37 }
@@ -67,13 +77,20 @@ places:
   - { name: 聖弗洛里安, aliases: [Sankt Florian], lat: 48.21, lon: 14.38 }
   - { name: 羅勞, aliases: [Rohrau], lat: 48.07, lon: 16.86 }
   - { name: 海恩堡, aliases: [Hainburg], lat: 48.15, lon: 16.94 }
-  - { name: 雷丁, aliases: [Raiding], lat: 47.57, lon: 16.53 }
+  - { name: 雷丁, aliases: [Raiding, 多博然, 多博爾揚, Doborján], lat: 47.57, lon: 16.53 }
   - { name: 巴登, aliases: [Baden bei Wien], lat: 48.01, lon: 16.23 }
   - { name: 海利根施塔特, aliases: [Heiligenstadt, 聖城], lat: 48.25, lon: 16.36 }
   - { name: 格奈克辛多夫, aliases: [Gneixendorf], lat: 48.43, lon: 15.62 }
   - { name: 因斯布魯克, aliases: [Innsbruck], lat: 47.27, lon: 11.39 }
   - { name: 波爾恰赫, aliases: [Pörtschach], lat: 46.63, lon: 14.15 }
   - { name: 巴德伊舍, aliases: [Bad Ischl], lat: 47.71, lon: 13.62 }
+  - { name: 施泰爾, aliases: [Steyr], lat: 48.04, lon: 14.42 }
+  - { name: 格蒙登, aliases: [Gmunden], lat: 47.92, lon: 13.80 }
+  - { name: 巴德加施泰因, aliases: [Bad Gastein], lat: 47.11, lon: 13.13 }
+  - { name: 克雷姆斯明斯特, aliases: [Kremsmünster], lat: 48.05, lon: 14.13 }
+  - { name: 阿岑布魯克, aliases: [Atzenbrugg], lat: 48.28, lon: 15.94 }
+  - { name: 格拉茲, aliases: [格拉茨, Graz], lat: 47.07, lon: 15.44 }
+  - { name: 艾森施塔特, aliases: [Eisenstadt], lat: 47.85, lon: 16.52 }
   - { name: 米爾茨楚施拉格, aliases: [Mürzzuschlag], lat: 47.60, lon: 15.68 }
 
   # 瑞士
@@ -84,6 +101,9 @@ places:
   - { name: 伯恩, aliases: [Bern], lat: 46.95, lon: 7.45 }
   - { name: 呂施利孔, aliases: [Rüschlikon], lat: 47.31, lon: 8.55 }
   - { name: 圖恩, aliases: [Thun, 圖恩湖, 霍夫施泰滕, Hofstetten], lat: 46.76, lon: 7.63 }
+  - { name: 盧加諾, aliases: [Lugano], lat: 46.00, lon: 8.95 }
+  - { name: 巴塞爾, aliases: [Basel], lat: 47.56, lon: 7.59 }
+  - { name: 盧塞恩, aliases: [特里布申, Tribschen, Lucerne, Luzern], lat: 47.05, lon: 8.31 }
 
   # 法國、比利時、荷蘭
   - { name: 巴黎, aliases: [Paris], lat: 48.86, lon: 2.35 }
@@ -106,6 +126,9 @@ places:
   - { name: 海牙, aliases: [The Hague, Den Haag], lat: 52.08, lon: 4.31 }
   - { name: 烏特勒支, aliases: [Utrecht], lat: 52.09, lon: 5.12 }
   - { name: 鹿特丹, aliases: [Rotterdam], lat: 51.92, lon: 4.48 }
+  - { name: 布洛涅濱海, aliases: [Boulogne-sur-Mer, Boulogne], lat: 50.73, lon: 1.61 }
+  - { name: 拉謝內, aliases: [La Chênaie], lat: 48.45, lon: -2.05 }
+  - { name: 諾昂, aliases: [Nohant], lat: 46.62, lon: 2.30 }
 
   # 英國
   - { name: 倫敦, aliases: [London], lat: 51.51, lon: -0.13 }
@@ -141,6 +164,8 @@ places:
   - { name: 曼圖亞, aliases: [Mantua, Mantova], lat: 45.16, lon: 10.79 }
   - { name: 帕爾馬, aliases: [Parma], lat: 44.80, lon: 10.33 }
   - { name: 帕多瓦, aliases: [Padua, Padova], lat: 45.41, lon: 11.88 }
+  - { name: 聖羅索雷, aliases: [San Rossore], lat: 43.72, lon: 10.30 }
+  - { name: 蒂沃利, aliases: [Tivoli, 德斯特別墅, Villa d'Este], lat: 41.96, lon: 12.80 }
 
   # 捷克、匈牙利、波蘭、斯洛維尼亞
   - { name: 布拉格, aliases: [Prague, Praha], lat: 50.08, lon: 14.44 }
@@ -149,16 +174,21 @@ places:
   - { name: 利托米什爾, aliases: [Litomyšl], lat: 49.87, lon: 16.31 }
   - { name: 伊赫拉瓦, aliases: [Jihlava], lat: 49.40, lon: 15.59 }
   - { name: 卡利什捷, aliases: [Kaliště], lat: 49.59, lon: 15.30 }
-  - { name: 布達佩斯, aliases: [Budapest], lat: 47.50, lon: 19.04 }
+  - { name: 布達佩斯, aliases: [Budapest, 佩斯, 布達, Pest], lat: 47.50, lon: 19.04 }
   - { name: 納吉聖米克洛什, aliases: [Nagyszentmiklós], lat: 46.07, lon: 20.63 }
   - { name: 華沙, aliases: [Warsaw, Warszawa], lat: 52.23, lon: 21.01 }
   - { name: 熱拉佐瓦沃拉, aliases: [Żelazowa Wola], lat: 52.26, lon: 20.31 }
   - { name: 康尼希察, aliases: [Konjšica], lat: 46.07, lon: 14.97 }
   - { name: 奧洛穆茨, aliases: [Olomouc, Olmütz], lat: 49.59, lon: 17.25 }
   - { name: 布爾諾, aliases: [Brno, Brünn], lat: 49.20, lon: 16.61 }
-  - { name: 布拉提斯拉瓦, aliases: [Bratislava, Pressburg, 普萊斯堡], lat: 48.15, lon: 17.11 }
+  - { name: 布拉提斯拉瓦, aliases: [Bratislava, Pressburg, 普萊斯堡, 波茲尼, 普雷斯堡], lat: 48.15, lon: 17.11 }
   - { name: 特普利采, aliases: [泰普利采, Teplice], lat: 50.64, lon: 13.83 }
   - { name: 卡羅維瓦利, aliases: [Karlovy Vary, Carlsbad], lat: 50.23, lon: 12.87 }
+  - { name: 紹普朗, aliases: [Sopron, Ödenburg], lat: 47.68, lon: 16.59 }
+  - { name: 傑爾, aliases: [Győr], lat: 47.69, lon: 17.64 }
+  - { name: 埃斯泰爾戈姆, aliases: [Esztergom, Gran], lat: 47.79, lon: 18.74 }
+  - { name: 澤利茲, aliases: [Zseliz, Želiezovce], lat: 48.05, lon: 18.67 }
+  - { name: 塞克薩德, aliases: [Szekszárd], lat: 46.35, lon: 18.71 }
 
   # 北歐、波羅的海
   - { name: 卑爾根, aliases: [Bergen], lat: 60.39, lon: 5.32 }
@@ -166,6 +196,9 @@ places:
   - { name: 海門林納, aliases: [Hämeenlinna], lat: 61.00, lon: 24.46 }
   - { name: 耶爾文佩, aliases: [Järvenpää, 愛諾拉, Ainola], lat: 60.47, lon: 25.09 }
   - { name: 維爾紐斯, aliases: [Vilnius], lat: 54.69, lon: 25.28 }
+  - { name: 哥本哈根, aliases: [Copenhagen, København], lat: 55.68, lon: 12.57 }
+  - { name: 里加, aliases: [Riga], lat: 56.95, lon: 24.11 }
+  - { name: 塔爾圖, aliases: [Tartu, Derpt], lat: 58.38, lon: 26.72 }
 
   # 俄羅斯、烏克蘭
   - { name: 聖彼得堡, aliases: [Saint Petersburg, St. Petersburg], lat: 59.94, lon: 30.31 }
@@ -181,11 +214,18 @@ places:
   - { name: 敖德薩, aliases: [Odesa, Odessa], lat: 46.48, lon: 30.72 }
   - { name: 日托米爾, aliases: [Zhytomyr], lat: 50.25, lon: 28.66 }
   - { name: 松措夫卡, aliases: [Sontsivka], lat: 48.09, lon: 37.19 }
+  - { name: 沃羅寧策, aliases: [Woronince, Voronovytsia], lat: 48.97, lon: 28.69 }
+  - { name: 利沃夫, aliases: [Lemberg, Lviv], lat: 49.84, lon: 24.03 }
+  - { name: 切爾諾夫策, aliases: [Czernowitz, Chernivtsi], lat: 48.29, lon: 25.94 }
+  - { name: 雅西, aliases: [Iași, Jassy], lat: 47.16, lon: 27.59 }
 
   # 希臘、中東
   - { name: 雅典, aliases: [Athens], lat: 37.98, lon: 23.73 }
   - { name: 埃皮達魯斯, aliases: [Epidaurus], lat: 37.60, lon: 23.08 }
   - { name: 耶路撒冷, aliases: [Jerusalem], lat: 31.78, lon: 35.22 }
+  - { name: 伊斯坦堡, aliases: [君士坦丁堡, Constantinople, Istanbul], lat: 41.01, lon: 28.98 }
+  - { name: 馬德里, aliases: [Madrid], lat: 40.42, lon: -3.70 }
+  - { name: 里斯本, aliases: [Lisbon, Lisboa], lat: 38.72, lon: -9.14 }
 
   # 美洲
   - { name: 紐約, aliases: [New York], lat: 40.71, lon: -74.01 }
