@@ -9,6 +9,7 @@ import worldUrl from 'world-atlas/countries-50m.json?url';
 import type { Timeline } from '../types';
 import { buildPersonStays, busiestYear, routeOf, stayInYear } from '../lib/places';
 import type { Place, Stay } from '../lib/places';
+import { MAX_HOP_KM, distanceKm, placeUrl, routeLinks } from '../lib/googleMaps';
 import { dashboardHash, mapHash, timelineHash } from '../lib/route';
 import { Logo } from './Logo';
 
@@ -43,6 +44,16 @@ interface Person {
 }
 
 const shortName = (title: string) => title.replace(/(生平|大事記|時間軸)$/, '');
+
+/** A small link that opens the place in Google Maps in a new tab. */
+function GoogleLink({ place }: { place: Place }) {
+  const label = `在 Google 地圖開啟${place.name}`;
+  return (
+    <a className="mv-google mv-google-place" href={placeUrl(place)} target="_blank" rel="noopener noreferrer" title={label} aria-label={label}>
+      ↗
+    </a>
+  );
+}
 
 /**
  * The map (#p=map&y=1723&sel=Bach): where each musician was in the chosen year, from the `@place` of their periods
@@ -177,6 +188,8 @@ export function MapView({
     ]);
   }, [hasSize, route, fit]);
 
+  const google = useMemo(() => routeLinks(route.map((s) => s.place)), [route]);
+  const crossing = route.some((stop, i) => i > 0 && distanceKm(route[i - 1].place, stop.place) > MAX_HOP_KM);
   const screen = (place: Place): [number, number] => t.apply(project(place));
   const unknown = people.flatMap((p) => [...new Set(p.unknown)].map((raw) => `${p.name}：${raw}`));
   const count = cities.reduce((n, c) => n + c.residents.length, 0);
@@ -336,6 +349,30 @@ export function MapView({
                 </p>
               )}
               <p className="mv-meta">{here ? `${year} 年在${here.place.name}（${here.title}）` : `${year} 年沒有所在地的紀錄`}</p>
+              {google.length === 1 && (
+                <p className="mv-meta">
+                  <a className="mv-google" href={google[0].url} target="_blank" rel="noopener noreferrer">
+                    在 Google 地圖看路線 ↗
+                  </a>
+                  {crossing && <small className="mv-google-note">跨洋的一段不含在內</small>}
+                </p>
+              )}
+              {google.length > 1 && (
+                <details className="mv-google-list">
+                  <summary>在 Google 地圖看路線（分 {google.length} 段）</summary>
+                  <ol>
+                    {google.map((link, i) => (
+                      <li key={i}>
+                        <a className="mv-google" href={link.url} target="_blank" rel="noopener noreferrer">
+                          {link.from.name} → {link.to.name} ↗
+                        </a>
+                        <small>{link.stops} 站</small>
+                      </li>
+                    ))}
+                  </ol>
+                  <p>Google 地圖的一條路線最多 11 站，所以分段{crossing && '；跨洋的一段不含在內'}。</p>
+                </details>
+              )}
               <ol className="mv-stops">
                 {route.map((stop, i) => (
                   <li key={`${stop.place.name}-${i}`} className={here?.place === stop.place ? 'here' : undefined}>
@@ -345,6 +382,7 @@ export function MapView({
                         {stop.dateLabel}　{stop.title}
                       </span>
                     </button>
+                    <GoogleLink place={stop.place} />
                   </li>
                 ))}
               </ol>
@@ -358,6 +396,7 @@ export function MapView({
                 <section key={place.name} className="mv-place">
                   <h3>
                     {place.name} <small>{residents.length}</small>
+                    <GoogleLink place={place} />
                   </h3>
                   <ul>
                     {residents.map(({ person, stay }) => (
