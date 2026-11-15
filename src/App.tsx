@@ -5,7 +5,7 @@ import topics from 'virtual:index-topics';
 import places from 'virtual:index-places';
 import type { Lane, Period, Timeline, TimelineEvent } from './types';
 import { canAlignByAge, toAgeAxis } from './lib/ageAxis';
-import { VIEWS, dashboardHash, lifespansHash, mapHash, parseHash, searchHash, timelineHash, worksHash } from './lib/route';
+import { VIEWS, dashboardHash, galleryHash,lifespansHash, mapHash, parseHash, searchHash, timelineHash, worksHash } from './lib/route';
 import type { View } from './lib/route';
 import { Dashboard } from './components/Dashboard';
 import { Lifespans } from './components/Lifespans';
@@ -14,6 +14,7 @@ import { RelationGraph } from './components/RelationGraph';
 import { YearIndex } from './components/YearIndex';
 import { TopicIndex } from './components/TopicIndex';
 import { WorkIndex } from './components/WorkIndex';
+import { Gallery } from './components/Gallery';
 import { Search } from './components/Search';
 import { MapView } from './components/MapView';
 import { Logo } from './components/Logo';
@@ -40,6 +41,9 @@ export function App() {
   if (route.page === 'lifespans') return <Lifespans key={lifespansHash(route.mode, route.selected, route.only)} timelines={timelines} mode={route.mode} selected={route.selected} only={route.only} />;
   if (route.page === 'index') return <NameIndex timelines={timelines} extras={extraPeople} />;
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
+  if (route.page === 'gallery') {
+    return <Gallery key={galleryHash(route.category, route.era, route.query)} timelines={timelines} category={route.category} era={route.era} query={route.query} />;
+  }
   if (route.page === 'works') {
     return <WorkIndex key={worksHash(route.category, route.sort, route.query)} timelines={timelines} category={route.category} sort={route.sort} query={route.query} />;
   }

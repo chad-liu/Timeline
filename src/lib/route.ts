@@ -20,6 +20,7 @@ export type Route =
   | { page: 'index' }
   | { page: 'topics' }
   | { page: 'works'; category?: string; sort: WorkSort; query: string }
+  | { page: 'gallery'; category?: string; era?: string; query: string }
   | { page: 'search'; query: string }
   | { page: 'map'; year?: number; selected?: string }
   | { page: 'graph'; category?: string; minWeight: number; cross: boolean; from?: string; to?: string }
@@ -29,7 +30,7 @@ export type Route =
 /**
  * Routes live in the URL hash: no `t` parameter shows the dashboard (`#c=音樂家&tag=浪漫時期` picks its category tab and tag filter),
  * `#v=horizontal&t=Bach|Handel` shows those timelines (`&e=Bach-3` also opens that event, `&a=1` lines people up by age instead of by year), `#p=lifespans` shows the lifespan chart (`&g=era` orders everyone by birth year, `&sel=Confucius` highlights who lived at the same time, `&only=1` hides the rest)
- * `#p=index` the name index, `#p=topics` the topic index, `#p=works&c=音樂家&s=author&q=安魂曲` the works index,`#p=search&q=波茨坦` the full-text search, `#p=map&y=1723&sel=Bach` the map (where the musicians were that year, and one person's route), `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories, `&from=Voltaire&to=Bach` the shortest path between two nodes) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
+ * `#p=index` the name index, `#p=topics` the topic index, `#p=works&c=音樂家&s=author&q=安魂曲` the works index, `#p=gallery&c=藝術家&era=15世紀` the image wall,`#p=search&q=波茨坦` the full-text search, `#p=map&y=1723&sel=Bach` the map (where the musicians were that year, and one person's route), `#p=graph` the relation graph (`&c=音樂家&w=2` keeps one category and links of at least 2 events, `&x=1` only links between two categories, `&from=Voltaire&to=Bach` the shortest path between two nodes) and `#p=years&y=1789&s=10` what every timeline has in that year (`s=1`), decade (`s=10`) or century (`s=100`).
  */
 export function parseHash(hash: string, knownIds: string[]): Route {
   const params = new URLSearchParams(hash.replace(/^#/, ''));
@@ -44,6 +45,9 @@ export function parseHash(hash: string, knownIds: string[]): Route {
   }
   if (params.get('p') === 'index') return { page: 'index' };
   if (params.get('p') === 'topics') return { page: 'topics' };
+  if (params.get('p') === 'gallery') {
+    return { page: 'gallery', category: params.get('c') ?? undefined, era: params.get('era') ?? undefined, query: params.get('q') ?? '' };
+  }
   if (params.get('p') === 'works') {
     const sort = params.get('s');
     return { page: 'works', category: params.get('c') ?? undefined, sort: sort === 'author' || sort === 'count' ? sort : 'year', query: params.get('q') ?? '' };
@@ -110,6 +114,15 @@ export function lifespansHash(mode: LifespanMode = 'category', selected?: string
 }
 export const INDEX_HASH = '#p=index';
 export const TOPICS_HASH = '#p=topics';
+
+/** The image wall: `c` keeps one category, `era` one century (as its heading reads, e.g. 15世紀), `q` is the search text. */
+export function galleryHash(category?: string, era?: string, query = ''): string {
+  const params = new URLSearchParams({ p: 'gallery' });
+  if (category) params.set('c', category);
+  if (era) params.set('era', era);
+  if (query.trim()) params.set('q', query.trim());
+  return '#' + params.toString();
+}
 
 /** The works index: `c` keeps one category, `s` is the order (by year when left out), `q` the search text. */
 export function worksHash(category?: string, sort: WorkSort = 'year', query = ''): string {

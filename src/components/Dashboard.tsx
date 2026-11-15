@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Timeline } from '../types';
 import { formatYear } from '../lib/parseDate';
-import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, graphHash, mapHash, searchHash, timelineHash, worksHash, yearsHash } from '../lib/route';
+import { INDEX_HASH, LIFESPANS_HASH, TOPICS_HASH, VIEWS, dashboardHash, galleryHash, graphHash, mapHash, searchHash, timelineHash, worksHash, yearsHash } from '../lib/route';
 import { groupTimelines, tagsOf } from '../lib/timelineOrder';
 import { Logo } from './Logo';
 
@@ -98,6 +98,9 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
             </a>
             <a className="btn-secondary" href={mapHash()}>
               地圖
+            </a>
+            <a className="btn-secondary" href={galleryHash()}>
+              圖片牆
             </a>
           </div>
         </div>
