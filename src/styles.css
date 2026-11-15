@@ -2633,3 +2633,126 @@ input {
     border-left: 0;
   }
 }
+
+/* Relation graph: the path between two nodes */
+.rg-svg.path .rg-node:not(.onpath) {
+  opacity: 0.15;
+}
+
+.rg-svg.path .rg-links line:not(.onpath) {
+  stroke-opacity: 0.08;
+}
+
+.rg-links line.onpath {
+  stroke: #e8590c;
+  stroke-opacity: 1;
+}
+
+.rg-node.onpath circle,
+.rg-node.onpath rect {
+  stroke: #e8590c;
+  stroke-width: 3;
+}
+
+.rg-node.onpath text {
+  display: block;
+  font-weight: 700;
+}
+
+.rg-svg.picking .rg-node {
+  cursor: crosshair;
+}
+
+.rg-picking {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 1;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  padding: 6px 14px;
+  transform: translateX(-50%);
+  border: 1px solid #e8590c;
+  border-radius: 999px;
+  background: #fff4e6;
+  font-size: 14px;
+}
+
+.rg-picking a,
+.rg-meta a {
+  margin-left: 10px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a.rg-close {
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.rg-panel h2.rg-path-title {
+  margin-right: 24px;
+  border-color: #e8590c;
+}
+
+.rg-path-actions {
+  margin: 8px 0 0;
+}
+
+.rg-path-actions button {
+  padding: 4px 10px;
+  border: 1px solid #e8590c;
+  border-radius: 999px;
+  background: #fff4e6;
+  color: #a83f00;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.rg-panel ol.rg-path {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rg-panel ol.rg-path li {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+.rg-panel ol.rg-path button {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 6px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rg-panel ol.rg-path button:hover {
+  background: var(--accent-soft);
+}
+
+.rg-panel ol.rg-path em {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.rg-panel ol.rg-path small {
+  display: block;
+  margin-left: 10px;
+  padding: 4px 0 4px 14px;
+  border-left: 2px solid #e8590c;
+  font-size: 12px;
+}

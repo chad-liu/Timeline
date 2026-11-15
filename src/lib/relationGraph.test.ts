@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildNameIndex } from './nameIndex';
 import { parseExtraPeople } from './extraPeople';
-import { buildRelationGraph, filterRelationGraph, SEE_WEIGHT, timelineTerms, TOPIC_MIN_EVENTS } from './relationGraph';
+import { buildRelationGraph, filterRelationGraph, SEE_WEIGHT, shortestPath, timelineTerms, TOPIC_MIN_EVENTS } from './relationGraph';
 import { parseTimeline } from './parseTimeline';
 
 const timeline = (id: string, frontmatter: string, events: string) => parseTimeline(`---\n${frontmatter}\n---\n\n# Events\n${events}`, id);
@@ -145,5 +145,53 @@ describe('topic links', () => {
   it('keeps topic links under the minimum weight filter like any mention', () => {
     expect(filterRelationGraph(g, { minWeight: 3 }).links.some((l) => l.topic)).toBe(false);
     expect(filterRelationGraph(g, { minWeight: 2 }).links.some((l) => l.topic)).toBe(true);
+  });
+});
+
+describe('shortestPath', () => {
+  const node = (id: string, kind: 'person' | 'timeline' = 'person') => ({ id, kind, name: id, years: '', category: '', color: '', links: [], degree: 1, weight: 1 });
+  const link = (source: string, target: string, weight: number, extra: Partial<{ see: boolean; topic: boolean }> = {}) => ({
+    source,
+    target,
+    forward: weight,
+    backward: 0,
+    weight,
+    see: false,
+    topic: false,
+    ...extra,
+  });
+  // A–B–D and A–C–D are both two steps, A–E–F–D is three; everyone but G mentions the era T.
+  const web = {
+    nodes: [...['A', 'B', 'C', 'D', 'E', 'F', 'G'].map((id) => node(id)), node('t:T', 'timeline')],
+    links: [
+      link('A', 'B', 1),
+      link('B', 'D', 1),
+      link('A', 'C', 5),
+      link('C', 'D', 4),
+      link('A', 'E', 9),
+      link('E', 'F', 9),
+      link('D', 'F', 9),
+      link('A', 't:T', 3, { topic: true }),
+      link('D', 't:T', 3, { topic: true }),
+      link('G', 't:T', 3, { topic: true }),
+    ],
+  };
+
+  it('takes the fewest steps, and the strongest links among equals', () => {
+    const path = shortestPath(web, 'A', 'D');
+    expect(path?.nodes).toEqual(['A', 'C', 'D']);
+    expect(path?.links.map((l) => l.weight)).toEqual([5, 4]);
+    expect(shortestPath(web, 'D', 'A')?.nodes).toEqual(['D', 'C', 'A']);
+  });
+
+  it('does not pass through a timeline node, but may start or end at one', () => {
+    expect(shortestPath(web, 'A', 'G')).toBeNull();
+    expect(shortestPath(web, 'G', 't:T')?.nodes).toEqual(['G', 't:T']);
+    expect(shortestPath(web, 't:T', 'F')?.nodes).toEqual(['t:T', 'D', 'F']);
+  });
+
+  it('handles the same node twice and unknown nodes', () => {
+    expect(shortestPath(web, 'A', 'A')).toEqual({ nodes: ['A'], links: [] });
+    expect(shortestPath(web, 'A', 'Nobody')).toBeNull();
   });
 });

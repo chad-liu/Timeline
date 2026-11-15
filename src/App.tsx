@@ -41,7 +41,7 @@ export function App() {
   if (route.page === 'topics') return <TopicIndex timelines={timelines} topics={topics} />;
   if (route.page === 'search') return <Search key={searchHash(route.query)} timelines={timelines} query={route.query} />;
   if (route.page === 'map') return <MapView key={mapHash(route.year, route.selected)} timelines={timelines} places={places} year={route.year} selected={route.selected} />;
-  if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} />;
+  if (route.page === 'graph') return <RelationGraph timelines={timelines} extras={extraPeople} category={route.category} minWeight={route.minWeight} cross={route.cross} from={route.from} to={route.to} />;
   if (route.page === 'years') return <YearIndex timelines={timelines} extras={extraPeople} year={route.year} span={route.span} />;
   return (
     <TimelinePage

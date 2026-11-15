@@ -7,7 +7,7 @@ import { zoom, zoomIdentity } from 'd3-zoom';
 import type { Timeline } from '../types';
 import type { ExtraPerson } from '../lib/extraPeople';
 import { buildNameIndex } from '../lib/nameIndex';
-import { buildRelationGraph, filterRelationGraph } from '../lib/relationGraph';
+import { buildRelationGraph, filterRelationGraph, shortestPath } from '../lib/relationGraph';
 import type { GraphLink, GraphNode } from '../lib/relationGraph';
 import { INDEX_HASH, dashboardHash, graphHash, timelineHash } from '../lib/route';
 import { CATEGORY_ORDER } from '../lib/timelineOrder';
@@ -32,12 +32,17 @@ export function RelationGraph({
   category,
   minWeight,
   cross,
+  from,
+  to,
 }: {
   timelines: Timeline[];
   extras: ExtraPerson[];
   category?: string;
   minWeight: number;
   cross: boolean;
+  /** Node ids of the ends of the path to show (`&from=…&to=…`); with only `from`, the next node clicked becomes the other end. */
+  from?: string;
+  to?: string;
 }) {
   const index = useMemo(() => buildNameIndex(timelines, extras), [timelines, extras]);
   const full = useMemo(() => buildRelationGraph(index, timelines), [index, timelines]);
@@ -49,6 +54,23 @@ export function RelationGraph({
   const [selected, setSelected] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const svgRef = useRef<SVGSVGElement>(null);
+
+  // The path between two nodes, within the filtered graph. Its ends live in the URL, so they change through the hash, not React state.
+  const start = from !== undefined && graph.nodes.some((n) => n.id === from) ? from : undefined;
+  const end = start !== undefined && to !== undefined && to !== start && graph.nodes.some((n) => n.id === to) ? to : undefined;
+  const path = useMemo(() => (start && end ? shortestPath(graph, start, end) : null), [graph, start, end]);
+  const hash = (pathFrom?: string, pathTo?: string) => graphHash(category, minWeight, cross, pathFrom, pathTo);
+  const goPath = (pathFrom?: string, pathTo?: string) => {
+    setSelected(null);
+    location.hash = hash(pathFrom, pathTo);
+  };
+  // While a start is waiting for its end, a click on a node picks the end; the D3 handlers read this through a ref.
+  const picking = start !== undefined && end === undefined;
+  const onNodeClick = useRef<(id: string) => void>(() => {});
+  onNodeClick.current = (id) => {
+    if (picking && id !== start) goPath(start, id);
+    else setSelected(id);
+  };
 
   // Rebuild the simulation whenever the filtered graph changes.
   useEffect(() => {
@@ -79,6 +101,7 @@ export function RelationGraph({
       .data(links)
       .join('line')
       .attr('class', (d) => (d.see ? 'see' : d.topic ? 'topic' : null))
+      .attr('data-link', (d) => `${d.source}|${d.target}`)
       .attr('stroke-width', (d) => 1 + Math.min(6, Math.sqrt(d.weight)) + (d.see ? 1 : 0));
     link.append('title').text((d) => {
       const [a, b] = [nodes.find((n) => n.id === d.source), nodes.find((n) => n.id === d.target)];
@@ -126,7 +149,7 @@ export function RelationGraph({
     node.on('mouseenter', (_, d) => highlight(d.id)).on('mouseleave', () => highlight(null));
     node.on('click', (event, d) => {
       event.stopPropagation();
-      setSelected(d.id);
+      onNodeClick.current(d.id);
     });
     svg.on('click', () => setSelected(null));
 
@@ -200,17 +223,25 @@ export function RelationGraph({
     };
   }, [graph]);
 
-  // Selection and search only change classes, so they never restart the simulation.
+  // Selection, search and the path only change classes, so they never restart the simulation.
   const q = query.trim();
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
+    const onPath = new Set(path ? path.nodes : start ? [start] : []);
+    const pathLinks = new Set(path?.links.map((l) => `${l.source}|${l.target}`));
+    svg.classList.toggle('path', path !== null);
+    svg.classList.toggle('picking', picking);
     for (const g of svg.querySelectorAll<SVGGElement>('.rg-node')) {
       const node = graph.nodes.find((n) => n.id === g.dataset.id);
       g.classList.toggle('selected', g.dataset.id === selected);
       g.classList.toggle('match', q !== '' && !!node && node.name.includes(q));
+      g.classList.toggle('onpath', onPath.has(g.dataset.id ?? ''));
     }
-  }, [graph, selected, q]);
+    for (const line of svg.querySelectorAll<SVGLineElement>('.rg-links line')) {
+      line.classList.toggle('onpath', pathLinks.has(line.dataset.link ?? ''));
+    }
+  }, [graph, selected, q, path, start, picking]);
 
   const byId = new Map(full.nodes.map((n) => [n.id, n]));
   const entry = selected ? byId.get(selected) : undefined;
@@ -242,22 +273,22 @@ export function RelationGraph({
 
       <div className="rg-controls">
         <nav className="dash-tag-filter" aria-label="類別">
-          <a className={category ? 'tag-chip' : 'tag-chip active'} href={graphHash(null, minWeight, cross)}>
+          <a className={category ? 'tag-chip' : 'tag-chip active'} href={graphHash(null, minWeight, cross, start, end)}>
             全部
           </a>
           {categories.map((c) => (
-            <a key={c} className={c === category ? 'tag-chip active' : 'tag-chip'} href={graphHash(c, minWeight, cross)}>
+            <a key={c} className={c === category ? 'tag-chip active' : 'tag-chip'} href={graphHash(c, minWeight, cross, start, end)}>
               {c}
             </a>
           ))}
         </nav>
         <div className="ni-tools">
-          <a className={cross ? 'tag-chip active' : 'tag-chip'} href={graphHash(category, minWeight, !cross)} title="只留下連到另一個類別的連線">
+          <a className={cross ? 'tag-chip active' : 'tag-chip'} href={graphHash(category, minWeight, !cross, start, end)} title="只留下連到另一個類別的連線">
             只看跨類別
           </a>
           <div className="ls-fold" role="group" aria-label="最少提及事件數">
             {WEIGHTS.map((w) => (
-              <a key={w} className={w === minWeight ? 'active' : undefined} href={graphHash(category, w, cross)}>
+              <a key={w} className={w === minWeight ? 'active' : undefined} href={graphHash(category, w, cross, start, end)}>
                 ≥{w}
               </a>
             ))}
@@ -269,7 +300,60 @@ export function RelationGraph({
       <div className="rg-stage">
         <svg ref={svgRef} className="rg-svg" role="img" aria-label="人物關係圖" />
         {graph.nodes.length === 0 && <p className="empty rg-empty">沒有符合條件的連線。</p>}
-        <p className="rg-hint">滾輪縮放、拖曳移動；點節點看連線。實線＝人物互相提及（越粗事件越多），淡色細線＝人物的內文提到某個戰爭、時代等時間軸，虛線＝相關時間軸（see:），方塊＝家族或時代等時間軸</p>
+        <p className="rg-hint">滾輪縮放、拖曳移動；點節點看連線，也可以找出兩個節點之間的最短路徑。實線＝人物互相提及（越粗事件越多），淡色細線＝人物的內文提到某個戰爭、時代等時間軸，虛線＝相關時間軸（see:），方塊＝家族或時代等時間軸</p>
+
+        {picking && (
+          <p className="rg-picking">
+            路徑起點：<b>{byId.get(start)?.name}</b>。點另一個節點當終點
+            <a href={hash()}>取消</a>
+          </p>
+        )}
+
+        {!entry && start && end && (
+          <aside className="rg-panel">
+            <a className="rg-close" href={hash()} aria-label="清除路徑" title="清除路徑">
+              ×
+            </a>
+            <h2 className="rg-path-title">
+              {byId.get(start)?.name} → {byId.get(end)?.name}
+            </h2>
+            {path ? (
+              <>
+                <p className="rg-meta">
+                  最短路徑：{path.links.length} 步
+                  <a href={hash(end, start)}>反向</a>
+                </p>
+                <ol className="rg-path">
+                  {path.nodes.map((id, i) => {
+                    const node = byId.get(id)!;
+                    const link = path.links[i];
+                    const next = link && byId.get(path.nodes[i + 1])!;
+                    const out = link ? (link.source === id ? link.forward : link.backward) : 0;
+                    return (
+                      <li key={id}>
+                        <button type="button" onClick={() => setSelected(id)}>
+                          <span className="dot" style={{ background: node.color }} />
+                          {node.name}
+                          <em>{node.category}</em>
+                        </button>
+                        {link && (
+                          <small>
+                            {link.see && '相關時間軸'}
+                            {link.see && link.weight > 0 && '・'}
+                            {link.topic && `${node.kind === 'person' ? '內文提到它' : '被它的內文提到'} ${link.weight} 則`}
+                            {!link.topic && link.weight > 0 && `提到${next.name} ${out} 則・被提到 ${link.weight - out} 則`}
+                          </small>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </>
+            ) : (
+              <p className="rg-meta">在目前的篩選條件下，找不到只經過人物的路徑。可以放寬類別或「≥」的事件數再試。</p>
+            )}
+          </aside>
+        )}
 
         {entry && (
           <aside className="rg-panel">
@@ -278,6 +362,17 @@ export function RelationGraph({
             </button>
             <h2 style={{ borderColor: entry.color }}>{entry.name}</h2>
             <p className="rg-meta">{[entry.years, entry.category].filter(Boolean).join('・')}</p>
+            <p className="rg-path-actions">
+              {start && start !== entry.id ? (
+                <button type="button" onClick={() => goPath(start, entry.id)}>
+                  從{byId.get(start)?.name}到這裡的路徑
+                </button>
+              ) : (
+                <button type="button" onClick={() => goPath(entry.id)}>
+                  找出到另一個人的路徑
+                </button>
+              )}
+            </p>
             <p className="rg-own">
               {entry.links.map((t) => (
                 <a key={t.id} href={timelineHash([t.id], 'vertical')}>

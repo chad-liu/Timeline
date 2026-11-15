@@ -193,3 +193,54 @@ export function filterRelationGraph(graph: RelationGraph, options: { category?: 
   const { nodes } = withDegrees(new Map(graph.nodes.map((n) => [n.id, n])), links);
   return { nodes: nodes.map((n) => (inCategory(n.id) ? n : { ...n, outside: true })), links };
 }
+
+/** A chain of links from one node to another: `nodes[i]` and `nodes[i + 1]` are joined by `links[i]`. */
+export interface GraphPath {
+  nodes: string[];
+  links: GraphLink[];
+}
+
+/**
+ * The shortest chain of links from `from` to `to`, or null when there is none. It passes through people only: a timeline node
+ * (a war, a period, a family) links to so many people that it would turn every pair into "both mention the Renaissance",
+ * so such a node may only be an end of the path. Among the chains with the fewest steps, the one with the strongest links wins.
+ */
+export function shortestPath(graph: RelationGraph, from: string, to: string): GraphPath | null {
+  const kind = new Map(graph.nodes.map((n) => [n.id, n.kind]));
+  if (!kind.has(from) || !kind.has(to)) return null;
+  if (from === to) return { nodes: [from], links: [] };
+  const passable = (id: string) => kind.get(id) === 'person' || id === from || id === to;
+  const edges = new Map<string, { other: string; link: GraphLink }[]>();
+  for (const link of graph.links) {
+    if (!passable(link.source) || !passable(link.target)) continue;
+    edges.set(link.source, [...(edges.get(link.source) ?? []), { other: link.target, link }]);
+    edges.set(link.target, [...(edges.get(link.target) ?? []), { other: link.source, link }]);
+  }
+
+  // Dijkstra: a step costs 1, plus a little more the weaker the link, never enough to outweigh a whole step.
+  const cost = (link: GraphLink) => 1 + 0.001 / (1 + link.weight + (link.see ? SEE_WEIGHT : 0));
+  const distance = new Map([[from, 0]]);
+  const via = new Map<string, { other: string; link: GraphLink }>();
+  const done = new Set<string>();
+  for (;;) {
+    let current: string | undefined;
+    for (const [id, d] of distance) if (!done.has(id) && (current === undefined || d < distance.get(current)!)) current = id;
+    if (current === undefined) return null;
+    if (current === to) break;
+    done.add(current);
+    for (const { other, link } of edges.get(current) ?? []) {
+      const d = distance.get(current)! + cost(link);
+      if (d < (distance.get(other) ?? Infinity)) {
+        distance.set(other, d);
+        via.set(other, { other: current, link });
+      }
+    }
+  }
+
+  const path: GraphPath = { nodes: [to], links: [] };
+  for (let id = to; id !== from; id = via.get(id)!.other) {
+    path.nodes.unshift(via.get(id)!.other);
+    path.links.unshift(via.get(id)!.link);
+  }
+  return path;
+}
