@@ -7,6 +7,7 @@ routeOf: Handel
 see: [Handel, HandelWorks]
 related:
   - 韓德爾生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/韓德爾行旅.html
+cover: images/hdt-cover.jpg
 color: "#1864ab"
 description: 韓德爾一生的行旅：哈雷出生，赴漢堡、義大利學習歌劇，經漢諾威定居倫敦，在坎農斯、科芬園與西敏寺寫下歌劇與神劇，並到都柏林首演《彌賽亞》；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 韓德爾一生的行旅：哈雷出生，赴漢堡、義大利學�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「韓德爾生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Handel）；作品與人生大事見「韓德爾生平」與「韓德爾主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- hdt-cover.jpg：Building for the Fireworks in the Green Park 1748.jpg（1748年倫敦格林公園為皇家煙火搭建的建築版畫）
 -->
 
 # Periods

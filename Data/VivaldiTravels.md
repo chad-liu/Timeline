@@ -7,6 +7,7 @@ routeOf: Vivaldi
 see: [Vivaldi, VivaldiWorks]
 related:
   - 韋瓦第生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/韋瓦第行旅.html
+cover: images/vit-cover.jpg
 color: "#a61e4d"
 description: 韋瓦第一生的行旅：威尼斯的紅髮神父、皮耶塔孤兒院的教師，曼圖亞宮廷樂長，到羅馬、阿姆斯特丹演出與出版作品，晚年前往維也納；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 韋瓦第一生的行旅：威尼斯的紅髮神父、皮耶塔孤�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「韋瓦第生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Vivaldi）；作品與人生大事見「韋瓦第生平」與「韋瓦第主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- vit-cover.jpg：Pier Leone Ghezzi - Caricatures of Vivaldi, Monsignor Casoni and Monsignor Farsetti.jpg（皮耶·萊昂內·蓋齊所繪的諷刺畫，畫韋瓦第與兩位神職人員）
 -->
 
 # Periods
