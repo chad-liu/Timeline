@@ -5,6 +5,7 @@ tags: [中國文學]
 see: [DuFu, ChineseHistory]
 related:
   - 李白(701~762): https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/李白(701~762).html
+  - 李白生平×行旅×作品（互動式）: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/李白生平_行旅_作品_互動式.html
 born: 701
 died: 762
 aliases: [李太白, 青蓮居士, 詩仙, 謫仙人]
