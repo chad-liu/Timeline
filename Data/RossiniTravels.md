@@ -7,6 +7,7 @@ routeOf: Rossini
 see: [Rossini]
 related:
   - 羅西尼生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/羅西尼行旅.html
+cover: images/rst-cover.jpg
 color: "#ae3ec9"
 description: 羅西尼一生的行旅：佩薩羅出生，在波隆那、威尼斯、米蘭、那不勒斯寫下一部部歌劇，轉往巴黎後封筆，晚年住在帕西與佛羅倫斯；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 羅西尼一生的行旅：佩薩羅出生，在波隆那、威尼�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「羅西尼生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Rossini）；作品與人生大事見「羅西尼生平」與「羅西尼主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- rst-cover.jpg：PU-Pesaro-Teatro-Rossini-1956.jpg（佩薩羅的羅西尼劇院，1956年的明信片）
 -->
 
 # Periods

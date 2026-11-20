@@ -5,6 +5,7 @@ follows: Donizetti
 routeOf: Donizetti
 related:
   - 董尼才第生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/董尼才第行旅.html
+cover: images/dzt-cover.jpg
 color: "#1c7ed6"
 description: 董尼才第一生的行旅：貝加莫出生，在波隆那、威尼斯、羅馬、那不勒斯與米蘭寫下歌劇，後半生在巴黎與維也納度過，回到貝加莫去世；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -14,7 +15,8 @@ description: 董尼才第一生的行旅：貝加莫出生，在波隆那、威�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取；目前還沒有「董尼才第生平」時間軸，所以暫時不會出現在地圖上（做好生平時間軸、id 取 Donizetti 之後，frontmatter 的 routeOf: Donizetti 就會把這裡的停留併入他的路線）。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- dzt-cover.jpg：Bergamo - Particolare monumento a Donizetti.jpg（貝加莫的董尼才第紀念像局部，老明信片）
 -->
 
 # Periods
