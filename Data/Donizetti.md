@@ -8,6 +8,7 @@ related:
 born: 1797-11-29
 died: 1848-04-08
 aliases: [多尼采蒂, 多尼才第, 蓋塔諾·董尼才第, 蓋塔諾·多尼采蒂]
+cover: images/dzbio-cover.jpg
 color: "#1c7ed6"
 description: 蓋塔諾·董尼才第（Gaetano Donizetti，1797–1848），貝加莫出生的義大利歌劇作曲家，與羅西尼、貝里尼並稱「美聲時代」三巨頭；一生寫下約七十部歌劇，《愛情靈藥》《拉美莫爾的露琪亞》《軍中女郎》《唐·帕斯夸萊》都是歌劇院的常備劇目，晚年在巴黎與維也納忙碌工作，因梅毒與精神疾病病倒，回到故鄉貝加莫去世
 ---
@@ -21,7 +22,8 @@ description: 蓋塔諾·董尼才第（Gaetano Donizetti，1797–1848），貝�
 - 生平多處日期（如1846年被送進伊夫里療養院）英文條目只寫月份或季節，這裡照寫月份。
 - 他的妻子維吉妮亞·瓦塞利1837年7月30日去世，這裡寫在拿坡里。
 - 人名與其他時間軸一致：羅西尼（Rossini）、貝里尼（Bellini）、威爾第（Verdi）；馬耶爾、朗吉等人沒有獨立時間軸。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- dzbio-cover.jpg：Gaetano Donizetti (portrait by Joseph Kriehuber, 1842).jpg（約瑟夫·克里胡貝爾1842年所繪董尼才第肖像（石版畫））
 -->
 
 # Periods
