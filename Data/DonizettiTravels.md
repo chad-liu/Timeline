@@ -3,6 +3,7 @@ title: 董尼才第行旅
 category: 音樂家
 follows: Donizetti
 routeOf: Donizetti
+see: [Donizetti]
 related:
   - 董尼才第生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/董尼才第行旅.html
 cover: images/dzt-cover.jpg
@@ -40,8 +41,8 @@ description: 董尼才第一生的行旅：貝加莫出生，在波隆那、威�
 ## 1816 ~ 1818 | 嘗試創作早期歌劇@波隆那、貝加莫 {label="1816－1817"}
 嘗試創作早期歌劇，並逐漸建立自己的歌劇寫作能力。1817年前後返回貝加莫。
 
-## 1818 ~ 1821 | 歌劇《波爾多的恩里科》首演@威尼斯 {label="1818—1819年"}
-（1818）歌劇《波爾多的恩里科》（Enrico di Borgogna）首演，正式踏入歌劇創作領域。
+## 1818 ~ 1821 | 歌劇《勃艮第的恩里科》首演@威尼斯 {label="1818—1819年"}
+（1818）歌劇《勃艮第的恩里科》（Enrico di Borgogna）首演，正式踏入歌劇創作領域。
 （1819）《俄羅斯沙皇彼得大帝》（Il falegname di Livonia）首演，開始累積劇院創作經驗。
 
 ## 1821 ~ 1822 | 歌劇《格拉納達的佐拉伊達》早期版本上演@羅馬 {label="1821—1822年"}

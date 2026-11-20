@@ -3,6 +3,7 @@ title: 貝里尼行旅
 category: 音樂家
 follows: Bellini
 routeOf: Bellini
+see: [Bellini]
 related:
   - 貝里尼生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/貝里尼行旅.html
 cover: images/blt-cover.jpg
