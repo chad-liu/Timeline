@@ -7,6 +7,7 @@ routeOf: Mendelssohn
 see: [Mendelssohn, MendelssohnWorks]
 related:
   - 孟德爾頌生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/孟德爾頌行旅.html
+cover: images/mnt-cover.jpg
 color: "#0a84ff"
 description: 孟德爾頌一生的行旅：漢堡出生、柏林成長，十八歲後遊歷英國、義大利與德國各地，擔任杜塞道夫的音樂總監與萊比錫布商大廈樂團的指揮，多次渡海到英國演出；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 孟德爾頌一生的行旅：漢堡出生、柏林成長，十八�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「孟德爾頌生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Mendelssohn）；作品與人生大事見「孟德爾頌生平」與「孟德爾頌主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- mnt-cover.jpg：Scotland-Staffa-Fingals-Cave-1900.jpg（蘇格蘭斯塔法島的芬加爾洞，約1900年的彩色照片）
 -->
 
 # Periods
