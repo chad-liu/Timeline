@@ -7,6 +7,7 @@ routeOf: Mahler
 see: [Mahler, MahlerWorks]
 related:
   - 馬勒生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/馬勒行旅.html
+cover: images/mht-cover.jpg
 color: "#d9480f"
 description: 馬勒一生的行旅：波希米亞的卡利什特出生，在伊赫拉瓦、維也納求學，歷任卡塞爾、布拉格、萊比錫、布達佩斯、漢堡的指揮，擔任維也納宮廷歌劇院院長，夏季在麥爾尼格與多布亞科作曲，晚年到紐約；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 馬勒一生的行旅：波希米亞的卡利什特出生，在伊�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「馬勒生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Mahler）；作品與人生大事見「馬勒生平」與「馬勒主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- mht-cover.jpg："Haüschen" de Toblach (Dobbiaco), maisonnette où Gustav Mahler s'isolait pour composer - btv1b8422173g.jpg（多布亞科（托布拉赫）馬勒用來作曲的小屋，法國國家圖書館藏老照片）
 -->
 
 # Periods

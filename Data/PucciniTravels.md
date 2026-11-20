@@ -7,6 +7,7 @@ routeOf: Puccini
 see: [Puccini, PucciniWorks]
 related:
   - 普契尼生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/普契尼行旅.html
+cover: images/pct-cover.jpg
 color: "#b5179e"
 description: 普契尼一生的行旅：盧卡出生於音樂世家，到米蘭求學，在托雷德拉戈與維亞雷焦居住創作，到紐約、布宜諾斯艾利斯等地參加歌劇首演，最後在布魯塞爾治療去世；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 普契尼一生的行旅：盧卡出生於音樂世家，到米蘭�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「普契尼生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Puccini）；作品與人生大事見「普契尼生平」與「普契尼主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- pct-cover.jpg：A.Villa (Ravello, 12 febbraio 1865 – Milano, 31 dicembre 1906), Giacomo Puccini a Cavallo al lago di Massaciuccoli.jpg（A. 維拉所繪〈騎馬在馬薩丘科利湖畔的普契尼〉（托雷德拉戈））
 -->
 
 # Periods
