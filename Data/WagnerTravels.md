@@ -7,6 +7,7 @@ routeOf: Wagner
 see: [Wagner, WagnerWorks]
 related:
   - 華格納生平行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/華格納行旅.html
+cover: images/wgt-cover.jpg
 color: "#364fc7"
 description: 華格納一生的行旅：萊比錫出生，在馬格德堡、里加與巴黎奮鬥，任德勒斯登宮廷指揮，在蘇黎世流亡，經路德維希二世支持後定居慕尼黑、特里布申，最後在拜魯特創辦音樂節；每一站都標有地點，可以在「地圖」頁看到每一年的所在地與路線
 ---
@@ -16,7 +17,8 @@ description: 華格納一生的行旅：萊比錫出生，在馬格德堡、里�
 這條時間軸的每一則事件是一段停留，標題最後的「@地點」會被地圖頁讀取，與「華格納生平」時間軸自己的「@地點」合併成路線（frontmatter 的 routeOf: Wagner）；作品與人生大事見「華格納生平」與「華格納主要作品」。
 體例：表格中同一個地點連續出現的列合併成一則事件，日期是第一列的年份或月份，結束是下一個地點開始的時間（所以停留的長短是依表格排出來的推估）；每一列的說明依原表保留，併入同一則事件的內文。
 - 人名的分隔號一律用「·」。
-- 沒有附圖。
+圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
+- wgt-cover.jpg：Musée Richard Wagner - Maison à Triebschen, lac des Quatre-Cantons - reprod. photoméc. d'un cl. Franz Schneider - btv1b8425762p.jpg（四森林州湖畔特里布申的華格納故居，弗朗茲·施奈德攝）
 -->
 
 # Periods
