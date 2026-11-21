@@ -22,7 +22,7 @@ description: 金庸（查良鏞，1924–2018），浙江海寧人，華語世�
 - 英文維基百科條目首句的生日（2月6日）與內文（3月10日）自相矛盾，這裡依內文與筆記，記為3月10日。
 - 《鹿鼎記》連載到1972年，與筆記一致；《越女劍》1970年的日期依筆記。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- lit-jy-cover.jpg：Cha Leung-yung, Kan Yuet-keung, Li Fook-shu, Luk Hoi-on, Pang Fu-wah, Tsui Ka-cheung kse1967-08-29 p4.jpg（1967年香港報紙刊出的查良鏞（金庸）與友人合照）
+- lit-jy-cover.jpg：D:\Books\png\金庸.jpeg（Books 專案內的金庸圖片，由使用者指定）
 -->
 
 # Periods
