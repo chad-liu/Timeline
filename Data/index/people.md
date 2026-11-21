@@ -227,12 +227,6 @@ people:
     note: 〈維納斯的誕生〉的畫家，梅迪奇家族的御用畫家
 
   # 音樂家
-  - name: 帕格尼尼
-    terms: [帕格尼尼]
-    born: 1782
-    died: 1840
-    category: 音樂家
-    note: 炫技小提琴家，影響了李斯特與白遼士
   - name: 克拉拉·舒曼
     terms: [克拉拉]
     born: 1819

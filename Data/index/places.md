@@ -9,6 +9,9 @@
 # 座標只需要到城市等級（小數兩位）。村莊或已併入大城市的舊地名，用它實際的位置。
 places:
   # 德國
+  - { name: 歐廷, aliases: [Eutin], lat: 54.14, lon: 10.62 }
+  - { name: 弗萊貝格, aliases: [Freiberg], lat: 50.92, lon: 13.34 }
+  - { name: 希爾德布格豪森, aliases: [Hildburghausen], lat: 50.43, lon: 10.72 }
   - { name: 萊比錫, aliases: [Leipzig], lat: 51.34, lon: 12.37 }
   - { name: 柏林, aliases: [Berlin], lat: 52.52, lon: 13.40 }
   - { name: 舍訥貝格, aliases: [Schöneberg], lat: 52.48, lon: 13.35 }
@@ -141,6 +144,9 @@ places:
   - { name: 多佛, aliases: [Dover], lat: 51.13, lon: 1.31 }
 
   # 義大利
+  - { name: 熱那亞, aliases: [Genoa, Genova], lat: 44.41, lon: 8.93 }
+  - { name: 克雷莫納, aliases: [Cremona], lat: 45.13, lon: 10.02 }
+  - { name: 曼托瓦, aliases: [Mantua, Mantova], lat: 45.16, lon: 10.79 }
   - { name: 羅馬, aliases: [Rome, Roma], lat: 41.90, lon: 12.50 }
   - { name: 威尼斯, aliases: [Venice, Venezia], lat: 45.44, lon: 12.33 }
   - { name: 米蘭, aliases: [Milan, Milano], lat: 45.46, lon: 9.19 }
@@ -168,6 +174,7 @@ places:
   - { name: 蒂沃利, aliases: [Tivoli, 德斯特別墅, Villa d'Este], lat: 41.96, lon: 12.80 }
 
   # 捷克、匈牙利、波蘭、斯洛維尼亞
+  - { name: 布雷斯勞, aliases: [Breslau, Wrocław, 弗羅茨瓦夫], lat: 51.11, lon: 17.04 }
   - { name: 布拉格, aliases: [Prague, Praha], lat: 50.08, lon: 14.44 }
   - { name: 內拉霍澤維斯, aliases: [Nelahozeves], lat: 50.26, lon: 14.30 }
   - { name: 茲洛尼采, aliases: [Zlonice], lat: 50.29, lon: 14.09 }

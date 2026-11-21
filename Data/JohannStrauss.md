@@ -2,6 +2,9 @@
 title: 小約翰·史特勞斯生平
 category: 音樂家
 tags: [浪漫時期]
+see: [JohannStraussI]
+related:
+  - 小約翰·史特勞斯（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/小約翰・史特勞斯(1825~1899，Johann%20Strauss%20II).html
 born: 1825-10-25
 died: 1899-06-03
 color: "#bf8b2e"
