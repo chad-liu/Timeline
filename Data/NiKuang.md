@@ -22,7 +22,7 @@ description: 倪匡（倪聰，1935–2022），生於上海的香港作家與�
 - 英文維基百科寫他1992年移居舊金山、2006年回到香港；筆記寫2007年。這裡依英文維基百科寫2006年。
 - 英文維基百科寫他1986年在台北受洗成為基督徒，筆記沒有提到，補寫在晚年的事件裡。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- lit-nk-cover.jpg：NiKuangSciFiction.jpg（倪匡科幻小說相關的照片）
+- lit-nk-cover.jpg：D:\Books\png\倪匡.jpeg（Books 專案內的倪匡圖片，由使用者指定）
 -->
 
 # Periods

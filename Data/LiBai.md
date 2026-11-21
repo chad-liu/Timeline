@@ -9,7 +9,7 @@ related:
 born: 701
 died: 762
 aliases: [李太白, 青蓮居士, 詩仙, 謫仙人]
-cover: images/lb-cover.jpg
+cover: images/bk-libai-cover.jpg
 color: "#1c7ed6"
 description: 李白（701–762），字太白，號青蓮居士，盛唐浪漫主義詩人，後世尊為「詩仙」，與杜甫並稱「李杜」；蜀中成長、出蜀漫遊，742年奉詔入長安供奉翰林，兩年後離京，安史之亂中因永王李璘案流放夜郎，途中遇赦，病逝當塗
 ---
@@ -26,7 +26,7 @@ description: 李白（701–762），字太白，號青蓮居士，盛唐浪漫�
 - 享年：筆記寫約62歲（虛歲），網站依生卒年自動計算的歲數為61歲。
 - 人名與其他時間軸一致：杜甫（DuFu）；唐玄宗、楊貴妃、安祿山沒有獨立時間軸，唐朝背景見 ChineseHistory。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- lb-cover.jpg：Liang Kai - Li Bai Strolling.jpg（梁楷〈太白行吟圖〉，南宋（東京國立博物館））
+- bk-libai-cover.jpg：D:\Books\png\李白.jpeg（Books 專案內的李白圖片，由使用者指定）
 - lb-huanghelou.jpg：Xia Yong - Huang He Lou.jpg（夏永〈黃鶴樓圖〉，元代）
 - lb-jiange.jpg：Jiange Pass in Sichuan.tif（〈劍閣圖〉，17世紀（瑞典遠東古物博物館），蜀道之險）
 - lb-xuanzong.jpg：李隆基像.jpg（唐玄宗像）

@@ -33,7 +33,7 @@ description: 陶淵明（約365–427），名潛，字元亮，自號五柳先�
 - 身後：筆記寫顏延之為他撰寫誄文，後世稱「靖節先生」，唐代王維、孟浩然、儲光羲，宋代蘇軾（大量和陶詩）、黃庭堅都推崇他，照此。
 - 人名與其他時間軸一致：蘇軾（Data 的 SuDongpo）；顏延之、慧遠、劉裕、桓玄沒有獨立時間軸。東晉的玄學背景見 Xuanxue。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- tym-cover.jpg：Anonymous - Portrait of Tao Yuanming - 1943.120 - Art Institute of Chicago.jpg（佚名〈陶淵明像〉，芝加哥藝術博物館）
+- tym-cover.jpg：D:\Books\png\陶淵明.jpeg（Books 專案內的陶淵明圖片，由使用者指定）
 - tym-chen.jpg：Tao Yuanming by Chen Hongshou.jpg（陳洪綬〈陶淵明故事圖〉中持菊的陶淵明，明代）
 -->
 

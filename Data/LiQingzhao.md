@@ -26,7 +26,7 @@ description: 李清照（1084–約1155），號易安居士，齊州章丘人�
 - 〈夏日絕句〉「生當作人傑」：筆記列為代表詩作，一般認為作於南渡之初（約1128年），這裡依此。
 - 人名與其他時間軸一致：李煜（LiYu）、辛棄疾（XinQiji）、蘇軾（SuDongpo）、朱熹（ZhuXi）；趙明誠沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- lqz-cover.jpg：李清照畫像.jpg（李清照畫像（1911年以前））
+- lqz-cover.jpg：D:\Books\png\李清照.jpeg（Books 專案內的李清照圖片，由使用者指定）
 - lqz-map.jpg：Jin Dynasty ,Sourthen Song Dynasty and Western Xia Dynasty 1141.jpg（1141年前後金、南宋與西夏疆域圖（《Historical and Commercial Atlas of China》，1935））
 - lqz-dama.jpg：李清照打馬圖.png（李清照《打馬圖》的圖式）
 - lqz-wenji.jpg：易安居士文集书影.jpg（《易安居士文集》書影）

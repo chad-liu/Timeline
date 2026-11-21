@@ -25,7 +25,7 @@ description: 辛棄疾（1140–1207），字幼安，號稼軒，歷城人，�
 - 卒後：維基百科補充1208年被倪思彈劾追削爵秩，1233年追贈光祿大夫，宋末謝枋得為他上疏洗冤，追諡「忠敏」，照此。
 - 人名與其他時間軸一致：李清照（LiQingzhao）、朱熹（ZhuXi）、蘇軾（SuDongpo）；陳亮、陸游、韓侂胄沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- xqj-cover.jpg：Xin Qiji calligraphy of Qu Guo Tie, Song dynasty.jpg（辛棄疾書法〈去國帖〉，宋代（國立故宮博物院））
+- xqj-cover.jpg：D:\Books\png\辛棄疾.jpeg（Books 專案內的辛棄疾圖片，由使用者指定）
 - lqz-map.jpg：Jin Dynasty ,Sourthen Song Dynasty and Western Xia Dynasty 1141.jpg（1141年前後金、南宋與西夏疆域圖（與李清照生平時間軸共用））
 -->
 

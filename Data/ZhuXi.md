@@ -25,7 +25,7 @@ description: 朱熹（1130–1200），字元晦，號晦庵，諡文，世稱�
 - 身後：筆記列1209年賜諡「文」、1227年追封信國公、1241年從祀孔廟、1313年元仁宗以四書集注為科舉依據，寫進最後一則事件。
 - 人名與其他時間軸一致：孔子（Confucius）、辛棄疾（XinQiji）、李清照（LiQingzhao）；陸九淵、呂祖謙、張栻、李侗沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- zx-cover.jpg：Portraits of Famous Men - Zhu Xi.jpg（朱熹像，19世紀至20世紀初）
+- zx-cover.jpg：D:\Books\png\朱熹.jpeg（Books 專案內的朱熹圖片，由使用者指定）
 - zx-bailudong.jpg：亜細亜大観 05 062 "白鹿洞書院 （廬山）".jpg（廬山白鹿洞書院，民國初年的照片（《亞細亞大觀》））
 - zx-sishu.jpg：The Four Books in Chapter and Verse with Collected Commentaries WDL3052.jpg（《四書章句集注》書影（世界數位圖書館））
 - zx-yuelu.jpg：Yuelu Academy 131.jpg（岳麓書院內的匾額）

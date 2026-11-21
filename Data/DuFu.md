@@ -25,7 +25,7 @@ description: 杜甫（712–770），字子美，自號少陵野老，盛唐到�
 - 筆記的〈茅屋為秋風所破歌〉作761年，依此。
 - 人名與其他時間軸一致：李白（LiBai）；高適、嚴武、房琯沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- df-cover.jpg：Dufu.jpg（杜甫像，清宮舊藏）
+- df-cover.jpg：D:\Books\png\杜甫.jpeg（Books 專案內的杜甫圖片，由使用者指定）
 - df-birthplace.jpg：Birthplace of Dufu, Tang Dynasty Poet Statue of Dufu (Du Fu) (48028078791).jpg（河南鞏義杜甫故里的杜甫像）
 - lb-cover.jpg：Liang Kai - Li Bai Strolling.jpg（梁楷〈太白行吟圖〉，南宋（與李白生平時間軸共用））
 - lb-rebels.jpg：Rebel provinces post An Lushan.jpg（安史之亂後割據的藩鎮分布圖（與李白生平時間軸共用））

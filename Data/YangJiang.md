@@ -22,7 +22,7 @@ description: 楊絳（楊季康，1911–2016），生於北京的作家、翻�
 - 她被下放到「五七幹校」的日期，筆記寫1970年7月；錢鍾書筆記寫1969年，這裡各依筆記。
 - 《洗澡之後》是2014年出版的《洗澡》續篇。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- lit-yj-cover.jpg：Yang Jiang in 1932.jpg（1932年的楊絳）
+- lit-yj-cover.jpg：D:\Books\png\楊絳.jpeg（Books 專案內的楊絳圖片，由使用者指定）
 -->
 
 # Periods

@@ -8,7 +8,7 @@ related:
 born: 1056
 died: 1121
 aliases: [周美成, 清真居士, 周清真]
-cover: images/jingkang-qingming.jpg
+cover: images/bk-zhoubangyan-cover.jpg
 color: "#d6336c"
 description: 周邦彥（1056–1121），字美成，號清真居士，錢塘人，北宋末年的詞人與音樂家，被尊為「詞家之冠」「詞中老杜」；以〈汴都賦〉受宋神宗賞識，長期在州縣任小官，晚年提舉宋徽宗的大晟府審訂樂律，集北宋婉約詞之大成，開南宋格律派
 ---
@@ -24,7 +24,7 @@ description: 周邦彥（1056–1121），字美成，號清真居士，錢塘�
 - 〈蘇幕遮〉〈蘭陵王·柳〉〈六醜〉等名作的寫作年代多不確定，〈滿庭芳·夏日溧水無想山作〉依題目放在溧水知縣任內。
 - 人名與其他時間軸一致：柳永（LiuYong）、蘇軾（SuDongpo）、李清照（LiQingzhao）；王安石、宋徽宗、李師師沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- jingkang-qingming.jpg：Along the River During the Qingming Festival (detail of original).jpg（張擇端《清明上河圖》局部，北宋汴京的繁華（與北宋靖康之變大事記共用））
+- bk-zhoubangyan-cover.jpg：D:\Books\png\周邦彥.jpeg（Books 專案內的周邦彥圖片，由使用者指定）
 - dangzheng-huizong.jpg：Huizong.jpg（宋徽宗像，國立故宮博物院藏（與北宋新舊黨爭大事記共用））
 -->
 

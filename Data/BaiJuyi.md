@@ -8,7 +8,7 @@ related:
 born: 772-02-28
 died: 846-09-08
 aliases: [白樂天, 香山居士, 醉吟先生, 白香山]
-cover: images/bjy-cover.jpg
+cover: images/bk-baijuyi-cover.jpg
 color: "#2b8a3e"
 description: 白居易（772–846），字樂天，號香山居士、醉吟先生，中唐最具代表性的詩人之一；與元稹倡導新樂府運動，主張「文章合為時而著，歌詩合為事而作」，寫下〈長恨歌〉〈琵琶行〉〈賣炭翁〉；貶江州後歷任杭州、蘇州刺史，晚年退居洛陽，與劉禹錫唱和
 ---
@@ -27,7 +27,7 @@ description: 白居易（772–846），字樂天，號香山居士、醉吟先�
 - 「香山九老」：筆記寫845年參與洛陽七老會；維基百科同寫845年在履道里舉行七老會，照此。
 - 人名與其他時間軸一致：元稹（YuanZhen）、劉禹錫（LiuYuxi）、杜甫（DuFu）；楊貴妃、武元衡沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- bjy-cover.jpg：唐名臣像-21-白樂天.jpg（《唐名臣像》中的白居易像）
+- bk-baijuyi-cover.jpg：D:\Books\png\白居易.jpeg（Books 專案內的白居易圖片，由使用者指定）
 - bjy-chen.jpg：Bai Juyi by Chen Hongshou.jpg（陳洪綬所繪白居易故事圖，17世紀（蘇黎世里特貝格博物館））
 - bjy-baiyuan.jpg：Tang Poet Bai Juyi Statue in Bai Garden.jpg（洛陽龍門白園的白居易像）
 -->
