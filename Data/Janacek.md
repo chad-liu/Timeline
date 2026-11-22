@@ -4,6 +4,7 @@ category: 音樂家
 tags: [近當代音樂]
 see: [JanacekTravels, Smetana, Dvorak]
 related:
+  - 楊納傑克（音樂家）: https://chad-liu.github.io/books/html/5-2.音樂家/楊納傑克(1854~1928，Leoš%20Janáček).html
   - 楊納傑克行旅（知識圖譜）: https://chad-liu.github.io/books/html/5-2-2.音樂家行旅/楊納傑克行旅.html
 born: 1854-07-03
 died: 1928-08-12
