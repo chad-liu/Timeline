@@ -9,7 +9,7 @@ related:
   - 王安石變法（法律與制度史）: https://chad-liu.github.io/books/html/1-6-4.法律與制度史/1069-王安石變法.html
 color: "#1971c2"
 description: 從改革背景、熙寧新法到新舊黨爭與新法廢除（960–1127）：一場理想、執行與政治支持彼此拉扯的制度改革
-cover: images/sudongpo-wang-anshi.jpg
+cover: images/bk-wanganshireform-cover.jpg
 ---
 
 <!--
@@ -25,6 +25,7 @@ cover: images/sudongpo-wang-anshi.jpg
 - 筆記中的網頁引用連結（含追蹤參數）未收錄。
 - 圖片皆為 Wikimedia Commons 上的公有領域（含 CC0）作品，縮成最長邊 640px 的 JPEG。
 - sudongpo-wang-anshi.jpg（封面）：王安石像（與蘇東坡生平大事記共用）
+- bk-wanganshireform-cover.jpg：D:\3\TimelineCover\北宋王安石變法大事記.jpeg（使用者指定的封面圖片）
 - keju-taizu.jpg：宋太祖像（與中國科舉制度大事記共用）
 - wangan-fan.jpg：Fan Zhongyan scth.jpg（《三才圖會》中的范仲淹像）
 - wangan-shenzong.jpg：Shenzong of Song.jpg（宋神宗像，國立故宮博物院藏）

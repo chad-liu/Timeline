@@ -24,7 +24,7 @@ description: 商鞅（約前390–前338），本名公孫鞅，衛國人，戰�
 - 秦國變法前後的國勢與統一經過見「秦國崛起與統一天下」時間軸。
 - 人名與其他時間軸一致：秦孝公、秦惠文王、公叔痤、景監、公子虔、韓非（HanFei）。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- sy-cover.jpg：Qin Measuring Device of Prime Minister Shang Yang (9874250044).jpg（商鞅方升，前344年商鞅監製的標準量器，上海博物館藏）
+- sy-cover.jpg：D:\3\TimelineCover\商鞅生平.png（使用者指定的封面圖片）
 -->
 
 # Periods

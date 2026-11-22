@@ -29,7 +29,7 @@ description: 前431至前404年，雅典領導的提洛同盟與斯巴達領導�
 - 提洛同盟的結局：維基百科寫前404年提洛同盟戰敗而解散，前377年雅典另組第二次海上同盟，照此寫進前404年事件。
 - 人名與其他時間軸一致：伯里克利（頁面作伯里克里斯）、蘇格拉底、色諾芬。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品；繪畫與雕塑的年代多為後世作品，不代表事件當時的樣貌）：
-- pel-cover.jpg：Bust Pericles Chiaramonti.jpg（伯里克里斯半身像（羅馬時代複製品，梵蒂岡基亞拉蒙蒂博物館））
+- pel-cover.jpg：D:\3\TimelineCover\伯羅奔尼撒戰爭大事記.jpg（使用者指定的封面圖片）
 - pel-longwalls.jpg：The Piraeus and the Long Walls of Athens.jpg（雅典長牆與比雷埃夫斯港（復原圖））
 - pel-funeral.jpg：PericlesFuneralOrationRijksmuseum.jpg（伯里克里斯發表陣亡將士的葬禮演說（版畫，荷蘭國立博物館藏））
 - pel-plague.jpg：La peste d’Athènes. François Perrier.jpg（佩里耶〈雅典的瘟疫〉）

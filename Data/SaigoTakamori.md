@@ -26,7 +26,7 @@ description: 西鄉隆盛（1828–1877），薩摩藩的下級武士出身，�
 - 身後：1879年遷葬南洲墓地、1889年2月11日憲法頒布時特赦並追贈正三位、1898年上野銅像揭幕，取自維基百科。
 - 人名與其他時間軸一致：島津齊彬、島津久光、大久保利通、木戶孝允（桂小五郎）、坂本龍馬、勝海舟、德川慶喜、岩倉具視、月照、井伊直弼。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品；註明「共用」者沿用其他時間軸已有的圖片）：
-- sai-cover.jpg：Saigo Takamori Portrait by Ishikawa Shizumasa.jpg（石川靜正所繪西鄉隆盛像）
+- sai-cover.jpg：D:\3\TimelineCover\西鄉隆盛生平.jpg（使用者指定的封面圖片）
 - sai-nariakira.jpg：Shimazu Nariakira.jpg（島津齊彬）
 - japan-toba-fushimi.jpg（1868年描繪鳥羽伏見之戰的錦繪（與日本歷史時間軸共用））
 - meiji-edo-castle.jpg（明治神宮聖德記念繪畫館的〈江戶開城談判〉，後世所繪（與明治維新大事記時間軸共用））

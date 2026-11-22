@@ -35,7 +35,7 @@ description: 性、相、台、賢、禪、淨、律、密：三論、法相、�
 - 楊仁山：筆記只寫1837–1911年、佛典刻印與唯識學復興；他在1866年創立金陵刻經處，這裡用1866年。
 - 人名與其他時間軸一致：玄奘（Xuanzang）；慧遠（廬山慧遠，與北周的淨影寺慧遠不同人）、智顗、法藏、慧能、空海等沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- bz-cover.jpg：Sixth Patriarch Huineng, Nanhai Guanyin Temple, Foshan, Guangdong, China, picture2.jpg（廣東佛山南海觀音寺的六祖慧能像）
+- bz-cover.jpg：D:\3\TimelineCover\漢傳佛教八宗大事記.jpeg（使用者指定的封面圖片）
 - bz-huxi.jpg：Huxisanxiaotu.jpg（〈虎溪三笑圖〉，宋代，畫中有廬山慧遠）
 - bz-damo.jpg：達磨図-Bodhidharma MET DP-12232-057.jpg（日本〈達磨圖〉，大都會藝術博物館藏）
 - bz-shandao.jpg：Anonymous-Bodhisattva Leading the Way.jpg（敦煌藏經洞出土的〈引路菩薩圖〉，約9世紀，引導亡者往生淨土）

@@ -21,7 +21,7 @@ description: 從西陲養馬的秦非子、護送平王東遷的秦襄公、稱�
 - 前221年統一後的制度（皇帝、郡縣、書同文、車同軌）寫進最後一則；秦始皇之死與秦末的動亂見「秦末與楚漢相爭」時間軸。
 - 人名與其他時間軸一致：司馬遷（SimaQian，《史記》為主要史源）、商鞅（ShangYang）、韓非（HanFei）、屈原（QuYuan）；張儀、白起、范雎、呂不韋、李斯沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- qin-cover.jpg：QinShiHuang18thCentury.jpg（秦始皇像，18世紀《歷代帝王像》畫冊）
+- qin-cover.jpg：D:\3\TimelineCover\秦國崛起與統一天下.jpg（使用者指定的封面圖片）
 -->
 
 # Periods

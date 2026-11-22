@@ -10,7 +10,7 @@ died: 664-03-07
 aliases: [唐三藏, 三藏法師, 唐僧]
 notNames: [唐僧肉]
 color: "#e8590c"
-cover: images/silk-xuanzang.jpg
+cover: images/bk-xuanzang-cover.jpg
 description: 玄奘（602–664），唐代高僧、翻譯家與旅行家；為了尋求完整的《瑜伽師地論》，約629年違禁出關，歷時十七年西行印度，在那爛陀寺師從戒賢，645年帶回大量梵文經典，在長安主持譯經，翻譯約七十五部、一千三百多卷，口述《大唐西域記》，奠定中國法相唯識宗，也是《西遊記》唐僧的歷史原型
 ---
 
@@ -35,6 +35,7 @@ description: 玄奘（602–664），唐代高僧、翻譯家與旅行家；為�
 - 人名：頁面作戒賢、麴文泰、辯機、窺基、道昭、戒日王，照筆記；分隔號一律用·。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品；繪畫、版畫與插圖多為後世作品，不代表事件當時的樣貌）：
 - silk-xuanzang.jpg：Portrait of Xuanzang (Genjō) with Attendant MET DP-15580-007.jpg（日本畫〈玄奘三藏像〉，大都會藝術博物館藏（與絲綢之路大事記時間軸共用））
+- bk-xuanzang-cover.jpg：D:\3\TimelineCover\玄奘生平.png（使用者指定的封面圖片）
 - xz-route.jpg：Xuanzang route.jpg（玄奘西行路線圖）
 - xz-kucha.jpg：King Suvarnapusa of Kucha, Cave 69, Kizil.jpg（克孜爾石窟壁畫中的龜茲國王，龜茲是玄奘西行必經之地）
 - xz-bamiyan.jpg：Flickr - DVIDSHUB - Giant standing Buddhas of Bamiyan still cast shadows (Image 2 of 8).jpg（巴米揚大佛的壁龕（大佛於2001年被毀））

@@ -10,7 +10,7 @@ born: 155
 died: 220-03-15
 aliases: [魏武帝, 曹孟德]
 color: "#495057"
-cover: images/sanguo-caocao.jpg
+cover: images/bk-caocao-cover.jpg
 description: 曹操（155–220），字孟德，東漢末年的政治家、軍事家與文學家；迎漢獻帝、官渡擊敗袁紹而統一北方，赤壁受挫後封魏公、魏王，死後曹丕代漢建魏，追尊魏武帝
 ---
 
@@ -33,6 +33,7 @@ description: 曹操（155–220），字孟德，東漢末年的政治家、軍�
 - 人名與事件和漢末三國大事記（ThreeKingdoms）一致：漢獻帝、袁紹、袁譚、袁尚、呂布、陶謙、張繡、典韋、孫權、劉備、關羽等。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品；註明「共用」者沿用其他時間軸已有的圖片）：
 - sanguo-caocao.jpg（《三才圖會》中的魏太祖曹操像（與漢末三國大事記時間軸共用））
+- bk-caocao-cover.jpg：D:\3\TimelineCover\曹操生平.png（使用者指定的封面圖片）
 - sanguo-yellow.jpg（《三國演義》版畫插圖：劉備、關羽、張飛與黃巾軍作戰（與漢末三國大事記時間軸共用））
 - sanguo-dongzhuo.jpg（清代插圖中的董卓（與漢末三國大事記時間軸共用））
 - cc-xiandi.jpg：Emperor Xian Qing illustration.jpg（清代插圖中的漢獻帝）

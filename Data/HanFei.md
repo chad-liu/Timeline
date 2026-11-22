@@ -23,7 +23,7 @@ description: 韓非（約前280–前233），戰國末期韓國的公子，法�
 - 師承：筆記與維基百科都寫與李斯同學於荀子，時間不確定，這裡依荀子任蘭陵令（前255年）後的推估。
 - 人名與其他時間軸一致：荀子（Xunzi）、商鞅（ShangYang）、秦王政；李斯、姚賈、申不害、慎到沒有獨立時間軸。秦滅韓與統一的經過見「秦國崛起與統一天下」時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- hf-cover.jpg：Hanfeizi or Han Feizi, Qing dynasty, Hunan Museum.jpg（清代刊本《韓非子》，湖南省博物館藏）
+- hf-cover.jpg：D:\3\TimelineCover\韓非生平.jpeg（使用者指定的封面圖片）
 -->
 
 # Periods

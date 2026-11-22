@@ -38,7 +38,7 @@ description: 蓋烏斯·尤利烏斯·凱撒（前100–前44），羅馬共和�
 - 身後：筆記寫前43年第二次三頭同盟、前42年腓立比戰役，照此；屋大維後來成為奧古斯都（維基百科）。
 - 人名與其他時間軸一致：亞歷山大大帝（Data 的 AlexanderTheGreat）。龐培、克拉蘇、安東尼、屋大維、克麗奧佩脫拉、布魯圖斯沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- cae-cover.jpg：Head of Julius Caesar from Tusculum MAntTorino 2089 n01.jpg（圖斯庫倫出土的凱撒頭像，杜林古物博物館）
+- cae-cover.jpg：D:\3\TimelineCover\凱撒生平.png（使用者指定的封面圖片）
 - cae-pompey.jpg：(Venice) Pompey the Great, Museo Archeologico Nazionale.jpg（龐培胸像，威尼斯國立考古博物館）
 - cae-alesia.jpg：Lionel Royer - Vercingetorix Throwing down His Weapons at the feet of Julius Caesar.jpg（萊昂內爾·羅耶〈維欽托利在凱撒腳下投降〉，1899年）
 - cae-rubicon.jpg：Jean Fouquet - Caesar Crossing the Rubicon - WGA08034.jpg（讓·富凱繪製的〈凱撒渡過盧比孔河〉抄本插圖，15世紀）

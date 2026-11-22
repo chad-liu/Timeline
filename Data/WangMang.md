@@ -24,7 +24,7 @@ cover: images/wangmang-jialiang.jpg
 - 筆記第七部分的年份總表、第八部分的歷史評價與第九部分的歷史定位，是整理與評論，不單列事件；評價要點（改革失敗的五個原因、傳統與制度史的兩極評價、「理想與治理的落差」）寫進各項改革的說明與最後一則。
 - 筆記中的網頁引用連結（含追蹤參數）未收錄。
 - 圖片皆為 Wikimedia Commons 上的公有領域（含 CC0）作品，縮成最長邊 640px 的 JPEG。
-- wangmang-jialiang.jpg：Xin Measure Jia-liang, 9-24 AD.jpg（新莽嘉量，新朝的標準量器，封面；CC0）。王莽沒有可靠的同時代畫像，封面改用新朝的代表性文物
+- wangmang-jialiang.jpg：D:\3\TimelineCover\王莽.png（使用者指定的封面圖片）
 - wangmang-coin.jpg：Chinese Money 10 - Xin (Wang Mang) Spade Coin.jpg（新朝「大布黃千」布幣；CC0）
 - wangmang-guangwu.jpg：Han Guangwu Di.jpg（唐代帝王圖卷中的漢光武帝劉秀像）
 - wangmang-kunyang.jpg：Wang Mang(Emperor of the Xin dynasty).png（河南葉縣劉秀廟中的王莽塑像；葉縣即昆陽所在）

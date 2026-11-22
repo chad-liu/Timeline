@@ -35,7 +35,7 @@ description: 判教（教相判釋）是中國佛教把佛陀一生所說的眾�
 - 筆記提醒：傳統判教（解釋教義層次與究竟意義）不等於現代佛教史（研究經典形成與思想演變），五時並不是經典實際成立的順序，這點寫進最後一則與時期說明。
 - 人名與其他時間軸一致：釋迦牟尼（Buddha）、玄奘（Xuanzang）；鳩摩羅什、智顗、法藏、宗密等沒有獨立時間軸。人名分隔號依慣例用「·」。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- pj-cover.jpg：Sramana Zhiyi.jpeg（智顗像，天台宗的實際創立者）
+- pj-cover.jpg：D:\3\TimelineCover\佛教判教大事記.jpeg（使用者指定的封面圖片）
 - pj-guoqing.jpg：Tiantai Guoqing Temple (Mahavira Hall).jpg（天台山國清寺大雄寶殿，關野貞1918年攝）
 - pj-pagoda.jpg：Tiantai Zhenjue Temple (True-Body Pagoda of Master Zhizhe).jpg（天台山真覺寺智者大師真身塔，常盤大定1922年攝）
 - pj-xuanzang.jpg：Xuanzang w.jpg（玄奘取經圖，日本鎌倉時代）

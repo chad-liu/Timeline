@@ -21,7 +21,7 @@ description: 東周王室衰微後諸侯爭霸：齊桓公與管仲「尊王攘�
 - 筆記同年分列的事件合併（前685年齊桓公即位與任用管仲、前643年齊桓公病死與諸子爭位、前632年城濮之戰與踐土之盟、前496年檇李之戰與闔閭之死）。
 - 人名與其他時間軸一致：孔子（Confucius）；管仲、伍子胥、孫武沒有獨立時間軸。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- sah-cover.jpg：Li Tang - Duke Wen of Jin Recovering His State - 1973.120.2 - Metropolitan Museum of Art.jpg（傳南宋李唐〈晉文公復國圖〉局部，大都會藝術博物館藏）
+- sah-cover.jpg：D:\3\TimelineCover\春秋五霸大事記.jpg（使用者指定的封面圖片）
 -->
 
 # Periods

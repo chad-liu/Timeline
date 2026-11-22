@@ -8,7 +8,7 @@ born: 1162
 died: 1227-08-25
 aliases: [鐵木真, 元太祖]
 color: "#5c940d"
-cover: images/war-genghis.jpg
+cover: images/bk-genghiskhan-cover.jpg
 description: 成吉思汗（鐵木真，約1162–1227），蒙古帝國的創建者；1206年統一蒙古高原各部，以千戶制整編軍民，攻西夏、金朝，西征花剌子模，為橫跨歐亞的蒙古帝國奠基，也帶來大規模的屠殺與破壞
 ---
 
@@ -31,6 +31,7 @@ description: 成吉思汗（鐵木真，約1162–1227），蒙古帝國的創�
 - 譯名：王汗（脫斡鄰勒）、札木合、孛兒帖、者別（頁面作哲別，採維基百科與蒙古秘史常見寫法「者別」並註明）、速不台、木華黎、拖雷、窩闊台、朮赤；花剌子模、訛答剌、布哈拉、撒馬爾罕、玉龍傑赤照頁面。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品；註明「共用」者沿用其他時間軸已有的圖片）：
 - war-genghis.jpg（元代帝后像冊中的成吉思汗像（與武器與戰法時間軸共用））
+- bk-genghiskhan-cover.jpg：D:\3\TimelineCover\成吉思汗生平.png（使用者指定的封面圖片）
 - gk-kurultai.jpg：Temüjin proclaimed as Genghis Khan in 1206 Jami' al-tawarikh manuscript (trimmed).jpg（拉施德丁《史集》抄本插圖：1206年鐵木真被推舉為成吉思汗）
 - gk-bukhara.jpg：Genghis Khan's sermon to the people of Bukhara.jpg（成吉思汗在布哈拉清真寺向民眾訓話（波斯抄本插圖））
 - gk-qiu.jpg：丘處機.jpg（丘處機像）
