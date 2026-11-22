@@ -22,7 +22,7 @@ description: 袁崇煥（1584–1630），字元素，廣東東莞人，明末�
 - 處決毛文龍：筆記寫1629年6月，英文維基百科寫在他任督師期間，兩者一致；對這件事的評價分歧，這裡兩種意見都帶到。
 - 他逝世時被判凌遲，是兩份資料都有的記載。
 圖片來源（皆為 Wikimedia Commons 公有領域／CC0 作品，縮成最長邊 640px）：
-- hp-yc-cover.jpg：袁崇煥(Yuanchonghuan).jpg（袁崇煥像）
+- hp-yc-cover.jpg：D:\3\TimelineCover\袁崇煥.jpg（使用者指定的封面圖片）
 -->
 
 # Periods
