@@ -138,39 +138,18 @@ people:
     died: 1603
     category: 西方歷史
     note: 英格蘭女王，擊敗西班牙無敵艦隊
-  - name: 路易十四
-    terms: [路易十四]
-    born: 1638
-    died: 1715
-    category: 西方歷史
-    note: 法國「太陽王」，絕對王權的代表
   - name: 腓特烈大帝
     terms: [腓特烈大帝]
     born: 1712
     died: 1786
     category: 西方歷史
     note: 普魯士國王，開明專制的代表
-  - name: 拿破崙
-    terms: [拿破崙]
-    notNames: [拿破崙三世, 路易·拿破崙, 小拿破崙]
-    born: 1769
-    died: 1821
-    category: 西方歷史
-    timeline: NapoleonicWars
-    note: 法國皇帝，《拿破崙法典》與拿破崙戰爭
   - name: 拿破崙三世
     terms: [拿破崙三世, 路易·拿破崙]
     born: 1808
     died: 1873
     category: 西方歷史
     note: 法蘭西第二帝國皇帝，在普法戰爭中被俘
-  - name: 俾斯麥
-    terms: [俾斯麥]
-    born: 1815
-    died: 1898
-    category: 西方歷史
-    timeline: GermanUnification
-    note: 普魯士「鐵血宰相」，統一德意志並創設社會保險
   - name: 列寧
     terms: [列寧]
     notNames: [列寧格勒]
@@ -184,12 +163,6 @@ people:
     died: 1953
     category: 西方歷史
     note: 蘇聯領導人，推行計畫經濟與大清洗
-  - name: 希特勒
-    terms: [希特勒]
-    born: 1889
-    died: 1945
-    category: 西方歷史
-    note: 納粹德國領導人，發動第二次世界大戰
 
   # 宗教、探險與思想
   - name: 但丁
