@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Joule, Clausius, Carnot, Maxwell, Science]
 related:
-  - 開爾文生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/開爾文生平大事記.html
+  - 開爾文生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/開爾文.html
 born: 1824-06-26
 died: 1907-12-17
 aliases: [威廉·湯姆森, 湯姆森, 開爾文勳爵, 克耳文勳爵, 克耳文男爵, 開爾文男爵]

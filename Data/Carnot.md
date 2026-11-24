@@ -4,7 +4,7 @@ category: 科學家
 tags: [物理學]
 see: [Clausius, Kelvin, Joule, Boltzmann, Science]
 related:
-  - 卡諾生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/卡諾生平大事記.html
+  - 卡諾生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/卡諾.html
 born: 1796-06-01
 died: 1832-08-24
 aliases: [薩迪·卡諾, 尼古拉·卡諾, 尼古拉·萊昂納爾·薩迪·卡諾, 尼古拉·雷奧納爾·薩迪·卡諾]
