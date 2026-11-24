@@ -1035,6 +1035,32 @@ input {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.tag-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tag-check input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.tag-chip.tag-check.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  color: var(--text);
+}
+
+.tag-chip.tag-check.active small {
+  color: var(--muted);
+}
+
 .project-cover {
   position: relative;
   display: block;

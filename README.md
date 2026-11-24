@@ -61,7 +61,7 @@
 
 | 網址 | 開啟的內容 |
 |---|---|
-| `#c=音樂家&tag=浪漫時期` | Dashboard 的指定類別與標籤 |
+| `#c=音樂家&tag=浪漫時期` | Dashboard 的指定類別與標籤；標籤是可複選的核取方塊（不勾選＝全部），多個標籤以 `\|` 相連，如 `tag=浪漫時期\|巴洛克時期`（符合任一個即顯示） |
 | `#v=horizontal&t=Bach` | 一條時間軸的橫向檢視（`v` 可為 `horizontal`、`vertical`、`grid`） |
 | `#v=horizontal&t=Bach\|Handel` | 多條時間軸疊加比較 |
 | `#v=horizontal&t=Mozart\|Beethoven&a=1` | 同齡對照：人物疊加比較時把出生對齊，橫軸改成年齡 |

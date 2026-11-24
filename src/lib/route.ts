@@ -95,10 +95,12 @@ export function timelineHash(ids: string[], view: View = 'horizontal', event?: s
   return '#' + params.toString();
 }
 
-export function dashboardHash(category?: string, tag?: string): string {
+/** `tag` may be one tag or several (a timeline matches if it has any of them); several are joined with `|` in the URL. */
+export function dashboardHash(category?: string, tag?: string | string[]): string {
   const params = new URLSearchParams();
   if (category) params.set('c', category);
-  if (tag) params.set('tag', tag);
+  const tags = Array.isArray(tag) ? tag.join('|') : tag;
+  if (tags) params.set('tag', tags);
   const query = params.toString();
   return query ? '#' + query : '#';
 }

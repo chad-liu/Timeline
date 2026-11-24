@@ -50,8 +50,13 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
   const groups = groupTimelines(timelines);
   const active = groups.find((g) => g.category === category) ?? groups[0];
   const tags = active ? tagsOf(active.timelines) : [];
-  const activeTag = tag && tags.includes(tag) ? tag : undefined;
-  const shown = active ? active.timelines.filter((t) => !activeTag || t.tags.includes(activeTag)) : [];
+  // Nothing checked means every tag; several checked means timelines having any of them.
+  const selectedTags = (tag ?? '').split('|').filter((t) => tags.includes(t));
+  const shown = active ? active.timelines.filter((t) => selectedTags.length === 0 || t.tags.some((x) => selectedTags.includes(x))) : [];
+  const toggleTag = (name: string) => {
+    const next = selectedTags.includes(name) ? selectedTags.filter((x) => x !== name) : [...selectedTags, name];
+    location.hash = dashboardHash(active.category, next);
+  };
 
   return (
     <div className="dashboard">
@@ -117,15 +122,16 @@ export function Dashboard({ timelines, category, tag }: { timelines: Timeline[];
               ))}
             </nav>
             {tags.length > 0 && (
-              <nav className="dash-tag-filter" aria-label="標籤">
-                <a className={activeTag ? 'tag-chip' : 'tag-chip active'} href={dashboardHash(active.category)} aria-current={activeTag ? undefined : 'page'}>
-                  全部 <small>{active.timelines.length}</small>
-                </a>
-                {tags.map((t) => (
-                  <a key={t} className={t === activeTag ? 'tag-chip active' : 'tag-chip'} href={dashboardHash(active.category, t)} aria-current={t === activeTag ? 'page' : undefined}>
-                    {t} <small>{active.timelines.filter((x) => x.tags.includes(t)).length}</small>
-                  </a>
-                ))}
+              <nav className="dash-tag-filter" aria-label="標籤（不勾選＝全部）">
+                {tags.map((t) => {
+                  const on = selectedTags.includes(t);
+                  return (
+                    <label key={t} className={on ? 'tag-chip tag-check active' : 'tag-chip tag-check'}>
+                      <input type="checkbox" checked={on} onChange={() => toggleTag(t)} />
+                      {t} <small>{active.timelines.filter((x) => x.tags.includes(t)).length}</small>
+                    </label>
+                  );
+                })}
               </nav>
             )}
             <section className="dash-group">
