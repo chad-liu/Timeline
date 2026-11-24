@@ -1,7 +1,7 @@
 ---
 title: 三武一宗滅佛大事記
 category: 東方歷史
-tags: [宗教史]
+tags: [思想與宗教]
 see: [Buddha, ChineseHistory, Panjiao]
 related:
   - 北魏太武帝滅佛: https://chad-liu.github.io/books/html/1-2.中國歷史/北魏太武帝滅佛.html

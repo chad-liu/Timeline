@@ -1,7 +1,7 @@
 ---
 title: 漢傳佛教八宗大事記
 category: 東方歷史
-tags: [思想史]
+tags: [思想與宗教]
 see: [Panjiao, BuddhistTranslation, BuddhistPersecutions, Xuanzang, Buddha]
 related:
   - 漢傳佛教八宗: https://chad-liu.github.io/books/html/1-2.中國歷史/漢傳佛教八宗.html

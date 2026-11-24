@@ -1,7 +1,7 @@
 ---
 title: 佛教判教大事記
 category: 東方歷史
-tags: [思想史]
+tags: [思想與宗教]
 see: [Buddha, Xuanzang, Xuanxue, BuddhistPersecutions]
 related:
   - 佛教判教: https://chad-liu.github.io/books/html/1-2.中國歷史/佛教判教.html

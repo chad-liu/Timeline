@@ -1,7 +1,7 @@
 ---
 title: 佛教譯經大事記
 category: 東方歷史
-tags: [宗教史]
+tags: [思想與宗教]
 see: [Buddha, Xuanzang, SilkRoad, ChineseBuddhistSchools, Panjiao]
 related:
   - 佛教譯經: https://chad-liu.github.io/books/html/1-2.中國歷史/佛教譯經.html

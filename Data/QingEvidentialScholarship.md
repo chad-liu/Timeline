@@ -1,7 +1,7 @@
 ---
 title: 清代考據學大事記
 category: 東方歷史
-tags: [思想史]
+tags: [思想與宗教]
 see: [KejuSystem, ZengGuofan, HundredDaysReform, LiangQichao, HuShi]
 aliases: [考據學, 乾嘉學派, 乾嘉考據, 樸學, 考證學, 今文經學]
 related:

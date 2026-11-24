@@ -1,7 +1,7 @@
 ---
 title: 魏晉玄學大事記
 category: 東方歷史
-tags: [思想史]
+tags: [思想與宗教]
 related:
   - 魏晉玄學: https://chad-liu.github.io/books/html/1-2.中國歷史/魏晉玄學.html
   - 魏晉玄學大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/魏晉玄學大事記.html
