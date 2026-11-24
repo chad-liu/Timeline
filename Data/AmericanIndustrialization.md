@@ -1,7 +1,7 @@
 ---
 title: 美國工業革命
 category: 西方歷史
-tags: [經濟史]
+tags: [戰爭與革命]
 see: [IndustrialRevolution, AmericanCivilWar, Twain]
 aliases: [鍍金時代, 進步時代]
 related:

@@ -1,7 +1,7 @@
 ---
 title: 特洛伊戰爭大事記
 category: 西方歷史
-tags: [神話與史詩]
+tags: [戰爭與革命]
 see: [Greece, PersianWars, AlexanderTheGreat]
 related:
   - 特洛伊戰爭大事記: https://chad-liu.github.io/books/html/1-1.西方歷史/特洛伊戰爭大事記.html
