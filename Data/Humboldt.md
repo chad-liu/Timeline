@@ -1,7 +1,7 @@
 ---
 title: 洪堡生平
 category: 科學家
-tags: [地理學, 博物學]
+tags: [博物學]
 see: [Science]
 born: 1769-09-14
 died: 1859-05-06

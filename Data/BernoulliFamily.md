@@ -1,7 +1,7 @@
 ---
 title: 白努利家族
 category: 科學家
-tags: [數學, 家族史]
+tags: [物理學]
 see: [Euler, Newton, Leibniz, Science]
 related:
   - 白努利家族生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/白努利家族.html

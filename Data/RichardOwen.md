@@ -1,7 +1,7 @@
 ---
 title: 理查·歐文生平
 category: 科學家
-tags: [生物學, 古生物學]
+tags: [生物學]
 see: [Darwin, Huxley, Science]
 related:
   - 理查歐文生平大事記: https://chad-liu.github.io/books/html/8-2.科學家/理查歐文.html
