@@ -1,6 +1,6 @@
 ---
 title: 分子生物學發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [GeneticEngineering, CRISPR, Mendel, Pasteur, Science]
 related:

@@ -1,6 +1,6 @@
 ---
 title: 區塊鏈發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [Cryptocurrency, MonetarySystemHistory, BankingHistory, ComputerHistory]
 related:

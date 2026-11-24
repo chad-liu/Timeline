@@ -1,6 +1,6 @@
 ---
 title: 積體電路發展大事記
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [ComputerHistory, AIChips, TaiwanAISemiconductor, TSMC, QuantumMechanics, Turing]
 related:

@@ -60,7 +60,7 @@ people:
   - name: 張忠謀
     terms: [張忠謀]
     born: 1931
-    category: 政經商科
+    category: 產經
 ---
 `);
   const index = buildNameIndex(timelines, extras);

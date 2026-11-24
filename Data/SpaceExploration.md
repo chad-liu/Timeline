@@ -1,6 +1,6 @@
 ---
 title: 太空探險大事記
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [SpaceTelescopes, BlackHoleExploration, Science, Einstein, Hawking]
 related:

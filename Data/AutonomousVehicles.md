@@ -1,6 +1,6 @@
 ---
 title: 自動駕駛車輛發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [AIHistory, AIChips, RoboticsHistory, DroneHistory, ComputerHistory, TaiwanAISemiconductor]
 related:

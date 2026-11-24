@@ -1,6 +1,6 @@
 ---
 title: 好萊塢
-category: 政經商科
+category: 產經
 tags: [國外公司]
 related:
   - 好萊塢傳記 Hollywood (1908-): https://chad-liu.github.io/books/html/4-4.國外公司/好萊塢傳記.html

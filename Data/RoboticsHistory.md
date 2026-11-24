@@ -1,6 +1,6 @@
 ---
 title: 機器人發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [AIHistory, Turing, ComputerHistory, TaiwanAISemiconductor, AutonomousVehicles]
 related:

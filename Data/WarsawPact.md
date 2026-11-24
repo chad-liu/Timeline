@@ -1,6 +1,6 @@
 ---
 title: 華沙公約組織大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [NATO, ColdWar, RussianRevolution, UnitedNations]
 related:

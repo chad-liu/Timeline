@@ -1,6 +1,6 @@
 ---
 title: 金融經濟史
-category: 政經商科
+category: 產經
 tags: [經濟史]
 related:
   - 金融經濟史歷史因果分析: https://chad-liu.github.io/books/html/1-6-6.金融經濟史/歷史因果分析.html

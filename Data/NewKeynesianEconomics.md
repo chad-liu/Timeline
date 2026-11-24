@@ -1,6 +1,6 @@
 ---
 title: 新凱因斯學派
-category: 政經商科
+category: 產經
 tags: [經濟學派]
 see: [KeynesianEconomics, NewClassicalEconomics, Monetarism]
 aliases: [新凱因斯學派, 新凱因斯主義, 價格僵固性, 菜單成本, 泰勒法則, 通膨目標制]

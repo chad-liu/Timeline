@@ -1,6 +1,6 @@
 ---
 title: 全球銀行的演進
-category: 政經商科
+category: 產經
 tags: [經濟史]
 see: [FinanceHistory, MonetarySystemHistory, Medici]
 aliases: [商人銀行, 綜合銀行, 巴塞爾協議]

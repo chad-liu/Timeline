@@ -1,6 +1,6 @@
 ---
 title: 黑洞探索大事記
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [Einstein, Hawking, SpaceTelescopes, SpaceExploration, QuantumMechanics, Newton]
 related:

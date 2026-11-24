@@ -1,6 +1,6 @@
 ---
 title: 制度經濟學
-category: 政經商科
+category: 產經
 tags: [經濟學派]
 see: [ClassicalEconomics, ChicagoSchool, SocialistEconomics]
 aliases: [制度經濟學, 新制度經濟學, 交易成本, 寇斯定理, 公地悲劇]

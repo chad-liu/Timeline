@@ -1,6 +1,6 @@
 ---
 title: 金磚國家大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [Globalization, UnitedNations, FinancialCrisisHistory, MonetarySystemHistory, CentralBankHistory, OPEC, ColdWar]
 related:

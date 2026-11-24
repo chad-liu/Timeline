@@ -1,6 +1,6 @@
 ---
 title: 北約發展大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [ColdWar, WarsawPact, UnitedNations, EuropeanUnion, FiveEyes, AUKUS, RussianRevolution]
 related:

@@ -1,6 +1,6 @@
 ---
 title: 全球化與去全球化大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [TradeHistory, MonetarySystemHistory, FinancialCrisisHistory, ColdWar, EuropeanUnion, OPEC, AgeOfDiscovery, Ricardo, IndustrialRevolution, TSMC]
 related:

@@ -1,6 +1,6 @@
 ---
 title: 李嘉圖生平
-category: 政經商科
+category: 產經
 tags: [經濟學家]
 see: [ClassicalEconomics, Malthus, AdamSmith, JohnStuartMill]
 related:

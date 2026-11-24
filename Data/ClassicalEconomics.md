@@ -1,6 +1,6 @@
 ---
 title: 古典經濟學派
-category: 政經商科
+category: 產經
 tags: [經濟學派]
 see: [SocialistEconomics, IndustrialRevolution, Locke]
 aliases: [古典經濟學, 古典學派, 國富論, 看不見的手, 比較利益, 穀物法]

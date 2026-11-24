@@ -1,6 +1,6 @@
 ---
 title: 加密貨幣發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [Blockchain, MonetarySystemHistory, FinancialCrisisHistory, CentralBankHistory, BankingHistory, FinanceHistory]
 related:

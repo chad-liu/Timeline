@@ -1,6 +1,6 @@
 ---
 title: AUKUS大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [QUAD, FiveEyes, NATO, ColdWar, Taiwan]
 related:

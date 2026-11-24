@@ -1,6 +1,6 @@
 ---
 title: 台灣AI半導體產業發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [TSMC, AIChips, IntegratedCircuits, AIHistory, Taiwan]
 related:

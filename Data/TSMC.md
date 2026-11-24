@@ -1,6 +1,6 @@
 ---
 title: 台積電
-category: 政經商科
+category: 產經
 tags: [臺灣公司]
 related:
   - 台積電（TSMC）傳記: https://chad-liu.github.io/books/html/4-3.臺灣公司/台積電傳記.html

@@ -1,6 +1,6 @@
 ---
 title: 五眼聯盟大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [ColdWar, NATO, AUKUS, QUAD, WarsawPact, Turing, AIHistory]
 related:

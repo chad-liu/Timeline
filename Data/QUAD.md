@@ -1,6 +1,6 @@
 ---
 title: QUAD四方安全對話大事記
-category: 政經商科
+category: 政治科技
 tags: [政治組織]
 see: [AUKUS, FiveEyes, NATO, Japan, Globalization]
 related:

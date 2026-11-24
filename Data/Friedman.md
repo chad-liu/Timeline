@@ -1,6 +1,6 @@
 ---
 title: 傅利曼生平
-category: 政經商科
+category: 產經
 tags: [經濟學家]
 see: [Monetarism, ChicagoSchool, Hayek, Keynes]
 related:

@@ -251,7 +251,7 @@ people:
     notNames: [艾福特]
     born: 1863
     died: 1947
-    category: 政經商科
+    category: 產經
     note: 福特汽車創辦人，以流水線大量生產T型車
 
   # 東亞
@@ -270,7 +270,7 @@ people:
   - name: 張忠謀
     terms: [張忠謀]
     born: 1931
-    category: 政經商科
+    category: 產經
     timeline: TSMC
     note: 台積電創辦人，首創純晶圓代工
 ---

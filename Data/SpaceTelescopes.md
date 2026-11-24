@@ -1,6 +1,6 @@
 ---
 title: 太空望遠鏡發展史
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [SpaceExploration, BlackHoleExploration, Einstein, Hawking]
 related:

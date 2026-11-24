@@ -1,6 +1,6 @@
 ---
 title: 量子力學大事記
-category: 政經商科
+category: 政治科技
 tags: [現代科技]
 see: [Planck, Einstein, Feynman, Fermi, VonNeumann, Oppenheimer, Science, Hawking]
 related:

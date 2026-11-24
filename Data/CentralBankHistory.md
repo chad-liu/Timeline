@@ -1,6 +1,6 @@
 ---
 title: 世界中央銀行發展史
-category: 政經商科
+category: 產經
 tags: [經濟史]
 see: [BankingHistory, MonetarySystemHistory, FinancialCrisisHistory, FinanceHistory, Monetarism]
 aliases: [中央銀行, 最後貸款人, 聯邦準備制度, 歐洲中央銀行, 量化寬鬆]
