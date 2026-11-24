@@ -1,7 +1,7 @@
 ---
 title: 王陽明生平
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 see: [ZhuXi, Mencius, ZhangJuzheng]
 related:
   - 王陽明生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/王陽明(1472~1529).html

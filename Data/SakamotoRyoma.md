@@ -1,7 +1,7 @@
 ---
 title: 坂本龍馬大事記
 category: 東方歷史
-tags: [日本人物]
+tags: [人物]
 born: 1836-01-03
 died: 1867-12-10
 color: "#1b4965"

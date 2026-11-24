@@ -1,7 +1,7 @@
 ---
 title: 范仲淹生平
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 see: [ChineseHistory, OuyangXiu, SongPartyStrife, KejuSystem]
 related:
   - 范仲淹(989~1052): https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/范仲淹(989~1052).html

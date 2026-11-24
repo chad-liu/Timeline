@@ -1,7 +1,7 @@
 ---
 title: 韓非生平
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 see: [Xunzi, ShangYang, QinUnification]
 related:
   - 韓非子生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/韓非子(前280~前233).html

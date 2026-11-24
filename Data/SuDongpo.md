@@ -1,7 +1,7 @@
 ---
 title: 蘇東坡生平大事記
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 born: 1037-01-08
 died: 1101-08-24
 color: "#9c6644"

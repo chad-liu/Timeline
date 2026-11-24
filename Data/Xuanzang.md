@@ -1,7 +1,7 @@
 ---
 title: 玄奘生平
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 see: [SilkRoad, ChineseHistory]
 related:
   - 玄奘生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/玄奘(602~664).html

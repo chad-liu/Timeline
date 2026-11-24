@@ -1,7 +1,7 @@
 ---
 title: 孟子生平
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 see: [Confucius, Mozi, Xunzi]
 related:
   - 孟子生平大事記: https://chad-liu.github.io/books/html/1-2-1.中國歷史人物/孟子(前372~前289).html

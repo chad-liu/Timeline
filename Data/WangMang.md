@@ -1,7 +1,7 @@
 ---
 title: 王莽
 category: 東方歷史
-tags: [中國人物]
+tags: [人物]
 related:
   - 王莽興衰與改革: https://chad-liu.github.io/books/html/1-2.中國歷史/王莽興衰與改革.html
   - 王莽興亡大事記: https://chad-liu.github.io/books/html/1-2.中國歷史/王莽興亡大事記.html
