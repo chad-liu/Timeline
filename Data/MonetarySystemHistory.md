@@ -1,6 +1,6 @@
 ---
 title: 全球貨幣制度史
-category: 經濟商業
+category: 政經商科
 tags: [經濟史]
 see: [BankingHistory, FinanceHistory, Monetarism, Keynes, Friedman]
 aliases: [金本位, 金本位制, 複本位制, 布列敦森林體系, 浮動匯率, 特別提款權, 央行數位貨幣]

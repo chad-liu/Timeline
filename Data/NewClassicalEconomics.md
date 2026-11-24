@@ -1,6 +1,6 @@
 ---
 title: 新興古典學派
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [Monetarism, ChicagoSchool, NewKeynesianEconomics, KeynesianEconomics]
 aliases: [新興古典學派, 新古典宏觀經濟學, 理性預期, 盧卡斯批判, 實質景氣循環]

@@ -1,6 +1,6 @@
 ---
 title: 貨幣學派
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [KeynesianEconomics, ChicagoSchool, NewClassicalEconomics, FinanceHistory]
 aliases: [貨幣學派, 貨幣主義, 貨幣數量論, 自然失業率]

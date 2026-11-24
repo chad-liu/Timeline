@@ -1,6 +1,6 @@
 ---
 title: 凱因斯生平
-category: 經濟商業
+category: 政經商科
 tags: [經濟學家]
 see: [KeynesianEconomics, Hayek, Friedman]
 related:

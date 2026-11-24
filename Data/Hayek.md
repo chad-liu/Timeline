@@ -1,6 +1,6 @@
 ---
 title: 海耶克生平
-category: 經濟商業
+category: 政經商科
 tags: [經濟學家]
 see: [Keynes, Friedman, ChicagoSchool, SocialistEconomics, KeynesianEconomics]
 related:

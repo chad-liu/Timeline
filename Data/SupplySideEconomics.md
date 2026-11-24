@@ -1,6 +1,6 @@
 ---
 title: 供給面經濟學
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [ClassicalEconomics, Monetarism, ChicagoSchool, KeynesianEconomics]
 aliases: [供給面經濟學, 供給學派, 拉弗曲線, 雷根經濟學, 涓滴經濟學]

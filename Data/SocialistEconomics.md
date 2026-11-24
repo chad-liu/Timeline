@@ -1,6 +1,6 @@
 ---
 title: 社會主義經濟學
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [ClassicalEconomics, RussianRevolution, InstitutionalEconomics]
 aliases: [社會主義經濟學, 計畫經濟, 空想社會主義, 資本論, 共產黨宣言, 新經濟政策, 五年計畫, 市場社會主義, 改革開放]

@@ -1,6 +1,6 @@
 ---
 title: 芝加哥學派
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [Monetarism, NewClassicalEconomics, InstitutionalEconomics, SupplySideEconomics]
 aliases: [芝加哥學派, 芝加哥經濟學派, 芝加哥男孩, 效率市場假說]

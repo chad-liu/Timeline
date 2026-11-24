@@ -1,6 +1,6 @@
 ---
 title: 凱因斯學派
-category: 經濟商業
+category: 政經商科
 tags: [經濟學派]
 see: [ClassicalEconomics, Monetarism, NewKeynesianEconomics, FinanceHistory]
 aliases: [凱因斯學派, 凱因斯主義, 凱因斯革命, 有效需求, 乘數效果, 新古典綜合, 後凱因斯學派, 菲利普斯曲線]

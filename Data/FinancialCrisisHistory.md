@@ -1,6 +1,6 @@
 ---
 title: 世界金融危機史
-category: 經濟商業
+category: 政經商科
 tags: [經濟史]
 see: [FinanceHistory, BankingHistory, MonetarySystemHistory, KeynesianEconomics]
 aliases: [金融危機, 金融恐慌, 泡沫經濟, 亞洲金融風暴, 金融海嘯, 歐債危機]

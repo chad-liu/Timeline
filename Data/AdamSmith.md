@@ -1,6 +1,6 @@
 ---
 title: 亞當·斯密生平
-category: 經濟商業
+category: 政經商科
 tags: [經濟學家]
 see: [ClassicalEconomics, Malthus, Ricardo, JohnStuartMill]
 related:

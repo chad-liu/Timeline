@@ -1,6 +1,6 @@
 ---
 title: 約翰·斯圖亞特·彌爾生平
-category: 經濟商業
+category: 政經商科
 tags: [經濟學家]
 see: [ClassicalEconomics, Ricardo, Locke]
 related:
