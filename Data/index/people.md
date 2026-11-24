@@ -240,13 +240,6 @@ people:
     died: 1819
     category: 科學家
     note: 改良蒸汽機，啟動工業革命
-  - name: 達爾文
-    terms: [達爾文]
-    notNames: [社會達爾文主義]
-    born: 1809
-    died: 1882
-    category: 科學家
-    note: 《物種起源》，提出天擇演化論
   - name: 愛迪生
     terms: [愛迪生]
     born: 1847
