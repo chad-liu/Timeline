@@ -2,6 +2,7 @@
 title: 伯恩斯坦生平
 category: 音樂家
 tags: [指揮家]
+see: [ColdWar]
 related:
   - 伯恩斯坦（表演家）: https://chad-liu.github.io/books/html/5-3.表演家/伯恩斯坦（Leonard%20Bernstein）生平大事記.html
 born: 1918-08-25

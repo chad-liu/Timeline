@@ -2,6 +2,7 @@
 title: 歐伊斯特拉夫生平
 category: 音樂家
 tags: [提琴家]
+see: [ColdWar]
 related:
   - 歐伊斯特拉夫（表演家）: https://chad-liu.github.io/books/html/5-3.表演家/大衛・歐伊斯特拉夫（David%20Oistrakh）生平大事記.html
 born: 1908-09-30
